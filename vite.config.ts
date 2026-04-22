@@ -13,9 +13,19 @@ export default defineConfig({
       "@": path.resolve(process.cwd(), "src"),
     },
   },
-  // 强制指定输出目录为 dist，这是 Vercel 的标准
   build: {
     outDir: "dist",
     emptyOutDir: true,
+    // 解决方案：提高警告阈值，并把第三方库单独打包
+    chunkSizeWarningLimit: 1000, 
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return 'vendor'; // 把所有第三方库打包成一个单独的 vendor 文件
+          }
+        }
+      }
+    }
   },
 });
