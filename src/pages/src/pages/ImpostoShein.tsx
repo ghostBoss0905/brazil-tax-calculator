@@ -51,8 +51,7 @@ export default function ImpostoShein() {
 
         <p className="mb-6 text-lg">
           A Shein continua sendo uma das lojas internacionais mais populares no
-          Brasil. Porém, muitas pessoas ainda têm dúvidas sobre imposto,
-          Remessa Conforme e valor final da compra.
+          Brasil.
         </p>
 
         <p className="mb-6">
@@ -69,11 +68,6 @@ export default function ImpostoShein() {
           importação e ICMS.
         </p>
 
-        <p className="mb-4">
-          Atualmente, compras acima de US$50 podem pagar até 60% de imposto,
-          dependendo do tipo de envio e da participação no Remessa Conforme.
-        </p>
-
         <h2 className="text-2xl font-bold mt-10 mb-4">
           Como Funciona o Remessa Conforme na Shein?
         </h2>
@@ -81,11 +75,6 @@ export default function ImpostoShein() {
         <p className="mb-4">
           A Shein participa oficialmente do programa Remessa Conforme da Receita
           Federal.
-        </p>
-
-        <p className="mb-4">
-          Isso permite que compras internacionais tenham tributação reduzida em
-          alguns casos.
         </p>
 
         <div className="overflow-x-auto mt-6">
@@ -112,47 +101,19 @@ export default function ImpostoShein() {
         </div>
 
         <h2 className="text-2xl font-bold mt-10 mb-4">
-          Roupa da Shein Paga Imposto?
-        </h2>
-
-        <p className="mb-4">
-          Sim. Vestidos, calças, maquiagem, bolsas e outros produtos da Shein
-          podem pagar imposto ao entrar no Brasil.
-        </p>
-
-        <p className="mb-4">
-          O valor depende do preço da compra, frete e estado brasileiro de
-          entrega.
-        </p>
-
-        <h2 className="text-2xl font-bold mt-10 mb-4">
-          Vale a Pena Comprar na Shein em 2026?
-        </h2>
-
-        <p className="mb-4">
-          Em muitos casos, ainda vale a pena importar da Shein, principalmente
-          roupas femininas e acessórios.
-        </p>
-
-        <p className="mb-4">
-          Porém, é importante calcular o imposto antes da compra para evitar
-          surpresas.
-        </p>
-
-        <h2 className="text-2xl font-bold mt-10 mb-4">
           Calculadora de Imposto Shein
         </h2>
 
         <p className="mb-4">
           Use nossa calculadora gratuita para estimar o valor final da sua
-          compra na Shein.
+          compra.
         </p>
 
         <a
           href="/"
           className="inline-block mt-4 bg-black text-white px-6 py-3 rounded-xl"
         >
-          Usar Calculadora de Imposto de Importação
+          Usar Calculadora de Imposto
         </a>
 
         <h2 className="text-2xl font-bold mt-12 mb-4">
@@ -167,7 +128,7 @@ export default function ImpostoShein() {
 
             <p>
               Em alguns casos, parte dos impostos pode aparecer diretamente no
-              checkout da compra.
+              checkout.
             </p>
           </div>
 
@@ -181,26 +142,11 @@ export default function ImpostoShein() {
               ICMS.
             </p>
           </div>
-
-          <div>
-            <h3 className="font-semibold text-lg">
-              Como saber o valor do imposto antes de comprar?
-            </h3>
-
-            <p>
-              Você pode usar nossa calculadora gratuita para estimar o valor da
-              tributação.
-            </p>
-          </div>
         </div>
 
         <div className="mt-12 border-t pt-6">
           <p className="text-sm text-gray-500">
             Publicado em Maio de 2026.
-          </p>
-
-          <p className="text-sm text-gray-500">
-            Baseado nas regras atuais da Receita Federal do Brasil.
           </p>
         </div>
       </main>
