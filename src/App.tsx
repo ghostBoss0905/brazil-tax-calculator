@@ -1,3 +1,4 @@
+import ImpostoShein from "@/pages/ImpostoShein";
 import { Switch, Route } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -22,6 +23,10 @@ function Router() {
       {/* 首页 */}
       <Route path="/" component={Home} />
 
+      <Route
+  path="/imposto-shein-brasil"
+  component={ImpostoShein}
+/>
       {/* SEO 页面 */}
       <Route
         path="/imposto-aliexpress-brasil"
