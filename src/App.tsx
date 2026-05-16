@@ -5,7 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
-import ComoCalcularImposto from "@/pages/ComoCalcularImposto";
+import ImpostoAliExpress from "@/pages/ImpostoAliExpress";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -19,13 +19,16 @@ const queryClient = new QueryClient({
 function Router() {
   return (
     <Switch>
+      {/* 首页 */}
       <Route path="/" component={Home} />
 
+      {/* SEO 页面 */}
       <Route
-        path="/como-calcular-imposto-importacao-brasil"
-        component={ComoCalcularImposto}
+        path="/imposto-aliexpress-brasil"
+        component={ImpostoAliExpress}
       />
 
+      {/* 404 */}
       <Route component={NotFound} />
     </Switch>
   );
