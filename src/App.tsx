@@ -1,6 +1,5 @@
 import { Switch, Route } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
@@ -9,6 +8,7 @@ import NotFound from "@/pages/not-found";
 
 import ImpostoAliExpress from "@/pages/ImpostoAliExpress";
 import ImpostoShein from "@/pages/ImpostoShein";
+import RemessaConforme from "@/pages/RemessaConforme";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,23 +22,31 @@ const queryClient = new QueryClient({
 function Router() {
   return (
     <Switch>
+
       {/* 首页 */}
       <Route path="/" component={Home} />
 
-      {/* Shein SEO 页面 */}
-      <Route
-        path="/imposto-shein-brasil"
-        component={ImpostoShein}
-      />
-
-      {/* AliExpress SEO 页面 */}
+      {/* AliExpress SEO页 */}
       <Route
         path="/imposto-aliexpress-brasil"
         component={ImpostoAliExpress}
       />
 
+      {/* Shein SEO页 */}
+      <Route
+        path="/imposto-shein-brasil"
+        component={ImpostoShein}
+      />
+
+      {/* Remessa Conforme SEO页 */}
+      <Route
+        path="/o-que-e-remessa-conforme"
+        component={RemessaConforme}
+      />
+
       {/* 404 */}
       <Route component={NotFound} />
+
     </Switch>
   );
 }
