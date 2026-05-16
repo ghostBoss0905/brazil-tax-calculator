@@ -1,12 +1,14 @@
-import ImpostoShein from "@/pages/ImpostoShein";
 import { Switch, Route } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
+
 import ImpostoAliExpress from "@/pages/ImpostoAliExpress";
+import ImpostoShein from "@/pages/ImpostoShein";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -23,11 +25,13 @@ function Router() {
       {/* 首页 */}
       <Route path="/" component={Home} />
 
+      {/* Shein SEO 页面 */}
       <Route
-  path="/imposto-shein-brasil"
-  component={ImpostoShein}
-/>
-      {/* SEO 页面 */}
+        path="/imposto-shein-brasil"
+        component={ImpostoShein}
+      />
+
+      {/* AliExpress SEO 页面 */}
       <Route
         path="/imposto-aliexpress-brasil"
         component={ImpostoAliExpress}
