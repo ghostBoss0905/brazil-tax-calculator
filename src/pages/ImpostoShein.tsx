@@ -1,209 +1,100 @@
-import { Helmet } from "react-helmet";
-
 export default function ImpostoShein() {
   return (
-    <>
-      <Helmet>
-        <title>
-          Imposto Shein Brasil: Como Funciona em 2026
-        </title>
+    <main className="max-w-4xl mx-auto px-6 py-12">
 
-        <meta
-          name="description"
-          content="Veja como funciona o imposto da Shein no Brasil em 2026. Descubra taxas, ICMS, Remessa Conforme e como calcular antes de comprar."
-        />
+      <h1 className="text-4xl font-bold mb-6">
+        Como Funciona o Imposto da Shein no Brasil (2026)
+      </h1>
 
-        <link
-          rel="canonical"
-          href="https://www.taxadeimportacao.com/imposto-shein-brasil"
-        />
+      <p className="text-lg mb-8">
+        Comprar na Shein ficou mais caro após as novas regras de importação
+        no Brasil. Mas ainda é possível economizar usando o Remessa Conforme.
+      </p>
 
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "A Shein cobra imposto no Brasil?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Sim. Compras internacionais podem pagar imposto de importação e ICMS dependendo do valor.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "A Shein participa do Remessa Conforme?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Sim. A Shein participa oficialmente do programa Remessa Conforme.",
-                },
-              },
-            ],
-          })}
-        </script>
-      </Helmet>
+      <h2 className="text-2xl font-semibold mt-10 mb-4">
+        Quanto é o Imposto da Shein?
+      </h2>
 
-      <main className="max-w-4xl mx-auto px-6 py-10">
-        <h1 className="text-4xl font-bold mb-6">
-          Imposto Shein Brasil: Como Funciona em 2026
-        </h1>
+      <p className="mb-6">
+        Compras internacionais podem pagar 20% ou 60% de imposto,
+        dependendo da modalidade da importação.
+      </p>
 
-        <p className="mb-6 text-lg">
-          A Shein continua sendo uma das lojas internacionais mais populares no
-          Brasil. Porém, muitas pessoas ainda têm dúvidas sobre imposto,
-          Remessa Conforme e valor final da compra.
-        </p>
+      <h2 className="text-2xl font-semibold mt-10 mb-4">
+        A Shein Participa do Remessa Conforme?
+      </h2>
 
-        <p className="mb-6">
-          Neste guia atualizado de 2026, você vai entender como funciona o
-          imposto da Shein no Brasil e como calcular antes de comprar.
-        </p>
+      <p className="mb-6">
+        Sim. A Shein participa oficialmente do programa Remessa Conforme
+        da Receita Federal.
+      </p>
 
-        <h2 className="text-2xl font-bold mt-10 mb-4">
-          A Shein Cobra Imposto no Brasil?
+      <h2 className="text-2xl font-semibold mt-10 mb-4">
+        Como Calcular o Imposto?
+      </h2>
+
+      <p className="mb-6">
+        O cálculo depende do valor do produto, frete internacional e ICMS
+        do estado brasileiro.
+      </p>
+
+      <a
+        href="/"
+        className="inline-block bg-black text-white px-6 py-3 rounded-xl mb-10"
+      >
+        Usar Calculadora de Imposto
+      </a>
+
+      <h2 className="text-2xl font-semibold mt-10 mb-4">
+        FAQ - Perguntas Frequentes
+      </h2>
+
+      <h3 className="text-xl font-semibold mt-6 mb-2">
+        Compras da Shein abaixo de US$50 pagam imposto?
+      </h3>
+
+      <p className="mb-4">
+        Compras abaixo de US$50 podem pagar ICMS dependendo do estado.
+      </p>
+
+      <h3 className="text-xl font-semibold mt-6 mb-2">
+        Vale a pena comprar na Shein em 2026?
+      </h3>
+
+      <p className="mb-4">
+        Depende do produto e do valor final após os impostos.
+      </p>
+
+      <div className="mt-10">
+        <h2 className="text-2xl font-semibold mb-4">
+          Saiba Mais
         </h2>
 
-        <p className="mb-4">
-          Sim. Compras internacionais na Shein podem pagar imposto de
-          importação e ICMS.
-        </p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>
+            <a
+              href="/o-que-e-remessa-conforme"
+              className="text-blue-600 underline"
+            >
+              O que é Remessa Conforme?
+            </a>
+          </li>
 
-        <p className="mb-4">
-          Atualmente, compras acima de US$50 podem pagar até 60% de imposto,
-          dependendo do tipo de envio e da participação no Remessa Conforme.
-        </p>
+          <li>
+            <a
+              href="/imposto-aliexpress-brasil"
+              className="text-blue-600 underline"
+            >
+              Imposto do AliExpress no Brasil
+            </a>
+          </li>
+        </ul>
+      </div>
 
-        <h2 className="text-2xl font-bold mt-10 mb-4">
-          Como Funciona o Remessa Conforme na Shein?
-        </h2>
+      <p className="text-sm text-gray-500 mt-12">
+        Atualizado em Maio de 2026.
+      </p>
 
-        <p className="mb-4">
-          A Shein participa oficialmente do programa Remessa Conforme da Receita
-          Federal.
-        </p>
-
-        <p className="mb-4">
-          Isso permite que compras internacionais tenham tributação reduzida em
-          alguns casos.
-        </p>
-
-        <div className="overflow-x-auto mt-6">
-          <table className="w-full border border-gray-300">
-            <thead>
-              <tr className="bg-gray-100">
-                <th className="border p-3 text-left">Cenário</th>
-                <th className="border p-3 text-left">Imposto</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td className="border p-3">Com Remessa Conforme</td>
-                <td className="border p-3">20% + ICMS</td>
-              </tr>
-
-              <tr>
-                <td className="border p-3">Sem Remessa Conforme</td>
-                <td className="border p-3">60% + ICMS</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h2 className="text-2xl font-bold mt-10 mb-4">
-          Roupa da Shein Paga Imposto?
-        </h2>
-
-        <p className="mb-4">
-          Sim. Vestidos, calças, maquiagem, bolsas e outros produtos da Shein
-          podem pagar imposto ao entrar no Brasil.
-        </p>
-
-        <p className="mb-4">
-          O valor depende do preço da compra, frete e estado brasileiro de
-          entrega.
-        </p>
-
-        <h2 className="text-2xl font-bold mt-10 mb-4">
-          Vale a Pena Comprar na Shein em 2026?
-        </h2>
-
-        <p className="mb-4">
-          Em muitos casos, ainda vale a pena importar da Shein, principalmente
-          roupas femininas e acessórios.
-        </p>
-
-        <p className="mb-4">
-          Porém, é importante calcular o imposto antes da compra para evitar
-          surpresas.
-        </p>
-
-        <h2 className="text-2xl font-bold mt-10 mb-4">
-          Calculadora de Imposto Shein
-        </h2>
-
-        <p className="mb-4">
-          Use nossa calculadora gratuita para estimar o valor final da sua
-          compra na Shein.
-        </p>
-
-        <a
-          href="/"
-          className="inline-block mt-4 bg-black text-white px-6 py-3 rounded-xl"
-        >
-          Usar Calculadora de Imposto de Importação
-        </a>
-
-        <h2 className="text-2xl font-bold mt-12 mb-4">
-          FAQ - Perguntas Frequentes
-        </h2>
-
-        <div className="space-y-6">
-          <div>
-            <h3 className="font-semibold text-lg">
-              A Shein cobra imposto automaticamente?
-            </h3>
-
-            <p>
-              Em alguns casos, parte dos impostos pode aparecer diretamente no
-              checkout da compra.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-lg">
-              Compras abaixo de US$50 pagam imposto?
-            </h3>
-
-            <p>
-              Dependendo do estado, compras abaixo de US$50 ainda podem pagar
-              ICMS.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold text-lg">
-              Como saber o valor do imposto antes de comprar?
-            </h3>
-
-            <p>
-              Você pode usar nossa calculadora gratuita para estimar o valor da
-              tributação.
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-12 border-t pt-6">
-          <p className="text-sm text-gray-500">
-            Publicado em Maio de 2026.
-          </p>
-
-          <p className="text-sm text-gray-500">
-            Baseado nas regras atuais da Receita Federal do Brasil.
-          </p>
-        </div>
-      </main>
-    </>
+    </main>
   );
 }
