@@ -9,6 +9,7 @@ import NotFound from "@/pages/not-found";
 import ImpostoAliExpress from "@/pages/ImpostoAliExpress";
 import ImpostoShein from "@/pages/ImpostoShein";
 import RemessaConforme from "@/pages/RemessaConforme";
+import ICMSImportacao from "@/pages/ICMSImportacao";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,22 +27,25 @@ function Router() {
       {/* 首页 */}
       <Route path="/" component={Home} />
 
-      {/* AliExpress SEO页 */}
+      {/* SEO 页面 */}
       <Route
         path="/imposto-aliexpress-brasil"
         component={ImpostoAliExpress}
       />
 
-      {/* Shein SEO页 */}
       <Route
         path="/imposto-shein-brasil"
         component={ImpostoShein}
       />
 
-      {/* Remessa Conforme SEO页 */}
       <Route
         path="/o-que-e-remessa-conforme"
         component={RemessaConforme}
+      />
+
+      <Route
+        path="/icms-importacao-brasil"
+        component={ICMSImportacao}
       />
 
       {/* 404 */}
