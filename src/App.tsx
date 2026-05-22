@@ -8,8 +8,10 @@ import NotFound from "@/pages/not-found";
 
 import ImpostoAliExpress from "@/pages/ImpostoAliExpress";
 import ImpostoShein from "@/pages/ImpostoShein";
+import ImpostoShopee from "@/pages/ImpostoShopee";
 import RemessaConforme from "@/pages/RemessaConforme";
 import ICMSImportacao from "@/pages/ICMSImportacao";
+import ComoCalcularImposto from "@/pages/ComoCalcularImposto";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -39,6 +41,11 @@ function Router() {
       />
 
       <Route
+        path="/imposto-shopee-brasil"
+        component={ImpostoShopee}
+      />
+
+      <Route
         path="/o-que-e-remessa-conforme"
         component={RemessaConforme}
       />
@@ -46,6 +53,11 @@ function Router() {
       <Route
         path="/icms-importacao-brasil"
         component={ICMSImportacao}
+      />
+
+      <Route
+        path="/como-calcular-imposto-importacao-brasil"
+        component={ComoCalcularImposto}
       />
 
       {/* 404 */}

@@ -1,6 +1,27 @@
+import SeoHead from "@/components/SeoHead";
+
 export default function ImpostoShein() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-12">
+    <>
+      <SeoHead
+        title="Imposto Shein Brasil 2026: Como Calcular Taxas"
+        description="Veja como funciona o imposto da Shein no Brasil em 2026, incluindo Remessa Conforme, ICMS e como estimar o valor final da compra."
+        canonical="https://www.taxadeimportacao.com/imposto-shein-brasil"
+        faqs={[
+          {
+            question: "Compras da Shein abaixo de US$50 pagam imposto?",
+            answer:
+              "Sim. Compras abaixo de US$50 podem pagar Imposto de Importação e ICMS, conforme a regra aplicada à compra e ao estado de destino.",
+          },
+          {
+            question: "Vale a pena comprar na Shein em 2026?",
+            answer:
+              "Depende do preço final com produto, frete, Imposto de Importação e ICMS. A calculadora ajuda a comparar antes de comprar.",
+          },
+        ]}
+      />
+
+      <main className="max-w-4xl mx-auto px-6 py-12">
 
       <h1 className="text-4xl font-bold mb-6">
         Como Funciona o Imposto da Shein no Brasil (2026)
@@ -95,6 +116,7 @@ export default function ImpostoShein() {
         Atualizado em Maio de 2026.
       </p>
 
-    </main>
+      </main>
+    </>
   );
 }

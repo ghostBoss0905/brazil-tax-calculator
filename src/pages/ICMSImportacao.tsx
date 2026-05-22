@@ -1,6 +1,32 @@
+import SeoHead from "@/components/SeoHead";
+
 export default function ICMSImportacao() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-12">
+    <>
+      <SeoHead
+        title="ICMS Importação Brasil 2026: Como Calcular"
+        description="Entenda como o ICMS de importação entra no cálculo de compras internacionais no Brasil e como estimar o custo final."
+        canonical="https://www.taxadeimportacao.com/icms-importacao-brasil"
+        faqs={[
+          {
+            question: "O ICMS é cobrado em todas as importações?",
+            answer:
+              "Na maioria das compras internacionais para o Brasil, o ICMS faz parte da cobrança tributária e varia conforme o estado.",
+          },
+          {
+            question: "Qual é o ICMS de importação no Brasil?",
+            answer:
+              "A Receita Federal informa que a alíquota usada pode ficar entre 17% e 20%, conforme o estado e a regra aplicável.",
+          },
+          {
+            question: "Como pagar o ICMS de importação?",
+            answer:
+              "Em sites certificados no Remessa Conforme, o pagamento costuma ocorrer na compra; fora dele, pode ser cobrado na chegada da encomenda.",
+          },
+        ]}
+      />
+
+      <main className="max-w-4xl mx-auto px-6 py-12">
 
       <h1 className="text-4xl font-bold mb-6">
         ICMS na Importação do Brasil (2026)
@@ -26,7 +52,8 @@ export default function ICMSImportacao() {
       </h2>
 
       <p className="mb-6">
-        Na maioria dos estados brasileiros, o ICMS de importação é de 17%.
+        A Receita Federal informa que a cobrança costuma variar entre 17% e
+        20%, conforme o estado e a regra aplicada à compra.
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -123,6 +150,7 @@ export default function ICMSImportacao() {
         Atualizado em Maio de 2026.
       </p>
 
-    </main>
+      </main>
+    </>
   );
 }

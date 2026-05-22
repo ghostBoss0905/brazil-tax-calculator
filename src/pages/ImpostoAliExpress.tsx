@@ -1,6 +1,27 @@
+import SeoHead from "@/components/SeoHead";
+
 export default function ImpostoAliExpress() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-12">
+    <>
+      <SeoHead
+        title="Imposto AliExpress Brasil 2026: Como Calcular Taxas"
+        description="Entenda como calcular o imposto do AliExpress no Brasil em 2026, com Remessa Conforme, ICMS, frete e custo final antes da compra."
+        canonical="https://www.taxadeimportacao.com/imposto-aliexpress-brasil"
+        faqs={[
+          {
+            question: "Compras do AliExpress abaixo de US$50 pagam imposto?",
+            answer:
+              "Sim. Compras abaixo de US$50 podem pagar Imposto de Importação reduzido em sites certificados e também ICMS estadual.",
+          },
+          {
+            question: "O AliExpress participa do Remessa Conforme?",
+            answer:
+              "Sim. O AliExpress aparece entre as plataformas que operam com o Programa Remessa Conforme.",
+          },
+        ]}
+      />
+
+      <main className="max-w-4xl mx-auto px-6 py-12">
 
       <h1 className="text-4xl font-bold mb-6">
         Como Calcular o Imposto do AliExpress no Brasil (2026)
@@ -95,6 +116,7 @@ export default function ImpostoAliExpress() {
         Atualizado em Maio de 2026.
       </p>
 
-    </main>
+      </main>
+    </>
   );
 }

@@ -1,6 +1,32 @@
+import SeoHead from "@/components/SeoHead";
+
 export default function RemessaConforme() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-12">
+    <>
+      <SeoHead
+        title="O Que é Remessa Conforme? Regras e Impostos 2026"
+        description="Entenda o Programa Remessa Conforme, como funciona a cobrança de impostos em compras internacionais e quando usar a calculadora."
+        canonical="https://www.taxadeimportacao.com/o-que-e-remessa-conforme"
+        faqs={[
+          {
+            question: "O que é Remessa Conforme?",
+            answer:
+              "É um programa da Receita Federal para plataformas certificadas informarem e cobrarem os tributos de compras internacionais de forma antecipada.",
+          },
+          {
+            question: "Compras abaixo de US$50 pagam imposto?",
+            answer:
+              "Sim. Mesmo compras abaixo de US$50 podem pagar Imposto de Importação e ICMS, de acordo com as regras vigentes.",
+          },
+          {
+            question: "Como calcular o imposto antes de comprar?",
+            answer:
+              "Use uma calculadora de imposto de importação com valor do produto, frete, câmbio, estado e situação do Remessa Conforme.",
+          },
+        ]}
+      />
+
+      <main className="max-w-4xl mx-auto px-6 py-12">
 
       <h1 className="text-4xl font-bold mb-6">
         O Que é Remessa Conforme? (2026)
@@ -113,6 +139,7 @@ export default function RemessaConforme() {
         Atualizado em Maio de 2026.
       </p>
 
-    </main>
+      </main>
+    </>
   );
 }

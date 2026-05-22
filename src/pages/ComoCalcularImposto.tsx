@@ -1,23 +1,30 @@
-import { Helmet } from "react-helmet";
+import SeoHead from "@/components/SeoHead";
 
 export default function ComoCalcularImposto() {
   return (
     <>
-      <Helmet>
-        <title>
-          Como Calcular Imposto de Importação no Brasil 2026
-        </title>
-
-        <meta
-          name="description"
-          content="Aprenda como calcular imposto de importação no Brasil em 2026. Veja ICMS, Remessa Conforme e custo final atualizado."
-        />
-
-        <link
-          rel="canonical"
-          href="https://www.taxadeimportacao.com/como-calcular-imposto-importacao-brasil"
-        />
-      </Helmet>
+      <SeoHead
+        title="Como Calcular Imposto de Importação no Brasil 2026"
+        description="Aprenda como calcular imposto de importação no Brasil em 2026. Veja ICMS, Remessa Conforme e custo final atualizado."
+        canonical="https://www.taxadeimportacao.com/como-calcular-imposto-importacao-brasil"
+        faqs={[
+          {
+            question: "Quais impostos são cobrados em compras internacionais?",
+            answer:
+              "As compras internacionais podem ter Imposto de Importação, ICMS estadual e custos de frete ou seguro incluídos na base de cálculo.",
+          },
+          {
+            question: "Como funciona o Remessa Conforme?",
+            answer:
+              "O Remessa Conforme permite que plataformas certificadas informem e cobrem os tributos no momento da compra.",
+          },
+          {
+            question: "Como calcular o imposto antes de comprar?",
+            answer:
+              "Informe valor do produto, frete, câmbio, estado de destino e se a loja participa do Remessa Conforme.",
+          },
+        ]}
+      />
 
       <div
         style={{
