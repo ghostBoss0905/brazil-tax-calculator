@@ -72,6 +72,26 @@ export default function ImpostoShopee() {
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Produto nacional ou internacional na Shopee?
+        </h2>
+
+        <p className="mb-6">
+          Uma dúvida comum é confundir produtos vendidos no Brasil com produtos
+          internacionais dentro da própria Shopee. Se o item já está em estoque
+          nacional, a dinâmica de importação pode ser diferente. Se vem do
+          exterior, o comprador deve observar prazo de entrega, indicação de
+          envio internacional e cobrança de tributos no checkout.
+        </p>
+
+        <p className="mb-6">
+          Antes de comprar, compare produtos parecidos vendidos por lojistas
+          nacionais e internacionais. Às vezes o preço importado parece menor,
+          mas o frete, o prazo e os impostos reduzem a vantagem. Em outros
+          casos, mesmo com tributação, a compra internacional continua mais
+          barata.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
           Exemplo simples de cálculo
         </h2>
 
@@ -82,6 +102,18 @@ export default function ImpostoShopee() {
           de Importação e o ICMS do estado de destino. Como o ICMS pode variar,
           a melhor forma é simular antes da compra.
         </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Checklist antes de finalizar a compra
+        </h2>
+
+        <ul className="list-disc pl-6 mb-6 space-y-2">
+          <li>Verifique se o produto é nacional ou internacional.</li>
+          <li>Confira se impostos e ICMS aparecem no checkout.</li>
+          <li>Some frete, seguro e possíveis tarifas ao preço do produto.</li>
+          <li>Simule o custo final com o estado correto de destino.</li>
+          <li>Compare o resultado com uma opção vendida no Brasil.</li>
+        </ul>
 
         <a
           href="/"

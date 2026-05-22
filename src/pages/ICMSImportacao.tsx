@@ -38,6 +38,14 @@ export default function ICMSImportacao() {
         do estado.
       </p>
 
+      <p className="mb-6">
+        Muita gente calcula apenas o Imposto de Importação e esquece o ICMS.
+        Esse é um erro comum. O ICMS pode aumentar bastante o custo final
+        porque ele não incide apenas sobre o preço do produto em dólar. A base
+        de cálculo pode considerar produto, frete, seguro e o próprio imposto
+        de importação, conforme as regras aplicadas à operação.
+      </p>
+
       <h2 className="text-2xl font-semibold mt-10 mb-4">
         O Que é ICMS?
       </h2>
@@ -45,6 +53,13 @@ export default function ICMSImportacao() {
       <p className="mb-6">
         ICMS significa Imposto sobre Circulação de Mercadorias e Serviços.
         Ele é cobrado pelos estados brasileiros.
+      </p>
+
+      <p className="mb-6">
+        No contexto de compras internacionais, o ICMS entra porque a mercadoria
+        será entregue em um estado brasileiro. Por isso, duas pessoas comprando
+        o mesmo produto podem ter custos finais diferentes se morarem em
+        estados com regras ou alíquotas diferentes.
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -56,6 +71,32 @@ export default function ICMSImportacao() {
         20%, conforme o estado e a regra aplicada à compra.
       </p>
 
+      <p className="mb-6">
+        Essa variação é importante para SEO e para o usuário final. Quem busca
+        "ICMS importação Brasil" normalmente quer entender por que o valor
+        final ficou maior do que esperava. Em muitos casos, a resposta está na
+        forma como o ICMS é calculado por dentro, aumentando a base antes da
+        aplicação da alíquota.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-10 mb-4">
+        Por que o ICMS aumenta tanto o valor final?
+      </h2>
+
+      <p className="mb-6">
+        O ICMS pode parecer pequeno quando visto apenas como uma porcentagem,
+        mas o efeito no total pode ser maior porque ele entra em uma base que
+        já inclui outros custos. Produto, frete, seguro e imposto de importação
+        podem formar a base da cobrança. Assim, uma compra que parecia barata
+        em dólar pode ficar bem mais cara em reais.
+      </p>
+
+      <p className="mb-6">
+        Por isso, uma calculadora de importação precisa pedir o estado de
+        destino. Sem esse dado, o resultado pode ser apenas uma estimativa
+        genérica e pouco confiável.
+      </p>
+
       <h2 className="text-2xl font-semibold mt-10 mb-4">
         Compras Abaixo de US$50 Pagam ICMS?
       </h2>
@@ -65,12 +106,28 @@ export default function ICMSImportacao() {
         da plataforma e do estado brasileiro.
       </p>
 
+      <p className="mb-6">
+        O limite de US$50 é frequentemente confundido com isenção total, mas a
+        regra não deve ser interpretada dessa forma. As orientações da Receita
+        Federal deixam claro que compras internacionais podem envolver Imposto
+        de Importação e ICMS. O tratamento depende da modalidade, da plataforma
+        e do enquadramento da operação.
+      </p>
+
       <h2 className="text-2xl font-semibold mt-10 mb-4">
         Como Calcular o ICMS?
       </h2>
 
       <p className="mb-6">
         O cálculo depende do valor do produto, frete e imposto de importação.
+      </p>
+
+      <p className="mb-6">
+        Para uma simulação simples, comece pelo valor dos produtos, some frete
+        e seguro quando houver, converta para reais e aplique a regra de
+        Imposto de Importação. Depois, calcule o ICMS conforme a alíquota do
+        estado de destino. A calculadora automatiza esse processo para reduzir
+        o risco de erro manual.
       </p>
 
       <a
@@ -99,7 +156,7 @@ export default function ICMSImportacao() {
 
       <p className="mb-4">
         A alíquota pode variar entre estados, mas geralmente fica em torno
-        de 17%.
+        de 17% a 20%.
       </p>
 
       <h3 className="text-xl font-semibold mt-6 mb-2">
@@ -109,6 +166,16 @@ export default function ICMSImportacao() {
       <p className="mb-4">
         O pagamento normalmente acontece junto com o imposto de importação
         no momento da liberação da encomenda.
+      </p>
+
+      <h3 className="text-xl font-semibold mt-6 mb-2">
+        O ICMS aparece no checkout?
+      </h3>
+
+      <p className="mb-4">
+        Em compras feitas por empresas certificadas no Remessa Conforme, o ICMS
+        pode aparecer no checkout. Fora desse fluxo, ele pode ser cobrado na
+        chegada da encomenda.
       </p>
 
       <div className="mt-10">
@@ -143,11 +210,22 @@ export default function ICMSImportacao() {
               Imposto da Shein no Brasil
             </a>
           </li>
+
+          <li>
+            <a
+              href="/imposto-shopee-brasil"
+              className="text-blue-600 underline"
+            >
+              Imposto da Shopee no Brasil
+            </a>
+          </li>
         </ul>
       </div>
 
       <p className="text-sm text-gray-500 mt-12">
-        Atualizado em Maio de 2026.
+        Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras
+        Internacionais e orientações públicas sobre ICMS em remessas
+        internacionais.
       </p>
 
       </main>

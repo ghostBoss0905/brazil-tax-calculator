@@ -29,7 +29,17 @@ export default function ImpostoShein() {
 
       <p className="text-lg mb-8">
         Comprar na Shein ficou mais caro após as novas regras de importação
-        no Brasil. Mas ainda é possível economizar usando o Remessa Conforme.
+        no Brasil. Mesmo assim, muita gente ainda encontra bons preços em
+        roupas, acessórios e itens de casa quando calcula o custo final antes
+        de fechar o pedido.
+      </p>
+
+      <p className="mb-6">
+        A principal diferença entre uma compra boa e uma compra cara demais
+        está no cálculo completo. Na Shein, é comum adicionar vários itens
+        pequenos ao carrinho. O preço unitário pode parecer baixo, mas o valor
+        total do pedido, o frete, o câmbio, o Imposto de Importação e o ICMS
+        precisam entrar na conta.
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -41,6 +51,33 @@ export default function ImpostoShein() {
         dependendo da modalidade da importação.
       </p>
 
+      <p className="mb-6">
+        Em compras feitas por plataformas certificadas no Programa Remessa
+        Conforme, os tributos devem ser informados de forma mais clara antes do
+        pagamento. Em outras situações, a cobrança pode acontecer quando a
+        encomenda chega ao Brasil. Por isso, a pergunta correta não é apenas
+        "quanto custa na Shein?", mas "quanto custa depois dos impostos?".
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-10 mb-4">
+        Por que pedidos pequenos também podem ficar caros?
+      </h2>
+
+      <p className="mb-6">
+        Muitos pedidos da Shein são compostos por produtos baratos, como uma
+        blusa, uma capa, um acessório ou um item de decoração. O problema é que
+        o imposto considera a operação de importação, não apenas a percepção de
+        que o item é barato. Quando você soma vários produtos, o carrinho pode
+        ultrapassar rapidamente o limite mental que parecia seguro.
+      </p>
+
+      <p className="mb-6">
+        Outro ponto é o frete. Mesmo quando o frete aparece como promocional ou
+        diluído no pedido, ele pode influenciar a base de cálculo. O ideal é
+        sempre simular o pedido completo antes de comparar com uma loja no
+        Brasil.
+      </p>
+
       <h2 className="text-2xl font-semibold mt-10 mb-4">
         A Shein Participa do Remessa Conforme?
       </h2>
@@ -50,6 +87,14 @@ export default function ImpostoShein() {
         da Receita Federal.
       </p>
 
+      <p className="mb-6">
+        Isso não significa que toda compra ficará sem imposto. O benefício do
+        programa está em tornar a cobrança mais previsível e, em determinadas
+        faixas, aplicar regras diferenciadas para plataformas certificadas. O
+        consumidor deve conferir no checkout se os tributos aparecem
+        discriminados antes de pagar.
+      </p>
+
       <h2 className="text-2xl font-semibold mt-10 mb-4">
         Como Calcular o Imposto?
       </h2>
@@ -57,6 +102,34 @@ export default function ImpostoShein() {
       <p className="mb-6">
         O cálculo depende do valor do produto, frete internacional e ICMS
         do estado brasileiro.
+      </p>
+
+      <p className="mb-6">
+        Para calcular de forma prática, anote o valor total dos produtos, o
+        frete, a cotação do dólar usada pela compra e o estado de entrega. Em
+        seguida, use a calculadora para estimar o custo com Imposto de
+        Importação e ICMS. Esse passo é especialmente útil quando você está
+        escolhendo entre comprar uma peça importada ou uma alternativa já
+        disponível no Brasil.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-10 mb-4">
+        Quando comprar na Shein ainda pode valer a pena?
+      </h2>
+
+      <p className="mb-6">
+        A compra tende a fazer mais sentido quando o preço final, já com
+        impostos, continua abaixo do preço brasileiro e quando o prazo de
+        entrega não é um problema. Também pode valer a pena para peças muito
+        específicas, tamanhos difíceis de encontrar ou produtos que não estão
+        disponíveis localmente.
+      </p>
+
+      <p className="mb-6">
+        Por outro lado, se a diferença for pequena, o risco de atraso, troca,
+        variação de tamanho e tributação adicional pode não compensar. Em SEO,
+        essa é justamente a intenção de busca do usuário: ele quer saber se a
+        compra continua vantajosa depois da regra tributária.
       </p>
 
       <a
@@ -86,6 +159,16 @@ export default function ImpostoShein() {
         Depende do produto e do valor final após os impostos.
       </p>
 
+      <h3 className="text-xl font-semibold mt-6 mb-2">
+        O imposto aparece antes de pagar?
+      </h3>
+
+      <p className="mb-4">
+        Em compras dentro do fluxo de plataformas certificadas, os tributos
+        devem aparecer no checkout. Se não aparecerem, considere o risco de
+        cobrança na chegada ao Brasil.
+      </p>
+
       <div className="mt-10">
         <h2 className="text-2xl font-semibold mb-4">
           Saiba Mais
@@ -109,11 +192,21 @@ export default function ImpostoShein() {
               Imposto do AliExpress no Brasil
             </a>
           </li>
+
+          <li>
+            <a
+              href="/imposto-shopee-brasil"
+              className="text-blue-600 underline"
+            >
+              Imposto da Shopee no Brasil
+            </a>
+          </li>
         </ul>
       </div>
 
       <p className="text-sm text-gray-500 mt-12">
-        Atualizado em Maio de 2026.
+        Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras
+        Internacionais e orientações sobre o Programa Remessa Conforme.
       </p>
 
       </main>
