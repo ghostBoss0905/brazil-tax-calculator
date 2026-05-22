@@ -12,6 +12,7 @@ import ImpostoShopee from "@/pages/ImpostoShopee";
 import RemessaConforme from "@/pages/RemessaConforme";
 import ICMSImportacao from "@/pages/ICMSImportacao";
 import ComoCalcularImposto from "@/pages/ComoCalcularImposto";
+import TabelaImpostoImportacao from "@/pages/TabelaImpostoImportacao";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -58,6 +59,11 @@ function Router() {
       <Route
         path="/como-calcular-imposto-importacao-brasil"
         component={ComoCalcularImposto}
+      />
+
+      <Route
+        path="/tabela-imposto-importacao-brasil"
+        component={TabelaImpostoImportacao}
       />
 
       {/* 404 */}

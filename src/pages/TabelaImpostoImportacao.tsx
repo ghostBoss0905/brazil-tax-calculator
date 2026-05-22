@@ -1,0 +1,277 @@
+import SeoHead from "@/components/SeoHead";
+
+export default function TabelaImpostoImportacao() {
+  return (
+    <>
+      <SeoHead
+        title="Tabela de Imposto de Importação Brasil 2026"
+        description="Veja a tabela de imposto de importação no Brasil em 2026 para compras internacionais, com Remessa Conforme, ICMS e exemplos práticos."
+        canonical="https://www.taxadeimportacao.com/tabela-imposto-importacao-brasil"
+        faqs={[
+          {
+            question: "Qual é a tabela de imposto de importação em 2026?",
+            answer:
+              "Segundo a Receita Federal, em sites certificados no Programa Remessa Conforme, compras de até US$50 têm Imposto de Importação federal de 0%; acima de US$50, aplica-se 60% com desconto equivalente a US$30. O ICMS estadual continua sendo cobrado.",
+          },
+          {
+            question: "O ICMS entra na tabela de importação?",
+            answer:
+              "Sim. Além do Imposto de Importação federal, compras internacionais também podem ter ICMS estadual, normalmente entre 17% e 20%, conforme o estado.",
+          },
+          {
+            question: "A tabela vale para AliExpress, Shein e Shopee?",
+            answer:
+              "A tabela ajuda a entender a regra geral, mas o comprador deve conferir se a compra foi feita em site certificado no Remessa Conforme e se os tributos aparecem no checkout.",
+          },
+        ]}
+      />
+
+      <main className="max-w-4xl mx-auto px-6 py-12">
+        <h1 className="text-4xl font-bold mb-6">
+          Tabela de Imposto de Importação no Brasil (2026)
+        </h1>
+
+        <p className="text-lg mb-8">
+          A tabela de imposto de importação ajuda a entender quanto uma compra
+          internacional pode custar antes de chegar ao Brasil. Em 2026, o
+          cálculo depende principalmente do valor aduaneiro da compra, da
+          participação da loja no Programa Remessa Conforme e do ICMS do estado
+          de destino.
+        </p>
+
+        <p className="mb-6">
+          Este guia resume as regras de forma prática para quem compra em sites
+          como AliExpress, Shein, Shopee, Amazon, Temu e outras plataformas
+          internacionais. A tabela abaixo não substitui a simulação completa,
+          mas ajuda a saber qual regra provavelmente será aplicada.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Tabela resumida para compras internacionais
+        </h2>
+
+        <div className="overflow-x-auto mb-8">
+          <table className="w-full border-collapse text-left">
+            <thead>
+              <tr className="border-b">
+                <th className="py-3 pr-4">Situação da compra</th>
+                <th className="py-3 pr-4">Imposto de Importação</th>
+                <th className="py-3 pr-4">ICMS</th>
+                <th className="py-3">Observação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b align-top">
+                <td className="py-3 pr-4">
+                  Site certificado no Remessa Conforme, até US$50
+                </td>
+                <td className="py-3 pr-4">0% federal</td>
+                <td className="py-3 pr-4">17% a 20%, conforme o estado</td>
+                <td className="py-3">
+                  Os tributos devem aparecer no checkout antes do pagamento.
+                </td>
+              </tr>
+              <tr className="border-b align-top">
+                <td className="py-3 pr-4">
+                  Site certificado no Remessa Conforme, acima de US$50
+                </td>
+                <td className="py-3 pr-4">
+                  60%, com desconto equivalente a US$30
+                </td>
+                <td className="py-3 pr-4">17% a 20%, conforme o estado</td>
+                <td className="py-3">
+                  O desconto reduz o imposto federal a pagar, mas não elimina
+                  o ICMS.
+                </td>
+              </tr>
+              <tr className="border-b align-top">
+                <td className="py-3 pr-4">
+                  Site não certificado no Remessa Conforme
+                </td>
+                <td className="py-3 pr-4">60%</td>
+                <td className="py-3 pr-4">17% a 20%, conforme o estado</td>
+                <td className="py-3">
+                  A cobrança pode ocorrer quando a encomenda chega ao Brasil.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          O que entra no valor aduaneiro?
+        </h2>
+
+        <p className="mb-6">
+          A Receita Federal explica que a base do Imposto de Importação é o
+          valor aduaneiro da encomenda internacional. Para simplificar, o
+          consumidor pode pensar na soma do valor dos produtos, do frete e do
+          seguro quando houver. Esse valor é convertido para reais e usado como
+          ponto de partida para o cálculo.
+        </p>
+
+        <p className="mb-6">
+          É por isso que uma compra de US$48 com frete de US$8 pode não ser
+          analisada da mesma forma que um produto isolado de US$48 com frete
+          grátis. O que importa para a conta é o conjunto da operação.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Como funciona a regra até US$50?
+        </h2>
+
+        <p className="mb-6">
+          Para compras feitas em sites certificados no Programa Remessa
+          Conforme, a Receita Federal informa que o Imposto de Importação
+          federal é 0% quando o valor da compra é de até US$50. Isso não
+          significa compra sem imposto, porque o ICMS estadual pode continuar
+          sendo cobrado.
+        </p>
+
+        <p className="mb-6">
+          Na prática, o comprador deve conferir o checkout. Se a plataforma
+          mostra o valor do produto, frete, Imposto de Importação e ICMS antes
+          do pagamento, fica mais fácil saber se o preço final compensa.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Como funciona a regra acima de US$50?
+        </h2>
+
+        <p className="mb-6">
+          Para compras acima de US$50 em sites certificados no Remessa
+          Conforme, a Receita Federal informa alíquota de 60% de Imposto de
+          Importação, com desconto equivalente a US$30 sobre o imposto a pagar.
+          Depois disso, ainda pode haver ICMS estadual.
+        </p>
+
+        <p className="mb-6">
+          Esse desconto é importante porque reduz a cobrança federal em compras
+          um pouco acima de US$50. Mesmo assim, o custo final pode subir
+          bastante quando o ICMS e o câmbio entram na conta.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Exemplo prático de uso da tabela
+        </h2>
+
+        <p className="mb-6">
+          Imagine uma compra internacional de US$80, já somando produto e
+          frete. Se ela for feita em uma plataforma certificada, a regra federal
+          acima de US$50 pode aplicar 60% com desconto equivalente a US$30. Em
+          seguida, entra o ICMS do estado de destino. O resultado final pode
+          ficar bem diferente do preço visto no anúncio.
+        </p>
+
+        <p className="mb-6">
+          Por isso, a tabela serve como orientação inicial, mas a decisão de
+          compra deve ser feita com uma calculadora que considere câmbio,
+          estado, frete e Remessa Conforme.
+        </p>
+
+        <a
+          href="/"
+          className="inline-block bg-black text-white px-6 py-3 rounded-xl mb-10"
+        >
+          Calcular imposto de importação agora
+        </a>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          FAQ - Perguntas Frequentes
+        </h2>
+
+        <h3 className="text-xl font-semibold mt-6 mb-2">
+          Compras abaixo de US$50 são isentas?
+        </h3>
+
+        <p className="mb-4">
+          Em sites certificados no Remessa Conforme, o Imposto de Importação
+          federal pode ser 0% até US$50, mas o ICMS estadual pode continuar
+          sendo cobrado.
+        </p>
+
+        <h3 className="text-xl font-semibold mt-6 mb-2">
+          A tabela vale para compras fora do Remessa Conforme?
+        </h3>
+
+        <p className="mb-4">
+          Compras fora de sites certificados podem ter regra diferente,
+          incluindo cobrança de 60% de Imposto de Importação e ICMS quando a
+          encomenda chega ao Brasil.
+        </p>
+
+        <h3 className="text-xl font-semibold mt-6 mb-2">
+          O imposto é calculado sobre produto ou produto mais frete?
+        </h3>
+
+        <p className="mb-4">
+          A base de cálculo considera o valor aduaneiro, que inclui o valor dos
+          bens, frete e seguro quando houver.
+        </p>
+
+        <div className="mt-10">
+          <h2 className="text-2xl font-semibold mb-4">
+            Guias Relacionados
+          </h2>
+
+          <ul className="list-disc pl-6 space-y-2">
+            <li>
+              <a
+                href="/como-calcular-imposto-importacao-brasil"
+                className="text-blue-600 underline"
+              >
+                Como calcular imposto de importação
+              </a>
+            </li>
+            <li>
+              <a
+                href="/o-que-e-remessa-conforme"
+                className="text-blue-600 underline"
+              >
+                O que é Remessa Conforme?
+              </a>
+            </li>
+            <li>
+              <a
+                href="/icms-importacao-brasil"
+                className="text-blue-600 underline"
+              >
+                ICMS na importação do Brasil
+              </a>
+            </li>
+            <li>
+              <a
+                href="/imposto-aliexpress-brasil"
+                className="text-blue-600 underline"
+              >
+                Imposto do AliExpress no Brasil
+              </a>
+            </li>
+            <li>
+              <a
+                href="/imposto-shein-brasil"
+                className="text-blue-600 underline"
+              >
+                Imposto da Shein no Brasil
+              </a>
+            </li>
+            <li>
+              <a
+                href="/imposto-shopee-brasil"
+                className="text-blue-600 underline"
+              >
+                Imposto da Shopee no Brasil
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <p className="text-sm text-gray-500 mt-12">
+          Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras
+          Internacionais, página "Quanto vou pagar de impostos?" e orientações
+          sobre o Programa Remessa Conforme.
+        </p>
+      </main>
+    </>
+  );
+}

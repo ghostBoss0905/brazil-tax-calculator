@@ -43,6 +43,12 @@ const pages = [
     description:
       "Aprenda como calcular imposto de importação no Brasil em 2026. Veja ICMS, Remessa Conforme e custo final atualizado.",
   },
+  {
+    path: "/tabela-imposto-importacao-brasil",
+    title: "Tabela de Imposto de Importação Brasil 2026",
+    description:
+      "Veja a tabela de imposto de importação no Brasil em 2026 para compras internacionais, com Remessa Conforme, ICMS e exemplos práticos.",
+  },
 ];
 
 const siteOrigin = "https://www.taxadeimportacao.com";
