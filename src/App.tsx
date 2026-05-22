@@ -14,6 +14,7 @@ import ICMSImportacao from "@/pages/ICMSImportacao";
 import ComoCalcularImposto from "@/pages/ComoCalcularImposto";
 import TabelaImpostoImportacao from "@/pages/TabelaImpostoImportacao";
 import TaxaCorreiosImportacao from "@/pages/TaxaCorreiosImportacao";
+import CalcularTaxasImportacao from "@/pages/CalcularTaxasImportacao";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -70,6 +71,11 @@ function Router() {
       <Route
         path="/taxa-correios-importacao"
         component={TaxaCorreiosImportacao}
+      />
+
+      <Route
+        path="/calcular-taxas-importacao"
+        component={CalcularTaxasImportacao}
       />
 
       {/* 404 */}

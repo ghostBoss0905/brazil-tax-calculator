@@ -55,6 +55,12 @@ const pages = [
     description:
       "Entenda a taxa dos Correios em compras internacionais, como consultar tributos no Minhas Importações e quando pagar imposto de importação.",
   },
+  {
+    path: "/calcular-taxas-importacao",
+    title: "Calcular Taxas de Importação 2026: Guia e Simulador",
+    description:
+      "Aprenda como calcular taxas de importação no Brasil em 2026, incluindo Imposto de Importação, ICMS, frete, câmbio e Remessa Conforme.",
+  },
 ];
 
 const siteOrigin = "https://www.taxadeimportacao.com";
