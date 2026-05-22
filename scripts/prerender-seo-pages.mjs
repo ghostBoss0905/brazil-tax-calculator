@@ -49,6 +49,12 @@ const pages = [
     description:
       "Veja a tabela de imposto de importação no Brasil em 2026 para compras internacionais, com Remessa Conforme, ICMS e exemplos práticos.",
   },
+  {
+    path: "/taxa-correios-importacao",
+    title: "Taxa dos Correios Importação 2026: Como Pagar",
+    description:
+      "Entenda a taxa dos Correios em compras internacionais, como consultar tributos no Minhas Importações e quando pagar imposto de importação.",
+  },
 ];
 
 const siteOrigin = "https://www.taxadeimportacao.com";

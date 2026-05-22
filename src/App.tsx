@@ -13,6 +13,7 @@ import RemessaConforme from "@/pages/RemessaConforme";
 import ICMSImportacao from "@/pages/ICMSImportacao";
 import ComoCalcularImposto from "@/pages/ComoCalcularImposto";
 import TabelaImpostoImportacao from "@/pages/TabelaImpostoImportacao";
+import TaxaCorreiosImportacao from "@/pages/TaxaCorreiosImportacao";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -64,6 +65,11 @@ function Router() {
       <Route
         path="/tabela-imposto-importacao-brasil"
         component={TabelaImpostoImportacao}
+      />
+
+      <Route
+        path="/taxa-correios-importacao"
+        component={TaxaCorreiosImportacao}
       />
 
       {/* 404 */}
