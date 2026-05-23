@@ -1,4 +1,5 @@
 import SeoHead from "@/components/SeoHead";
+import RelatedGuides from "@/components/RelatedGuides";
 
 export default function TabelaImpostoImportacao() {
   return (
@@ -271,6 +272,7 @@ export default function TabelaImpostoImportacao() {
           Internacionais, página "Quanto vou pagar de impostos?" e orientações
           sobre o Programa Remessa Conforme.
         </p>
+        <RelatedGuides currentPath="/tabela-imposto-importacao-brasil" />
       </main>
     </>
   );

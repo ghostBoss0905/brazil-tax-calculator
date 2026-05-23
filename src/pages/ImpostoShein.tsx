@@ -1,4 +1,5 @@
 import SeoHead from "@/components/SeoHead";
+import RelatedGuides from "@/components/RelatedGuides";
 
 export default function ImpostoShein() {
   return (
@@ -208,6 +209,8 @@ export default function ImpostoShein() {
         Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras
         Internacionais e orientações sobre o Programa Remessa Conforme.
       </p>
+
+      <RelatedGuides currentPath="/imposto-shein-brasil" />
 
       </main>
     </>

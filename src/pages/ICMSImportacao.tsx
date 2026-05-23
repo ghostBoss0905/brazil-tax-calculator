@@ -1,4 +1,5 @@
 import SeoHead from "@/components/SeoHead";
+import RelatedGuides from "@/components/RelatedGuides";
 
 export default function ICMSImportacao() {
   return (
@@ -227,6 +228,8 @@ export default function ICMSImportacao() {
         Internacionais e orientações públicas sobre ICMS em remessas
         internacionais.
       </p>
+
+      <RelatedGuides currentPath="/icms-importacao-brasil" />
 
       </main>
     </>

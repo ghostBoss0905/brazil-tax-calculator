@@ -1,4 +1,5 @@
 import SeoHead from "@/components/SeoHead";
+import RelatedGuides from "@/components/RelatedGuides";
 
 export default function TaxaCorreiosImportacao() {
   return (
@@ -223,6 +224,7 @@ export default function TaxaCorreiosImportacao() {
           Importações, Receita Federal e orientações públicas sobre encomendas
           internacionais.
         </p>
+        <RelatedGuides currentPath="/taxa-correios-importacao" />
       </main>
     </>
   );

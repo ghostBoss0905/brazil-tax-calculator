@@ -1,4 +1,5 @@
 import SeoHead from "@/components/SeoHead";
+import RelatedGuides from "@/components/RelatedGuides";
 
 export default function ImpostoShopee() {
   return (
@@ -192,6 +193,7 @@ export default function ImpostoShopee() {
           Atualizado em Maio de 2026. Fonte: orientações públicas da Receita
           Federal sobre compras internacionais e Programa Remessa Conforme.
         </p>
+        <RelatedGuides currentPath="/imposto-shopee-brasil" />
       </main>
     </>
   );

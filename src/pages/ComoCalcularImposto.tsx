@@ -1,4 +1,5 @@
 import SeoHead from "@/components/SeoHead";
+import RelatedGuides from "@/components/RelatedGuides";
 
 export default function ComoCalcularImposto() {
   return (
@@ -183,6 +184,7 @@ export default function ComoCalcularImposto() {
           Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras
           Internacionais e orientações sobre remessas internacionais.
         </p>
+        <RelatedGuides currentPath="/como-calcular-imposto-importacao-brasil" />
       </div>
     </>
   );

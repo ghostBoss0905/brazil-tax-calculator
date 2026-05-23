@@ -35,6 +35,7 @@ import {
 } from "@/components/ui/tooltip";
 import { formatBRL } from "@/lib/utils";
 import { BRAZILIAN_STATES, FAQS } from "@/lib/constants";
+import RelatedGuides from "@/components/RelatedGuides";
 
 const calculatorSchema = z.object({
   productValue: z.coerce
@@ -659,6 +660,15 @@ export default function Home() {
               />
             ))}
           </div>
+        </section>
+
+        <section className="max-w-5xl mx-auto mb-12">
+          <RelatedGuides
+            currentPath="/"
+            title="Guias de importação"
+            intro="Aprofunde o cálculo antes de comprar em lojas internacionais."
+            limit={6}
+          />
         </section>
 
         <div className="max-w-3xl mx-auto mb-12 px-5 py-4 rounded-xl border border-border bg-muted/40 text-xs text-muted-foreground space-y-1">

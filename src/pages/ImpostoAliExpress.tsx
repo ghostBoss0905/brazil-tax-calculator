@@ -1,4 +1,5 @@
 import SeoHead from "@/components/SeoHead";
+import RelatedGuides from "@/components/RelatedGuides";
 
 export default function ImpostoAliExpress() {
   return (
@@ -200,6 +201,8 @@ export default function ImpostoAliExpress() {
         Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras
         Internacionais e orientações sobre o Programa Remessa Conforme.
       </p>
+
+      <RelatedGuides currentPath="/imposto-aliexpress-brasil" />
 
       </main>
     </>

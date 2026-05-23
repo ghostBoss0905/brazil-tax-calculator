@@ -1,4 +1,5 @@
 import SeoHead from "@/components/SeoHead";
+import RelatedGuides from "@/components/RelatedGuides";
 
 export default function RemessaConforme() {
   return (
@@ -232,6 +233,8 @@ export default function RemessaConforme() {
         Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras
         Internacionais e orientações sobre o Programa Remessa Conforme.
       </p>
+
+      <RelatedGuides currentPath="/o-que-e-remessa-conforme" />
 
       </main>
     </>

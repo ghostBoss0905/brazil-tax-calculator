@@ -1,4 +1,5 @@
 import SeoHead from "@/components/SeoHead";
+import RelatedGuides from "@/components/RelatedGuides";
 
 export default function CalcularTaxasImportacao() {
   return (
@@ -246,6 +247,7 @@ export default function CalcularTaxasImportacao() {
           Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras
           Internacionais e orientações públicas sobre remessas internacionais.
         </p>
+        <RelatedGuides currentPath="/calcular-taxas-importacao" />
       </main>
     </>
   );
