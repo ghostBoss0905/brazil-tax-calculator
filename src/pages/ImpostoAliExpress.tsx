@@ -32,14 +32,25 @@ export default function ImpostoAliExpress() {
         Comprar no AliExpress ficou mais caro desde 2024. Mas com a informação
         certa, você ainda pode comparar o custo real antes de pagar. O ponto
         principal é não olhar apenas para o preço do produto: frete, câmbio,
-        Imposto de Importação e ICMS mudam completamente o valor final.
+        Imposto de Importação e{" "}
+        <a href="/icms-importacao-brasil" className="text-blue-600 underline">
+          ICMS
+        </a>{" "}
+        mudam completamente o valor final.
       </p>
 
       <p className="mb-6">
         Este guia explica, de forma prática, como pensar no imposto do
         AliExpress no Brasil em 2026. A ideia não é decorar uma fórmula
         complicada, mas entender quais valores entram na conta e quando a
-        compra internacional ainda faz sentido.
+        compra internacional ainda faz sentido. Para comparar com outras
+        regras, veja também a{" "}
+        <a
+          href="/tabela-imposto-importacao-brasil"
+          className="text-blue-600 underline"
+        >
+          tabela de imposto de importação
+        </a>.
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -91,7 +102,14 @@ export default function ImpostoAliExpress() {
 
       <p className="mb-6">
         Use nossa calculadora gratuita para descobrir exatamente quanto
-        você vai pagar.
+        você vai pagar. Se quiser entender o passo a passo da conta, veja o
+        guia sobre{" "}
+        <a
+          href="/calcular-taxas-importacao"
+          className="text-blue-600 underline"
+        >
+          como calcular taxas de importação
+        </a>.
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">

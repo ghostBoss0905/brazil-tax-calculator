@@ -36,7 +36,14 @@ export default function CalcularTaxasImportacao() {
           Para calcular taxas de importação no Brasil, você precisa olhar além
           do preço do produto. O custo final pode incluir frete internacional,
           câmbio, Imposto de Importação, ICMS estadual e, em alguns casos,
-          cobranças dos Correios ou da transportadora.
+          cobranças dos{" "}
+          <a
+            href="/taxa-correios-importacao"
+            className="text-blue-600 underline"
+          >
+            Correios
+          </a>{" "}
+          ou da transportadora.
         </p>
 
         <p className="mb-6">
@@ -44,6 +51,13 @@ export default function CalcularTaxasImportacao() {
           pagar antes de comprar em sites como AliExpress, Shein, Shopee, Amazon
           ou Temu. Se você já tem os valores da compra, use a calculadora. Se
           ainda está comparando produtos, siga o passo a passo abaixo.
+          Para uma visão rápida das faixas, veja a{" "}
+          <a
+            href="/tabela-imposto-importacao-brasil"
+            className="text-blue-600 underline"
+          >
+            tabela de imposto de importação
+          </a>.
         </p>
 
         <a
@@ -137,7 +151,14 @@ export default function CalcularTaxasImportacao() {
           O Programa Remessa Conforme torna a cobrança mais previsível em sites
           certificados. Para compras de até US$50, a regra federal pode ser 0%
           de Imposto de Importação, mas o ICMS continua relevante. Acima de
-          US$50, há regra federal própria e o ICMS também entra na conta.
+          US$50, há regra federal própria e o ICMS também entra na conta. Veja
+          o guia completo sobre{" "}
+          <a
+            href="/o-que-e-remessa-conforme"
+            className="text-blue-600 underline"
+          >
+            Remessa Conforme
+          </a>.
         </p>
 
         <p className="mb-6">

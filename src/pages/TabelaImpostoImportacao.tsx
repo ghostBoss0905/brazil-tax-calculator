@@ -36,15 +36,28 @@ export default function TabelaImpostoImportacao() {
           A tabela de imposto de importação ajuda a entender quanto uma compra
           internacional pode custar antes de chegar ao Brasil. Em 2026, o
           cálculo depende principalmente do valor aduaneiro da compra, da
-          participação da loja no Programa Remessa Conforme e do ICMS do estado
-          de destino.
+          participação da loja no{" "}
+          <a
+            href="/o-que-e-remessa-conforme"
+            className="text-blue-600 underline"
+          >
+            Programa Remessa Conforme
+          </a>{" "}
+          e do ICMS do estado de destino.
         </p>
 
         <p className="mb-6">
           Este guia resume as regras de forma prática para quem compra em sites
           como AliExpress, Shein, Shopee, Amazon, Temu e outras plataformas
           internacionais. A tabela abaixo não substitui a simulação completa,
-          mas ajuda a saber qual regra provavelmente será aplicada.
+          mas ajuda a saber qual regra provavelmente será aplicada. Para
+          transformar a tabela em uma estimativa, use o guia de{" "}
+          <a
+            href="/calcular-taxas-importacao"
+            className="text-blue-600 underline"
+          >
+            calcular taxas de importação
+          </a>.
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -149,7 +162,11 @@ export default function TabelaImpostoImportacao() {
         <p className="mb-6">
           Esse desconto é importante porque reduz a cobrança federal em compras
           um pouco acima de US$50. Mesmo assim, o custo final pode subir
-          bastante quando o ICMS e o câmbio entram na conta.
+          bastante quando o{" "}
+          <a href="/icms-importacao-brasil" className="text-blue-600 underline">
+            ICMS
+          </a>{" "}
+          e o câmbio entram na conta.
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">

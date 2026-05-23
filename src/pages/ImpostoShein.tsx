@@ -39,7 +39,10 @@ export default function ImpostoShein() {
         A principal diferença entre uma compra boa e uma compra cara demais
         está no cálculo completo. Na Shein, é comum adicionar vários itens
         pequenos ao carrinho. O preço unitário pode parecer baixo, mas o valor
-        total do pedido, o frete, o câmbio, o Imposto de Importação e o ICMS
+        total do pedido, o frete, o câmbio, o Imposto de Importação e o{" "}
+        <a href="/icms-importacao-brasil" className="text-blue-600 underline">
+          ICMS
+        </a>{" "}
         precisam entrar na conta.
       </p>
 
@@ -58,6 +61,13 @@ export default function ImpostoShein() {
         pagamento. Em outras situações, a cobrança pode acontecer quando a
         encomenda chega ao Brasil. Por isso, a pergunta correta não é apenas
         "quanto custa na Shein?", mas "quanto custa depois dos impostos?".
+        Para entender as faixas de cobrança, consulte a{" "}
+        <a
+          href="/tabela-imposto-importacao-brasil"
+          className="text-blue-600 underline"
+        >
+          tabela de imposto de importação
+        </a>.
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -111,7 +121,14 @@ export default function ImpostoShein() {
         seguida, use a calculadora para estimar o custo com Imposto de
         Importação e ICMS. Esse passo é especialmente útil quando você está
         escolhendo entre comprar uma peça importada ou uma alternativa já
-        disponível no Brasil.
+        disponível no Brasil; para fazer essa conta com calma, veja também
+        como{" "}
+        <a
+          href="/calcular-taxas-importacao"
+          className="text-blue-600 underline"
+        >
+          calcular taxas de importação
+        </a>.
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">

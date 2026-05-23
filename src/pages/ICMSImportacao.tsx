@@ -36,7 +36,14 @@ export default function ICMSImportacao() {
       <p className="text-lg mb-8">
         O ICMS é um dos principais impostos cobrados em compras internacionais
         no Brasil. Mesmo compras abaixo de US$50 podem pagar ICMS dependendo
-        do estado.
+        do estado. Se você ainda está montando a conta completa, veja também
+        como{" "}
+        <a
+          href="/calcular-taxas-importacao"
+          className="text-blue-600 underline"
+        >
+          calcular taxas de importação
+        </a>.
       </p>
 
       <p className="mb-6">
@@ -112,7 +119,13 @@ export default function ICMSImportacao() {
         regra não deve ser interpretada dessa forma. As orientações da Receita
         Federal deixam claro que compras internacionais podem envolver Imposto
         de Importação e ICMS. O tratamento depende da modalidade, da plataforma
-        e do enquadramento da operação.
+        e do enquadramento da operação; veja o resumo na{" "}
+        <a
+          href="/tabela-imposto-importacao-brasil"
+          className="text-blue-600 underline"
+        >
+          tabela de imposto de importação
+        </a>.
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">

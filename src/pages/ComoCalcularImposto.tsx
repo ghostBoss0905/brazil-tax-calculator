@@ -44,7 +44,12 @@ export default function ComoCalcularImposto() {
 
         <p>
           Neste guia atualizado de 2026, você aprenderá como calcular imposto
-          de importação no Brasil passo a passo.
+          de importação no Brasil passo a passo. Se quiser apenas uma estimativa
+          rápida, veja também o guia para{" "}
+          <a href="/calcular-taxas-importacao">
+            calcular taxas de importação
+          </a>
+          .
         </p>
 
         <p>
@@ -67,7 +72,8 @@ export default function ComoCalcularImposto() {
           informadas pela plataforma também podem entrar no valor total. A
           Receita Federal orienta que compras internacionais devem considerar o
           valor dos bens, frete e seguro quando houver. Depois entram as regras
-          de Imposto de Importação e ICMS.
+          de Imposto de Importação e{" "}
+          <a href="/icms-importacao-brasil">ICMS na importação</a>.
         </p>
 
         <h2>Passo a passo para calcular</h2>
@@ -86,14 +92,21 @@ export default function ComoCalcularImposto() {
 
         <p>
           O programa Remessa Conforme altera a forma de cobrança dos impostos em
-          compras internacionais abaixo de US$50.
+          compras internacionais abaixo de US$50. Para entender a regra em mais
+          detalhes, consulte o guia sobre{" "}
+          <a href="/o-que-e-remessa-conforme">Remessa Conforme</a>.
         </p>
 
         <p>
           Em plataformas certificadas, os tributos tendem a aparecer no
           checkout, antes do pagamento. Isso ajuda o consumidor a enxergar o
           custo final. Fora desse fluxo, a cobrança pode aparecer apenas quando
-          a encomenda chega ao Brasil, antes da entrega.
+          a encomenda chega ao Brasil, antes da entrega, junto com eventuais
+          cobranças como a{" "}
+          <a href="/taxa-correios-importacao">
+            taxa dos Correios na importação
+          </a>
+          .
         </p>
 
         <h2>Exemplo de cálculo</h2>
@@ -106,7 +119,11 @@ export default function ComoCalcularImposto() {
 
         <p>
           Dependendo do estado, o valor final pode ultrapassar R$900 após ICMS
-          e imposto de importação.
+          e imposto de importação. Para comparar faixas e cenários, veja a{" "}
+          <a href="/tabela-imposto-importacao-brasil">
+            tabela de imposto de importação
+          </a>
+          .
         </p>
 
         <p>

@@ -43,7 +43,14 @@ export default function RemessaConforme() {
         outras plataformas internacionais, o programa mudou a forma como os
         impostos aparecem na compra. Em vez de descobrir a cobrança apenas
         quando a encomenda chega ao Brasil, o consumidor passa a ter mais
-        previsibilidade quando compra em uma empresa certificada.
+        previsibilidade quando compra em uma empresa certificada. Para comparar
+        as faixas de cobrança, veja a{" "}
+        <a
+          href="/tabela-imposto-importacao-brasil"
+          className="text-blue-600 underline"
+        >
+          tabela de imposto de importação
+        </a>.
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -67,7 +74,15 @@ export default function RemessaConforme() {
         Na prática, isso significa que o usuário consegue comparar o preço
         final antes de pagar. Se uma blusa custa pouco, mas o imposto e o frete
         deixam o pedido caro, a decisão muda. Se o preço final ainda for
-        competitivo, a importação pode continuar fazendo sentido.
+        competitivo, a importação pode continuar fazendo sentido. Use o guia
+        de{" "}
+        <a
+          href="/calcular-taxas-importacao"
+          className="text-blue-600 underline"
+        >
+          calcular taxas de importação
+        </a>{" "}
+        para montar essa conta.
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -108,7 +123,10 @@ export default function RemessaConforme() {
         do tipo de operação e do estado de destino. A Receita Federal também
         orienta que o ICMS pode variar conforme a unidade federativa. Por isso,
         páginas que prometem um valor único para todo o Brasil podem induzir o
-        consumidor ao erro.
+        consumidor ao erro. Entenda melhor no guia de{" "}
+        <a href="/icms-importacao-brasil" className="text-blue-600 underline">
+          ICMS na importação
+        </a>.
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">

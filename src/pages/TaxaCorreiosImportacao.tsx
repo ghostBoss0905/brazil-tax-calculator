@@ -44,7 +44,14 @@ export default function TaxaCorreiosImportacao() {
           Esta página explica a diferença entre imposto de importação, ICMS e
           Despacho Postal, além de mostrar como consultar a cobrança no Minhas
           Importações. A ideia é ajudar você a entender se a taxa faz sentido,
-          quando pagar e quando pedir revisão.
+          quando pagar e quando pedir revisão. Para saber a regra geral dos
+          tributos, consulte a{" "}
+          <a
+            href="/tabela-imposto-importacao-brasil"
+            className="text-blue-600 underline"
+          >
+            tabela de imposto de importação
+          </a>.
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -101,7 +108,14 @@ export default function TaxaCorreiosImportacao() {
           Isso é comum em compras feitas fora do fluxo do Remessa Conforme ou
           quando os tributos não foram pagos no checkout. Em sites certificados,
           parte das cobranças pode aparecer antes do pagamento da compra, mas o
-          consumidor ainda deve acompanhar o rastreamento até a entrega.
+          consumidor ainda deve acompanhar o rastreamento até a entrega. Veja
+          também o guia sobre{" "}
+          <a
+            href="/o-que-e-remessa-conforme"
+            className="text-blue-600 underline"
+          >
+            Remessa Conforme
+          </a>.
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -129,7 +143,14 @@ export default function TaxaCorreiosImportacao() {
           Para evitar surpresa, estime o custo final antes de comprar. Some
           produto, frete e seguro quando houver, converta para reais e simule o
           Imposto de Importação e o ICMS. Depois compare com o preço de um
-          produto equivalente vendido no Brasil.
+          produto equivalente vendido no Brasil. Se ainda estiver no momento de
+          compra, use o passo a passo para{" "}
+          <a
+            href="/calcular-taxas-importacao"
+            className="text-blue-600 underline"
+          >
+            calcular taxas de importação
+          </a>.
         </p>
 
         <p className="mb-6">

@@ -36,8 +36,11 @@ export default function ImpostoShopee() {
           Comprar produtos internacionais pela Shopee pode parecer barato no
           primeiro momento, mas o custo final depende dos impostos cobrados no
           Brasil. Antes de finalizar a compra, vale estimar o Imposto de
-          Importação, o ICMS e o frete para evitar surpresa quando a encomenda
-          chegar.
+          Importação, o{" "}
+          <a href="/icms-importacao-brasil" className="text-blue-600 underline">
+            ICMS
+          </a>{" "}
+          e o frete para evitar surpresa quando a encomenda chegar.
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -50,7 +53,14 @@ export default function ImpostoShopee() {
           internacionais, a Receita Federal informa que o Imposto de Importação
           pode ter regra reduzida para compras de até US$50 em sites
           certificados no Programa Remessa Conforme. Também pode haver cobrança
-          de ICMS estadual.
+          de ICMS estadual. Para comparar essa regra com outras situações, veja
+          a{" "}
+          <a
+            href="/tabela-imposto-importacao-brasil"
+            className="text-blue-600 underline"
+          >
+            tabela de imposto de importação
+          </a>.
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -69,7 +79,13 @@ export default function ImpostoShopee() {
           Se os impostos não forem cobrados no momento da compra, a encomenda
           pode ser tributada na chegada ao Brasil. Nessa situação, o consumidor
           normalmente precisa pagar os valores indicados pelos Correios ou pela
-          transportadora antes da entrega.
+          transportadora antes da entrega; entenda esse processo no guia sobre{" "}
+          <a
+            href="/taxa-correios-importacao"
+            className="text-blue-600 underline"
+          >
+            taxa dos Correios na importação
+          </a>.
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
