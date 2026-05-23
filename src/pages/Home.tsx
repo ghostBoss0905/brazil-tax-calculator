@@ -86,10 +86,10 @@ function calculateTaxes(data: CalculatorFormValues): TaxResults {
 
   if (isRemessaConforme) {
     if (isBelow50) {
-      ii = subtotalBrl * 0.2;
+      ii = 0;
     } else {
       const rawII = subtotalBrl * 0.6;
-      const discountBrl = 20 * exchangeRate;
+      const discountBrl = 30 * exchangeRate;
       ii = Math.max(rawII - discountBrl, 0);
     }
 
@@ -243,8 +243,43 @@ export default function Home() {
               Calcule rapidamente o custo final da sua compra internacional,
               incluindo imposto de importação e ICMS.
             </p>
+            <div className="mt-4 flex flex-wrap justify-center gap-2 text-xs sm:text-sm text-muted-foreground">
+              <span className="rounded-full border border-border bg-background px-3 py-1">
+                Regras 2026 atualizadas
+              </span>
+              <span className="rounded-full border border-border bg-background px-3 py-1">
+                Remessa Conforme
+              </span>
+              <span className="rounded-full border border-border bg-background px-3 py-1">
+                ICMS por estado
+              </span>
+            </div>
           </div>
         </header>
+
+        <section className="mb-6 grid grid-cols-1 gap-3 text-sm text-muted-foreground sm:grid-cols-3">
+          <div className="rounded-xl border border-border bg-card p-4">
+            <p className="font-semibold text-foreground">Antes de comprar</p>
+            <p className="mt-1">
+              Simule o custo final antes de pagar em AliExpress, Shein, Shopee
+              ou outra loja internacional.
+            </p>
+          </div>
+          <div className="rounded-xl border border-border bg-card p-4">
+            <p className="font-semibold text-foreground">Regra oficial</p>
+            <p className="mt-1">
+              Considera produto, frete, câmbio, Remessa Conforme e ICMS do
+              estado de destino.
+            </p>
+          </div>
+          <div className="rounded-xl border border-border bg-card p-4">
+            <p className="font-semibold text-foreground">Decisão rápida</p>
+            <p className="mt-1">
+              Compare o total estimado com uma opção vendida no Brasil antes
+              de finalizar a compra.
+            </p>
+          </div>
+        </section>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8">
           <div className="lg:col-span-5">
@@ -255,7 +290,7 @@ export default function Home() {
                   Dados da Compra
                 </CardTitle>
                 <CardDescription>
-                  Preencha os campos e clique em calcular.
+                  Informe produto, frete, câmbio, estado e tipo de compra.
                 </CardDescription>
               </CardHeader>
 
@@ -387,15 +422,15 @@ export default function Home() {
                             <Info className="w-4 h-4 text-muted-foreground hover:text-primary transition-colors" />
                           </TooltipTrigger>
                           <TooltipContent className="max-w-xs">
-                            <p>
-                              Lojas certificadas que cobram os impostos no
+                        <p>
+                              Lojas certificadas que mostram os tributos no
                               checkout.
                             </p>
                           </TooltipContent>
                         </Tooltip>
                       </Label>
                       <p className="text-xs text-muted-foreground">
-                        Imposto cobrado no site da loja.
+                        Ative quando os tributos aparecem antes do pagamento.
                       </p>
                     </div>
                     <Controller
@@ -416,7 +451,7 @@ export default function Home() {
                     size="lg"
                     className="w-full text-lg h-14 shadow-lg shadow-accent/20"
                   >
-                    Calcular Impostos
+                    Ver custo final estimado
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </form>
@@ -442,8 +477,19 @@ export default function Home() {
                       Aguardando dados
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                      Preencha os valores e clique em calcular.
+                      Preencha os dados para ver produto, frete, imposto,
+                      ICMS e total estimado em reais.
                     </p>
+                    <div className="rounded-xl bg-background p-4 text-left text-xs text-muted-foreground shadow-sm">
+                      <p className="font-semibold text-foreground">
+                        Como interpretar o resultado
+                      </p>
+                      <ul className="mt-2 list-disc space-y-1 pl-4">
+                        <li>O total ajuda a decidir antes da compra.</li>
+                        <li>O valor oficial pode mudar no checkout.</li>
+                        <li>Compare sempre com uma opção nacional.</li>
+                      </ul>
+                    </div>
                   </div>
                 </motion.div>
               ) : (
@@ -662,6 +708,44 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="max-w-5xl mx-auto mb-12 rounded-2xl border border-primary/10 bg-primary/5 p-5 sm:p-6">
+          <div className="grid gap-5 lg:grid-cols-[1.3fr_1fr] lg:items-center">
+            <div>
+              <h2 className="text-2xl font-bold text-foreground">
+                Não sabe se a compra vai compensar?
+              </h2>
+              <p className="mt-2 text-muted-foreground leading-relaxed">
+                Use o resultado como ponto de comparação: se o custo final
+                importado ficar perto do preço brasileiro, prazo, garantia e
+                troca podem pesar mais que a economia.
+              </p>
+            </div>
+            <div className="grid gap-2 text-sm">
+              <a
+                href="/calcular-taxas-importacao"
+                className="flex items-center justify-between rounded-xl bg-background px-4 py-3 font-medium text-foreground shadow-sm hover:text-primary"
+              >
+                Como calcular taxas de importação
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href="/tabela-imposto-importacao-brasil"
+                className="flex items-center justify-between rounded-xl bg-background px-4 py-3 font-medium text-foreground shadow-sm hover:text-primary"
+              >
+                Ver tabela de imposto 2026
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href="/taxa-correios-importacao"
+                className="flex items-center justify-between rounded-xl bg-background px-4 py-3 font-medium text-foreground shadow-sm hover:text-primary"
+              >
+                Entender taxa dos Correios
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </section>
+
         <section className="max-w-5xl mx-auto mb-12">
           <RelatedGuides
             currentPath="/"
@@ -672,9 +756,9 @@ export default function Home() {
         </section>
 
         <div className="max-w-3xl mx-auto mb-12 px-5 py-4 rounded-xl border border-border bg-muted/40 text-xs text-muted-foreground space-y-1">
-          <p><strong>Versão das regras:</strong> 2026-03</p>
-          <p><strong>Última verificação:</strong> Receita Federal do Brasil</p>
-          <p><strong>Fonte oficial:</strong> Receita Federal e normas públicas aplicáveis</p>
+          <p><strong>Versão das regras:</strong> 2026-05</p>
+          <p><strong>Última verificação:</strong> Receita Federal do Brasil e Portal Compras Internacionais</p>
+          <p><strong>Fonte oficial:</strong> Receita Federal, Correios e normas públicas aplicáveis</p>
           <p><strong>Aviso legal:</strong> Esta calculadora fornece uma estimativa. O valor final é definido pelas autoridades competentes no Brasil.</p>
         </div>
       </main>
