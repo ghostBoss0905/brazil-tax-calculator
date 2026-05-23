@@ -713,59 +713,70 @@ export default function Home() {
                         </div>
 
                         <div className="p-5 sm:p-6 bg-slate-50/40">
-                          <div className="rounded-2xl border border-border bg-background p-5 shadow-sm">
-                            <div className="mb-4 flex items-start justify-between gap-4">
+                          <div className="mx-auto max-w-sm rounded-3xl border border-border bg-background p-6 shadow-sm">
+                            <div className="mb-8 flex items-start justify-between gap-4">
                               <div>
                                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                                   Resumo para compartilhar
                                 </p>
-                                <h3 className="mt-1 text-lg font-bold text-foreground">
+                                <h3 className="mt-2 text-2xl font-bold leading-tight text-foreground">
                                   Estimativa de importação
                                 </h3>
                               </div>
-                              <div className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                              <div className="rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">
                                 2026
                               </div>
                             </div>
 
-                            <div className="grid grid-cols-2 gap-3 text-sm">
-                              <div className="rounded-xl bg-muted/50 p-3">
-                                <p className="text-xs text-muted-foreground">
+                            <div className="rounded-2xl border border-primary/10 bg-primary/5 p-5">
+                              <p className="text-sm text-muted-foreground">
+                                Custo final estimado
+                              </p>
+                              <p className="mt-2 text-5xl font-extrabold leading-none text-primary">
+                                {formatBRL(results.total)}
+                              </p>
+                            </div>
+
+                            <div className="mt-5 space-y-3 text-sm">
+                              <div className="flex items-center justify-between rounded-xl bg-muted/50 p-4">
+                                <span className="text-muted-foreground">
                                   Subtotal
-                                </p>
-                                <p className="font-semibold text-foreground">
+                                </span>
+                                <span className="font-semibold text-foreground">
                                   {formatBRL(results.subtotalBrl)}
-                                </p>
+                                </span>
                               </div>
-                              <div className="rounded-xl bg-muted/50 p-3">
-                                <p className="text-xs text-muted-foreground">
+                              <div className="flex items-center justify-between rounded-xl bg-muted/50 p-4">
+                                <span className="text-muted-foreground">
                                   Tributos
-                                </p>
-                                <p className="font-semibold text-foreground">
+                                </span>
+                                <span className="font-semibold text-foreground">
                                   {formatBRL(
                                     results.ii +
                                       results.icms +
                                       results.cofins +
                                       results.fee,
                                   )}
-                                </p>
+                                </span>
+                              </div>
+                              <div className="flex items-center justify-between rounded-xl bg-muted/50 p-4">
+                                <span className="text-muted-foreground">
+                                  ICMS
+                                </span>
+                                <span className="font-semibold text-foreground">
+                                  {formatBRL(results.icms)}
+                                </span>
                               </div>
                             </div>
 
-                            <div className="mt-4 rounded-xl border border-primary/10 bg-primary/5 p-4">
-                              <p className="text-xs text-muted-foreground">
-                                Custo final estimado
-                              </p>
-                              <p className="text-3xl font-extrabold text-primary">
-                                {formatBRL(results.total)}
-                              </p>
-                            </div>
-
-                            <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+                            <p className="mt-6 text-xs leading-relaxed text-muted-foreground">
                               Ao copiar ou compartilhar, o resumo inclui produto
                               e frete, estado, Remessa Conforme, tributos e link
                               para a calculadora.
                             </p>
+                            <div className="mt-6 border-t border-border pt-4 text-xs font-semibold text-primary">
+                              taxadeimportacao.com
+                            </div>
                           </div>
                         </div>
                       </div>
