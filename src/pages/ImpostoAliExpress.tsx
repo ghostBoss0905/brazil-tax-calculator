@@ -1,5 +1,6 @@
 import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
+import DirectAnswer from "@/components/DirectAnswer";
 
 export default function ImpostoAliExpress() {
   return (
@@ -27,6 +28,15 @@ export default function ImpostoAliExpress() {
       <h1 className="text-4xl font-bold mb-6">
         Como Calcular o Imposto do AliExpress no Brasil (2026)
       </h1>
+
+      <DirectAnswer>
+        <p>
+          O imposto do AliExpress no Brasil depende do valor da compra, frete,
+          câmbio, ICMS do estado de entrega e participação no Remessa Conforme.
+          Antes de pagar, compare o custo total estimado com uma opção vendida
+          no Brasil.
+        </p>
+      </DirectAnswer>
 
       <p className="text-lg mb-8">
         Comprar no AliExpress ficou mais caro desde 2024. Mas com a informação

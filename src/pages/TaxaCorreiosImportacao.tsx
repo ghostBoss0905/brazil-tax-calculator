@@ -1,5 +1,6 @@
 import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
+import DirectAnswer from "@/components/DirectAnswer";
 
 export default function TaxaCorreiosImportacao() {
   return (
@@ -31,6 +32,15 @@ export default function TaxaCorreiosImportacao() {
         <h1 className="text-4xl font-bold mb-6">
           Taxa dos Correios na Importação: Como Consultar e Pagar (2026)
         </h1>
+
+        <DirectAnswer>
+          <p>
+            A taxa dos Correios na importação pode incluir o Despacho Postal e,
+            quando houver tributação, os valores definidos pela Receita Federal.
+            O pagamento normalmente aparece no ambiente Minhas Importações ou
+            no aplicativo dos Correios.
+          </p>
+        </DirectAnswer>
 
         <p className="text-lg mb-8">
           Quando uma compra internacional chega ao Brasil, o consumidor pode

@@ -42,6 +42,15 @@ const pages = [
     title: "Como Calcular Imposto de Importação no Brasil 2026",
     description:
       "Aprenda como calcular imposto de importação no Brasil em 2026. Veja ICMS, Remessa Conforme e custo final atualizado.",
+    howToSteps: [
+      "Some o valor dos produtos comprados.",
+      "Adicione frete internacional e seguro, se houver.",
+      "Converta o valor para reais usando o câmbio da compra.",
+      "Confira se a loja participa do Remessa Conforme.",
+      "Aplique o Imposto de Importação conforme a regra da compra.",
+      "Calcule o ICMS do estado de destino.",
+      "Compare o custo final com uma opção vendida no Brasil.",
+    ],
   },
   {
     path: "/tabela-imposto-importacao-brasil",
@@ -60,6 +69,15 @@ const pages = [
     title: "Calcular Taxas de Importação 2026: Guia e Simulador",
     description:
       "Aprenda como calcular taxas de importação no Brasil em 2026, incluindo Imposto de Importação, ICMS, frete, câmbio e Remessa Conforme.",
+    howToSteps: [
+      "Some produto, frete e seguro.",
+      "Converta o total para reais usando o câmbio da compra.",
+      "Confira se a loja está no Programa Remessa Conforme.",
+      "Aplique a regra de Imposto de Importação.",
+      "Calcule o ICMS conforme o estado de entrega.",
+      "Some cobranças postais, se existirem.",
+      "Compare o custo final com uma compra nacional.",
+    ],
   },
 ];
 
@@ -74,6 +92,111 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;");
 }
 
+function buildSchema(page) {
+  const canonical = `${siteOrigin}${page.path}`;
+  const pageId = `${canonical}#webpage`;
+  const articleId = `${canonical}#article`;
+  const breadcrumbId = `${canonical}#breadcrumb`;
+  const graph = [
+    {
+      "@type": "Organization",
+      "@id": `${siteOrigin}/#organization`,
+      name: "Taxa de Importação",
+      url: siteOrigin,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteOrigin}/#website`,
+      name: "Taxa de Importação",
+      url: siteOrigin,
+      inLanguage: "pt-BR",
+      publisher: {
+        "@id": `${siteOrigin}/#organization`,
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": breadcrumbId,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Início",
+          item: siteOrigin,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: page.title,
+          item: canonical,
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": pageId,
+      url: canonical,
+      name: page.title,
+      description: page.description,
+      inLanguage: "pt-BR",
+      isPartOf: {
+        "@id": `${siteOrigin}/#website`,
+      },
+      breadcrumb: {
+        "@id": breadcrumbId,
+      },
+      datePublished: "2026-05-23",
+      dateModified: "2026-05-23",
+    },
+    {
+      "@type": "Article",
+      "@id": articleId,
+      mainEntityOfPage: {
+        "@id": pageId,
+      },
+      headline: page.title,
+      description: page.description,
+      inLanguage: "pt-BR",
+      author: {
+        "@type": "Organization",
+        "@id": `${siteOrigin}/#organization`,
+      },
+      publisher: {
+        "@id": `${siteOrigin}/#organization`,
+      },
+      datePublished: "2026-05-23",
+      dateModified: "2026-05-23",
+    },
+  ];
+
+  if (page.howToSteps) {
+    graph.push({
+      "@type": "HowTo",
+      "@id": `${canonical}#howto`,
+      name: page.title,
+      description: page.description,
+      inLanguage: "pt-BR",
+      mainEntityOfPage: {
+        "@id": pageId,
+      },
+      step: page.howToSteps.map((step, index) => ({
+        "@type": "HowToStep",
+        position: index + 1,
+        text: step,
+      })),
+    });
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": graph,
+  };
+}
+
+function buildSchemaTag(page) {
+  return `<script type="application/ld+json">${JSON.stringify(buildSchema(page))}</script>`;
+}
+
 function updateHead(html, page) {
   const canonical = `${siteOrigin}${page.path}`;
 
@@ -86,7 +209,8 @@ function updateHead(html, page) {
     .replace(
       /<link rel="canonical" href=".*?" \/>/s,
       `<link rel="canonical" href="${canonical}" />`,
-    );
+    )
+    .replace("</head>", `    ${buildSchemaTag(page)}\n  </head>`);
 }
 
 for (const page of pages) {

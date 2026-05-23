@@ -1,5 +1,6 @@
 import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
+import DirectAnswer from "@/components/DirectAnswer";
 
 export default function ICMSImportacao() {
   return (
@@ -32,6 +33,15 @@ export default function ICMSImportacao() {
       <h1 className="text-4xl font-bold mb-6">
         ICMS na Importação do Brasil (2026)
       </h1>
+
+      <DirectAnswer>
+        <p>
+          ICMS na importação é um imposto estadual que pode entrar no custo de
+          compras internacionais. Ele varia conforme o estado de destino e deve
+          ser considerado junto com produto, frete, seguro e Imposto de
+          Importação.
+        </p>
+      </DirectAnswer>
 
       <p className="text-lg mb-8">
         O ICMS é um dos principais impostos cobrados em compras internacionais

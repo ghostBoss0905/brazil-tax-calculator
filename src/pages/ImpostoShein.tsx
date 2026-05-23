@@ -1,5 +1,6 @@
 import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
+import DirectAnswer from "@/components/DirectAnswer";
 
 export default function ImpostoShein() {
   return (
@@ -27,6 +28,15 @@ export default function ImpostoShein() {
       <h1 className="text-4xl font-bold mb-6">
         Como Funciona o Imposto da Shein no Brasil (2026)
       </h1>
+
+      <DirectAnswer>
+        <p>
+          O imposto da Shein no Brasil deve ser estimado somando produto, frete,
+          câmbio, Imposto de Importação e ICMS. Mesmo compras pequenas podem
+          ter tributos, por isso o custo final é mais importante que o preço do
+          item isolado.
+        </p>
+      </DirectAnswer>
 
       <p className="text-lg mb-8">
         Comprar na Shein ficou mais caro após as novas regras de importação

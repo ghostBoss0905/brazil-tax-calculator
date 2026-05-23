@@ -1,5 +1,6 @@
 import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
+import DirectAnswer from "@/components/DirectAnswer";
 
 export default function CalcularTaxasImportacao() {
   return (
@@ -31,6 +32,15 @@ export default function CalcularTaxasImportacao() {
         <h1 className="text-4xl font-bold mb-6">
           Como Calcular Taxas de Importação no Brasil (2026)
         </h1>
+
+        <DirectAnswer>
+          <p>
+            Para calcular taxas de importação, some produto, frete e seguro,
+            converta o total para reais, aplique o Imposto de Importação,
+            estime o ICMS do estado de destino e adicione possíveis cobranças
+            postais ou logísticas.
+          </p>
+        </DirectAnswer>
 
         <p className="text-lg mb-8">
           Para calcular taxas de importação no Brasil, você precisa olhar além

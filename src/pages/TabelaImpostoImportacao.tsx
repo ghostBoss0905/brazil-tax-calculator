@@ -1,5 +1,6 @@
 import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
+import DirectAnswer from "@/components/DirectAnswer";
 
 export default function TabelaImpostoImportacao() {
   return (
@@ -31,6 +32,15 @@ export default function TabelaImpostoImportacao() {
         <h1 className="text-4xl font-bold mb-6">
           Tabela de Imposto de Importação no Brasil (2026)
         </h1>
+
+        <DirectAnswer>
+          <p>
+            A tabela de imposto de importação em 2026 ajuda a estimar se a
+            compra entra na regra de até US$50, acima de US$50 ou fora do
+            Remessa Conforme. O ICMS estadual continua sendo parte importante
+            do custo final.
+          </p>
+        </DirectAnswer>
 
         <p className="text-lg mb-8">
           A tabela de imposto de importação ajuda a entender quanto uma compra

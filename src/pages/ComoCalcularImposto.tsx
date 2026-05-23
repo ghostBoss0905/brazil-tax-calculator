@@ -1,5 +1,6 @@
 import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
+import DirectAnswer from "@/components/DirectAnswer";
 
 export default function ComoCalcularImposto() {
   return (
@@ -36,6 +37,15 @@ export default function ComoCalcularImposto() {
         }}
       >
         <h1>Como Calcular Imposto de Importação no Brasil em 2026</h1>
+
+        <DirectAnswer>
+          <p>
+            Para calcular imposto de importação no Brasil, some produto, frete
+            e seguro, converta para reais, aplique a regra de Imposto de
+            Importação e estime o ICMS do estado de entrega. Depois compare o
+            custo final com uma compra nacional.
+          </p>
+        </DirectAnswer>
 
         <p>
           Comprar produtos internacionais na Shopee, AliExpress, Amazon ou

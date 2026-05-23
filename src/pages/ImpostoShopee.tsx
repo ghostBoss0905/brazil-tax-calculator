@@ -1,5 +1,6 @@
 import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
+import DirectAnswer from "@/components/DirectAnswer";
 
 export default function ImpostoShopee() {
   return (
@@ -31,6 +32,15 @@ export default function ImpostoShopee() {
         <h1 className="text-4xl font-bold mb-6">
           Como Calcular o Imposto da Shopee no Brasil (2026)
         </h1>
+
+        <DirectAnswer>
+          <p>
+            O imposto da Shopee internacional depende de produto, frete,
+            câmbio, ICMS e forma de cobrança dos tributos. O comprador deve
+            confirmar se o pedido é nacional ou internacional e se os impostos
+            aparecem no checkout.
+          </p>
+        </DirectAnswer>
 
         <p className="text-lg mb-8">
           Comprar produtos internacionais pela Shopee pode parecer barato no

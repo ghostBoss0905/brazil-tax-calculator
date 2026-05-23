@@ -1,5 +1,6 @@
 import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
+import DirectAnswer from "@/components/DirectAnswer";
 
 export default function RemessaConforme() {
   return (
@@ -32,6 +33,14 @@ export default function RemessaConforme() {
       <h1 className="text-4xl font-bold mb-6">
         O Que é Remessa Conforme? (2026)
       </h1>
+
+      <DirectAnswer>
+        <p>
+          Remessa Conforme é o programa da Receita Federal que permite a
+          plataformas certificadas informar e recolher tributos de compras
+          internacionais no checkout, dando mais previsibilidade ao consumidor.
+        </p>
+      </DirectAnswer>
 
       <p className="text-lg mb-8">
         O Remessa Conforme é um programa da Receita Federal criado para
