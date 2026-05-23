@@ -244,41 +244,59 @@ export default function Home() {
               incluindo imposto de importação e ICMS.
             </p>
             <div className="mt-4 flex flex-wrap justify-center gap-2 text-xs sm:text-sm text-muted-foreground">
-              <span className="rounded-full border border-border bg-background px-3 py-1">
+              <a
+                href="/tabela-imposto-importacao-brasil"
+                className="rounded-full border border-border bg-background px-3 py-1 transition-colors hover:border-primary hover:text-primary"
+              >
                 Regras 2026 atualizadas
-              </span>
-              <span className="rounded-full border border-border bg-background px-3 py-1">
+              </a>
+              <a
+                href="/o-que-e-remessa-conforme"
+                className="rounded-full border border-border bg-background px-3 py-1 transition-colors hover:border-primary hover:text-primary"
+              >
                 Remessa Conforme
-              </span>
-              <span className="rounded-full border border-border bg-background px-3 py-1">
+              </a>
+              <a
+                href="/icms-importacao-brasil"
+                className="rounded-full border border-border bg-background px-3 py-1 transition-colors hover:border-primary hover:text-primary"
+              >
                 ICMS por estado
-              </span>
+              </a>
             </div>
           </div>
         </header>
 
         <section className="mb-6 grid grid-cols-1 gap-3 text-sm text-muted-foreground sm:grid-cols-3">
-          <div className="rounded-xl border border-border bg-card p-4">
+          <a
+            href="#tax-form"
+            className="rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary hover:text-muted-foreground"
+          >
             <p className="font-semibold text-foreground">Antes de comprar</p>
             <p className="mt-1">
               Simule o custo final antes de pagar em AliExpress, Shein, Shopee
               ou outra loja internacional.
             </p>
-          </div>
-          <div className="rounded-xl border border-border bg-card p-4">
+          </a>
+          <a
+            href="/tabela-imposto-importacao-brasil"
+            className="rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary hover:text-muted-foreground"
+          >
             <p className="font-semibold text-foreground">Regra oficial</p>
             <p className="mt-1">
               Considera produto, frete, câmbio, Remessa Conforme e ICMS do
               estado de destino.
             </p>
-          </div>
-          <div className="rounded-xl border border-border bg-card p-4">
+          </a>
+          <a
+            href="/calcular-taxas-importacao"
+            className="rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary hover:text-muted-foreground"
+          >
             <p className="font-semibold text-foreground">Decisão rápida</p>
             <p className="mt-1">
               Compare o total estimado com uma opção vendida no Brasil antes
               de finalizar a compra.
             </p>
-          </div>
+          </a>
         </section>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8">
