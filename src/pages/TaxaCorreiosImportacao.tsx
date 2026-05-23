@@ -1,6 +1,7 @@
 import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
 import DirectAnswer from "@/components/DirectAnswer";
+import OfficialSources from "@/components/OfficialSources";
 
 export default function TaxaCorreiosImportacao() {
   return (
@@ -11,19 +12,19 @@ export default function TaxaCorreiosImportacao() {
         canonical="https://www.taxadeimportacao.com/taxa-correios-importacao"
         faqs={[
           {
-            question: "O que é a taxa dos Correios na importação?",
+            question: "Onde pago a taxa dos Correios?",
             answer:
-              "Em encomendas internacionais, os Correios podem cobrar o Despacho Postal pelo serviço de tratamento, além dos tributos definidos pela Receita Federal.",
+              "O pagamento é feito no ambiente Minhas Importações ou no app dos Correios, quando houver cobrança pendente para a encomenda.",
           },
           {
-            question: "Como pagar imposto de importação nos Correios?",
+            question: "O que acontece se eu não pagar?",
             answer:
-              "O pagamento é feito pelo ambiente Minhas Importações ou pelo app dos Correios, quando houver tributo ou serviço postal a pagar.",
+              "A encomenda pode não ser liberada para entrega e pode seguir o fluxo definido pelos Correios e pela Receita Federal para objetos não pagos.",
           },
           {
-            question: "Posso pedir revisão do imposto?",
+            question: "Posso pagar primeiro e pedir revisão depois?",
             answer:
-              "Sim. Segundo a Receita Federal, o pedido de revisão deve ser feito antes do pagamento dos tributos.",
+              "A orientação mais segura é pedir revisão antes do pagamento quando você discordar da cobrança. Depois de pagar, a contestação pode seguir outro caminho e ficar mais difícil.",
           },
         ]}
       />
@@ -81,6 +82,41 @@ export default function TaxaCorreiosImportacao() {
           item. Por isso, antes de pagar, é importante conferir o detalhamento
           no ambiente oficial dos Correios.
         </p>
+
+        <div className="overflow-x-auto mb-8">
+          <table className="w-full border-collapse text-left">
+            <thead>
+              <tr className="border-b">
+                <th className="py-3 pr-4">Cobrança</th>
+                <th className="py-3 pr-4">Quem define</th>
+                <th className="py-3">Como aparece para o comprador</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b align-top">
+                <td className="py-3 pr-4">Imposto de Importação</td>
+                <td className="py-3 pr-4">Receita Federal</td>
+                <td className="py-3">
+                  Pode aparecer no checkout ou na chegada da encomenda.
+                </td>
+              </tr>
+              <tr className="border-b align-top">
+                <td className="py-3 pr-4">ICMS</td>
+                <td className="py-3 pr-4">Estado de destino</td>
+                <td className="py-3">
+                  Pode aparecer junto com os tributos da importação.
+                </td>
+              </tr>
+              <tr className="border-b align-top">
+                <td className="py-3 pr-4">Despacho Postal</td>
+                <td className="py-3 pr-4">Correios</td>
+                <td className="py-3">
+                  Pode aparecer no Minhas Importações quando aplicável.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
           Como consultar a taxa no Minhas Importações
@@ -146,6 +182,18 @@ export default function TaxaCorreiosImportacao() {
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Checklist antes de pagar
+        </h2>
+
+        <ul className="list-disc pl-6 mb-6 space-y-2">
+          <li>Confira se o código de rastreamento pertence à sua compra.</li>
+          <li>Compare produto, frete e seguro com o comprovante do pedido.</li>
+          <li>Veja se a cobrança separa imposto, ICMS e serviço postal.</li>
+          <li>Confirme se a compra já teve tributos pagos no checkout.</li>
+          <li>Se discordar do valor, solicite revisão antes de pagar.</li>
+        </ul>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
           Como estimar o valor antes da compra
         </h2>
 
@@ -208,6 +256,33 @@ export default function TaxaCorreiosImportacao() {
           fluxo logístico e das regras aplicadas à encomenda. O detalhamento
           deve ser conferido no Minhas Importações.
         </p>
+
+        <h3 className="text-xl font-semibold mt-6 mb-2">
+          Posso pagar primeiro e pedir revisão depois?
+        </h3>
+
+        <p className="mb-4">
+          A orientação mais segura é pedir revisão antes do pagamento quando
+          você discordar da cobrança. Depois de pagar, a contestação pode seguir
+          outro caminho e ficar mais difícil.
+        </p>
+
+        <OfficialSources
+          sources={[
+            {
+              label: "Correios - Minhas Importações",
+              href: "https://www.correios.com.br/receber/encomenda/internacional/minhas-importacoes",
+            },
+            {
+              label: "Receita Federal - Tributação de remessas internacionais",
+              href: "https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/remessas-postal-e-expressa/topicos/tributacao",
+            },
+            {
+              label: "Receita Federal - Pedido de reembolso ou restituição",
+              href: "https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/remessas-postal-e-expressa/problemas-frequentes/pedido-de-reembolso-e-ou-restituicao",
+            },
+          ]}
+        />
 
         <div className="mt-10">
           <h2 className="text-2xl font-semibold mb-4">

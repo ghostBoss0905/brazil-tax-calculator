@@ -1,6 +1,7 @@
 import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
 import DirectAnswer from "@/components/DirectAnswer";
+import OfficialSources from "@/components/OfficialSources";
 
 export default function CalcularTaxasImportacao() {
   return (
@@ -11,19 +12,19 @@ export default function CalcularTaxasImportacao() {
         canonical="https://www.taxadeimportacao.com/calcular-taxas-importacao"
         faqs={[
           {
-            question: "Como calcular taxas de importação?",
+            question: "Preciso calcular ICMS separadamente?",
             answer:
-              "Some produto, frete e seguro, converta para reais, aplique o Imposto de Importação conforme a regra da compra e depois estime o ICMS do estado de destino.",
+              "Sim. O ICMS é estadual e pode mudar o valor final. Por isso, a calculadora pede o estado de destino.",
           },
           {
-            question: "Qual taxa entra no cálculo de importação?",
+            question: "Frete entra no cálculo?",
             answer:
-              "Normalmente entram Imposto de Importação, ICMS estadual, frete, seguro quando houver e possíveis cobranças postais ou logísticas.",
+              "Sim. Frete e seguro, quando houver, podem entrar no valor aduaneiro usado como base da importação.",
           },
           {
-            question: "Compras no Remessa Conforme pagam taxa?",
+            question: "A estimativa da calculadora é o valor final oficial?",
             answer:
-              "Podem pagar ICMS e, dependendo do valor, Imposto de Importação. Sites certificados devem mostrar os tributos no checkout.",
+              "Não. A calculadora serve para estimar o custo antes da compra. O valor oficial depende das informações declaradas, do enquadramento da remessa, do estado de destino e da cobrança registrada no checkout, nos Correios ou na transportadora.",
           },
         ]}
       />
@@ -85,7 +86,8 @@ export default function CalcularTaxasImportacao() {
           O primeiro erro de muitos compradores é calcular apenas o preço do
           produto. Em compras internacionais, o valor relevante costuma ser o
           valor aduaneiro: produto, frete e seguro quando houver. Esse total é
-          convertido para reais e serve de base para a cobrança dos tributos.
+          convertido para reais e serve de base para a cobrança dos tributos,
+          conforme a orientação da Receita Federal para remessas internacionais.
         </p>
 
         <ul className="list-disc pl-6 mb-6 space-y-2">
@@ -132,6 +134,25 @@ export default function CalcularTaxasImportacao() {
           prática, o ICMS pode ser calculado sobre uma base que já inclui outros
           valores. Por isso, usar uma calculadora reduz bastante o risco de
           estimar errado.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Regras atualizadas em 2026
+        </h2>
+
+        <p className="mb-6">
+          Em maio de 2026, a Receita Federal informou atualização do Portal
+          Compras Internacionais após novas regras de tributação. Para o
+          consumidor, o ponto prático é confirmar se a compra está em plataforma
+          certificada, se o valor total passa de US$50 e se o ICMS aparece no
+          checkout.
+        </p>
+
+        <p className="mb-6">
+          A calculadora ajuda a transformar essas regras em uma estimativa de
+          custo final, mas o valor definitivo será sempre o informado pela
+          plataforma, Correios, transportadora ou autoridade competente no fluxo
+          da importação.
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -232,6 +253,34 @@ export default function CalcularTaxasImportacao() {
           no checkout com tributos e se a plataforma está operando no Remessa
           Conforme.
         </p>
+
+        <h3 className="text-xl font-semibold mt-6 mb-2">
+          A estimativa da calculadora é o valor final oficial?
+        </h3>
+
+        <p className="mb-4">
+          Não. A calculadora serve para estimar o custo antes da compra. O valor
+          oficial depende das informações declaradas, do enquadramento da
+          remessa, do estado de destino e da cobrança efetivamente registrada no
+          checkout, nos Correios ou na transportadora.
+        </p>
+
+        <OfficialSources
+          sources={[
+            {
+              label: "Receita Federal - Tributação de remessas internacionais",
+              href: "https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/remessas-postal-e-expressa/topicos/tributacao",
+            },
+            {
+              label: "Receita Federal - Calculadora de impostos do Portal Compras Internacionais",
+              href: "https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/remessas-postal-e-expressa/calculadora-de-impostos-portal-aduana-e-comercio-exterior",
+            },
+            {
+              label: "Receita Federal - Atualização do Portal Compras Internacionais em maio de 2026",
+              href: "https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/maio/receita-federal-atualiza-o-portal-compras-internacionais-apos-novas-regras-de-tributacao",
+            },
+          ]}
+        />
 
         <div className="mt-10">
           <h2 className="text-2xl font-semibold mb-4">

@@ -1,6 +1,7 @@
 import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
 import DirectAnswer from "@/components/DirectAnswer";
+import OfficialSources from "@/components/OfficialSources";
 
 export default function TabelaImpostoImportacao() {
   return (
@@ -11,19 +12,19 @@ export default function TabelaImpostoImportacao() {
         canonical="https://www.taxadeimportacao.com/tabela-imposto-importacao-brasil"
         faqs={[
           {
-            question: "Qual é a tabela de imposto de importação em 2026?",
+            question: "Compras abaixo de US$50 são isentas?",
             answer:
-              "Segundo a Receita Federal, em sites certificados no Programa Remessa Conforme, compras de até US$50 têm Imposto de Importação federal de 0%; acima de US$50, aplica-se 60% com desconto equivalente a US$30. O ICMS estadual continua sendo cobrado.",
+              "Em sites certificados no Remessa Conforme, o Imposto de Importação federal pode ser 0% até US$50, mas o ICMS estadual pode continuar sendo cobrado.",
           },
           {
-            question: "O ICMS entra na tabela de importação?",
+            question: "A tabela vale para compras fora do Remessa Conforme?",
             answer:
-              "Sim. Além do Imposto de Importação federal, compras internacionais também podem ter ICMS estadual, normalmente entre 17% e 20%, conforme o estado.",
+              "Compras fora de sites certificados podem ter regra diferente, incluindo cobrança de 60% de Imposto de Importação e ICMS quando a encomenda chega ao Brasil.",
           },
           {
-            question: "A tabela vale para AliExpress, Shein e Shopee?",
+            question: "Por que o ICMS aparece mesmo quando o imposto federal é 0%?",
             answer:
-              "A tabela ajuda a entender a regra geral, mas o comprador deve conferir se a compra foi feita em site certificado no Remessa Conforme e se os tributos aparecem no checkout.",
+              "Porque o Imposto de Importação federal e o ICMS estadual são cobranças diferentes. Em compras até US$50 dentro do Remessa Conforme, a regra federal pode ser 0%, mas o ICMS estadual ainda pode ser cobrado.",
           },
         ]}
       />
@@ -66,8 +67,14 @@ export default function TabelaImpostoImportacao() {
             href="/calcular-taxas-importacao"
             className="text-blue-600 underline"
           >
-            calcular taxas de importação
-          </a>.
+          calcular taxas de importação
+        </a>.
+        </p>
+
+        <p className="mb-6">
+          A Receita Federal atualizou em 2026 as orientações do Portal Compras
+          Internacionais. Por isso, esta tabela separa a regra de sites
+          certificados no Remessa Conforme da regra de compras fora desse fluxo.
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -197,6 +204,25 @@ export default function TabelaImpostoImportacao() {
           estado, frete e Remessa Conforme.
         </p>
 
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Como ler a tabela sem errar
+        </h2>
+
+        <p className="mb-6">
+          Primeiro, identifique se a compra aparece no checkout como uma compra
+          internacional com tributos discriminados. Depois, some produto, frete
+          e seguro para entender o valor aduaneiro. Por fim, verifique o estado
+          de entrega, porque o ICMS pode alterar o custo final mesmo quando a
+          regra federal parece simples.
+        </p>
+
+        <p className="mb-6">
+          A tabela não deve ser lida como promessa de preço final. Ela é uma
+          referência para estimar o cenário mais provável antes de pagar. O
+          valor final depende da declaração da remessa, da cobrança no checkout
+          e da validação feita no processo de importação.
+        </p>
+
         <a
           href="/"
           className="inline-block bg-black text-white px-6 py-3 rounded-xl mb-10"
@@ -236,6 +262,33 @@ export default function TabelaImpostoImportacao() {
           A base de cálculo considera o valor aduaneiro, que inclui o valor dos
           bens, frete e seguro quando houver.
         </p>
+
+        <h3 className="text-xl font-semibold mt-6 mb-2">
+          Por que o ICMS aparece mesmo quando o imposto federal é 0%?
+        </h3>
+
+        <p className="mb-4">
+          Porque o Imposto de Importação federal e o ICMS estadual são cobranças
+          diferentes. Em compras até US$50 dentro do Remessa Conforme, a regra
+          federal pode ser 0%, mas o ICMS estadual ainda pode ser cobrado.
+        </p>
+
+        <OfficialSources
+          sources={[
+            {
+              label: "Receita Federal - Quais são os impostos devidos",
+              href: "https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/remessas-postal-e-expressa/preciso-pagar-impostos-nas-compras-internacionais/quais-sao-os-impostos-devidos",
+            },
+            {
+              label: "Receita Federal - Tributação de remessas internacionais",
+              href: "https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/remessas-postal-e-expressa/topicos/tributacao",
+            },
+            {
+              label: "Receita Federal - Casos em que não é preciso pagar Imposto de Importação",
+              href: "https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/remessas-postal-e-expressa/preciso-pagar-impostos-nas-compras-internacionais/saiba-em-quais-casos-nao-e-preciso-pagar-impostos-em-suas-compras-internacionais",
+            },
+          ]}
+        />
 
         <div className="mt-10">
           <h2 className="text-2xl font-semibold mb-4">

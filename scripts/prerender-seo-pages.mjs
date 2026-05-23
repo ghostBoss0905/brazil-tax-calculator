@@ -57,18 +57,69 @@ const pages = [
     title: "Tabela de Imposto de Importação Brasil 2026",
     description:
       "Veja a tabela de imposto de importação no Brasil em 2026 para compras internacionais, com Remessa Conforme, ICMS e exemplos práticos.",
+    faqs: [
+      {
+        question: "Compras abaixo de US$50 são isentas?",
+        answer:
+          "Em sites certificados no Remessa Conforme, o Imposto de Importação federal pode ser 0% até US$50, mas o ICMS estadual pode continuar sendo cobrado.",
+      },
+      {
+        question: "A tabela vale para compras fora do Remessa Conforme?",
+        answer:
+          "Compras fora de sites certificados podem ter regra diferente, incluindo cobrança de 60% de Imposto de Importação e ICMS quando a encomenda chega ao Brasil.",
+      },
+      {
+        question: "Por que o ICMS aparece mesmo quando o imposto federal é 0%?",
+        answer:
+          "Porque o Imposto de Importação federal e o ICMS estadual são cobranças diferentes. Em compras até US$50 dentro do Remessa Conforme, a regra federal pode ser 0%, mas o ICMS estadual ainda pode ser cobrado.",
+      },
+    ],
   },
   {
     path: "/taxa-correios-importacao",
     title: "Taxa dos Correios Importação 2026: Como Pagar",
     description:
       "Entenda a taxa dos Correios em compras internacionais, como consultar tributos no Minhas Importações e quando pagar imposto de importação.",
+    faqs: [
+      {
+        question: "Onde pago a taxa dos Correios?",
+        answer:
+          "O pagamento é feito no ambiente Minhas Importações ou no app dos Correios, quando houver cobrança pendente para a encomenda.",
+      },
+      {
+        question: "O que acontece se eu não pagar?",
+        answer:
+          "A encomenda pode não ser liberada para entrega e pode seguir o fluxo definido pelos Correios e pela Receita Federal para objetos não pagos.",
+      },
+      {
+        question: "Posso pagar primeiro e pedir revisão depois?",
+        answer:
+          "A orientação mais segura é pedir revisão antes do pagamento quando você discordar da cobrança. Depois de pagar, a contestação pode seguir outro caminho e ficar mais difícil.",
+      },
+    ],
   },
   {
     path: "/calcular-taxas-importacao",
     title: "Calcular Taxas de Importação 2026: Guia e Simulador",
     description:
       "Aprenda como calcular taxas de importação no Brasil em 2026, incluindo Imposto de Importação, ICMS, frete, câmbio e Remessa Conforme.",
+    faqs: [
+      {
+        question: "Preciso calcular ICMS separadamente?",
+        answer:
+          "Sim. O ICMS é estadual e pode mudar o valor final. Por isso, a calculadora pede o estado de destino.",
+      },
+      {
+        question: "Frete entra no cálculo?",
+        answer:
+          "Sim. Frete e seguro, quando houver, podem entrar no valor aduaneiro usado como base da importação.",
+      },
+      {
+        question: "A estimativa da calculadora é o valor final oficial?",
+        answer:
+          "Não. A calculadora serve para estimar o custo antes da compra. O valor oficial depende das informações declaradas, do enquadramento da remessa, do estado de destino e da cobrança registrada no checkout, nos Correios ou na transportadora.",
+      },
+    ],
     howToSteps: [
       "Some produto, frete e seguro.",
       "Converta o total para reais usando o câmbio da compra.",
@@ -183,6 +234,21 @@ function buildSchema(page) {
         "@type": "HowToStep",
         position: index + 1,
         text: step,
+      })),
+    });
+  }
+
+  if (page.faqs) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${canonical}#faq`,
+      mainEntity: page.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
       })),
     });
   }
