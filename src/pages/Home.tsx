@@ -120,6 +120,30 @@ function calculateTaxes(data: CalculatorFormValues): TaxResults {
   };
 }
 
+function buildShareSummary(results: TaxResults, data: CalculatorFormValues) {
+  const totalTributes = results.ii + results.icms + results.cofins + results.fee;
+  const remessaStatus = data.isRemessaConforme
+    ? "Remessa Conforme: sim"
+    : "Remessa Conforme: não";
+
+  return [
+    "Estimativa de importação no Brasil",
+    "Taxa de Importação - Calculadora gratuita",
+    "",
+    `Produto + frete: ${data.currency} ${(data.productValue + data.shippingCost).toFixed(2)}`,
+    `Estado: ${data.state}`,
+    remessaStatus,
+    "",
+    `Subtotal convertido: ${formatBRL(results.subtotalBrl)}`,
+    `Imposto de Importação: ${formatBRL(results.ii)}`,
+    `ICMS estimado: ${formatBRL(results.icms)}`,
+    `Total de tributos: ${formatBRL(totalTributes)}`,
+    `Custo final estimado: ${formatBRL(results.total)}`,
+    "",
+    "Simule em: https://www.taxadeimportacao.com/",
+  ].join("\n");
+}
+
 export default function Home() {
   const [results, setResults] = useState<TaxResults | null>(null);
   const [copied, setCopied] = useState(false);
@@ -161,16 +185,14 @@ export default function Home() {
   async function handleCopyResult() {
     if (!results) return;
 
-    const text = [
-      "Resultado estimado da importação no Brasil",
-      "",
-      `Moeda: ${watch("currency")}`,
-      `Estado: ${watch("state")}`,
-      `Subtotal: ${formatBRL(results.subtotalBrl)}`,
-      `Imposto de Importação: ${formatBRL(results.ii)}`,
-      `ICMS: ${formatBRL(results.icms)}`,
-      `Total estimado: ${formatBRL(results.total)}`,
-    ].join("\n");
+    const text = buildShareSummary(results, {
+      productValue: watch("productValue"),
+      currency: watch("currency"),
+      shippingCost: watch("shippingCost"),
+      exchangeRate: watch("exchangeRate"),
+      state: watch("state"),
+      isRemessaConforme: watch("isRemessaConforme"),
+    });
 
     try {
       await navigator.clipboard.writeText(text);
@@ -184,19 +206,21 @@ export default function Home() {
   async function handleShareResult() {
     if (!results) return;
 
-    const text = [
-      "Resultado estimado da importação no Brasil",
-      `Subtotal: ${formatBRL(results.subtotalBrl)}`,
-      `Total estimado: ${formatBRL(results.total)}`,
-      `Imposto: ${formatBRL(results.ii)}`,
-      `ICMS: ${formatBRL(results.icms)}`,
-    ].join(" | ");
+    const text = buildShareSummary(results, {
+      productValue: watch("productValue"),
+      currency: watch("currency"),
+      shippingCost: watch("shippingCost"),
+      exchangeRate: watch("exchangeRate"),
+      state: watch("state"),
+      isRemessaConforme: watch("isRemessaConforme"),
+    });
 
     if (navigator.share) {
       try {
         await navigator.share({
-          title: "Calculadora de Importação",
+          title: "Estimativa de importação no Brasil",
           text,
+          url: "https://www.taxadeimportacao.com/",
         });
       } catch {}
     } else {
@@ -440,7 +464,7 @@ export default function Home() {
                             <Info className="w-4 h-4 text-muted-foreground hover:text-primary transition-colors" />
                           </TooltipTrigger>
                           <TooltipContent className="max-w-xs">
-                        <p>
+                            <p>
                               Lojas certificadas que mostram os tributos no
                               checkout.
                             </p>
@@ -685,6 +709,63 @@ export default function Home() {
                                 </span>
                               </div>
                             )}
+                          </div>
+                        </div>
+
+                        <div className="p-5 sm:p-6 bg-slate-50/40">
+                          <div className="rounded-2xl border border-border bg-background p-5 shadow-sm">
+                            <div className="mb-4 flex items-start justify-between gap-4">
+                              <div>
+                                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                                  Resumo para compartilhar
+                                </p>
+                                <h3 className="mt-1 text-lg font-bold text-foreground">
+                                  Estimativa de importação
+                                </h3>
+                              </div>
+                              <div className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                                2026
+                              </div>
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-3 text-sm">
+                              <div className="rounded-xl bg-muted/50 p-3">
+                                <p className="text-xs text-muted-foreground">
+                                  Subtotal
+                                </p>
+                                <p className="font-semibold text-foreground">
+                                  {formatBRL(results.subtotalBrl)}
+                                </p>
+                              </div>
+                              <div className="rounded-xl bg-muted/50 p-3">
+                                <p className="text-xs text-muted-foreground">
+                                  Tributos
+                                </p>
+                                <p className="font-semibold text-foreground">
+                                  {formatBRL(
+                                    results.ii +
+                                      results.icms +
+                                      results.cofins +
+                                      results.fee,
+                                  )}
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="mt-4 rounded-xl border border-primary/10 bg-primary/5 p-4">
+                              <p className="text-xs text-muted-foreground">
+                                Custo final estimado
+                              </p>
+                              <p className="text-3xl font-extrabold text-primary">
+                                {formatBRL(results.total)}
+                              </p>
+                            </div>
+
+                            <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+                              Ao copiar ou compartilhar, o resumo inclui produto
+                              e frete, estado, Remessa Conforme, tributos e link
+                              para a calculadora.
+                            </p>
                           </div>
                         </div>
                       </div>
