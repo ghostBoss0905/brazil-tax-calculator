@@ -66,8 +66,8 @@ export default function RelatedGuides({
   return (
     <section className="mt-12">
       <div className="mb-5">
-        <h2 className="text-2xl font-semibold mb-2">{title}</h2>
-        <p className="text-gray-600">{intro}</p>
+        <h2 className="text-2xl font-semibold mb-2 text-[#071933]">{title}</h2>
+        <p className="text-slate-600">{intro}</p>
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2">
@@ -75,10 +75,17 @@ export default function RelatedGuides({
           <a
             key={guide.href}
             href={guide.href}
-            className="block rounded-lg border border-gray-200 p-4 hover:border-gray-400 transition-colors"
+            className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-colors hover:border-[#008272]"
           >
-            <span className="font-semibold text-gray-950">{guide.title}</span>
-            <span className="block text-sm text-gray-600 mt-1">
+            <span className="absolute right-0 top-0 h-16 w-16 opacity-60">
+              <span className="absolute right-0 top-0 h-8 w-8 bg-[#ffca28]/30 [clip-path:polygon(0_0,100%_0,100%_100%)]" />
+              <span className="absolute right-8 top-8 h-8 w-8 bg-[#0b7f55]/20 [clip-path:polygon(0_0,100%_100%,0_100%)]" />
+              <span className="absolute right-0 top-8 h-8 w-8 bg-[#06264b]/10 [clip-path:polygon(100%_0,100%_100%,0_100%)]" />
+            </span>
+            <span className="relative block font-semibold text-[#071933] group-hover:text-[#008272]">
+              {guide.title}
+            </span>
+            <span className="relative mt-1 block text-sm text-slate-600">
               {guide.description}
             </span>
           </a>

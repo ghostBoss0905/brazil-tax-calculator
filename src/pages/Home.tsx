@@ -15,6 +15,10 @@ import {
   ShieldCheck,
   Copy,
   Share2,
+  ShoppingCart,
+  BadgeCheck,
+  Zap,
+  HelpCircle,
 } from "lucide-react";
 
 import {
@@ -144,6 +148,43 @@ function buildShareSummary(results: TaxResults, data: CalculatorFormValues) {
   ].join("\n");
 }
 
+function GeometricBrazilStrip() {
+  const tiles = [
+    "bg-[#ffca28]",
+    "bg-[#f5b700]",
+    "bg-[#0b7f55]",
+    "bg-[#0f5f4d]",
+    "bg-[#06264b]",
+    "bg-[#f8e7a8]",
+    "bg-[#ffd449]",
+    "bg-[#168f5b]",
+    "bg-[#073763]",
+    "bg-[#f6c516]",
+    "bg-[#0a7a61]",
+    "bg-[#fff4cc]",
+  ];
+
+  return (
+    <div className="absolute left-0 top-0 hidden h-full w-20 overflow-hidden rounded-l-[28px] lg:block">
+      <div className="grid h-full grid-cols-2">
+        {tiles.map((color, index) => {
+          const clipPath =
+            index % 3 === 0
+              ? "polygon(0 0, 100% 0, 0 100%)"
+              : index % 3 === 1
+                ? "polygon(100% 0, 100% 100%, 0 100%)"
+                : undefined;
+
+          return (
+            <div key={index} className={color} style={{ clipPath }} />
+          );
+        })}
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/10" />
+    </div>
+  );
+}
+
 export default function Home() {
   const [results, setResults] = useState<TaxResults | null>(null);
   const [copied, setCopied] = useState(false);
@@ -236,100 +277,133 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-background font-sans pb-20 selection:bg-primary/20">
-      <div
-        className="absolute top-0 left-0 w-full h-[220px] sm:h-[260px] bg-primary/5 pointer-events-none -z-10"
-        style={{
-          backgroundImage: `url(${import.meta.env.BASE_URL}images/hero-pattern.png)`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.22,
-        }}
-      />
-      <div className="absolute top-0 left-0 w-full h-[220px] sm:h-[260px] bg-gradient-to-b from-transparent to-background pointer-events-none -z-10" />
-
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 lg:pt-12">
-        <header className="mb-6 sm:mb-8 text-center flex flex-col items-center gap-3 sm:gap-4">
-          <div className="bg-primary/10 p-3 rounded-2xl ring-1 ring-primary/20">
-            <img
-              src={`${import.meta.env.BASE_URL}images/logo-icon.png`}
-              alt="Logo"
-              className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
-            />
+    <div className="min-h-screen bg-[#f7f9fb] font-sans pb-20 selection:bg-[#f5c400]/30">
+      <main className="mx-auto max-w-7xl px-4 pb-10 pt-6 sm:px-6 lg:px-8 lg:pt-10">
+        <section className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-2xl shadow-slate-200/70">
+          <GeometricBrazilStrip />
+          <div className="pointer-events-none absolute right-0 top-24 hidden h-80 w-80 opacity-60 lg:block">
+            <div className="grid h-full grid-cols-4">
+              {Array.from({ length: 16 }).map((_, index) => (
+                <div
+                  key={index}
+                  className={
+                    index % 4 === 0
+                      ? "bg-[#ffca28]/20"
+                      : index % 4 === 1
+                        ? "bg-[#0b7f55]/10"
+                        : index % 4 === 2
+                          ? "bg-[#06264b]/10"
+                          : "bg-transparent"
+                  }
+                  style={{
+                    clipPath:
+                      index % 2 === 0
+                        ? "polygon(0 0, 100% 0, 0 100%)"
+                        : "polygon(100% 0, 100% 100%, 0 100%)",
+                  }}
+                />
+              ))}
+            </div>
           </div>
 
-          <div className="max-w-3xl">
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-foreground tracking-tight leading-tight">
-              Calculadora de{" "}
-              <span className="text-primary">Imposto de Importação no Brasil</span>
-            </h1>
-            <p className="mt-3 text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Calcule rapidamente o custo final da sua compra internacional,
-              incluindo imposto de importação e ICMS.
-            </p>
-            <div className="mt-4 flex flex-wrap justify-center gap-2 text-xs sm:text-sm text-muted-foreground">
+          <div className="relative px-4 py-5 sm:px-8 sm:py-8 lg:pl-28 lg:pr-8">
+            <header className="mb-8 flex flex-col gap-8 lg:mb-12">
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#06264b] text-white shadow-lg shadow-[#06264b]/20">
+                    <Calculator className="h-5 w-5" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-sm font-semibold text-[#06264b]">
+                      Taxa de Importação
+                    </p>
+                    <p className="text-xs text-slate-500">
+                      Brasil 2026
+                    </p>
+                  </div>
+                </div>
+                <a
+                  href="/calcular-taxas-importacao"
+                  className="hidden items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-[#06264b] shadow-sm transition-colors hover:border-[#008272] sm:flex"
+                >
+                  Ajuda
+                  <HelpCircle className="h-4 w-4" />
+                </a>
+              </div>
+
+              <div className="mx-auto max-w-3xl text-center">
+                <div className="mb-5 flex flex-wrap justify-center gap-2 text-xs sm:text-sm text-slate-600">
               <a
                 href="/tabela-imposto-importacao-brasil"
-                className="rounded-full border border-border bg-background px-3 py-1 transition-colors hover:border-primary hover:text-primary"
+                    className="rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm transition-colors hover:border-[#008272] hover:text-[#008272]"
               >
                 Regras 2026 atualizadas
               </a>
               <a
                 href="/o-que-e-remessa-conforme"
-                className="rounded-full border border-border bg-background px-3 py-1 transition-colors hover:border-primary hover:text-primary"
+                    className="rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm transition-colors hover:border-[#008272] hover:text-[#008272]"
               >
                 Remessa Conforme
               </a>
               <a
                 href="/icms-importacao-brasil"
-                className="rounded-full border border-border bg-background px-3 py-1 transition-colors hover:border-primary hover:text-primary"
+                    className="rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm transition-colors hover:border-[#008272] hover:text-[#008272]"
               >
                 ICMS por estado
               </a>
             </div>
-          </div>
-        </header>
 
-        <section className="mb-6 grid grid-cols-1 gap-3 text-sm text-muted-foreground sm:grid-cols-3">
-          <a
-            href="#tax-form"
-            className="rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary hover:text-muted-foreground"
-          >
-            <p className="font-semibold text-foreground">Antes de comprar</p>
-            <p className="mt-1">
-              Simule o custo final antes de pagar em AliExpress, Shein, Shopee
-              ou outra loja internacional.
-            </p>
-          </a>
-          <a
-            href="/tabela-imposto-importacao-brasil"
-            className="rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary hover:text-muted-foreground"
-          >
-            <p className="font-semibold text-foreground">Regra oficial</p>
-            <p className="mt-1">
-              Considera produto, frete, câmbio, Remessa Conforme e ICMS do
-              estado de destino.
-            </p>
-          </a>
-          <a
-            href="/calcular-taxas-importacao"
-            className="rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary hover:text-muted-foreground"
-          >
-            <p className="font-semibold text-foreground">Decisão rápida</p>
-            <p className="mt-1">
-              Compare o total estimado com uma opção vendida no Brasil antes
-              de finalizar a compra.
-            </p>
-          </a>
-        </section>
+                <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-[#071933] sm:text-5xl lg:text-6xl">
+                  Calcule o custo final da importação
+                </h1>
+                <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+                  Estime Imposto de Importação, ICMS, frete e Remessa Conforme
+                  antes de comprar.
+                </p>
+              </div>
+            </header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8">
-          <div className="lg:col-span-5">
-            <Card className="border-primary/10 shadow-lg shadow-primary/5 rounded-2xl">
-              <CardHeader className="bg-slate-50/50 dark:bg-slate-900/50 border-b border-border/50 rounded-t-2xl pb-4">
-                <CardTitle className="flex items-center gap-2 text-xl">
-                  <Calculator className="w-5 h-5" />
-                  Dados da Compra
+            <section className="mb-8 grid grid-cols-1 gap-3 text-sm text-slate-600 sm:grid-cols-3">
+              <a
+                href="#tax-form"
+                className="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
+              >
+                <ShoppingCart className="mb-3 h-7 w-7 text-[#008272]" />
+                <p className="font-semibold text-[#071933]">Antes de comprar</p>
+                <p className="mt-1">
+                  Simule o custo final antes de pagar em AliExpress, Shein,
+                  Shopee e outras lojas.
+                </p>
+              </a>
+              <a
+                href="/tabela-imposto-importacao-brasil"
+                className="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
+              >
+                <BadgeCheck className="mb-3 h-7 w-7 text-[#008272]" />
+                <p className="font-semibold text-[#071933]">Regra oficial</p>
+                <p className="mt-1">
+                  Considera produto, frete, câmbio, Remessa Conforme e ICMS.
+                </p>
+              </a>
+              <a
+                href="/calcular-taxas-importacao"
+                className="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
+              >
+                <Zap className="mb-3 h-7 w-7 text-[#008272]" />
+                <p className="font-semibold text-[#071933]">Decisão rápida</p>
+                <p className="mt-1">
+                  Compare o total estimado com uma opção vendida no Brasil.
+                </p>
+              </a>
+            </section>
+
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-7">
+            <Card className="rounded-[24px] border-slate-200 bg-white shadow-xl shadow-slate-200/70">
+              <CardHeader className="border-b border-slate-100 bg-white pb-4">
+                <CardTitle className="flex items-center gap-2 text-xl text-[#071933]">
+                  <Calculator className="w-5 h-5 text-[#008272]" />
+                  Dados da importação
                 </CardTitle>
                 <CardDescription>
                   Informe produto, frete, câmbio, estado e tipo de compra.
@@ -501,7 +575,7 @@ export default function Home() {
             </Card>
           </div>
 
-          <div className="lg:col-span-7" id="results-panel">
+          <div className="lg:col-span-5" id="results-panel">
             <AnimatePresence mode="wait">
               {!results ? (
                 <motion.div
@@ -541,8 +615,8 @@ export default function Home() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ type: "spring", duration: 0.4, bounce: 0.2 }}
                 >
-                  <Card className="border-primary/20 shadow-xl shadow-primary/5 overflow-hidden rounded-2xl">
-                    <div className="bg-primary px-4 py-6 sm:px-6 sm:py-8 text-primary-foreground text-center relative overflow-hidden">
+                  <Card className="overflow-hidden rounded-[24px] border-0 bg-[#06264b] text-white shadow-2xl shadow-[#06264b]/25">
+                    <div className="relative overflow-hidden px-4 py-6 text-center text-white sm:px-6 sm:py-8">
                       <div
                         className="absolute top-0 left-0 w-full h-full opacity-10"
                         style={{
@@ -552,15 +626,15 @@ export default function Home() {
                         }}
                       ></div>
 
-                      <h2 className="text-primary-foreground/80 font-medium text-xs sm:text-sm uppercase tracking-wider mb-2 relative z-10">
-                        Custo Final Estimado
+                      <h2 className="relative z-10 mb-2 text-xs font-semibold uppercase tracking-wider text-white/70 sm:text-sm">
+                        Resumo estimado
                       </h2>
 
-                      <div className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight relative z-10 leading-none">
+                      <div className="relative z-10 text-5xl font-extrabold leading-none tracking-tight text-[#ffca28] sm:text-6xl">
                         {formatBRL(results.total)}
                       </div>
 
-                      <div className="mt-4 inline-flex items-center gap-1.5 bg-white/10 px-3 py-1 rounded-full text-sm font-medium relative z-10 backdrop-blur-sm">
+                      <div className="relative z-10 mt-4 inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-sm font-medium backdrop-blur-sm">
                         <Scale className="w-4 h-4" />
                         Carga tributária efetiva:{" "}
                         {results.effectiveRate.toFixed(1)}%
@@ -570,7 +644,7 @@ export default function Home() {
                         <Button
                           type="button"
                           variant="secondary"
-                          className="w-full h-14 bg-white text-primary hover:bg-white/90 text-lg"
+                          className="h-14 w-full bg-white text-[#06264b] hover:bg-white/90 text-lg"
                           onClick={handleCopyResult}
                         >
                           <Copy className="w-5 h-5 mr-2" />
@@ -580,7 +654,7 @@ export default function Home() {
                         <Button
                           type="button"
                           variant="secondary"
-                          className="w-full h-14 bg-white/10 text-white border border-white/20 hover:bg-white/20 text-lg"
+                          className="h-14 w-full border border-white/20 bg-white/10 text-white hover:bg-white/20 text-lg"
                           onClick={handleShareResult}
                         >
                           <Share2 className="w-5 h-5 mr-2" />
@@ -589,35 +663,35 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <CardContent className="p-0">
-                      <div className="divide-y divide-border">
-                        <div className="p-5 sm:p-6 bg-slate-50/30 dark:bg-slate-900/30">
-                          <h4 className="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-4 flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-slate-400"></div>
+                    <CardContent className="p-0 text-white">
+                      <div className="divide-y divide-white/10">
+                        <div className="bg-white/[0.03] p-5 sm:p-6">
+                          <h4 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/60">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#ffca28]"></div>
                             Valores Base
                           </h4>
 
                           <div className="space-y-3">
                             <div className="flex justify-between items-center text-sm sm:text-base gap-4">
-                              <span className="text-foreground font-medium">
+                              <span className="font-medium text-white/80">
                                 Produto ({watch("currency")})
                               </span>
-                              <span className="text-muted-foreground text-right">
+                              <span className="text-right text-white">
                                 {formatBRL(results.productBrl)}
                               </span>
                             </div>
 
                             <div className="flex justify-between items-center text-sm sm:text-base gap-4">
-                              <span className="text-foreground font-medium">
+                              <span className="font-medium text-white/80">
                                 Frete ({watch("currency")})
                               </span>
-                              <span className="text-muted-foreground text-right">
+                              <span className="text-right text-white">
                                 {formatBRL(results.shippingBrl)}
                               </span>
                             </div>
 
-                            <div className="flex justify-between items-center pt-3 border-t border-border border-dashed font-semibold text-lg gap-4">
-                              <span className="text-foreground">
+                            <div className="flex justify-between items-center pt-3 border-t border-white/10 border-dashed font-semibold text-lg gap-4">
+                              <span className="text-white">
                                 Subtotal Base
                               </span>
                               <span className="text-right">
@@ -628,17 +702,17 @@ export default function Home() {
                         </div>
 
                         <div className="p-5 sm:p-6">
-                          <h4 className="text-sm font-bold text-primary uppercase tracking-wider mb-4 flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                          <h4 className="text-sm font-bold text-[#ffca28] uppercase tracking-wider mb-4 flex items-center gap-2">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#ffca28]"></div>
                             Impostos & Taxas
                           </h4>
 
-                          <div className="mb-5 p-4 rounded-xl bg-primary/5 border border-primary/10">
+                          <div className="mb-5 p-4 rounded-xl bg-white/10 border border-white/10">
                             <div className="flex justify-between items-center gap-4">
-                              <span className="text-sm sm:text-base font-semibold text-foreground">
+                              <span className="text-sm sm:text-base font-semibold text-white">
                                 Total de Tributos
                               </span>
-                              <span className="text-2xl sm:text-3xl font-extrabold text-destructive text-right">
+                              <span className="text-2xl sm:text-3xl font-extrabold text-[#ffca28] text-right">
                                 {formatBRL(
                                   results.ii +
                                     results.icms +
@@ -652,11 +726,11 @@ export default function Home() {
                           <div className="space-y-4">
                             <div className="flex justify-between items-start gap-4">
                               <div>
-                                <span className="text-sm sm:text-base font-semibold text-foreground flex items-center gap-1.5">
+                                <span className="text-sm sm:text-base font-semibold text-white/80 flex items-center gap-1.5">
                                   Imposto de Importação (II)
                                   <Tooltip>
                                     <TooltipTrigger>
-                                      <Info className="w-3.5 h-3.5 text-muted-foreground" />
+                                      <Info className="w-3.5 h-3.5 text-white/50" />
                                     </TooltipTrigger>
                                     <TooltipContent>
                                       Imposto federal de importação.
@@ -664,18 +738,18 @@ export default function Home() {
                                   </Tooltip>
                                 </span>
                               </div>
-                              <span className="font-medium text-destructive text-right whitespace-nowrap">
+                              <span className="font-medium text-[#ffca28] text-right whitespace-nowrap">
                                 {formatBRL(results.ii)}
                               </span>
                             </div>
 
                             <div className="flex justify-between items-start gap-4">
                               <div>
-                                <span className="text-sm sm:text-base font-semibold text-foreground flex items-center gap-1.5">
+                                <span className="text-sm sm:text-base font-semibold text-white/80 flex items-center gap-1.5">
                                   ICMS ({watch("state")})
                                   <Tooltip>
                                     <TooltipTrigger>
-                                      <Info className="w-3.5 h-3.5 text-muted-foreground" />
+                                      <Info className="w-3.5 h-3.5 text-white/50" />
                                     </TooltipTrigger>
                                     <TooltipContent>
                                       ICMS estadual estimado.
@@ -683,17 +757,17 @@ export default function Home() {
                                   </Tooltip>
                                 </span>
                               </div>
-                              <span className="font-medium text-destructive text-right whitespace-nowrap">
+                              <span className="font-medium text-[#ffca28] text-right whitespace-nowrap">
                                 {formatBRL(results.icms)}
                               </span>
                             </div>
 
                             {results.cofins > 0 && (
                               <div className="flex justify-between items-start gap-4">
-                                <span className="text-sm sm:text-base font-semibold text-foreground">
+                                <span className="text-sm sm:text-base font-semibold text-white/80">
                                   PIS/COFINS
                                 </span>
-                                <span className="font-medium text-destructive text-right whitespace-nowrap">
+                                <span className="font-medium text-[#ffca28] text-right whitespace-nowrap">
                                   {formatBRL(results.cofins)}
                                 </span>
                               </div>
@@ -701,10 +775,10 @@ export default function Home() {
 
                             {results.fee > 0 && (
                               <div className="flex justify-between items-start gap-4">
-                                <span className="text-sm sm:text-base font-semibold text-foreground">
+                                <span className="text-sm sm:text-base font-semibold text-white/80">
                                   Despacho Postal
                                 </span>
-                                <span className="font-medium text-destructive text-right whitespace-nowrap">
+                                <span className="font-medium text-[#ffca28] text-right whitespace-nowrap">
                                   {formatBRL(results.fee)}
                                 </span>
                               </div>
@@ -712,8 +786,8 @@ export default function Home() {
                           </div>
                         </div>
 
-                        <div className="p-5 sm:p-6 bg-slate-50/40">
-                          <div className="mx-auto max-w-sm rounded-3xl border border-border bg-background p-6 shadow-sm">
+                        <div className="bg-white/[0.03] p-5 sm:p-6">
+                          <div className="mx-auto max-w-sm rounded-3xl border border-white/10 bg-white p-6 text-[#071933] shadow-sm">
                             <div className="mb-8 flex items-start justify-between gap-4">
                               <div>
                                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -796,6 +870,8 @@ export default function Home() {
             </AnimatePresence>
           </div>
         </div>
+          </div>
+        </section>
 
         <section className="mt-14 sm:mt-16 mb-12 max-w-3xl mx-auto">
           <div className="text-center mb-7">

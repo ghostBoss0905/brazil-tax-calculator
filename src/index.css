@@ -231,3 +231,106 @@
     background-color: var(--elevate-2);
   }
 }
+
+@layer components {
+  body {
+    background:
+      radial-gradient(circle at top right, rgba(255, 202, 40, 0.14), transparent 30rem),
+      linear-gradient(180deg, #f7f9fb 0%, #ffffff 58%, #f7f9fb 100%);
+  }
+
+  main.max-w-4xl {
+    position: relative;
+    overflow: hidden;
+    max-width: 960px !important;
+    margin-top: 2.5rem !important;
+    margin-bottom: 3rem !important;
+    border: 1px solid rgb(226 232 240);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 28px 70px rgba(15, 35, 65, 0.10);
+  }
+
+  main.max-w-4xl::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 100%;
+    background:
+      linear-gradient(135deg, #ffca28 0 25%, transparent 25% 50%, #0b7f55 50% 75%, #06264b 75%),
+      linear-gradient(45deg, #0b7f55, #ffca28);
+    background-size: 36px 36px;
+  }
+
+  main.max-w-4xl::after {
+    content: "";
+    position: absolute;
+    right: -5rem;
+    top: 8rem;
+    width: 18rem;
+    height: 18rem;
+    opacity: 0.45;
+    pointer-events: none;
+    background:
+      linear-gradient(135deg, rgba(255, 202, 40, 0.28) 0 50%, transparent 50%),
+      linear-gradient(45deg, transparent 0 50%, rgba(11, 127, 85, 0.16) 50%),
+      linear-gradient(135deg, rgba(6, 38, 75, 0.10) 0 50%, transparent 50%);
+    background-size: 96px 96px;
+  }
+
+  main.max-w-4xl > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  main.max-w-4xl h1 {
+    max-width: 760px;
+    color: #071933;
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+  }
+
+  main.max-w-4xl h2 {
+    color: #071933;
+    margin-top: 2.75rem;
+  }
+
+  main.max-w-4xl p,
+  main.max-w-4xl li {
+    color: #53627a;
+  }
+
+  main.max-w-4xl a {
+    color: #007f73;
+    text-decoration-color: rgba(0, 127, 115, 0.35);
+    text-underline-offset: 3px;
+  }
+
+  main.max-w-4xl a:hover {
+    color: #06264b;
+  }
+
+  main.max-w-4xl table {
+    overflow: hidden;
+    border-radius: 18px;
+    background: white;
+    box-shadow: inset 0 0 0 1px rgb(226 232 240);
+  }
+
+  main.max-w-4xl th {
+    color: #071933;
+    background: #f8fafc;
+  }
+
+  main.max-w-4xl td {
+    color: #53627a;
+  }
+
+  main.max-w-4xl .bg-gray-100 {
+    border: 1px solid rgba(0, 127, 115, 0.18);
+    background: linear-gradient(135deg, rgba(0, 127, 115, 0.08), rgba(255, 202, 40, 0.12)) !important;
+  }
+}

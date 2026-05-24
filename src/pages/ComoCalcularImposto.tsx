@@ -28,14 +28,7 @@ export default function ComoCalcularImposto() {
         ]}
       />
 
-      <div
-        style={{
-          maxWidth: "900px",
-          margin: "0 auto",
-          padding: "40px",
-          lineHeight: "1.8",
-        }}
-      >
+      <main className="max-w-4xl mx-auto px-6 py-12">
         <h1>Como Calcular Imposto de Importação no Brasil em 2026</h1>
 
         <DirectAnswer>
@@ -212,7 +205,7 @@ export default function ComoCalcularImposto() {
           Internacionais e orientações sobre remessas internacionais.
         </p>
         <RelatedGuides currentPath="/como-calcular-imposto-importacao-brasil" />
-      </div>
+      </main>
     </>
   );
 }
