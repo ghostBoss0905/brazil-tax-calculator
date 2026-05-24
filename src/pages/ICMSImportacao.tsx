@@ -1,6 +1,7 @@
 import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
 import DirectAnswer from "@/components/DirectAnswer";
+import { icmsStatePages } from "@/pages/ICMSPorEstado";
 
 export default function ICMSImportacao() {
   return (
@@ -164,19 +165,13 @@ export default function ICMSImportacao() {
       </p>
 
       <div className="grid gap-3 sm:grid-cols-2 mb-8">
-        {[
-          ["São Paulo", "/icms-importacao-sao-paulo"],
-          ["Minas Gerais", "/icms-importacao-minas-gerais"],
-          ["Paraná", "/icms-importacao-parana"],
-          ["Rio de Janeiro", "/icms-importacao-rio-de-janeiro"],
-          ["Santa Catarina", "/icms-importacao-santa-catarina"],
-        ].map(([label, href]) => (
+        {icmsStatePages.map(({ path, state }) => (
           <a
-            key={href}
-            href={href}
+            key={path}
+            href={path}
             className="rounded-xl border border-slate-200 bg-white px-4 py-3 font-medium text-slate-900 shadow-sm hover:border-[#008272] hover:text-[#008272]"
           >
-            ICMS importação {label}
+            ICMS importação {state.name}
           </a>
         ))}
       </div>

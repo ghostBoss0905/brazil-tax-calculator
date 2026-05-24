@@ -346,6 +346,98 @@ const pages = [
   },
 ];
 
+const states = [
+  { slug: "acre", name: "Acre", code: "AC", rate: "17%" },
+  { slug: "alagoas", name: "Alagoas", code: "AL", rate: "20%" },
+  { slug: "amazonas", name: "Amazonas", code: "AM", rate: "20%" },
+  { slug: "amapa", name: "Amapá", code: "AP", rate: "18%" },
+  { slug: "bahia", name: "Bahia", code: "BA", rate: "20,5%" },
+  { slug: "ceara", name: "Ceará", code: "CE", rate: "20%" },
+  { slug: "distrito-federal", name: "Distrito Federal", code: "DF", rate: "20%" },
+  { slug: "espirito-santo", name: "Espírito Santo", code: "ES", rate: "17%" },
+  { slug: "goias", name: "Goiás", code: "GO", rate: "19%" },
+  { slug: "maranhao", name: "Maranhão", code: "MA", rate: "22%" },
+  { slug: "minas-gerais", name: "Minas Gerais", code: "MG", rate: "20%" },
+  { slug: "mato-grosso-do-sul", name: "Mato Grosso do Sul", code: "MS", rate: "17%" },
+  { slug: "mato-grosso", name: "Mato Grosso", code: "MT", rate: "17%" },
+  { slug: "para", name: "Pará", code: "PA", rate: "19%" },
+  { slug: "paraiba", name: "Paraíba", code: "PB", rate: "20%" },
+  { slug: "pernambuco", name: "Pernambuco", code: "PE", rate: "20,5%" },
+  { slug: "piaui", name: "Piauí", code: "PI", rate: "21%" },
+  { slug: "parana", name: "Paraná", code: "PR", rate: "19,5%" },
+  { slug: "rio-de-janeiro", name: "Rio de Janeiro", code: "RJ", rate: "22%" },
+  { slug: "rio-grande-do-norte", name: "Rio Grande do Norte", code: "RN", rate: "20%" },
+  { slug: "rondonia", name: "Rondônia", code: "RO", rate: "17,5%" },
+  { slug: "roraima", name: "Roraima", code: "RR", rate: "20%" },
+  { slug: "rio-grande-do-sul", name: "Rio Grande do Sul", code: "RS", rate: "17%" },
+  { slug: "santa-catarina", name: "Santa Catarina", code: "SC", rate: "17%" },
+  { slug: "sao-paulo", name: "São Paulo", code: "SP", rate: "18%" },
+  { slug: "sergipe", name: "Sergipe", code: "SE", rate: "19%" },
+  { slug: "tocantins", name: "Tocantins", code: "TO", rate: "20%" },
+];
+
+const platforms = [
+  { slug: "aliexpress", name: "AliExpress" },
+  { slug: "shein", name: "Shein" },
+  { slug: "shopee", name: "Shopee" },
+  { slug: "temu", name: "Temu" },
+  { slug: "amazon-internacional", name: "Amazon Internacional" },
+];
+
+const generatedStatePages = states.map((state) => ({
+  path: `/icms-importacao-${state.slug}`,
+  title: `ICMS Importação ${state.name} 2026: Como Calcular`,
+  description: `Entenda como estimar ICMS de importação para ${state.name} em 2026, com imposto de importação, frete, câmbio e Remessa Conforme.`,
+  faqs: [
+    {
+      question: `Qual ICMS a calculadora usa para ${state.name}?`,
+      answer: `Para ${state.name}, a calculadora usa ${state.rate} como alíquota estimada de ICMS no estado de destino.`,
+    },
+    {
+      question: `Compra abaixo de US$50 para ${state.code} paga ICMS?`,
+      answer:
+        "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS estadual pode continuar aparecendo no custo final.",
+    },
+    {
+      question: "O valor final é oficial?",
+      answer:
+        "Não. A página e a calculadora oferecem uma estimativa para decisão de compra. O valor oficial depende do checkout, da declaração da remessa e das autoridades competentes.",
+    },
+  ],
+}));
+
+const generatedPlatformStatePages = platforms.flatMap((platform) =>
+  states.map((state) => ({
+    path: `/imposto-${platform.slug}-${state.slug}`,
+    title: `Imposto ${platform.name} ${state.name} 2026: Como Calcular`,
+    description: `Calcule imposto de compras da ${platform.name} para ${state.name} em 2026, com ICMS de ${state.rate}, frete, câmbio e Remessa Conforme.`,
+    faqs: [
+      {
+        question: `Como calcular imposto da ${platform.name} para ${state.name}?`,
+        answer: `Some produto, frete e seguro, converta para reais, aplique a regra de Imposto de Importação e use ${state.rate} como ICMS estimado para ${state.name}.`,
+      },
+      {
+        question: `Compra da ${platform.name} para ${state.code} abaixo de US$50 paga ICMS?`,
+        answer:
+          "Pode pagar. Mesmo em plataforma certificada no Remessa Conforme, o ICMS estadual pode continuar aparecendo no checkout.",
+      },
+      {
+        question: `O imposto da ${platform.name} aparece no checkout?`,
+        answer:
+          "Em compras dentro do Remessa Conforme, os tributos podem aparecer antes do pagamento. Em outros fluxos, a cobrança pode ocorrer na chegada ao Brasil.",
+      },
+    ],
+  })),
+);
+
+const allPages = Array.from(
+  new Map(
+    [...pages, ...generatedStatePages, ...generatedPlatformStatePages].map(
+      (page) => [page.path, page],
+    ),
+  ).values(),
+);
+
 const siteOrigin = "https://www.taxadeimportacao.com";
 const baseHtml = await readFile(baseHtmlPath, "utf8");
 
@@ -493,10 +585,41 @@ function updateHead(html, page) {
     .replace("</head>", `    ${buildSchemaTag(page)}\n  </head>`);
 }
 
-for (const page of pages) {
+function buildSitemap() {
+  const urls = [
+    {
+      path: "/",
+    },
+    ...allPages,
+  ];
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls
+  .map(
+    (page) => `
+  <url>
+    <loc>${siteOrigin}${page.path}</loc>
+    <lastmod>2026-05-24</lastmod>
+  </url>`,
+  )
+  .join("\n")}
+
+</urlset>
+`;
+}
+
+await writeFile(join(distPath, "sitemap.xml"), buildSitemap());
+console.log("Generated /sitemap.xml");
+
+for (const page of allPages) {
   const html = updateHead(baseHtml, page);
   const outputPath = join(distPath, page.path, "index.html");
+  const cleanOutputPath = join(distPath, `${page.path}.html`);
   await mkdir(dirname(outputPath), { recursive: true });
+  await mkdir(dirname(cleanOutputPath), { recursive: true });
   await writeFile(outputPath, html);
+  await writeFile(cleanOutputPath, html);
   console.log(`Generated ${page.path}/index.html`);
 }

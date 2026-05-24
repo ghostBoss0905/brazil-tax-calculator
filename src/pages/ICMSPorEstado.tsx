@@ -6,51 +6,58 @@ import RelatedGuides from "@/components/RelatedGuides";
 import SeoHead from "@/components/SeoHead";
 
 const statePages = [
+  { slug: "acre", name: "Acre", code: "AC", rate: "17%" },
+  { slug: "alagoas", name: "Alagoas", code: "AL", rate: "20%" },
+  { slug: "amazonas", name: "Amazonas", code: "AM", rate: "20%" },
+  { slug: "amapa", name: "Amapá", code: "AP", rate: "18%" },
+  { slug: "bahia", name: "Bahia", code: "BA", rate: "20,5%" },
+  { slug: "ceara", name: "Ceará", code: "CE", rate: "20%" },
+  { slug: "distrito-federal", name: "Distrito Federal", code: "DF", rate: "20%" },
+  { slug: "espirito-santo", name: "Espírito Santo", code: "ES", rate: "17%" },
+  { slug: "goias", name: "Goiás", code: "GO", rate: "19%" },
+  { slug: "maranhao", name: "Maranhão", code: "MA", rate: "22%" },
   {
     slug: "sao-paulo",
     name: "São Paulo",
     code: "SP",
     rate: "18%",
-    buyerExample: "um comprador em São Paulo que importa roupas, eletrônicos ou acessórios",
-    localNote:
-      "São Paulo concentra muitas compras internacionais e comparações com marketplaces nacionais, então o ICMS pode mudar bastante a decisão de compra.",
   },
   {
     slug: "minas-gerais",
     name: "Minas Gerais",
     code: "MG",
     rate: "20%",
-    buyerExample: "um comprador em Minas Gerais que compara importados com lojas brasileiras",
-    localNote:
-      "Em Minas Gerais, a simulação por estado ajuda a evitar comparar apenas o preço em dólar com o preço nacional.",
   },
+  { slug: "mato-grosso-do-sul", name: "Mato Grosso do Sul", code: "MS", rate: "17%" },
+  { slug: "mato-grosso", name: "Mato Grosso", code: "MT", rate: "17%" },
+  { slug: "para", name: "Pará", code: "PA", rate: "19%" },
+  { slug: "paraiba", name: "Paraíba", code: "PB", rate: "20%" },
+  { slug: "pernambuco", name: "Pernambuco", code: "PE", rate: "20,5%" },
+  { slug: "piaui", name: "Piauí", code: "PI", rate: "21%" },
   {
     slug: "parana",
     name: "Paraná",
     code: "PR",
     rate: "19,5%",
-    buyerExample: "um comprador no Paraná que quer prever o custo antes do checkout",
-    localNote:
-      "No Paraná, pequenas diferenças de frete, câmbio e ICMS podem mudar se a importação ainda compensa.",
   },
   {
     slug: "rio-de-janeiro",
     name: "Rio de Janeiro",
     code: "RJ",
     rate: "22%",
-    buyerExample: "um comprador no Rio de Janeiro avaliando produto internacional e entrega local",
-    localNote:
-      "No Rio de Janeiro, o ICMS estimado usado pela calculadora pode ter peso relevante no custo final da importação.",
   },
+  { slug: "rio-grande-do-norte", name: "Rio Grande do Norte", code: "RN", rate: "20%" },
+  { slug: "rondonia", name: "Rondônia", code: "RO", rate: "17,5%" },
+  { slug: "roraima", name: "Roraima", code: "RR", rate: "20%" },
+  { slug: "rio-grande-do-sul", name: "Rio Grande do Sul", code: "RS", rate: "17%" },
   {
     slug: "santa-catarina",
     name: "Santa Catarina",
     code: "SC",
     rate: "17%",
-    buyerExample: "um comprador em Santa Catarina simulando compras em AliExpress, Shein, Shopee ou Temu",
-    localNote:
-      "Em Santa Catarina, a comparação com preço nacional ainda deve incluir prazo, garantia e possível cobrança no checkout.",
   },
+  { slug: "sergipe", name: "Sergipe", code: "SE", rate: "19%" },
+  { slug: "tocantins", name: "Tocantins", code: "TO", rate: "20%" },
 ];
 
 const defaultState = statePages[0];
@@ -108,15 +115,15 @@ export default function ICMSPorEstado() {
 
         <p className="text-lg mb-8">
           O ICMS é um dos motivos pelos quais duas compras internacionais com o
-          mesmo preço podem ter custos finais diferentes no Brasil. Para{" "}
-          {state.buyerExample}, o estado de destino precisa entrar na conta
-          antes de decidir se vale a pena importar.
+          mesmo preço podem ter custos finais diferentes no Brasil. Para um
+          comprador em {state.name}, o estado de destino precisa entrar na
+          conta antes de decidir se vale a pena importar.
         </p>
 
         <p className="mb-6">
-          {state.localNote} Esta página explica como pensar no cálculo para{" "}
-          {state.name}, mas a forma mais segura é simular o pedido completo com
-          produto, frete, câmbio e a regra do{" "}
+          Esta página explica como pensar no cálculo para {state.name}. A forma
+          mais segura é simular o pedido completo com produto, frete, câmbio e
+          a regra do{" "}
           <a
             href="/o-que-e-remessa-conforme"
             className="text-blue-600 underline"

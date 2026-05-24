@@ -20,6 +20,7 @@ import ImpostoAmazonInternacional from "@/pages/ImpostoAmazonInternacional";
 import ComprasAbaixo50Dolares from "@/pages/ComprasAbaixo50Dolares";
 import LojasRemessaConforme from "@/pages/LojasRemessaConforme";
 import ICMSPorEstado from "@/pages/ICMSPorEstado";
+import DynamicSeoPage from "@/pages/DynamicSeoPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -112,6 +113,8 @@ function Router() {
       <Route path="/icms-importacao-rio-de-janeiro" component={ICMSPorEstado} />
 
       <Route path="/icms-importacao-santa-catarina" component={ICMSPorEstado} />
+
+      <Route path="/:page" component={DynamicSeoPage} />
 
       {/* 404 */}
       <Route component={NotFound} />
