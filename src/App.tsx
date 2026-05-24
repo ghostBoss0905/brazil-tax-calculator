@@ -15,6 +15,10 @@ import ComoCalcularImposto from "@/pages/ComoCalcularImposto";
 import TabelaImpostoImportacao from "@/pages/TabelaImpostoImportacao";
 import TaxaCorreiosImportacao from "@/pages/TaxaCorreiosImportacao";
 import CalcularTaxasImportacao from "@/pages/CalcularTaxasImportacao";
+import ImpostoTemu from "@/pages/ImpostoTemu";
+import ImpostoAmazonInternacional from "@/pages/ImpostoAmazonInternacional";
+import ComprasAbaixo50Dolares from "@/pages/ComprasAbaixo50Dolares";
+import LojasRemessaConforme from "@/pages/LojasRemessaConforme";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -76,6 +80,26 @@ function Router() {
       <Route
         path="/calcular-taxas-importacao"
         component={CalcularTaxasImportacao}
+      />
+
+      <Route
+        path="/imposto-temu-brasil"
+        component={ImpostoTemu}
+      />
+
+      <Route
+        path="/imposto-amazon-internacional-brasil"
+        component={ImpostoAmazonInternacional}
+      />
+
+      <Route
+        path="/compras-internacionais-abaixo-50-dolares"
+        component={ComprasAbaixo50Dolares}
+      />
+
+      <Route
+        path="/lojas-remessa-conforme"
+        component={LojasRemessaConforme}
       />
 
       {/* 404 */}

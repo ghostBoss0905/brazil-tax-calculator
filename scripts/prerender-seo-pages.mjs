@@ -130,6 +130,105 @@ const pages = [
       "Compare o custo final com uma compra nacional.",
     ],
   },
+  {
+    path: "/imposto-temu-brasil",
+    title: "Imposto Temu Brasil 2026: Como Calcular Taxas",
+    description:
+      "Entenda como calcular imposto da Temu no Brasil em 2026, com Remessa Conforme, ICMS, frete, câmbio e comparação antes da compra.",
+    faqs: [
+      {
+        question: "A Temu participa do Remessa Conforme?",
+        answer:
+          "A Receita Federal lista empresas e plataformas certificadas no Programa Remessa Conforme. Antes de comprar, confirme no checkout se os tributos aparecem discriminados.",
+      },
+      {
+        question: "Compra da Temu abaixo de US$50 fica sem imposto?",
+        answer:
+          "Em plataformas certificadas, o Imposto de Importação federal pode ser 0% até US$50, mas o ICMS estadual pode continuar sendo cobrado.",
+      },
+      {
+        question: "Frete da Temu entra no cálculo?",
+        answer:
+          "Sim. Produto, frete e seguro, quando houver, podem compor o valor usado para estimar a importação.",
+      },
+    ],
+  },
+  {
+    path: "/imposto-amazon-internacional-brasil",
+    title: "Imposto Amazon Internacional Brasil 2026: Como Calcular",
+    description:
+      "Veja como estimar imposto em compras internacionais na Amazon em 2026, com Remessa Conforme, ICMS, frete e custo final.",
+    faqs: [
+      {
+        question: "Compra internacional na Amazon paga imposto?",
+        answer:
+          "Pode pagar, dependendo do valor, frete, enquadramento da compra, ICMS do estado e se os tributos aparecem no checkout.",
+      },
+      {
+        question: "Amazon e marketplace são a mesma coisa para imposto?",
+        answer:
+          "Não necessariamente. A Amazon pode vender diretamente ou intermediar vendedores. Verifique se a oferta é internacional e se os tributos estão incluídos.",
+      },
+      {
+        question: "Devo comparar com produto vendido no Brasil?",
+        answer:
+          "Sim. Compare o custo final importado com o preço nacional, prazo, garantia e possibilidade de troca.",
+      },
+    ],
+  },
+  {
+    path: "/compras-internacionais-abaixo-50-dolares",
+    title: "Compras Abaixo de US$50 Pagam Imposto? Regras 2026",
+    description:
+      "Entenda quando compras internacionais abaixo de US$50 pagam imposto no Brasil em 2026, com Remessa Conforme, ICMS e exemplos.",
+    faqs: [
+      {
+        question: "Compras abaixo de US$50 pagam imposto no Brasil?",
+        answer:
+          "Em plataformas certificadas no Remessa Conforme, o Imposto de Importação federal pode ser 0%, mas o ICMS estadual pode continuar sendo cobrado.",
+      },
+      {
+        question: "O limite de US$50 inclui frete?",
+        answer:
+          "Para estimar a compra com segurança, considere produto, frete e seguro quando houver, pois esses valores podem compor a operação de importação.",
+      },
+      {
+        question: "Fora do Remessa Conforme a regra muda?",
+        answer:
+          "Sim. Compras fora de plataformas certificadas podem seguir regra diferente e ter cobrança na chegada ao Brasil.",
+      },
+    ],
+  },
+  {
+    path: "/lojas-remessa-conforme",
+    title: "Lojas no Remessa Conforme 2026: Como Conferir",
+    description:
+      "Veja como conferir lojas e marketplaces no Programa Remessa Conforme em 2026 e por que isso muda o imposto de importação.",
+    faqs: [
+      {
+        question: "Como saber se uma loja está no Remessa Conforme?",
+        answer:
+          "Consulte a lista pública da Receita Federal e confirme no checkout se os tributos aparecem antes do pagamento.",
+      },
+      {
+        question: "Toda oferta de marketplace segue a mesma regra?",
+        answer:
+          "Não necessariamente. Em marketplaces, a operação pode depender do vendedor, da logística e do que aparece no checkout.",
+      },
+      {
+        question: "Estar no Remessa Conforme elimina o ICMS?",
+        answer:
+          "Não. O Remessa Conforme pode mudar a cobrança do Imposto de Importação federal, mas o ICMS estadual pode continuar sendo cobrado.",
+      },
+    ],
+    howToSteps: [
+      "Abra a lista oficial da Receita Federal.",
+      "Procure a empresa ou plataforma.",
+      "Verifique se a compra mostra tributos no checkout.",
+      "Some produto, frete e seguro quando houver.",
+      "Simule o custo final com ICMS do estado de entrega.",
+    ],
+  },
 ];
 
 const siteOrigin = "https://www.taxadeimportacao.com";

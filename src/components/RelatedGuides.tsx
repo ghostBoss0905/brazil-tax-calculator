@@ -44,6 +44,26 @@ const guides = [
     title: "Imposto da Shopee",
     description: "Compare produtos nacionais e internacionais antes de comprar.",
   },
+  {
+    href: "/imposto-temu-brasil",
+    title: "Imposto da Temu",
+    description: "Veja como estimar tributos, ICMS e custo final antes de comprar.",
+  },
+  {
+    href: "/imposto-amazon-internacional-brasil",
+    title: "Imposto da Amazon internacional",
+    description: "Entenda compras internacionais, tributos no checkout e comparação nacional.",
+  },
+  {
+    href: "/compras-internacionais-abaixo-50-dolares",
+    title: "Compras abaixo de US$50",
+    description: "Saiba quando há imposto federal, ICMS e cobrança no checkout.",
+  },
+  {
+    href: "/lojas-remessa-conforme",
+    title: "Lojas no Remessa Conforme",
+    description: "Confira como validar lojas certificadas antes de finalizar a compra.",
+  },
 ];
 
 type RelatedGuidesProps = {

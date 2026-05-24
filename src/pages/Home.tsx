@@ -920,7 +920,6 @@ export default function Home() {
             currentPath="/"
             title="Guias de importação"
             intro="Aprofunde o cálculo antes de comprar em lojas internacionais."
-            limit={6}
           />
         </section>
 
