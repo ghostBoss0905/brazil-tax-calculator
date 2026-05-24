@@ -523,11 +523,11 @@ export default function Home() {
             </Card>
           </div>
 
-          <aside className="lg:col-span-4">
-            <div className="grid gap-3">
+          <aside className="lg:col-span-4 lg:h-full">
+            <div className="grid h-full gap-3 lg:grid-rows-3">
               <a
                 href="/tabela-imposto-importacao-brasil"
-                className="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
+                className="group flex flex-col justify-center rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
               >
                 <BadgeCheck className="mb-3 h-7 w-7 text-[#008272]" />
                 <p className="font-semibold text-[#071933]">Regras 2026 atualizadas</p>
@@ -537,7 +537,7 @@ export default function Home() {
               </a>
               <a
                 href="/o-que-e-remessa-conforme"
-                className="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
+                className="group flex flex-col justify-center rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
               >
                 <ShoppingCart className="mb-3 h-7 w-7 text-[#008272]" />
                 <p className="font-semibold text-[#071933]">Remessa Conforme</p>
@@ -547,7 +547,7 @@ export default function Home() {
               </a>
               <a
                 href="/icms-importacao-brasil"
-                className="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
+                className="group flex flex-col justify-center rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
               >
                 <Zap className="mb-3 h-7 w-7 text-[#008272]" />
                 <p className="font-semibold text-[#071933]">ICMS por estado</p>
