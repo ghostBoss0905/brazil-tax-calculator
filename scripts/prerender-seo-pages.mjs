@@ -197,7 +197,7 @@ function buildSchema(page) {
         "@id": breadcrumbId,
       },
       datePublished: "2026-05-23",
-      dateModified: "2026-05-23",
+      dateModified: "2026-05-24",
     },
     {
       "@type": "Article",
@@ -216,7 +216,7 @@ function buildSchema(page) {
         "@id": `${siteOrigin}/#organization`,
       },
       datePublished: "2026-05-23",
-      dateModified: "2026-05-23",
+      dateModified: "2026-05-24",
     },
   ];
 
