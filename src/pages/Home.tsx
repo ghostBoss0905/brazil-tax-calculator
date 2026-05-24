@@ -310,8 +310,11 @@ export default function Home() {
             <header className="mb-8 flex flex-col gap-8 lg:mb-12">
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#06264b] text-white shadow-lg shadow-[#06264b]/20">
-                    <Calculator className="h-5 w-5" />
+                  <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-[#06264b] text-white shadow-lg shadow-[#06264b]/20">
+                    <span className="absolute left-0 top-0 h-6 w-6 bg-[#ffca28]" />
+                    <span className="absolute bottom-0 left-0 h-6 w-6 bg-[#0b7f55]" />
+                    <span className="absolute right-0 top-0 h-6 w-6 bg-[#f8e7a8]" />
+                    <Calculator className="relative h-5 w-5 text-white drop-shadow" />
                   </div>
                   <div className="text-left">
                     <p className="text-sm font-semibold text-[#06264b]">
@@ -332,27 +335,6 @@ export default function Home() {
               </div>
 
               <div className="mx-auto max-w-3xl text-center">
-                <div className="mb-5 flex flex-wrap justify-center gap-2 text-xs sm:text-sm text-slate-600">
-              <a
-                href="/tabela-imposto-importacao-brasil"
-                    className="rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm transition-colors hover:border-[#008272] hover:text-[#008272]"
-              >
-                Regras 2026 atualizadas
-              </a>
-              <a
-                href="/o-que-e-remessa-conforme"
-                    className="rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm transition-colors hover:border-[#008272] hover:text-[#008272]"
-              >
-                Remessa Conforme
-              </a>
-              <a
-                href="/icms-importacao-brasil"
-                    className="rounded-full border border-slate-200 bg-white px-4 py-2 shadow-sm transition-colors hover:border-[#008272] hover:text-[#008272]"
-              >
-                ICMS por estado
-              </a>
-            </div>
-
                 <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-[#071933] sm:text-5xl lg:text-6xl">
                   Calcule o custo final da importação
                 </h1>
@@ -363,42 +345,8 @@ export default function Home() {
               </div>
             </header>
 
-            <section className="mb-8 grid grid-cols-1 gap-3 text-sm text-slate-600 sm:grid-cols-3">
-              <a
-                href="#tax-form"
-                className="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
-              >
-                <ShoppingCart className="mb-3 h-7 w-7 text-[#008272]" />
-                <p className="font-semibold text-[#071933]">Antes de comprar</p>
-                <p className="mt-1">
-                  Simule o custo final antes de pagar em AliExpress, Shein,
-                  Shopee e outras lojas.
-                </p>
-              </a>
-              <a
-                href="/tabela-imposto-importacao-brasil"
-                className="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
-              >
-                <BadgeCheck className="mb-3 h-7 w-7 text-[#008272]" />
-                <p className="font-semibold text-[#071933]">Regra oficial</p>
-                <p className="mt-1">
-                  Considera produto, frete, câmbio, Remessa Conforme e ICMS.
-                </p>
-              </a>
-              <a
-                href="/calcular-taxas-importacao"
-                className="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
-              >
-                <Zap className="mb-3 h-7 w-7 text-[#008272]" />
-                <p className="font-semibold text-[#071933]">Decisão rápida</p>
-                <p className="mt-1">
-                  Compare o total estimado com uma opção vendida no Brasil.
-                </p>
-              </a>
-            </section>
-
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-8">
             <Card className="rounded-[24px] border-slate-200 bg-white shadow-xl shadow-slate-200/70">
               <CardHeader className="border-b border-slate-100 bg-white pb-4">
                 <CardTitle className="flex items-center gap-2 text-xl text-[#071933]">
@@ -575,7 +523,42 @@ export default function Home() {
             </Card>
           </div>
 
-          <div className="lg:col-span-5" id="results-panel">
+          <aside className="lg:col-span-4">
+            <div className="grid gap-3">
+              <a
+                href="/tabela-imposto-importacao-brasil"
+                className="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
+              >
+                <BadgeCheck className="mb-3 h-7 w-7 text-[#008272]" />
+                <p className="font-semibold text-[#071933]">Regras 2026 atualizadas</p>
+                <p className="mt-1 text-sm text-slate-600">
+                  Veja a tabela oficial usada como base da estimativa.
+                </p>
+              </a>
+              <a
+                href="/o-que-e-remessa-conforme"
+                className="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
+              >
+                <ShoppingCart className="mb-3 h-7 w-7 text-[#008272]" />
+                <p className="font-semibold text-[#071933]">Remessa Conforme</p>
+                <p className="mt-1 text-sm text-slate-600">
+                  Entenda quando os tributos aparecem no checkout.
+                </p>
+              </a>
+              <a
+                href="/icms-importacao-brasil"
+                className="group rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
+              >
+                <Zap className="mb-3 h-7 w-7 text-[#008272]" />
+                <p className="font-semibold text-[#071933]">ICMS por estado</p>
+                <p className="mt-1 text-sm text-slate-600">
+                  Compare como o estado de destino afeta o custo final.
+                </p>
+              </a>
+            </div>
+          </aside>
+
+          <div className="lg:col-span-12" id="results-panel">
             <AnimatePresence mode="wait">
               {!results ? (
                 <motion.div
