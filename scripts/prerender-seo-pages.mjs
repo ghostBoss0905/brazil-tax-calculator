@@ -229,6 +229,121 @@ const pages = [
       "Simule o custo final com ICMS do estado de entrega.",
     ],
   },
+  {
+    path: "/icms-importacao-sao-paulo",
+    title: "ICMS Importação São Paulo 2026: Como Calcular",
+    description:
+      "Entenda como estimar ICMS de importação para São Paulo em 2026, com imposto de importação, frete, câmbio e Remessa Conforme.",
+    faqs: [
+      {
+        question: "Qual ICMS a calculadora usa para São Paulo?",
+        answer:
+          "Para São Paulo, a calculadora usa 18% como alíquota estimada de ICMS no estado de destino.",
+      },
+      {
+        question: "Compra abaixo de US$50 para SP paga ICMS?",
+        answer:
+          "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS estadual pode continuar aparecendo no custo final.",
+      },
+      {
+        question: "O valor final é oficial?",
+        answer:
+          "Não. A página e a calculadora oferecem uma estimativa para decisão de compra. O valor oficial depende do checkout, da declaração da remessa e das autoridades competentes.",
+      },
+    ],
+  },
+  {
+    path: "/icms-importacao-minas-gerais",
+    title: "ICMS Importação Minas Gerais 2026: Como Calcular",
+    description:
+      "Entenda como estimar ICMS de importação para Minas Gerais em 2026, com imposto de importação, frete, câmbio e Remessa Conforme.",
+    faqs: [
+      {
+        question: "Qual ICMS a calculadora usa para Minas Gerais?",
+        answer:
+          "Para Minas Gerais, a calculadora usa 20% como alíquota estimada de ICMS no estado de destino.",
+      },
+      {
+        question: "Compra abaixo de US$50 para MG paga ICMS?",
+        answer:
+          "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS estadual pode continuar aparecendo no custo final.",
+      },
+      {
+        question: "O valor final é oficial?",
+        answer:
+          "Não. A página e a calculadora oferecem uma estimativa para decisão de compra. O valor oficial depende do checkout, da declaração da remessa e das autoridades competentes.",
+      },
+    ],
+  },
+  {
+    path: "/icms-importacao-parana",
+    title: "ICMS Importação Paraná 2026: Como Calcular",
+    description:
+      "Entenda como estimar ICMS de importação para Paraná em 2026, com imposto de importação, frete, câmbio e Remessa Conforme.",
+    faqs: [
+      {
+        question: "Qual ICMS a calculadora usa para Paraná?",
+        answer:
+          "Para Paraná, a calculadora usa 19,5% como alíquota estimada de ICMS no estado de destino.",
+      },
+      {
+        question: "Compra abaixo de US$50 para PR paga ICMS?",
+        answer:
+          "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS estadual pode continuar aparecendo no custo final.",
+      },
+      {
+        question: "O valor final é oficial?",
+        answer:
+          "Não. A página e a calculadora oferecem uma estimativa para decisão de compra. O valor oficial depende do checkout, da declaração da remessa e das autoridades competentes.",
+      },
+    ],
+  },
+  {
+    path: "/icms-importacao-rio-de-janeiro",
+    title: "ICMS Importação Rio de Janeiro 2026: Como Calcular",
+    description:
+      "Entenda como estimar ICMS de importação para Rio de Janeiro em 2026, com imposto de importação, frete, câmbio e Remessa Conforme.",
+    faqs: [
+      {
+        question: "Qual ICMS a calculadora usa para Rio de Janeiro?",
+        answer:
+          "Para Rio de Janeiro, a calculadora usa 22% como alíquota estimada de ICMS no estado de destino.",
+      },
+      {
+        question: "Compra abaixo de US$50 para RJ paga ICMS?",
+        answer:
+          "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS estadual pode continuar aparecendo no custo final.",
+      },
+      {
+        question: "O valor final é oficial?",
+        answer:
+          "Não. A página e a calculadora oferecem uma estimativa para decisão de compra. O valor oficial depende do checkout, da declaração da remessa e das autoridades competentes.",
+      },
+    ],
+  },
+  {
+    path: "/icms-importacao-santa-catarina",
+    title: "ICMS Importação Santa Catarina 2026: Como Calcular",
+    description:
+      "Entenda como estimar ICMS de importação para Santa Catarina em 2026, com imposto de importação, frete, câmbio e Remessa Conforme.",
+    faqs: [
+      {
+        question: "Qual ICMS a calculadora usa para Santa Catarina?",
+        answer:
+          "Para Santa Catarina, a calculadora usa 17% como alíquota estimada de ICMS no estado de destino.",
+      },
+      {
+        question: "Compra abaixo de US$50 para SC paga ICMS?",
+        answer:
+          "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS estadual pode continuar aparecendo no custo final.",
+      },
+      {
+        question: "O valor final é oficial?",
+        answer:
+          "Não. A página e a calculadora oferecem uma estimativa para decisão de compra. O valor oficial depende do checkout, da declaração da remessa e das autoridades competentes.",
+      },
+    ],
+  },
 ];
 
 const siteOrigin = "https://www.taxadeimportacao.com";

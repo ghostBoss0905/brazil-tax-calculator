@@ -19,6 +19,7 @@ import ImpostoTemu from "@/pages/ImpostoTemu";
 import ImpostoAmazonInternacional from "@/pages/ImpostoAmazonInternacional";
 import ComprasAbaixo50Dolares from "@/pages/ComprasAbaixo50Dolares";
 import LojasRemessaConforme from "@/pages/LojasRemessaConforme";
+import ICMSPorEstado from "@/pages/ICMSPorEstado";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -101,6 +102,16 @@ function Router() {
         path="/lojas-remessa-conforme"
         component={LojasRemessaConforme}
       />
+
+      <Route path="/icms-importacao-sao-paulo" component={ICMSPorEstado} />
+
+      <Route path="/icms-importacao-minas-gerais" component={ICMSPorEstado} />
+
+      <Route path="/icms-importacao-parana" component={ICMSPorEstado} />
+
+      <Route path="/icms-importacao-rio-de-janeiro" component={ICMSPorEstado} />
+
+      <Route path="/icms-importacao-santa-catarina" component={ICMSPorEstado} />
 
       {/* 404 */}
       <Route component={NotFound} />

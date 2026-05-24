@@ -64,6 +64,31 @@ const guides = [
     title: "Lojas no Remessa Conforme",
     description: "Confira como validar lojas certificadas antes de finalizar a compra.",
   },
+  {
+    href: "/icms-importacao-sao-paulo",
+    title: "ICMS importação São Paulo",
+    description: "Simule o custo final de compras internacionais para SP.",
+  },
+  {
+    href: "/icms-importacao-minas-gerais",
+    title: "ICMS importação Minas Gerais",
+    description: "Veja como o ICMS de MG entra na estimativa da importação.",
+  },
+  {
+    href: "/icms-importacao-parana",
+    title: "ICMS importação Paraná",
+    description: "Entenda a simulação de ICMS para compras internacionais no PR.",
+  },
+  {
+    href: "/icms-importacao-rio-de-janeiro",
+    title: "ICMS importação Rio de Janeiro",
+    description: "Calcule o impacto do ICMS do RJ no custo final importado.",
+  },
+  {
+    href: "/icms-importacao-santa-catarina",
+    title: "ICMS importação Santa Catarina",
+    description: "Compare importação e compra nacional usando o estado SC.",
+  },
 ];
 
 type RelatedGuidesProps = {

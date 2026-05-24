@@ -154,6 +154,33 @@ export default function ICMSImportacao() {
         o risco de erro manual.
       </p>
 
+      <h2 className="text-2xl font-semibold mt-10 mb-4">
+        ICMS de importação por estado
+      </h2>
+
+      <p className="mb-6">
+        Se você já sabe o estado de entrega, veja também o guia específico para
+        estimar a compra com mais contexto local.
+      </p>
+
+      <div className="grid gap-3 sm:grid-cols-2 mb-8">
+        {[
+          ["São Paulo", "/icms-importacao-sao-paulo"],
+          ["Minas Gerais", "/icms-importacao-minas-gerais"],
+          ["Paraná", "/icms-importacao-parana"],
+          ["Rio de Janeiro", "/icms-importacao-rio-de-janeiro"],
+          ["Santa Catarina", "/icms-importacao-santa-catarina"],
+        ].map(([label, href]) => (
+          <a
+            key={href}
+            href={href}
+            className="rounded-xl border border-slate-200 bg-white px-4 py-3 font-medium text-slate-900 shadow-sm hover:border-[#008272] hover:text-[#008272]"
+          >
+            ICMS importação {label}
+          </a>
+        ))}
+      </div>
+
       <a
         href="/"
         className="inline-block bg-black text-white px-6 py-3 rounded-xl mb-10"
