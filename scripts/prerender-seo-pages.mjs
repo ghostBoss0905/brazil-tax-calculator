@@ -14,7 +14,7 @@ const pages = [
       "Entenda como calcular o imposto do AliExpress no Brasil em 2026, com Remessa Conforme, ICMS, frete e custo final antes da compra.",
     h1: "Como Calcular o Imposto do AliExpress no Brasil (2026)",
     directAnswer: "O imposto do AliExpress depende do valor do produto, do frete, do câmbio, do estado de destino e se a compra está em plataforma certificada no Remessa Conforme. Para estimar, some produto e frete, converta para reais e aplique Imposto de Importação e ICMS.",
-    introParagraph: "Comprar no AliExpress pode parecer barato, mas o custo final no Brasil pode incluir Imposto de Importação, ICMS, frete e câmbio. Antes de finalizar a compra, vale estimar o valor total para evitar surpresa.",
+    introParagraph: "Comprar no AliExpress pode parecer barato, mas o custo final no Brasil pode incluir Imposto de Importação, ICMS, frete e câmbio. O AliExpress tem milhares de vendedores com certificação diferente no Remessa Conforme, o que muda a tributação. O frete varia de 15 a 60 dias e pode elevar o total acima de US$50, mudando a faixa de II. Cupons e AliCoins reduzem o preço pago, mas o imposto é calculado sobre o valor final. Antes de comprar, estime o valor total e compare com alternativas vendidas no Brasil.",
     faqs: [
       {
         question: "Compras do AliExpress abaixo de US$50 pagam imposto?",
@@ -40,7 +40,7 @@ const pages = [
       "Veja como funciona o imposto da Shein no Brasil em 2026, incluindo Remessa Conforme, ICMS e como estimar o valor final da compra.",
     h1: "Como Calcular o Imposto da Shein no Brasil (2026)",
     directAnswer: "O imposto da Shein depende do valor da compra, do frete, do câmbio, do estado de destino e se a Shein está no Remessa Conforme. Some produto e frete, converta para reais, aplique Imposto de Importação e ICMS do estado.",
-    introParagraph: "Comprar na Shein pode parecer vantajoso, mas o custo final no Brasil pode incluir Imposto de Importação, ICMS e frete. Pedidos pequenos também podem ficar caros depois dos tributos.",
+    introParagraph: "Comprar na Shein pode parecer vantajoso, mas o custo final no Brasil pode incluir Imposto de Importação, ICMS e frete. Na Shein, é comum adicionar vários itens pequenos ao carrinho — cada blusa, acessório ou item de casa pode parecer barato, mas o total ultrapassa US$50 rapidamente, mudando a tributação. Cupons da Shein reduzem o preço do produto, mas não a base de cálculo do imposto. Tamanhos asiáticos são menores que os brasileiros, e a qualidade pode não corresponder ao custo total após tributos.",
     faqs: [
       {
         question: "Compras da Shein abaixo de US$50 pagam imposto?",
@@ -66,7 +66,7 @@ const pages = [
       "Entenda como calcular o imposto da Shopee no Brasil em 2026, com Remessa Conforme, ICMS, frete e custo final da compra.",
     h1: "Como Calcular o Imposto da Shopee no Brasil (2026)",
     directAnswer: "O imposto da Shopee internacional depende de produto, frete, câmbio, ICMS e forma de cobrança dos tributos. Confirme se o pedido é nacional ou internacional e se os impostos aparecem no checkout.",
-    introParagraph: "Comprar produtos internacionais pela Shopee pode parecer barato, mas o custo final depende dos impostos cobrados no Brasil. Antes de finalizar, estime Imposto de Importação, ICMS e frete.",
+    introParagraph: "Comprar produtos internacionais pela Shopee pode parecer barato, mas o custo final depende dos impostos cobrados no Brasil. Na Shopee, produtos nacionais e internacionais aparecem juntos na busca — confira se o item mostra 'Envio Internacional' ou 'Importado'. Shopee Coins reduzem o pagamento, mas não a base de cálculo do imposto. Vouchers de frete grátis podem manter o total abaixo de US$50, favorendo a faixa de II de 0%. Antes de finalizar, estime Imposto de Importação, ICMS e frete.",
     faqs: [
       {
         question: "Compras da Shopee internacional pagam imposto?",
@@ -296,7 +296,7 @@ const pages = [
       "Entenda como calcular imposto da Temu no Brasil em 2026, com Remessa Conforme, ICMS, frete, câmbio e comparação antes da compra.",
     h1: "Imposto da Temu no Brasil: Como Calcular em 2026",
     directAnswer: "Para calcular o imposto da Temu, some produto, frete e seguro, converta para reais, confirme se os tributos aparecem no checkout e estime o ICMS do estado de entrega antes de comparar com uma compra nacional.",
-    introParagraph: "A Temu virou uma das buscas mais comuns para quem compra produtos internacionais baratos. O risco é olhar apenas o preço do anúncio e esquecer que o custo final no Brasil pode incluir ICMS, câmbio, frete e regras do Remessa Conforme.",
+    introParagraph: "A Temu virou uma das buscas mais comuns para quem compra produtos internacionais baratos. O risco é olhar apenas o preço do anúncio e esquecer que o custo final no Brasil pode incluir ICMS, câmbio, frete e regras do Remessa Conforme. Na Temu, o limite de US$50 é especialmente decisivo: itens custam US$1-15, e 5-8 produtos no carrinho ultrapassam o limite rapidamente. Cupons agressivos (30% off primeira compra) podem reduzir o valor pago, mas o imposto é calculado sobre o valor final. Verifique se o frete 'grátis' está incluso no preço ou realmente zerado.",
     faqs: [
       {
         question: "A Temu participa do Remessa Conforme?",
@@ -322,7 +322,7 @@ const pages = [
       "Veja como estimar imposto em compras internacionais na Amazon em 2026, com Remessa Conforme, ICMS, frete e custo final.",
     h1: "Imposto em Compra Internacional na Amazon Brasil",
     directAnswer: "Em compras internacionais na Amazon, calcule produto, frete, câmbio, Imposto de Importação e ICMS. O ponto decisivo é confirmar se a oferta mostra tributos no checkout antes do pagamento.",
-    introParagraph: "A Amazon pode exibir produtos vendidos no Brasil e produtos internacionais no mesmo ambiente. A dúvida principal é: o preço mostrado já inclui impostos ou a cobrança pode aparecer depois?",
+    introParagraph: "A Amazon pode exibir produtos vendidos no Brasil e produtos internacionais no mesmo ambiente. A dúvida principal é: o preço mostrado já inclui impostos ou a cobrança pode aparecer depois? Ofertas vendidas pela Amazon seguem fluxo centralizado com tributos no checkout; ofertas de vendedores terceiros podem ter tributação diferente. Produtos importados acima de US$100 têm carga tributária significativa (II + ICMS), e a garantia pode não ser válida no Brasil. Antes de importar, compare com o mesmo produto na Amazon Brasil.",
     faqs: [
       {
         question: "Compra internacional na Amazon paga imposto?",
@@ -417,17 +417,22 @@ const pages = [
       "Entenda como estimar ICMS de importação para São Paulo em 2026, com imposto de importação, frete, câmbio e Remessa Conforme.",
     h1: "ICMS de Importação em São Paulo: Como Calcular em 2026",
     directAnswer: "Para estimar o ICMS de importação em São Paulo, use o estado de destino SP na calculadora. A alíquota estimada usada para São Paulo é 18%, junto com produto, frete, câmbio, Imposto de Importação e Remessa Conforme.",
-    introParagraph: "O ICMS é um dos motivos pelos quais duas compras internacionais com o mesmo preço podem ter custos finais diferentes no Brasil. Para um comprador em São Paulo, o estado de destino precisa entrar na conta antes de decidir se vale a pena importar.",
+    introParagraph: "São Paulo é o estado com o maior volume de compras internacionais no Brasil. A alíquota de ICMS de 18% para importação é uma das mais baixas entre os grandes estados, o que torna as compras mais favoráveis em comparação com Rio de Janeiro (22%) ou Minas Gerais (20%). Além disso, a maior parte dos hubs de entrega e centros de processamento aduaneiro estão em São Paulo, o que pode resultar em prazos de entrega mais rápidos. Mas o consumidor paulista também tem mais alternativas nacionais disponíveis, tornando a comparação com lojas brasileiras ainda mais importante antes de decidir pela importação.",
     faqs: [
       {
         question: "Qual ICMS a calculadora usa para São Paulo?",
         answer:
-          "Para São Paulo, a calculadora usa 18% como alíquota estimada de ICMS no estado de destino.",
+          "Para São Paulo, a calculadora usa 18% como alíquota estimada de ICMS no estado de destino. Essa taxa é uma das mais baixas entre os estados com grande volume de importação, tornando o custo final mais favorável do que em Rio de Janeiro (22%) ou Minas Gerais (20%).",
       },
       {
         question: "Compra abaixo de US$50 para SP paga ICMS?",
         answer:
-          "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS estadual pode continuar aparecendo no custo final.",
+          "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS de São Paulo (18%) pode continuar aparecendo no checkout. Para um pedido de US$50 com câmbio de R$5,20, o ICMS SP seria aproximadamente R$46,80 — um custo que precisa ser comparado com alternativas nacionais.",
+      },
+      {
+        question: "São Paulo tem vantagem na importação?",
+        answer:
+          "Em relação ao ICMS, sim. A alíquota de 18% em São Paulo é mais baixa que a de Rio de Janeiro (22%) ou Minas Gerais (20%), resultando em custo final menor para o mesmo pedido. São Paulo também concentra hubs de entrega que podem reduzir o prazo de importação. Porém, o consumidor paulista dispõe de mais alternativas nacionais, o que exige uma comparação mais rigorosa entre o custo importado e o preço brasileiro.",
       },
       {
         question: "O valor final é oficial?",
@@ -494,18 +499,23 @@ const pages = [
     description:
       "Entenda como estimar ICMS de importação para Rio de Janeiro em 2026, com imposto de importação, frete, câmbio e Remessa Conforme.",
     h1: "ICMS de Importação em Rio de Janeiro: Como Calcular em 2026",
-    directAnswer: "Para estimar o ICMS de importação em Rio de Janeiro, use o estado de destino RJ na calculadora. A alíquota estimada usada para Rio de Janeiro é 22%, junto com produto, frete, câmbio, Imposto de Importação e Remessa Conforme.",
-    introParagraph: "O ICMS é um dos motivos pelos quais duas compras internacionais com o mesmo preço podem ter custos finais diferentes no Brasil. Para um comprador em Rio de Janeiro, o estado de destino precisa entrar na conta antes de decidir se vale a pena importar.",
+    directAnswer: "Para estimar o ICMS de importação em Rio de Janeiro, use o estado de destino RJ na calculadora. A alíquota estimada usada para Rio de Janeiro é 22%, uma das mais altas do Brasil, junto com produto, frete, câmbio, Imposto de Importação e Remessa Conforme.",
+    introParagraph: "Rio de Janeiro tem uma das alíquotas de ICMS mais altas para importação: 22%. Isso significa que o mesmo pedido internacional pode custar mais para um comprador fluminense do que para um comprador paulista (18%) ou catarinense (17%). A diferença de 4 pontos percentuais entre RJ e SP pode representar R$20-30 a mais em um pedido típico de US$50. Por isso, no Rio de Janeiro, a comparação com alternativas vendidas no Brasil é ainda mais decisiva — a carga tributária elevada reduz a vantagem do preço importado e, em muitos casos, torna a compra nacional mais econômica.",
     faqs: [
       {
         question: "Qual ICMS a calculadora usa para Rio de Janeiro?",
         answer:
-          "Para Rio de Janeiro, a calculadora usa 22% como alíquota estimada de ICMS no estado de destino.",
+          "Para Rio de Janeiro, a calculadora usa 22% como alíquota estimada de ICMS no estado de destino. Essa taxa é uma das mais altas do Brasil, superior a São Paulo (18%) e Santa Catarina (17%), resultando em custo final mais elevado para o mesmo pedido internacional.",
+      },
+      {
+        question: "Por que o ICMS do Rio de Janeiro é mais alto?",
+        answer:
+          "A alíquota de 22% é definida pela legislação estadual do Rio de Janeiro e incide sobre a base de cálculo da importação, que pode incluir produto, frete, seguro e o próprio Imposto de Importação. A diferença de 4 pontos percentuais em relação a São Paulo (18%) pode representar R$20-30 a mais em pedidos de US$50, tornando a comparação com produtos nacionais ainda mais importante.",
       },
       {
         question: "Compra abaixo de US$50 para RJ paga ICMS?",
         answer:
-          "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS estadual pode continuar aparecendo no custo final.",
+          "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS do Rio de Janeiro (22%) pode continuar aparecendo no checkout. Para um pedido de US$50 com câmbio de R$5,20, o ICMS RJ seria aproximadamente R$57,20 — mais de R$10 acima do que o mesmo pedido custaria em São Paulo (R$46,80). Essa diferença pode tornar a importação menos vantajosa no RJ.",
       },
       {
         question: "O valor final é oficial?",
@@ -634,7 +644,7 @@ const generatedPlatformStatePages = platforms.flatMap((platform) =>
 
 const allPages = Array.from(
   new Map(
-    [...pages, ...generatedStatePages, ...generatedPlatformStatePages].map(
+    [...generatedStatePages, ...generatedPlatformStatePages, ...pages].map(
       (page) => [page.path, page],
     ),
   ).values(),

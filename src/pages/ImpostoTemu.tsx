@@ -115,6 +115,90 @@ export default function ImpostoTemu() {
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Temu: preços ultra-baixo e o limite de US$50
+        </h2>
+
+        <p className="mb-6">
+          O limite de US$50 é especialmente crítico na Temu porque a
+          estratégia de preços da plataforma faz a maioria dos itens
+          individuais custar entre US$1 e US$15, o que incentiva adicionar
+          vários produtos ao mesmo pedido. O problema é que 5 a 8 itens pequenos
+          mais o frete podem facilmente ultrapassar US$50, ativando a alíquota
+          maior de Imposto de Importação. Na Temu, mais do que em qualquer
+          outra plataforma, o total do carrinho exige monitoramento cuidadoso —
+          um pedido de US$48 com frete de US$3 permanece com II de 0%, mas
+          adicionar um item de US$2 eleva o total a US$53 e muda tudo.
+        </p>
+
+        <p className="mb-6">
+          A Temu oferece promoções de pacote como "3 itens com 20% de desconto"
+          ou "5 itens com frete grátis", que incentivam adicionar produtos para
+          atingir esses patamares. O preço descontado que você efetivamente paga
+          define a base tributária, mas o frete ainda entra no total. Um pacote
+          que reduz o preço final (produto + frete) para abaixo de US$50 é
+          ideal; um que empurra o total acima de US$50 pode anular a economia
+          com impostos mais altos. Sempre calcule o custo final com a calculadora
+          antes de aceitar qualquer promoção de volume.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Cupons Temu e cálculo de imposto
+        </h2>
+
+        <p className="mb-6">
+          A Temu tem uma estratégia agressiva de cupons: frequentemente oferece
+          descontos na primeira compra (como "30% off no primeiro pedido"),
+          promoções sazonais e descontos exclusivos do app. No Remessa
+          Conforme, o imposto é calculado sobre o valor que você efetivamente
+          paga após os cupons. Se um cupom de 30% reduz um pedido de US$60 para
+          US$42 (mais frete de US$8 = US$50), a alíquota de II de 0% se aplica.
+          Mas isso só funciona se o valor final cobrado (produto após desconto +
+          frete) for ≤US$50. Sempre simule com o preço após cupom, não com o
+          original — a calculadora de importação ajuda a verificar o resultado.
+        </p>
+
+        <p className="mb-6">
+          A Temu também anuncia frete grátis em pedidos acima de um determinado
+          valor. Se o componente de frete for realmente zero, o valor total do
+          pedido é apenas o preço do produto, facilitando permanecer dentro do
+          limite de US$50. Porém, verifique se "frete grátis" significa que o
+          custo de frete foi efetivamente zerado ou simplesmente embutido no
+          preço do produto — a segunda opção não altera a base de cálculo
+          tributária, pois produto + frete (mesmo oculto) continua sendo
+          considerado. Confirme os valores no checkout antes de concluir a
+          compra.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Categorias mais comuns na Temu e quando importar compensa
+        </h2>
+
+        <p className="mb-6">
+          A Temu é mais forte em organização doméstica (caixas de
+          armazenamento, utensílios de cozinha), acessórios de eletrônicos
+          pequenos (cabos, suportes), acessórios de moda e materiais para
+          DIY/artesanato. Esses itens geralmente custam US$2–10 cada, o que os
+          torna ideais para pedidos que ficam abaixo de US$50 com II de 0%. Para
+          categorias onde alternativas brasileiras existem em preços similares
+          — como capas de celular básicas ou ferramentas simples de cozinha — a
+          importação pode não compensar depois de somar ICMS e considerar o
+          tempo de entrega. Avalie caso a caso usando a calculadora antes de
+          decidir.
+        </p>
+
+        <p className="mb-6">
+          Lojas brasileiras como Lojas Americanas, Mercado Livre e lojas
+          locais de artesanato oferecem itens pequenos semelhantes a preços que,
+          após os impostos da importação da Temu, podem ficar comparáveis. A
+          importação pela Temu compensa mais para itens niche indisponíveis
+          localmente, peças decorativas com designs únicos ou pedidos em
+          quantidade onde o custo por item após impostos permanece bem abaixo
+          das alternativas brasileiras. Use a calculadora para comparar o custo
+          total da importação com o preço nacional e decidir com base em
+          números, não apenas no preço de anúncio.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
           Exemplo de cálculo na Temu
         </h2>
 

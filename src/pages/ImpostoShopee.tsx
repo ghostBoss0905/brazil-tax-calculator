@@ -141,6 +141,83 @@ export default function ImpostoShopee() {
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Como identificar produtos internacionais na Shopee
+        </h2>
+
+        <p className="mb-6">
+          Na Shopee, os produtos internacionais costumam exibir tags como "Envio
+          Internacional" ou "Importado" na listagem, junto com prazos de entrega
+          mais longos — geralmente entre 15 e 45 dias — e preços que aparecem
+          em dólares convertidos para reais no momento da compra. Os itens
+          nacionais, por outro lado, mostram "Envio Nacional" ou "Vendido por
+          lojista BR" com entregas estimadas entre 3 e 7 dias. Quando ambos
+          aparecem lado a lado nos resultados de busca, compare o custo total da
+          versão internacional (incluindo impostos) com o preço nacional — a
+          opção importada pode parecer mais barata por item, mas frequentemente
+          fica mais cara depois dos tributos.
+        </p>
+
+        <p className="mb-6">
+          O Shopee Mall certifica lojistas nacionais com garantias de qualidade
+          e autenticidade, mas produtos internacionais podem vir de sellers não
+          certificados pelo Mall. Sellers internacionais fora do Mall podem não
+          seguir as regras do Remessa Conforme, o que resulta em Imposto de
+          Importação de 60% cobrado na chegada da encomenda, ao invés dos 0%
+          ou 20% possíveis dentro do programa. Por isso, ao comprar um item
+          importado na Shopee, prefira sellers que mostram a discriminação dos
+          tributos no checkout — essa transparência indica que o fluxo está
+          dentro do Remessa Conforme e que os impostos serão recolhidos
+          corretamente.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Shopee Coins, frete grátis e imposto
+        </h2>
+
+        <p className="mb-6">
+          Shopee Coins são moedas virtuais obtidas por login diário, compras
+          anteriores e jogos dentro do app, e podem ser usados como pagamento
+          parcial no checkout. Porém, Shopee Coins reduzem o valor que você
+          efetivamente paga, mas não alteram a base de cálculo tributária: no
+          Remessa Conforme, o Imposto de Importação incide sobre o total em
+          dólares (produto + frete), independentemente de quantos coins foram
+          aplicados. Assim, usar R$20 em coins num pedido de US$45 não muda a
+          classificação do pedido para a isenção de II até US$50 — o número
+          decisivo para o cálculo tributário é sempre o total em dólares antes
+          de qualquer desconto interno da plataforma.
+        </p>
+
+        <p className="mb-6">
+          A Shopee oferece regularmente vouchers de "Frete Grátis" para pedidos
+          internacionais, mas esses vouchers podem cobrir apenas parte do frete
+          ou exigir valor mínimo de compra. Como o total (produto + frete) em
+          dólares determina a alíquota do II — 0% para ≤US$50, 20%/60% acima
+          — um voucher que elimina completamente o componente de frete pode
+          manter o pedido dentro da faixa tributária mais favorável. Antes de
+          aplicar o voucher, verifique se ele cobre todo o custo de envio ou
+          apenas uma parte; um frete parcialmente subsidiado ainda entra na
+          base de cálculo e pode empurrar o pedido acima de US$50, mudando a
+          taxa de Imposto de Importação.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Shopee vs Mercado Livre para importação
+        </h2>
+
+        <p className="mb-6">
+          Shopee e Mercado Livre misturam sellers nacionais e internacionais,
+          mas o Mercado Livre separa mais explicitamente os itens importados na
+          navegação e sua certificação "Mercado Livre Líder" torna mais claro
+          quem é o vendedor confiável. Na Shopee, produtos nacionais e
+          internacionais aparecem lado a lado nos resultados de busca, o que
+          facilita confundi-los — especialmente quando o preço em dólares é
+          convertido para reais e parece mais vantajoso. Para eletrônicos e
+          acessórios, os sellers nacionais do Mercado Livre frequentemente têm
+          preços competitivos com os itens importados da Shopee após tributação,
+          especialmente considerando prazo de entrega e garantia local.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
           Exemplo de cálculo na Shopee
         </h2>
 

@@ -154,6 +154,93 @@ export default function ImpostoShein() {
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">
+        Dicas para economizar na Shein
+      </h2>
+
+      <p className="mb-6">
+        A Shein oferece frequentemente cupons de desconto como "15% off na
+        primeira compra" ou promoções sazonais com valores fixos. É importante
+        entender que esses cupons reduzem o preço do produto no checkout, mas
+        não reduzem a base de cálculo dos impostos. O Imposto de Importação e o
+        ICMS são calculados sobre o valor original da mercadoria antes do
+        desconto, ou sobre o valor aduaneiro definido pela Receita Federal. Um
+        cupom de R$10 pode economizar R$10 no produto, mas não reduz o ICMS ou
+        o II que será cobrado sobre o valor total da operação.
+      </p>
+
+      <p className="mb-6">
+        Uma estratégia eficaz é manter o total do carrinho (produto + frete) em
+        US$50 ou menos para aproveitar o benefício de 0% de Imposto de
+        Importação no Remessa Conforme. Na Shein, é muito comum adicionar
+        vários itens pequenos — uma blusa de US$15, um par de brincos de US$5,
+        uma bolsa de US$12 — e o total rapidamente ultrapassa US$50. Quando
+        isso acontece, o II volta a ser cobrado e o custo final aumenta
+        significativamente. Se o pedido está ficando acima de US$50, considere
+        dividir em duas compras separadas para manter cada uma dentro do limite
+        do benefício tributário.
+      </p>
+
+      <p className="mb-6">
+        Os flash sales da Shein podem parecer uma grande oportunidade, mas é
+        preciso entender como eles funcionam com os impostos de importação.
+        Durante os períodos promocionais, o preço do produto caí no site e o
+        cálculo tributário usa o preço efetivamente pago na compra, não o preço
+        original antes da promoção. Isso significa que, se o preço pago no
+        flash sale mantiver o total do pedido (produto + frete) igual ou abaixo
+        de US$50, o benefício de 0% de Imposto de Importação se aplica
+        normalmente. A vantagem real do flash sale está em reduzir o valor que
+        entra na base de cálculo, diminuindo tanto o II quanto o ICMS sobre a
+        operação.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-10 mb-4">
+        Tamanho, qualidade e prazo na Shein
+      </h2>
+
+      <p className="mb-6">
+        Um problema recorrente nas compras de roupas na Shein é a diferença
+        entre os tamanhos asiáticos e os tamanhos brasileiros. As numerações
+        da Shein costumam ser menores que o equivalente no Brasil, e uma peça
+        que parece ser "M" no site pode corresponder a um "P" no padrão
+        nacional. Pedir o tamanho errado significa receber um produto que não
+        serve — e você ainda pagou imposto de importação sobre ele. Sempre
+        consulte a tabela de medidas de cada produto e considere pedir um
+        tamanho acima do que você normalmente usa. Devoluções em pedidos
+        internacionais da Shein geralmente não são viáveis por conta do custo
+        de envio de retorno, tornando a escolha do tamanho ainda mais
+        importante.
+      </p>
+
+      <p className="mb-6">
+        A qualidade dos produtos da Shein segue o modelo de fast fashion: peças
+        chegam rápido da produção, mas a qualidade do tecido e da construção
+        pode variar bastante entre itens. Uma blusa de R$25 na Shein pode
+        custar R$45 no total após impostos — e se a qualidade não corresponde
+        ao que R$45 compraria em uma loja brasileira, a importação pode não
+        compensar mesmo que o preço original pareça mais barato. Avalie se o
+        custo final tributado justifica a expectativa de qualidade, especialmente
+        para peças que você planeja usar com frequência ou que precisam durar
+        mais tempo.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-10 mb-4">
+        Shein vs lojas brasileiras de fast fashion
+      </h2>
+
+      <p className="mb-6">
+        Lojas brasileiras de fast fashion como Renner, C&A e Riachuelo oferecem
+        roupas similares com tendências atualizadas a preços competitivos, com
+        vantagens que a importação não proporciona: entrega imediata, trocas e
+        devoluções facilitadas, e nenhum imposto de importação sobre o preço.
+        Enquanto uma blusa na Shein pode parecer mais barata no site, o custo
+        final com tributos, frete e câmbio frequentemente se aproxima do preço
+        dessas redes brasileiras. A importação pela Shein só faz sentido quando
+        o custo total (produto + frete + impostos) é significativamente menor
+        que o equivalente disponível no Brasil, ou quando o item específico não
+        está disponível em lojas nacionais.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-10 mb-4">
         Exemplo de cálculo na Shein
       </h2>
 

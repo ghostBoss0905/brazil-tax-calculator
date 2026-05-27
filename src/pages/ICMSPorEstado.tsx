@@ -85,13 +85,28 @@ export default function ICMSPorEstado() {
         faqs={[
           {
             question: `Qual ICMS a calculadora usa para ${state.name}?`,
-            answer: `Para ${state.name}, a calculadora usa ${state.rate} como alíquota estimada de ICMS no estado de destino.`,
+            answer: state.slug === "sao-paulo"
+              ? `Para São Paulo, a calculadora usa 18% como alíquota estimada de ICMS no estado de destino. Essa taxa é uma das mais baixas entre os estados com grande volume de importação, tornando o custo final mais favorável do que em Rio de Janeiro (22%) ou Minas Gerais (20%).`
+              : state.slug === "rio-de-janeiro"
+              ? `Para Rio de Janeiro, a calculadora usa 22% como alíquota estimada de ICMS no estado de destino. Essa taxa é uma das mais altas do Brasil, superior a São Paulo (18%) e Santa Catarina (17%), resultando em custo final mais elevado para o mesmo pedido internacional.`
+              : `Para ${state.name}, a calculadora usa ${state.rate} como alíquota estimada de ICMS no estado de destino.`,
           },
           {
             question: `Compra abaixo de US$50 para ${state.code} paga ICMS?`,
-            answer:
-              "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS estadual pode continuar aparecendo no custo final.",
+            answer: state.slug === "sao-paulo"
+              ? "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS de São Paulo (18%) pode continuar aparecendo no checkout. Para um pedido de US$50 com câmbio de R$5,20, o ICMS SP seria aproximadamente R$46,80 — um custo que precisa ser comparado com alternativas nacionais."
+              : state.slug === "rio-de-janeiro"
+              ? "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS do Rio de Janeiro (22%) pode continuar aparecendo no checkout. Para um pedido de US$50 com câmbio de R$5,20, o ICMS RJ seria aproximadamente R$57,20 — mais de R$10 acima do que o mesmo pedido custaria em São Paulo (R$46,80)."
+              : "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS estadual pode continuar aparecendo no custo final.",
           },
+          ...(state.slug === "sao-paulo" ? [{
+            question: "São Paulo tem vantagem na importação?",
+            answer: "Em relação ao ICMS, sim. A alíquota de 18% em São Paulo é mais baixa que a de Rio de Janeiro (22%) ou Minas Gerais (20%), resultando em custo final menor para o mesmo pedido. São Paulo também concentra hubs de entrega que podem reduzir o prazo de importação. Porém, o consumidor paulista dispõe de mais alternativas nacionais, o que exige uma comparação mais rigorosa entre o custo importado e o preço brasileiro.",
+          }] : []),
+          ...(state.slug === "rio-de-janeiro" ? [{
+            question: "Por que o ICMS do Rio de Janeiro é mais alto?",
+            answer: "A alíquota de 22% é definida pela legislação estadual do Rio de Janeiro e incide sobre a base de cálculo da importação, que pode incluir produto, frete, seguro e o próprio Imposto de Importação. A diferença de 4 pontos percentuais em relação a São Paulo (18%) pode representar R$20-30 a mais em pedidos de US$50, tornando a comparação com produtos nacionais ainda mais importante.",
+          }] : []),
           {
             question: "O valor final é oficial?",
             answer:
@@ -138,6 +153,60 @@ export default function ICMSPorEstado() {
             Remessa Conforme
           </a>.
         </p>
+
+        {state.slug === "sao-paulo" && (
+          <>
+            <h2 className="text-2xl font-semibold mt-10 mb-4">
+              São Paulo: vantagens e cuidado na importação
+            </h2>
+            <p className="mb-6">
+              São Paulo é o estado com o maior volume de compras internacionais
+              no Brasil. A alíquota de ICMS de 18% para importação é uma das
+              mais baixas entre os grandes estados — o que torna as compras
+              mais favoráveis em comparação com Rio de Janeiro (22%) ou Minas
+              Gerais (20%). A maior parte dos hubs de entrega e centros de
+              processamento aduaneiro estão em São Paulo, o que pode resultar em
+              prazos de entrega mais rápidos para pedidos internacionais.
+            </p>
+            <p className="mb-6">
+              Porém, o consumidor paulista também dispõe de mais alternativas
+              nacionais. Lojas como Mercado Livre, Magalu, Renner e Amazon
+              Brasil oferecem produtos com entrega em 1-5 dias, garantia local
+              e sem incerteza sobre impostos. Por isso, em São Paulo, a
+              importação só compensa quando o custo total (produto + frete +
+              imposto) é significativamente menor que a opção nacional —
+              tipicamente 20-30% de economia — ou quando o item específico não
+              está disponível no Brasil.
+            </p>
+          </>
+        )}
+
+        {state.slug === "rio-de-janeiro" && (
+          <>
+            <h2 className="text-2xl font-semibold mt-10 mb-4">
+              Rio de Janeiro: ICMS alto e quando importar compensa
+            </h2>
+            <p className="mb-6">
+              Rio de Janeiro tem uma das alíquotas de ICMS mais altas para
+              importação: 22%. Isso significa que o mesmo pedido internacional
+              pode custar mais para um comprador fluminense do que para um
+              paulista (18%) ou catarinense (17%). A diferença de 4 pontos
+              percentuais entre RJ e SP pode representar R$20-30 a mais em um
+              pedido típico de US$50 — uma diferença significativa que pode
+              eliminar a vantagem do preço importado.
+            </p>
+            <p className="mb-6">
+              No Rio de Janeiro, a comparação com alternativas vendidas no
+              Brasil é ainda mais decisiva. A carga tributária elevada reduz a
+              vantagem do preço importado e, em muitos casos, torna a compra
+              nacional mais econômica, especialmente para produtos acima de
+              US$50 onde o Imposto de Importação também incide. A importação no
+              RJ compensa principalmente para itens específicos não disponíveis
+              nacionalmente ou quando o preço importado é muito inferior
+              (acima de 40% de economia após todos os tributos).
+            </p>
+          </>
+        )}
 
         <a
           href="/"
@@ -216,8 +285,11 @@ export default function ICMSPorEstado() {
           Qual ICMS a calculadora usa para {state.name}?
         </h3>
         <p className="mb-4">
-          A calculadora usa {state.rate} como alíquota estimada para o estado
-          de destino {state.code}.
+          {state.slug === "sao-paulo"
+            ? "Para São Paulo, a calculadora usa 18% como alíquota estimada. Essa taxa é uma das mais baixas entre os estados com grande volume de importação, tornando o custo final mais favorável do que em Rio de Janeiro (22%) ou Minas Gerais (20%)."
+            : state.slug === "rio-de-janeiro"
+            ? "Para Rio de Janeiro, a calculadora usa 22% como alíquota estimada. Essa taxa é uma das mais altas do Brasil, superior a São Paulo (18%) e Santa Catarina (17%), resultando em custo final mais elevado para o mesmo pedido."
+            : `A calculadora usa ${state.rate} como alíquota estimada para o estado de destino ${state.code}.`}
         </p>
 
         <h3 className="text-xl font-semibold mt-6 mb-2">
@@ -228,6 +300,39 @@ export default function ICMSPorEstado() {
           pagamento. Fora desse fluxo, a cobrança pode surgir no processo de
           importação.
         </p>
+
+        {state.slug === "sao-paulo" && (
+          <>
+            <h3 className="text-xl font-semibold mt-6 mb-2">
+              São Paulo tem vantagem na importação?
+            </h3>
+            <p className="mb-4">
+              Em relação ao ICMS, sim. A alíquota de 18% em São Paulo é mais
+              baixa que a de Rio de Janeiro (22%) ou Minas Gerais (20%),
+              resultando em custo final menor para o mesmo pedido. São Paulo
+              também concentra hubs de entrega que podem reduzir o prazo. Porém,
+              o consumidor paulista dispõe de mais alternativas nacionais, o que
+              exige comparação rigorosa entre o custo importado e o preço
+              brasileiro.
+            </p>
+          </>
+        )}
+
+        {state.slug === "rio-de-janeiro" && (
+          <>
+            <h3 className="text-xl font-semibold mt-6 mb-2">
+              Por que o ICMS do Rio de Janeiro é mais alto?
+            </h3>
+            <p className="mb-4">
+              A alíquota de 22% é definida pela legislação estadual do Rio de
+              Janeiro e incide sobre a base de cálculo da importação, que pode
+              incluir produto, frete, seguro e o próprio Imposto de Importação.
+              A diferença de 4 pontos percentuais em relação a São Paulo (18%)
+              pode representar R$20-30 a mais em pedidos de US$50, tornando a
+              comparação com produtos nacionais ainda mais importante.
+            </p>
+          </>
+        )}
 
         <h3 className="text-xl font-semibold mt-6 mb-2">
           Esta estimativa substitui o valor oficial?

@@ -101,6 +101,94 @@ export default function ImpostoAmazonInternacional() {
         </ul>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Amazon: vendido pela Amazon vs vendedor terceiro
+        </h2>
+
+        <p className="mb-6">
+          Na Amazon internacional, existem dois tipos principais de oferta.
+          Quando o produto mostra "Vendido e enviado pela Amazon", a Amazon
+          própria assume a condição de importador e a transação segue a
+          logística centralizada da empresa, o que dentro do Remessa Conforme
+          tipicamente resulta em tributos exibidos no checkout com a
+          discriminação clara de Imposto de Importação e ICMS. Quando o
+          produto indica "Vendido por [nome do vendedor] e enviado pela
+          Amazon", um terceiro utiliza a infraestrutura de fulfillment da
+          Amazon, mas o tratamento tributário depende de se esse vendedor
+          específico está certificado no programa RC. Sempre confira os
+          campos "Vendido por" e "Enviado por" na página do produto —
+          combinações diferentes geram resultados tributários diferentes.
+        </p>
+
+        <p className="mb-6">
+          Identificar produtos internacionais na Amazon exige atenção aos
+          sinais visíveis na página. O Amazon.br exibe tanto produtos
+          nacionais quanto internacionais no mesmo ambiente, mas os itens
+          importados costumam apresentar marcações como "Importado" ou "Envio
+          internacional", janelas de entrega mais longas e, em alguns casos,
+          taxas estimadas de importação no checkout. Quando essas taxas
+          estimadas aparecem, elas funcionam como uma prévia da cobrança
+          tributária que será aplicada. Quando não aparecem, o imposto pode
+          ser cobrado posteriormente na chegada ao Brasil, potencialmente a
+          uma alíquota mais elevada.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Garantia, devolução e prazo na Amazon internacional
+        </h2>
+
+        <p className="mb-6">
+          Produtos importados via Amazon internacional podem não ter a mesma
+          garantia oferecida pela Amazon no Brasil. Um notebook ou câmera
+          comprado internacionalmente pode contar apenas com garantia do
+          fabricante válida no país de origem, exigindo o envio do produto
+          de volta para reparo — um processo caro e demorado. Antes de
+          importar eletrônicos acima de US$100, verifique se o fabricante
+          oferece garantia internacional ou se lojas brasileiras vendem o
+          mesmo produto com cobertura local, pois essa diferença pode mudar
+          completamente a relação custo-benefício.
+        </p>
+
+        <p className="mb-6">
+          A política de devolução da Amazon para pedidos internacionais
+          oferece janela de 30 dias, mas o custo de envio de retorno costuma
+          ser pago pelo cliente e pode ser significativo. Para um item de
+          US$20, gastar R$80 a R$150 no frete de devolução torna a troca
+          impraticável. Para produtos de valor acima de US$100, o custo de
+          retorno pode ser proporcionalmente menor, mas o imposto de
+          importação já pago geralmente não é restituído na devolução.
+          Considere esse risco na decisão de compra, especialmente para
+          itens onde a insatisfação é mais provável, como vestuário e
+          eletrônicos.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
+          Amazon Prime e importação
+        </h2>
+
+        <p className="mb-6">
+          Assinantes Amazon Prime podem obter frete mais rápido em itens
+          internacionais elegíveis, mas a velocidade de entrega não altera
+          o cálculo tributário — o total de produto mais frete continua
+          definindo a alíquota do Imposto de Importação. O frete gratuito
+          do Prime em itens internacionais pode eliminar o componente frete,
+          facilitando a permanência abaixo de US$50, mas convém verificar se
+          o "frete grátis" é realmente gratuito ou se há uma "taxa de envio"
+          apenas reduzida. A base de cálculo tributária inclui qualquer
+          valor de frete cobrado, mesmo que descontado pelo Prime.
+        </p>
+
+        <p className="mb-6">
+          A Amazon Brasil (amazon.com.br) vende muitos produtos com
+          fulfillment nacional, sem imposto de importação, entrega Prime em
+          1-2 dias e garantia brasileira. Antes de optar por um anúncio
+          internacional, busque o mesmo produto na loja brasileira. Em
+          muitos casos, o preço nacional é competitivo frente ao preço
+          internacional somado ao imposto de importação, especialmente para
+          eletrônicos, livros e itens de casa acima de US$50, onde a carga
+          tributária eleva significativamente o custo final da importação.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-4">
           Amazon, Remessa Conforme e ICMS
         </h2>
 

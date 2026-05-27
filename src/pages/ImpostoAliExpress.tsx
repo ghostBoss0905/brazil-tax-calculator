@@ -119,6 +119,88 @@ export default function ImpostoAliExpress() {
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">
+        AliExpress: vendedores, categorias e tempo de entrega
+      </h2>
+
+      <p className="mb-6">
+        O AliExpress possui milhares de vendedores, desde fábricas que vendem
+        diretamente até pequenos traders intermediários. A certificação do
+        vendedor dentro do Remessa Conforme afeta diretamente o tratamento
+        tributário: vendedores dentro do programa mostram os impostos no
+        checkout, enquanto vendedores não-certificados podem resultar em
+        Imposto de Importação de 60% cobrado na chegada da encomenda. Sempre
+        verifique a avaliação do vendedor e se o anúncio exibe badges como
+        "AliExpress Choice", que indicam sellers verificados e com melhor
+        histórico de entregas.
+      </p>
+
+      <p className="mb-6">
+        O prazo de entrega no AliExpress varia de 15 a 60 dias, dependendo do
+        vendedor e do método de envio escolhido. Opções mais rápidas como
+        "AliExpress Standard Shipping" ou "Cainiao Super Economy" têm custos
+        diferentes que alteram o total do pedido e podem fazer a compra ultrapassar
+        o limite de US$50, mudando a faixa de imposto. Considere se esperar mais
+        de 30 dias por um produto é compensador frente à economia obtida, pois
+        prazos longos também aumentam o risco de problemas logísticos e devoluções
+        complicadas.
+      </p>
+
+      <p className="mb-6">
+        O AliExpress é mais forte em eletrônicos, acessórios de celular,
+        gadgets de tecnologia e pequenos itens para casa. Para eletrônicos acima
+        de US$50, o impacto tributário é significativo (II com desconto do RC
+        + ICMS), tornando a comparação com alternativas brasileiras especialmente
+        importante. Para acessórios pequenos abaixo de US$50, a alíquota de 0%
+        de II dentro do Remessa Conforme pode gerar bom valor mesmo com o ICMS
+        estadual, mas convém sempre calcular o custo final antes de decidir.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-10 mb-4">
+        Cupons do AliExpress e o cálculo de imposto
+      </h2>
+
+      <p className="mb-6">
+        O AliExpress oferece diversos cupons — de novo usuário, de loja,
+        AliCoins e promoções de plataforma — que reduzem o preço que você paga,
+        mas o cálculo do imposto de importação no Remessa Conforme utiliza o
+        valor efetivamente cobrado do consumidor. Se um cupom reduz o total
+        (produto + frete) para abaixo de US$50, a regra de II a 0% se aplica
+        sobre esse valor menor. Porém, descontos no nível da loja que não
+        aparecem no total oficial do checkout podem não reduzir a base de
+        cálculo do imposto, pois a Receita Federal considera o valor declarado
+        na transação, não o preço original do anúncio.
+      </p>
+
+      <p className="mb-6">
+        Itens do "AliExpress Choice" frequentemente incluem frete grátis ou
+        com desconto, o que é vantajoso para manter o total ≤US$50 e evitar a
+        cobrança de Imposto de Importação. Mas "frete grátis" às vezes significa
+        que o custo do envio está embutido no preço do produto, de forma que a
+        base para cálculo tributário já inclui esse valor. Verifique o
+        detalhamento itemizado no checkout: se o frete aparece como zero mas o
+        preço do produto está acima do usual, a base aduaneira pode ser maior
+        do que você espera e impactar a faixa de imposto aplicada.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-10 mb-4">
+        AliExpress vs lojas brasileiras de eletrônicos
+      </h2>
+
+      <p className="mb-6">
+        Comparar o AliExpress com vendedores brasileiros de eletrônicos (Mercado
+        Livre, Magalu, Amazon Brasil) exige olhar além do preço. Lojas
+        brasileiras oferecem entrega rápida (2-5 dias vs 15-45 dias), cobertura
+        de garantia, devoluções mais simples e sem incerteza sobre imposto de
+        importação. A importação pelo AliExpress é vantajosa quando o custo
+        total é significativamente menor — tipicamente com economia de 30% ou
+        mais — ou quando o item específico não está disponível no Brasil. Para
+        eletrônicos comuns como capas de celular, carregadores e acessórios
+        pequenos, a diferença de preço no Brasil costuma ser pequena o suficiente
+        para que a importação não compense, especialmente considerando o prazo
+        de entrega e a segurança da compra local.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-10 mb-4">
         Calculadora de Imposto do AliExpress
       </h2>
 
