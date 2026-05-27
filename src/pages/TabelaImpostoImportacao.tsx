@@ -2,6 +2,7 @@ import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
 import DirectAnswer from "@/components/DirectAnswer";
 import OfficialSources from "@/components/OfficialSources";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export default function TabelaImpostoImportacao() {
   return (
@@ -42,6 +43,11 @@ export default function TabelaImpostoImportacao() {
             do custo final.
           </p>
         </DirectAnswer>
+
+        <Breadcrumb items={[
+          { label: "Início", href: "/" },
+          { label: "Tabela imposto de importação" }
+        ]} />
 
         <p className="text-lg mb-8">
           A tabela de imposto de importação ajuda a entender quanto uma compra
@@ -225,7 +231,7 @@ export default function TabelaImpostoImportacao() {
 
         <a
           href="/"
-          className="inline-block bg-black text-white px-6 py-3 rounded-xl mb-10"
+          className="inline-block bg-[#008272] hover:bg-[#06264b] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-md transition-colors mb-10"
         >
           Calcular imposto de importação agora
         </a>
@@ -289,63 +295,6 @@ export default function TabelaImpostoImportacao() {
             },
           ]}
         />
-
-        <div className="mt-10">
-          <h2 className="text-2xl font-semibold mb-4">
-            Guias Relacionados
-          </h2>
-
-          <ul className="list-disc pl-6 space-y-2">
-            <li>
-              <a
-                href="/como-calcular-imposto-importacao-brasil"
-                className="text-blue-600 underline"
-              >
-                Como calcular imposto de importação
-              </a>
-            </li>
-            <li>
-              <a
-                href="/o-que-e-remessa-conforme"
-                className="text-blue-600 underline"
-              >
-                O que é Remessa Conforme?
-              </a>
-            </li>
-            <li>
-              <a
-                href="/icms-importacao-brasil"
-                className="text-blue-600 underline"
-              >
-                ICMS na importação do Brasil
-              </a>
-            </li>
-            <li>
-              <a
-                href="/imposto-aliexpress-brasil"
-                className="text-blue-600 underline"
-              >
-                Imposto do AliExpress no Brasil
-              </a>
-            </li>
-            <li>
-              <a
-                href="/imposto-shein-brasil"
-                className="text-blue-600 underline"
-              >
-                Imposto da Shein no Brasil
-              </a>
-            </li>
-            <li>
-              <a
-                href="/imposto-shopee-brasil"
-                className="text-blue-600 underline"
-              >
-                Imposto da Shopee no Brasil
-              </a>
-            </li>
-          </ul>
-        </div>
 
         <p className="text-sm text-gray-500 mt-12">
           Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras

@@ -2,6 +2,7 @@ import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
 import DirectAnswer from "@/components/DirectAnswer";
 import OfficialSources from "@/components/OfficialSources";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export default function ComprasAbaixo50Dolares() {
   return (
@@ -14,17 +15,22 @@ export default function ComprasAbaixo50Dolares() {
           {
             question: "Compras abaixo de US$50 pagam imposto no Brasil?",
             answer:
-              "Em plataformas certificadas no Remessa Conforme, o Imposto de Importação federal pode ser 0%, mas o ICMS estadual pode continuar sendo cobrado.",
+              "Em plataformas certificadas no Remessa Conforme, o Imposto de Importação federal é 0% para compras até US$50, mas o ICMS estadual continua sendo cobrado com alíquotas entre 17% e 20%, dependendo do estado de destino. Fora do Remessa Conforme, compras abaixo de US$50 podem pagar Imposto de Importação de 60% sobre o valor aduaneiro, além do ICMS. Portanto, o limite de US$50 não garante isenção total — sempre simule o custo final com a calculadora antes de comprar.",
           },
           {
             question: "O limite de US$50 inclui frete?",
             answer:
-              "Para estimar a compra com segurança, considere produto, frete e seguro quando houver, pois esses valores podem compor a operação de importação.",
+              "Para estimar a compra com segurança, considere produto, frete e seguro quando houver, pois esses valores podem compor a base de cálculo da importação. Uma compra que parece abaixo de US$50 pelo preço do produto pode ultrapassar o limite quando o frete internacional é adicionado. Se o valor total (produto + frete + seguro) exceder US$50, a regra de Imposto de Importação de 0% pode não se aplicar, e a alíquota pode mudar para 20% dentro do RC ou 60% fora dele. Por isso, sempre use o valor total do carrinho ao verificar o enquadramento.",
           },
           {
             question: "Fora do Remessa Conforme a regra muda?",
             answer:
-              "Sim. Compras fora de plataformas certificadas podem seguir regra diferente e ter cobrança na chegada ao Brasil.",
+              "Sim. Compras fora de plataformas certificadas no Remessa Conforme podem pagar Imposto de Importação de 60% sobre o valor aduaneiro, cobrado quando a encomenda chega ao Brasil. Além disso, o ICMS estadual (17% a 20%) também é cobrado, e a cobrança aparece por meio dos Correios ou da transportadora, sem previsibilidade no checkout. Dentro do RC, o Imposto de Importação é 0% até US$50 e 20% acima, com tributos exibidos antes do pagamento. A diferença no custo final pode ser significativa entre os dois cenários.",
+          },
+          {
+            question: "Como saber se estou no Remessa Conforme?",
+            answer:
+              "Confira a lista pública de empresas certificadas no site da Receita Federal e, no momento da compra, veja se o checkout mostra os tributos antes do pagamento. Plataformas como AliExpress, Shein e Shopee participam do programa, mas em marketplaces, a operação pode depender do vendedor específico. Se os impostos aparecem discriminados no checkout (Imposto de Importação e ICMS), a compra está dentro do RC. Se não aparecem, a cobrança pode ocorrer na chegada ao Brasil com alíquota de 60% de Imposto de Importação.",
           },
         ]}
       />
@@ -41,6 +47,11 @@ export default function ComprasAbaixo50Dolares() {
             o ICMS estadual pode continuar sendo cobrado no checkout.
           </p>
         </DirectAnswer>
+
+        <Breadcrumb items={[
+          { label: "Início", href: "/" },
+          { label: "Compras abaixo de US$50" }
+        ]} />
 
         <p className="text-lg mb-8">
           A dúvida sobre compras abaixo de US$50 é uma das mais importantes
@@ -125,7 +136,7 @@ export default function ComprasAbaixo50Dolares() {
 
         <a
           href="/"
-          className="inline-block bg-black text-white px-6 py-3 rounded-xl mb-10"
+          className="inline-block bg-[#008272] hover:bg-[#06264b] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-md transition-colors mb-10"
         >
           Simular compra abaixo de US$50
         </a>
@@ -135,28 +146,58 @@ export default function ComprasAbaixo50Dolares() {
         </h2>
 
         <h3 className="text-xl font-semibold mt-6 mb-2">
-          Compra abaixo de US$50 ainda paga ICMS?
+          Compras abaixo de US$50 pagam imposto no Brasil?
         </h3>
         <p className="mb-4">
-          Sim, pode pagar. O ICMS é estadual e pode continuar sendo cobrado
-          mesmo quando o Imposto de Importação federal é 0%.
+          Em plataformas certificadas no Remessa Conforme, o Imposto de
+          Importação federal é 0% para compras até US$50, mas o ICMS estadual
+          continua sendo cobrado com alíquotas entre 17% e 20%, dependendo do
+          estado de destino. Fora do Remessa Conforme, compras abaixo de US$50
+          podem pagar Imposto de Importação de 60% sobre o valor aduaneiro,
+          além do ICMS. Portanto, o limite de US$50 não garante isenção total —
+          sempre simule o custo final com a calculadora antes de comprar.
         </p>
 
         <h3 className="text-xl font-semibold mt-6 mb-2">
-          A regra vale para qualquer site?
+          O limite de US$50 inclui frete?
         </h3>
         <p className="mb-4">
-          Não. A regra mais favorável depende de a compra estar em plataforma
-          certificada no Programa Remessa Conforme.
+          Para estimar a compra com segurança, considere produto, frete e seguro
+          quando houver, pois esses valores podem compor a base de cálculo da
+          importação. Uma compra que parece abaixo de US$50 pelo preço do
+          produto pode ultrapassar o limite quando o frete internacional é
+          adicionado. Se o valor total (produto + frete + seguro) exceder US$50,
+          a regra de Imposto de Importação de 0% pode não se aplicar, e a
+          alíquota pode mudar para 20% dentro do RC ou 60% fora dele. Por isso,
+          sempre use o valor total do carrinho ao verificar o enquadramento.
+        </p>
+
+        <h3 className="text-xl font-semibold mt-6 mb-2">
+          Fora do Remessa Conforme a regra muda?
+        </h3>
+        <p className="mb-4">
+          Sim. Compras fora de plataformas certificadas no Remessa Conforme
+          podem pagar Imposto de Importação de 60% sobre o valor aduaneiro,
+          cobrado quando a encomenda chega ao Brasil. Além disso, o ICMS
+          estadual (17% a 20%) também é cobrado, e a cobrança aparece por meio
+          dos Correios ou da transportadora, sem previsibilidade no checkout.
+          Dentro do RC, o Imposto de Importação é 0% até US$50 e 20% acima, com
+          tributos exibidos antes do pagamento. A diferença no custo final pode
+          ser significativa entre os dois cenários.
         </p>
 
         <h3 className="text-xl font-semibold mt-6 mb-2">
           Como saber se estou no Remessa Conforme?
         </h3>
         <p className="mb-4">
-          Confira se a Receita Federal lista a empresa como certificada e, no
-          momento da compra, veja se o checkout mostra os tributos antes do
-          pagamento.
+          Confira a lista pública de empresas certificadas no site da Receita
+          Federal e, no momento da compra, veja se o checkout mostra os tributos
+          antes do pagamento. Plataformas como AliExpress, Shein e Shopee
+          participam do programa, mas em marketplaces, a operação pode depender
+          do vendedor específico. Se os impostos aparecem discriminados no
+          checkout (Imposto de Importação e ICMS), a compra está dentro do RC.
+          Se não aparecem, a cobrança pode ocorrer na chegada ao Brasil com
+          alíquota de 60% de Imposto de Importação.
         </p>
 
         <OfficialSources

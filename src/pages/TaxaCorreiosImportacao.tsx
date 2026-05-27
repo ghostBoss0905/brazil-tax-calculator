@@ -2,6 +2,7 @@ import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
 import DirectAnswer from "@/components/DirectAnswer";
 import OfficialSources from "@/components/OfficialSources";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export default function TaxaCorreiosImportacao() {
   return (
@@ -42,6 +43,11 @@ export default function TaxaCorreiosImportacao() {
             no aplicativo dos Correios.
           </p>
         </DirectAnswer>
+
+        <Breadcrumb items={[
+          { label: "Início", href: "/" },
+          { label: "Taxa Correios importação" }
+        ]} />
 
         <p className="text-lg mb-8">
           Quando uma compra internacional chega ao Brasil, o consumidor pode
@@ -219,7 +225,7 @@ export default function TaxaCorreiosImportacao() {
 
         <a
           href="/"
-          className="inline-block bg-black text-white px-6 py-3 rounded-xl mb-10"
+          className="inline-block bg-[#008272] hover:bg-[#06264b] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-md transition-colors mb-10"
         >
           Calcular imposto de importação
         </a>
@@ -283,47 +289,6 @@ export default function TaxaCorreiosImportacao() {
             },
           ]}
         />
-
-        <div className="mt-10">
-          <h2 className="text-2xl font-semibold mb-4">
-            Guias Relacionados
-          </h2>
-
-          <ul className="list-disc pl-6 space-y-2">
-            <li>
-              <a
-                href="/tabela-imposto-importacao-brasil"
-                className="text-blue-600 underline"
-              >
-                Tabela de imposto de importação
-              </a>
-            </li>
-            <li>
-              <a
-                href="/como-calcular-imposto-importacao-brasil"
-                className="text-blue-600 underline"
-              >
-                Como calcular imposto de importação
-              </a>
-            </li>
-            <li>
-              <a
-                href="/o-que-e-remessa-conforme"
-                className="text-blue-600 underline"
-              >
-                O que é Remessa Conforme?
-              </a>
-            </li>
-            <li>
-              <a
-                href="/icms-importacao-brasil"
-                className="text-blue-600 underline"
-              >
-                ICMS na importação do Brasil
-              </a>
-            </li>
-          </ul>
-        </div>
 
         <p className="text-sm text-gray-500 mt-12">
           Atualizado em Maio de 2026. Fonte: Correios, ambiente Minhas

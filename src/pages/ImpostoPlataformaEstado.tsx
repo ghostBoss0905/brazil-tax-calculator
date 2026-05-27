@@ -6,6 +6,7 @@ import RelatedGuides from "@/components/RelatedGuides";
 import SeoHead from "@/components/SeoHead";
 import NotFound from "@/pages/not-found";
 import { icmsStatePages } from "@/pages/ICMSPorEstado";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const platforms = [
   {
@@ -110,6 +111,12 @@ export default function ImpostoPlataformaEstado() {
           </p>
         </DirectAnswer>
 
+        <Breadcrumb items={[
+          { label: "Início", href: "/" },
+          { label: platform.name, href: platform.basePath },
+          { label: `${state.name}` }
+        ]} />
+
         <p className="text-lg mb-8">
           Uma compra internacional da {platform.name} pode ter custo final
           diferente dependendo do estado de entrega. Para {state.name}, a
@@ -125,7 +132,7 @@ export default function ImpostoPlataformaEstado() {
 
         <a
           href="/"
-          className="inline-block bg-black text-white px-6 py-3 rounded-xl mb-10"
+          className="inline-block bg-[#008272] hover:bg-[#06264b] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-md transition-colors mb-10"
         >
           Simular compra da {platform.name} para {state.code}
         </a>

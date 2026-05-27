@@ -2,6 +2,7 @@ import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
 import DirectAnswer from "@/components/DirectAnswer";
 import { icmsStatePages } from "@/pages/ICMSPorEstado";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export default function ICMSImportacao() {
   return (
@@ -14,17 +15,22 @@ export default function ICMSImportacao() {
           {
             question: "O ICMS é cobrado em todas as importações?",
             answer:
-              "Na maioria das compras internacionais para o Brasil, o ICMS faz parte da cobrança tributária e varia conforme o estado.",
+              "Sim, na maioria das compras internacionais para o Brasil, o ICMS faz parte da tributação e varia conforme o estado de destino. A alíquota estadual oscila entre 17% e 20%, dependendo da unidade federativa, e incide sobre uma base de cálculo que pode incluir produto, frete, seguro e o próprio Imposto de Importação. Mesmo compras abaixo de US$50 em plataformas certificadas no Remessa Conforme, onde o Imposto de Importação federal é 0%, ainda pagam ICMS. Por isso, é fundamental informar o estado de entrega ao calcular o custo total da importação.",
           },
           {
             question: "Qual é o ICMS de importação no Brasil?",
             answer:
-              "A Receita Federal informa que a alíquota usada pode ficar entre 17% e 20%, conforme o estado e a regra aplicável.",
+              "A alíquota de ICMS na importação varia entre 17% e 20%, conforme o estado de destino e a regra aplicável à compra. Estados como Santa Catarina e Espírito Santo usam 17%, enquanto Minas Gerais e Ceará aplicam 20%. A base de cálculo do ICMS é calculada por dentro e pode incluir o valor do produto, frete, seguro e Imposto de Importação, amplificando o efeito no custo final. Para estimar corretamente, use a calculadora informando o estado de entrega.",
           },
           {
             question: "Como pagar o ICMS de importação?",
             answer:
-              "Em sites certificados no Remessa Conforme, o pagamento costuma ocorrer na compra; fora dele, pode ser cobrado na chegada da encomenda.",
+              "Em compras feitas por plataformas certificadas no Remessa Conforme, o ICMS costuma ser cobrado no checkout junto com o Imposto de Importação, antes do pagamento. Fora do programa, o ICMS pode ser cobrado quando a encomenda chega ao Brasil, por meio dos Correios ou da transportadora, com notificação de pagamento pendente. O pagamento pode ser feito no ambiente Minhas Importações ou no aplicativo dos Correios. Sempre confira se os tributos aparecem no checkout para evitar surpresas na entrega.",
+          },
+          {
+            question: "O ICMS aparece no checkout?",
+            answer:
+              "Em compras feitas dentro do Remessa Conforme, o ICMS pode aparecer discriminado no checkout junto com o Imposto de Importação, antes do pagamento. Fora desse fluxo, o ICMS é cobrado na chegada da encomenda ao Brasil, pelos Correios ou pela transportadora. A diferença é importante: no Remessa Conforme, compras até US$50 têm Imposto de Importação de 0%, mas o ICMS (17% a 20%) continua aparecendo. Verificar a tela de pagamento antes de finalizar o pedido é a forma mais segura de prever o custo total.",
           },
         ]}
       />
@@ -43,6 +49,11 @@ export default function ICMSImportacao() {
           Importação.
         </p>
       </DirectAnswer>
+
+      <Breadcrumb items={[
+        { label: "Início", href: "/" },
+        { label: "ICMS na importação" }
+      ]} />
 
       <p className="text-lg mb-8">
         O ICMS é um dos principais impostos cobrados em compras internacionais
@@ -91,11 +102,11 @@ export default function ICMSImportacao() {
       </p>
 
       <p className="mb-6">
-        Essa variação é importante para SEO e para o usuário final. Quem busca
-        "ICMS importação Brasil" normalmente quer entender por que o valor
-        final ficou maior do que esperava. Em muitos casos, a resposta está na
-        forma como o ICMS é calculado por dentro, aumentando a base antes da
-        aplicação da alíquota.
+        Essa variação é importante para o comprador. Quem busca entender o
+        ICMS na importação normalmente quer saber por que o valor final ficou
+        maior do que esperava. Em muitos casos, a resposta está na forma como
+        o ICMS é calculado por dentro, aumentando a base antes da aplicação da
+        alíquota.
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -178,7 +189,7 @@ export default function ICMSImportacao() {
 
       <a
         href="/"
-        className="inline-block bg-black text-white px-6 py-3 rounded-xl mb-10"
+        className="inline-block bg-[#008272] hover:bg-[#06264b] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-md transition-colors mb-10"
       >
         Calcular Imposto de Importação
       </a>
@@ -192,26 +203,43 @@ export default function ICMSImportacao() {
       </h3>
 
       <p className="mb-4">
-        Na maioria dos casos, sim. O ICMS faz parte da tributação de compras
-        internacionais no Brasil.
+        Sim, na maioria das compras internacionais para o Brasil, o ICMS faz
+        parte da tributação e varia conforme o estado de destino. A alíquota
+        estadual oscila entre 17% e 20%, dependendo da unidade federativa, e
+        incide sobre uma base de cálculo que pode incluir produto, frete, seguro
+        e o próprio Imposto de Importação. Mesmo compras abaixo de US$50 em
+        plataformas certificadas no Remessa Conforme, onde o Imposto de
+        Importação federal é 0%, ainda pagam ICMS. Por isso, é fundamental
+        informar o estado de entrega ao calcular o custo total da importação.
       </p>
 
       <h3 className="text-xl font-semibold mt-6 mb-2">
-        Qual estado cobra mais ICMS?
+        Qual é o ICMS de importação no Brasil?
       </h3>
 
       <p className="mb-4">
-        A alíquota pode variar entre estados, mas geralmente fica em torno
-        de 17% a 20%.
+        A alíquota de ICMS na importação varia entre 17% e 20%, conforme o
+        estado de destino e a regra aplicável à compra. Estados como Santa
+        Catarina e Espírito Santo usam 17%, enquanto Minas Gerais e Ceará
+        aplicam 20%. A base de cálculo do ICMS é calculada por dentro e pode
+        incluir o valor do produto, frete, seguro e Imposto de Importação,
+        amplificando o efeito no custo final. Para estimar corretamente, use a
+        calculadora informando o estado de entrega.
       </p>
 
       <h3 className="text-xl font-semibold mt-6 mb-2">
-        Como pagar o ICMS?
+        Como pagar o ICMS de importação?
       </h3>
 
       <p className="mb-4">
-        O pagamento normalmente acontece junto com o imposto de importação
-        no momento da liberação da encomenda.
+        Em compras feitas por plataformas certificadas no Remessa Conforme, o
+        ICMS costuma ser cobrado no checkout junto com o Imposto de Importação,
+        antes do pagamento. Fora do programa, o ICMS pode ser cobrado quando a
+        encomenda chega ao Brasil, por meio dos Correios ou da transportadora,
+        com notificação de pagamento pendente. O pagamento pode ser feito no
+        ambiente Minhas Importações ou no aplicativo dos Correios. Sempre
+        confira se os tributos aparecem no checkout para evitar surpresas na
+        entrega.
       </p>
 
       <h3 className="text-xl font-semibold mt-6 mb-2">
@@ -219,54 +247,15 @@ export default function ICMSImportacao() {
       </h3>
 
       <p className="mb-4">
-        Em compras feitas por empresas certificadas no Remessa Conforme, o ICMS
-        pode aparecer no checkout. Fora desse fluxo, ele pode ser cobrado na
-        chegada da encomenda.
+        Em compras feitas dentro do Remessa Conforme, o ICMS pode aparecer
+        discriminado no checkout junto com o Imposto de Importação, antes do
+        pagamento. Fora desse fluxo, o ICMS é cobrado na chegada da encomenda
+        ao Brasil, pelos Correios ou pela transportadora. A diferença é
+        importante: no Remessa Conforme, compras até US$50 têm Imposto de
+        Importação de 0%, mas o ICMS (17% a 20%) continua aparecendo.
+        Verificar a tela de pagamento antes de finalizar o pedido é a forma mais
+        segura de prever o custo total.
       </p>
-
-      <div className="mt-10">
-        <h2 className="text-2xl font-semibold mb-4">
-          Guias Relacionados
-        </h2>
-
-        <ul className="list-disc pl-6 space-y-2">
-          <li>
-            <a
-              href="/o-que-e-remessa-conforme"
-              className="text-blue-600 underline"
-            >
-              O que é Remessa Conforme?
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/imposto-aliexpress-brasil"
-              className="text-blue-600 underline"
-            >
-              Imposto do AliExpress no Brasil
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/imposto-shein-brasil"
-              className="text-blue-600 underline"
-            >
-              Imposto da Shein no Brasil
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/imposto-shopee-brasil"
-              className="text-blue-600 underline"
-            >
-              Imposto da Shopee no Brasil
-            </a>
-          </li>
-        </ul>
-      </div>
 
       <p className="text-sm text-gray-500 mt-12">
         Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras

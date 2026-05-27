@@ -1,6 +1,7 @@
 import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
 import DirectAnswer from "@/components/DirectAnswer";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export default function RemessaConforme() {
   return (
@@ -13,17 +14,27 @@ export default function RemessaConforme() {
           {
             question: "O que é Remessa Conforme?",
             answer:
-              "É um programa da Receita Federal para plataformas certificadas informarem e cobrarem os tributos de compras internacionais de forma antecipada.",
+              "O Remessa Conforme é um programa da Receita Federal que permite a plataformas certificadas informar e recolher os tributos de compras internacionais no checkout, antes do pagamento. Sem o programa, o Imposto de Importação pode chegar a 60% sobre o valor aduaneiro, cobrado quando a encomenda chega ao Brasil. Dentro do Remessa Conforme, compras até US$50 podem ter Imposto de Importação de 0%, e compras acima de US$50 têm alíquota reduzida a 20%. O ICMS estadual, que varia de 17% a 20% conforme o estado de destino, continua sendo cobrado em ambos os casos.",
           },
           {
             question: "Compras abaixo de US$50 pagam imposto?",
             answer:
-              "Sim. Mesmo compras abaixo de US$50 podem pagar Imposto de Importação e ICMS, de acordo com as regras vigentes.",
+              "Sim. Em plataformas certificadas no Remessa Conforme, o Imposto de Importação federal é 0% para compras até US$50, mas o ICMS estadual continua sendo cobrado com alíquotas entre 17% e 20%, dependendo do estado de destino. Fora do Remessa Conforme, mesmo compras abaixo de US$50 podem pagar Imposto de Importação de 60% sobre o valor aduaneiro, além do ICMS. Portanto, o limite de US$50 não garante compra sem tributos — sempre simule o custo total antes de pagar.",
           },
           {
             question: "Como calcular o imposto antes de comprar?",
             answer:
-              "Use uma calculadora de imposto de importação com valor do produto, frete, câmbio, estado e situação do Remessa Conforme.",
+              "Use uma calculadora de imposto de importação informando o valor do produto, frete, câmbio do dia, estado de destino e se a loja participa do Remessa Conforme. O cálculo considera o Imposto de Importação (0% até US$50 com RC, 20% acima de US$50 com RC ou 60% sem RC) e o ICMS estadual (17% a 20%). Simular antes de comprar permite comparar o custo final com alternativas vendidas no Brasil e evitar surpresas na chegada da encomenda.",
+          },
+          {
+            question: "O AliExpress participa do Remessa Conforme?",
+            answer:
+              "Sim. O AliExpress é uma das plataformas certificadas no Programa Remessa Conforme da Receita Federal. Isso significa que, em compras dentro do programa, os tributos aparecem discriminados no checkout antes do pagamento. Compras até US$50 têm Imposto de Importação de 0%, enquanto compras acima de US$50 pagam 20% de Imposto de Importação, mais ICMS estadual (17% a 20%). Para confirmar, verifique se os tributos estão visíveis na tela de pagamento antes de finalizar o pedido.",
+          },
+          {
+            question: "Remessa Conforme significa compra sem imposto?",
+            answer:
+              "Não. O Remessa Conforme organiza e antecipa a cobrança dos tributos em empresas certificadas, mas não elimina impostos. Em compras até US$50, o Imposto de Importação federal pode ser 0%, mas o ICMS estadual (17% a 20%) continua sendo cobrado. Acima de US$50, o Imposto de Importação é 20% dentro do programa, contra 60% fora dele. O programa oferece previsibilidade, não isenção — sempre calcule o custo total antes de comprar.",
           },
         ]}
       />
@@ -41,6 +52,11 @@ export default function RemessaConforme() {
           internacionais no checkout, dando mais previsibilidade ao consumidor.
         </p>
       </DirectAnswer>
+
+      <Breadcrumb items={[
+        { label: "Início", href: "/" },
+        { label: "Remessa Conforme" }
+      ]} />
 
       <p className="text-lg mb-8">
         O Remessa Conforme é um programa da Receita Federal criado para
@@ -178,11 +194,19 @@ export default function RemessaConforme() {
       </h2>
 
       <h3 className="text-xl font-semibold mt-6 mb-2">
-        O AliExpress participa do Remessa Conforme?
+        O que é Remessa Conforme?
       </h3>
 
       <p className="mb-4">
-        Sim. O AliExpress participa oficialmente do programa.
+        O Remessa Conforme é um programa da Receita Federal que permite a
+        plataformas certificadas informar e recolher os tributos de compras
+        internacionais no checkout, antes do pagamento. Sem o programa, o
+        Imposto de Importação pode chegar a 60% sobre o valor aduaneiro,
+        cobrado quando a encomenda chega ao Brasil. Dentro do Remessa
+        Conforme, compras até US$50 podem ter Imposto de Importação de 0%, e
+        compras acima de US$50 têm alíquota reduzida a 20%. O ICMS estadual,
+        que varia de 17% a 20% conforme o estado de destino, continua sendo
+        cobrado em ambos os casos.
       </p>
 
       <h3 className="text-xl font-semibold mt-6 mb-2">
@@ -190,16 +214,42 @@ export default function RemessaConforme() {
       </h3>
 
       <p className="mb-4">
-        Compras abaixo de US$50 podem pagar ICMS dependendo do estado.
+        Sim. Em plataformas certificadas no Remessa Conforme, o Imposto de
+        Importação federal é 0% para compras até US$50, mas o ICMS estadual
+        continua sendo cobrado com alíquotas entre 17% e 20%, dependendo do
+        estado de destino. Fora do Remessa Conforme, mesmo compras abaixo de
+        US$50 podem pagar Imposto de Importação de 60% sobre o valor
+        aduaneiro, além do ICMS. Portanto, o limite de US$50 não garante
+        compra sem tributos — sempre simule o custo total antes de pagar.
       </p>
 
       <h3 className="text-xl font-semibold mt-6 mb-2">
-        Como calcular o imposto?
+        Como calcular o imposto antes de comprar?
       </h3>
 
       <p className="mb-4">
-        Use nossa calculadora gratuita para estimar os impostos antes
-        de comprar.
+        Use uma calculadora de imposto de importação informando o valor do
+        produto, frete, câmbio do dia, estado de destino e se a loja participa
+        do Remessa Conforme. O cálculo considera o Imposto de Importação (0%
+        até US$50 com RC, 20% acima de US$50 com RC ou 60% sem RC) e o ICMS
+        estadual (17% a 20%). Simular antes de comprar permite comparar o
+        custo final com alternativas vendidas no Brasil e evitar surpresas na
+        chegada da encomenda.
+      </p>
+
+      <h3 className="text-xl font-semibold mt-6 mb-2">
+        O AliExpress participa do Remessa Conforme?
+      </h3>
+
+      <p className="mb-4">
+        Sim. O AliExpress é uma das plataformas certificadas no Programa
+        Remessa Conforme da Receita Federal. Isso significa que, em compras
+        dentro do programa, os tributos aparecem discriminados no checkout
+        antes do pagamento. Compras até US$50 têm Imposto de Importação de 0%,
+        enquanto compras acima de US$50 pagam 20% de Imposto de Importação,
+        mais ICMS estadual (17% a 20%). Para confirmar, verifique se os
+        tributos estão visíveis na tela de pagamento antes de finalizar o
+        pedido.
       </p>
 
       <h3 className="text-xl font-semibold mt-6 mb-2">
@@ -207,54 +257,14 @@ export default function RemessaConforme() {
       </h3>
 
       <p className="mb-4">
-        Não. O programa organiza e antecipa a cobrança dos tributos em empresas
-        certificadas, mas não significa que toda compra internacional ficará
-        isenta.
+        Não. O Remessa Conforme organiza e antecipa a cobrança dos tributos em
+        empresas certificadas, mas não elimina impostos. Em compras até US$50,
+        o Imposto de Importação federal pode ser 0%, mas o ICMS estadual (17%
+        a 20%) continua sendo cobrado. Acima de US$50, o Imposto de
+        Importação é 20% dentro do programa, contra 60% fora dele. O programa
+        oferece previsibilidade, não isenção — sempre calcule o custo total
+        antes de comprar.
       </p>
-
-      <div className="mt-10">
-        <h2 className="text-2xl font-semibold mb-4">
-          Guias Relacionados
-        </h2>
-
-        <ul className="list-disc pl-6 space-y-2">
-          <li>
-            <a
-              href="/imposto-aliexpress-brasil"
-              className="text-blue-600 underline"
-            >
-              Como funciona o imposto do AliExpress
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/imposto-shein-brasil"
-              className="text-blue-600 underline"
-            >
-              Como funciona o imposto da Shein
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/imposto-shopee-brasil"
-              className="text-blue-600 underline"
-            >
-              Como funciona o imposto da Shopee
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/como-calcular-imposto-importacao-brasil"
-              className="text-blue-600 underline"
-            >
-              Como calcular imposto de importação
-            </a>
-          </li>
-        </ul>
-      </div>
 
       <p className="text-sm text-gray-500 mt-12">
         Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras

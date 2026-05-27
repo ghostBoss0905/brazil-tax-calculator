@@ -12,36 +12,186 @@ const pages = [
     title: "Imposto AliExpress Brasil 2026: Como Calcular Taxas",
     description:
       "Entenda como calcular o imposto do AliExpress no Brasil em 2026, com Remessa Conforme, ICMS, frete e custo final antes da compra.",
+    h1: "Como Calcular o Imposto do AliExpress no Brasil (2026)",
+    directAnswer: "O imposto do AliExpress depende do valor do produto, do frete, do câmbio, do estado de destino e se a compra está em plataforma certificada no Remessa Conforme. Para estimar, some produto e frete, converta para reais e aplique Imposto de Importação e ICMS.",
+    introParagraph: "Comprar no AliExpress pode parecer barato, mas o custo final no Brasil pode incluir Imposto de Importação, ICMS, frete e câmbio. Antes de finalizar a compra, vale estimar o valor total para evitar surpresa.",
+    faqs: [
+      {
+        question: "Compras do AliExpress abaixo de US$50 pagam imposto?",
+        answer:
+          "Sim. Compras abaixo de US$50 no AliExpress podem pagar imposto, dependendo do enquadramento da compra. Em plataformas certificadas no Programa Remessa Conforme, o Imposto de Importação federal é 0% para pedidos até US$50, mas o ICMS estadual continua sendo cobrado, com alíquotas que variam de 17% a 20% dependendo do estado de destino. Se a compra não estiver dentro do Remessa Conforme, o Imposto de Importação pode chegar a 60% sobre o valor aduaneiro, além do ICMS. Por isso, mesmo pedidos de baixo valor podem ter custo final significativamente maior que o preço anunciado. Antes de comprar, use uma calculadora de importação para estimar o valor total e compare com alternativas vendidas no Brasil.",
+      },
+      {
+        question: "O AliExpress participa do Remessa Conforme?",
+        answer:
+          "Sim. O AliExpress é uma das plataformas certificadas no Programa Remessa Conforme da Receita Federal. Isso significa que, em compras feitas pelo AliExpress dentro do programa, os tributos podem ser calculados e exibidos no checkout antes do pagamento, dando mais previsibilidade ao consumidor. No Remessa Conforme, compras até US$50 têm Imposto de Importação de 0%, e compras acima de US$50 têm alíquota reduzida, além do ICMS estadual que varia de 17% a 20% conforme o estado. Para confirmar o enquadramento, verifique se os tributos aparecem discriminados no checkout antes de finalizar o pedido.",
+      },
+      {
+        question: "O imposto é cobrado na hora ou quando chega ao Brasil?",
+        answer:
+          "Em compras feitas dentro das regras do Remessa Conforme no AliExpress, os tributos costumam aparecer no checkout antes do pagamento, com valores calculados antecipadamente. Fora desse fluxo, como em compras de vendedores não-certificados, a cobrança pode ocorrer quando a encomenda chega ao Brasil, por meio dos Correios ou da transportadora, com Imposto de Importação de 60% e ICMS estadual. Para evitar surpresas, sempre confira se o checkout mostra os tributos antes de finalizar o pedido e use uma calculadora de importação para estimar o custo total. Compare o valor final com alternativas vendidas no Brasil antes de decidir pela importação.",
+      },
+    ],
   },
   {
     path: "/imposto-shein-brasil",
     title: "Imposto Shein Brasil 2026: Como Calcular Taxas",
     description:
       "Veja como funciona o imposto da Shein no Brasil em 2026, incluindo Remessa Conforme, ICMS e como estimar o valor final da compra.",
+    h1: "Como Calcular o Imposto da Shein no Brasil (2026)",
+    directAnswer: "O imposto da Shein depende do valor da compra, do frete, do câmbio, do estado de destino e se a Shein está no Remessa Conforme. Some produto e frete, converta para reais, aplique Imposto de Importação e ICMS do estado.",
+    introParagraph: "Comprar na Shein pode parecer vantajoso, mas o custo final no Brasil pode incluir Imposto de Importação, ICMS e frete. Pedidos pequenos também podem ficar caros depois dos tributos.",
+    faqs: [
+      {
+        question: "Compras da Shein abaixo de US$50 pagam imposto?",
+        answer:
+          "Compras da Shein abaixo de US$50 podem pagar imposto dependendo da modalidade da compra e do estado de destino. Em compras feitas pelo Programa Remessa Conforme, o Imposto de Importação federal é de 0% para valores até US$50, mas o ICMS estadual continua sendo cobrado, com alíquotas que variam de 17% a 22% conforme o estado. Já em compras fora do Remessa Conforme, a regra pode incluir Imposto de Importação de 60% sobre o valor aduaneiro, além do ICMS. Por isso, mesmo pedidos pequenos podem ter um custo final significativamente maior que o preço do produto no site.",
+      },
+      {
+        question: "Vale a pena comprar na Shein em 2026?",
+        answer:
+          "Vale a pena comprar na Shein em 2026 quando o preço final, já com impostos, continua abaixo de alternativas disponíveis no Brasil. Para pedidos até US$50 pelo Remessa Conforme, o Imposto de Importação é 0%, mas o ICMS (17% a 22%) ainda entra no custo. Para pedidos acima de US$50, o Imposto de Importação volta a ser cobrado e o custo final pode se aproximar ou ultrapassar o preço de lojas brasileiras. O comprador deve sempre simular o valor total antes de decidir, considerando produto, frete, câmbio e os tributos do estado de entrega.",
+      },
+      {
+        question: "O imposto aparece antes de pagar?",
+        answer:
+          "Em compras feitas pela Shein dentro do Programa Remessa Conforme, os tributos devem aparecer discriminados no checkout antes do pagamento, incluindo ICMS e, quando aplicável, o Imposto de Importação. Essa transparência é uma das vantagens de comprar em plataformas certificadas pela Receita Federal. Se os tributos não aparecem no checkout, há risco de cobrança na chegada ao Brasil, quando a encomenda pode ser tributada com Imposto de Importação de 60% e ICMS do estado. Antes de finalizar o pedido, confira sempre se o valor dos impostos está visível na tela de pagamento.",
+      },
+    ],
   },
   {
     path: "/imposto-shopee-brasil",
     title: "Imposto Shopee Brasil 2026: Como Calcular Taxas",
     description:
       "Entenda como calcular o imposto da Shopee no Brasil em 2026, com Remessa Conforme, ICMS, frete e custo final da compra.",
+    h1: "Como Calcular o Imposto da Shopee no Brasil (2026)",
+    directAnswer: "O imposto da Shopee internacional depende de produto, frete, câmbio, ICMS e forma de cobrança dos tributos. Confirme se o pedido é nacional ou internacional e se os impostos aparecem no checkout.",
+    introParagraph: "Comprar produtos internacionais pela Shopee pode parecer barato, mas o custo final depende dos impostos cobrados no Brasil. Antes de finalizar, estime Imposto de Importação, ICMS e frete.",
+    faqs: [
+      {
+        question: "Compras da Shopee internacional pagam imposto?",
+        answer:
+          "Sim. Compras internacionais feitas pela Shopee estão sujeitas ao Imposto de Importação e ao ICMS estadual. Dentro do Remessa Conforme, compras até US$50 (produto + frete) podem ter Imposto de Importação de 0%, mas o ICMS estadual — entre 17% e 20% conforme o estado — continua sendo cobrado. Acima de US$50 no Remessa Conforme, a alíquota federal é 20% sobre o valor aduaneiro, mais ICMS. Fora do Remessa Conforme, o Imposto de Importação pode chegar a 60%, tornando o custo final significativamente maior.",
+      },
+      {
+        question: "A Shopee participa do Remessa Conforme?",
+        answer:
+          "A Shopee é uma das plataformas que podem estar certificadas no Programa Remessa Conforme da Receita Federal. A lista oficial de empresas participantes é atualizada periodicamente e pode ser consultada no site da Receita. Quando a plataforma está certificada, os tributos aparecem discriminados no checkout — produto, frete, Imposto de Importação e ICMS — antes do pagamento. Se os impostos não aparecem no resumo da compra, o vendedor ou o fluxo pode estar fora do programa, e a cobrança pode ocorrer na chegada ao Brasil pelos Correios ou transportadora.",
+      },
+      {
+        question: "Como calcular o imposto da Shopee antes de comprar?",
+        answer:
+          "Some o valor do produto e o frete internacional, converta para reais usando o câmbio do dia e identifique o estado de destino para o ICMS. Em compras dentro do Remessa Conforme até US$50, o Imposto de Importação federal é 0%, mas o ICMS (17% a 20%) incide sobre a base de cálculo. Acima de US$50 no Remessa Conforme, aplique 20% de Imposto de Importação sobre o valor aduaneiro e depois calcule o ICMS estadual. Fora do Remessa Conforme, o Imposto de Importação pode ser 60% sobre o valor total. Use a calculadora deste site para simular todos os cenários antes de finalizar a compra.",
+      },
+      {
+        question: "Compras da Shopee abaixo de US$50 pagam imposto?",
+        answer:
+          "Sim, mesmo compras abaixo de US$50 podem ter cobrança de impostos. Em plataformas certificadas no Remessa Conforme, o Imposto de Importação federal pode ser 0% para valores até US$50 (produto + frete), mas o ICMS estadual continua sendo cobrado — a alíquota varia de 17% a 20% conforme o estado de destino. Fora do Remessa Conforme, compras abaixo de US$50 podem estar sujeitas ao Imposto de Importação de 60% sobre o valor aduaneiro, além do ICMS. Por isso, é fundamental verificar se a compra está dentro do programa e simular o custo total antes de pagar.",
+      },
+      {
+        question: "Como saber se o imposto já está incluído?",
+        answer:
+          "Confira o checkout da Shopee antes de finalizar o pagamento. Em compras dentro do Remessa Conforme, a plataforma deve mostrar os tributos discriminados: valor do produto, frete, Imposto de Importação e ICMS, separadamente. Se esses valores não aparecem no resumo da compra, a cobrança pode ocorrer quando a encomenda chegar ao Brasil, pelos Correios ou pela transportadora, com notificação de pagamento pendente. Nessa situação, o consumidor precisa quitar os tributos antes da entrega. Sempre prefira compras em que os impostos são transparentes no checkout para evitar surpresas.",
+      },
+      {
+        question: "Vale a pena comprar produto internacional na Shopee?",
+        answer:
+          "Depende do custo final comparado com uma alternativa nacional. Para compras dentro do Remessa Conforme até US$50, o Imposto de Importação pode ser 0%, mas o ICMS (17% a 20%) e o frete internacional ainda incidem. Acima de US$50, o Imposto de Importação de 20% dentro do RC ou 60% fora do RC pode elevar bastante o valor total. Em muitos casos, mesmo com tributação, o preço importado ainda fica abaixo da opção nacional, especialmente para eletrônicos e acessórios. Simule o custo total com a calculadora deste site e compare com produtos vendidos por lojistas brasileiros antes de decidir.",
+      },
+    ],
   },
   {
     path: "/o-que-e-remessa-conforme",
     title: "O Que é Remessa Conforme? Regras e Impostos 2026",
     description:
       "Entenda o Programa Remessa Conforme, como funciona a cobrança de impostos em compras internacionais e quando usar a calculadora.",
+    h1: "O Que é Remessa Conforme? (2026)",
+    directAnswer: "Remessa Conforme é o programa da Receita Federal que permite a plataformas certificadas informar e recolher tributos de compras internacionais no checkout, dando mais previsibilidade ao consumidor.",
+    introParagraph: "O Remessa Conforme é um programa da Receita Federal criado para simplificar a tributação de compras internacionais no Brasil. Em vez de descobrir a cobrança apenas quando a encomenda chega, o consumidor passa a ter mais previsibilidade quando compra em uma empresa certificada.",
+    faqs: [
+      {
+        question: "O que é Remessa Conforme?",
+        answer:
+          "O Remessa Conforme é um programa da Receita Federal que permite a plataformas certificadas informar e recolher os tributos de compras internacionais no checkout, antes do pagamento. Sem o programa, o Imposto de Importação pode chegar a 60% sobre o valor aduaneiro, cobrado quando a encomenda chega ao Brasil. Dentro do Remessa Conforme, compras até US$50 podem ter Imposto de Importação de 0%, e compras acima de US$50 têm alíquota reduzida a 20%. O ICMS estadual, que varia de 17% a 20% conforme o estado de destino, continua sendo cobrado em ambos os casos.",
+      },
+      {
+        question: "Compras abaixo de US$50 pagam imposto?",
+        answer:
+          "Sim. Em plataformas certificadas no Remessa Conforme, o Imposto de Importação federal é 0% para compras até US$50, mas o ICMS estadual continua sendo cobrado com alíquotas entre 17% e 20%, dependendo do estado de destino. Fora do Remessa Conforme, mesmo compras abaixo de US$50 podem pagar Imposto de Importação de 60% sobre o valor aduaneiro, além do ICMS. Portanto, o limite de US$50 não garante compra sem tributos — sempre simule o custo total antes de pagar.",
+      },
+      {
+        question: "Como calcular o imposto antes de comprar?",
+        answer:
+          "Use uma calculadora de imposto de importação informando o valor do produto, frete, câmbio do dia, estado de destino e se a loja participa do Remessa Conforme. O cálculo considera o Imposto de Importação (0% até US$50 com RC, 20% acima de US$50 com RC ou 60% sem RC) e o ICMS estadual (17% a 20%). Simular antes de comprar permite comparar o custo final com alternativas vendidas no Brasil e evitar surpresas na chegada da encomenda.",
+      },
+      {
+        question: "O AliExpress participa do Remessa Conforme?",
+        answer:
+          "Sim. O AliExpress é uma das plataformas certificadas no Programa Remessa Conforme da Receita Federal. Isso significa que, em compras dentro do programa, os tributos aparecem discriminados no checkout antes do pagamento. Compras até US$50 têm Imposto de Importação de 0%, enquanto compras acima de US$50 pagam 20% de Imposto de Importação, mais ICMS estadual (17% a 20%). Para confirmar, verifique se os tributos estão visíveis na tela de pagamento antes de finalizar o pedido.",
+      },
+      {
+        question: "Remessa Conforme significa compra sem imposto?",
+        answer:
+          "Não. O Remessa Conforme organiza e antecipa a cobrança dos tributos em empresas certificadas, mas não elimina impostos. Em compras até US$50, o Imposto de Importação federal pode ser 0%, mas o ICMS estadual (17% a 20%) continua sendo cobrado. Acima de US$50, o Imposto de Importação é 20% dentro do programa, contra 60% fora dele. O programa oferece previsibilidade, não isenção — sempre calcule o custo total antes de comprar.",
+      },
+    ],
   },
   {
     path: "/icms-importacao-brasil",
     title: "ICMS Importação Brasil 2026: Como Calcular",
     description:
       "Entenda como o ICMS de importação entra no cálculo de compras internacionais no Brasil e como estimar o custo final.",
+    h1: "ICMS na Importação do Brasil (2026)",
+    directAnswer: "ICMS na importação é um imposto estadual que pode entrar no custo de compras internacionais. Ele varia conforme o estado de destino e deve ser considerado junto com produto, frete, seguro e Imposto de Importação.",
+    introParagraph: "O ICMS é um dos principais impostos cobrados em compras internacionais no Brasil. Mesmo compras abaixo de US$50 podem pagar ICMS dependendo do estado.",
+    faqs: [
+      {
+        question: "O ICMS é cobrado em todas as importações?",
+        answer:
+          "Sim, na maioria das compras internacionais para o Brasil, o ICMS faz parte da tributação e varia conforme o estado de destino. A alíquota estadual oscila entre 17% e 20%, dependendo da unidade federativa, e incide sobre uma base de cálculo que pode incluir produto, frete, seguro e o próprio Imposto de Importação. Mesmo compras abaixo de US$50 em plataformas certificadas no Remessa Conforme, onde o Imposto de Importação federal é 0%, ainda pagam ICMS. Por isso, é fundamental informar o estado de entrega ao calcular o custo total da importação.",
+      },
+      {
+        question: "Qual é o ICMS de importação no Brasil?",
+        answer:
+          "A alíquota de ICMS na importação varia entre 17% e 20%, conforme o estado de destino e a regra aplicável à compra. Estados como Santa Catarina e Espírito Santo usam 17%, enquanto Minas Gerais e Ceará aplicam 20%. A base de cálculo do ICMS é calculada por dentro e pode incluir o valor do produto, frete, seguro e Imposto de Importação, amplificando o efeito no custo final. Para estimar corretamente, use a calculadora informando o estado de entrega.",
+      },
+      {
+        question: "Como pagar o ICMS de importação?",
+        answer:
+          "Em compras feitas por plataformas certificadas no Remessa Conforme, o ICMS costuma ser cobrado no checkout junto com o Imposto de Importação, antes do pagamento. Fora do programa, o ICMS pode ser cobrado quando a encomenda chega ao Brasil, por meio dos Correios ou da transportadora, com notificação de pagamento pendente. O pagamento pode ser feito no ambiente Minhas Importações ou no aplicativo dos Correios. Sempre confira se os tributos aparecem no checkout para evitar surpresas na entrega.",
+      },
+      {
+        question: "O ICMS aparece no checkout?",
+        answer:
+          "Em compras feitas dentro do Remessa Conforme, o ICMS pode aparecer discriminado no checkout junto com o Imposto de Importação, antes do pagamento. Fora desse fluxo, o ICMS é cobrado na chegada da encomenda ao Brasil, pelos Correios ou pela transportadora. A diferença é importante: no Remessa Conforme, compras até US$50 têm Imposto de Importação de 0%, mas o ICMS (17% a 20%) continua aparecendo. Verificar a tela de pagamento antes de finalizar o pedido é a forma mais segura de prever o custo total.",
+      },
+    ],
   },
   {
     path: "/como-calcular-imposto-importacao-brasil",
     title: "Como Calcular Imposto de Importação no Brasil 2026",
     description:
       "Aprenda como calcular imposto de importação no Brasil em 2026. Veja ICMS, Remessa Conforme e custo final atualizado.",
+    h1: "Como Calcular Imposto de Importação no Brasil em 2026",
+    directAnswer: "Para calcular imposto de importação no Brasil, some produto, frete e seguro, converta para reais, aplique a regra de Imposto de Importação e estime o ICMS do estado de entrega. Depois compare o custo final com uma compra nacional.",
+    introParagraph: "Comprar produtos internacionais na Shopee, AliExpress, Amazon ou Shein ficou mais caro após as novas regras de importação no Brasil. Neste guia, você aprenderá como calcular imposto de importação passo a passo.",
+    faqs: [
+      {
+        question: "Quais impostos são cobrados em compras internacionais?",
+        answer:
+          "As compras internacionais para o Brasil podem pagar Imposto de Importação e ICMS estadual, além de custos de frete e seguro incluídos na base de cálculo. O Imposto de Importação é 0% até US$50 em plataformas certificadas no Remessa Conforme, 20% acima de US$50 no RC, ou 60% fora do programa. O ICMS estadual varia de 17% a 20% conforme o estado de destino e incide sobre uma base que pode incluir produto, frete, seguro e o próprio Imposto de Importação. Por isso, o custo final pode ser significativamente maior que o preço anunciado no site.",
+      },
+      {
+        question: "Como funciona o Remessa Conforme?",
+        answer:
+          "O Remessa Conforme é um programa da Receita Federal que permite a plataformas certificadas informar e cobrar os tributos no momento da compra, antes do pagamento. Compras até US$50 em plataformas certificadas têm Imposto de Importação de 0%, enquanto acima de US$50 a alíquota é 20%. Sem o programa, o Imposto de Importação pode chegar a 60% sobre o valor aduaneiro, cobrado na chegada ao Brasil. O ICMS estadual (17% a 20%) é cobrado em todos os cenários, dentro ou fora do programa.",
+      },
+      {
+        question: "Como calcular o imposto antes de comprar?",
+        answer:
+          "Informe o valor do produto, frete internacional, câmbio do dia, estado de destino e se a loja participa do Remessa Conforme. Some produto e frete, converta para reais, aplique o Imposto de Importação (0% até US$50 com RC, 20% acima de US$50 com RC, ou 60% sem RC) e depois calcule o ICMS estadual (17% a 20%). Use a calculadora deste site para automatizar o processo e compare o custo final com uma compra nacional antes de decidir pela importação.",
+      },
+    ],
     howToSteps: [
       "Some o valor dos produtos comprados.",
       "Adicione frete internacional e seguro, se houver.",
@@ -57,6 +207,9 @@ const pages = [
     title: "Tabela de Imposto de Importação Brasil 2026",
     description:
       "Veja a tabela de imposto de importação no Brasil em 2026 para compras internacionais, com Remessa Conforme, ICMS e exemplos práticos.",
+    h1: "Tabela de Imposto de Importação no Brasil (2026)",
+    directAnswer: "A tabela de imposto de importação em 2026 ajuda a estimar se a compra entra na regra de até US$50, acima de US$50 ou fora do Remessa Conforme. O ICMS estadual continua sendo parte importante do custo final.",
+    introParagraph: "A tabela de imposto de importação ajuda a entender quanto uma compra internacional pode custar antes de chegar ao Brasil. Em 2026, o cálculo depende do valor aduaneiro, da participação da loja no Remessa Conforme e do ICMS do estado.",
     faqs: [
       {
         question: "Compras abaixo de US$50 são isentas?",
@@ -80,6 +233,9 @@ const pages = [
     title: "Taxa dos Correios Importação 2026: Como Pagar",
     description:
       "Entenda a taxa dos Correios em compras internacionais, como consultar tributos no Minhas Importações e quando pagar imposto de importação.",
+    h1: "Taxa dos Correios na Importação: Como Consultar e Pagar (2026)",
+    directAnswer: "A taxa dos Correios na importação pode incluir o Despacho Postal e, quando houver tributação, os valores definidos pela Receita Federal. O pagamento normalmente aparece no ambiente Minhas Importações ou no aplicativo dos Correios.",
+    introParagraph: "Quando uma compra internacional chega ao Brasil, o consumidor pode precisar pagar tributos de importação e valores cobrados pelos Correios antes da entrega.",
     faqs: [
       {
         question: "Onde pago a taxa dos Correios?",
@@ -103,6 +259,9 @@ const pages = [
     title: "Calcular Taxas de Importação 2026: Guia e Simulador",
     description:
       "Aprenda como calcular taxas de importação no Brasil em 2026, incluindo Imposto de Importação, ICMS, frete, câmbio e Remessa Conforme.",
+    h1: "Como Calcular Taxas de Importação no Brasil (2026)",
+    directAnswer: "Para calcular taxas de importação, some produto, frete e seguro, converta o total para reais, aplique o Imposto de Importação, estime o ICMS do estado de destino e adicione possíveis cobranças postais ou logísticas.",
+    introParagraph: "Para calcular taxas de importação no Brasil, você precisa olhar além do preço do produto. O custo final pode incluir frete internacional, câmbio, Imposto de Importação, ICMS estadual e cobranças dos Correios.",
     faqs: [
       {
         question: "Preciso calcular ICMS separadamente?",
@@ -135,21 +294,24 @@ const pages = [
     title: "Imposto Temu Brasil 2026: Como Calcular Taxas",
     description:
       "Entenda como calcular imposto da Temu no Brasil em 2026, com Remessa Conforme, ICMS, frete, câmbio e comparação antes da compra.",
+    h1: "Imposto da Temu no Brasil: Como Calcular em 2026",
+    directAnswer: "Para calcular o imposto da Temu, some produto, frete e seguro, converta para reais, confirme se os tributos aparecem no checkout e estime o ICMS do estado de entrega antes de comparar com uma compra nacional.",
+    introParagraph: "A Temu virou uma das buscas mais comuns para quem compra produtos internacionais baratos. O risco é olhar apenas o preço do anúncio e esquecer que o custo final no Brasil pode incluir ICMS, câmbio, frete e regras do Remessa Conforme.",
     faqs: [
       {
         question: "A Temu participa do Remessa Conforme?",
         answer:
-          "A Receita Federal lista empresas e plataformas certificadas no Programa Remessa Conforme. Antes de comprar, confirme no checkout se os tributos aparecem discriminados.",
+          "A Receita Federal mantém uma lista pública de empresas e plataformas certificadas no Programa Remessa Conforme, e a Temu pode estar entre elas. Em compras dentro do programa, o Imposto de Importação federal pode ser 0% para valores até US$50, com ICMS estadual de 17% a 20% dependendo do estado; acima de US$50, a alíquota federal é reduzida dentro do RC. Fora do Remessa Conforme, o Imposto de Importação pode chegar a 60% sobre o valor aduaneiro, além do ICMS. Antes de comprar, confirme no checkout se os tributos aparecem discriminados e use a calculadora de importação para estimar o custo total. Compare o valor final com alternativas vendidas no Brasil antes de decidir.",
       },
       {
         question: "Compra da Temu abaixo de US$50 fica sem imposto?",
         answer:
-          "Em plataformas certificadas, o Imposto de Importação federal pode ser 0% até US$50, mas o ICMS estadual pode continuar sendo cobrado.",
+          "Em compras da Temu dentro do Programa Remessa Conforme, o Imposto de Importação federal pode ser 0% para valores até US$50 (produto + frete), mas o ICMS estadual continua sendo cobrado com alíquotas de 17% a 20% dependendo do estado de destino. Fora do Remessa Conforme, compras abaixo de US$50 podem estar sujeitas ao Imposto de Importação de 60% sobre o valor aduaneiro, além do ICMS. Portanto, 'abaixo de US$50' não significa necessariamente 'sem tributos' — o ICMS sempre pode incidir. Verifique no checkout se os tributos estão discriminados e use a calculadora para estimar o custo final antes de pagar. Compare o valor total com produtos vendidos no Brasil para avaliar se a importação realmente vale a pena.",
       },
       {
         question: "Frete da Temu entra no cálculo?",
         answer:
-          "Sim. Produto, frete e seguro, quando houver, podem compor o valor usado para estimar a importação.",
+          "Sim, o frete internacional entra no valor aduaneiro usado como base para calcular o Imposto de Importação e o ICMS. Produto, frete e seguro, quando houver, compõem o total da operação que define a faixa de tributação — dentro ou acima de US$50 no Remessa Conforme. Um carrinho com produto de US$42 e frete de US$8, por exemplo, ultrapassa o limite de US$50 e muda a regra de Imposto de Importação de 0% para a alíquota reduzida dentro do RC, ou 60% fora dele. Por isso, sempre some produto e frete antes de avaliar se a compra fica em faixa de tributação mais favorável. Use a calculadora de importação para simular o custo total e compare com alternativas no Brasil.",
       },
     ],
   },
@@ -158,21 +320,24 @@ const pages = [
     title: "Imposto Amazon Internacional Brasil 2026: Como Calcular",
     description:
       "Veja como estimar imposto em compras internacionais na Amazon em 2026, com Remessa Conforme, ICMS, frete e custo final.",
+    h1: "Imposto em Compra Internacional na Amazon Brasil",
+    directAnswer: "Em compras internacionais na Amazon, calcule produto, frete, câmbio, Imposto de Importação e ICMS. O ponto decisivo é confirmar se a oferta mostra tributos no checkout antes do pagamento.",
+    introParagraph: "A Amazon pode exibir produtos vendidos no Brasil e produtos internacionais no mesmo ambiente. A dúvida principal é: o preço mostrado já inclui impostos ou a cobrança pode aparecer depois?",
     faqs: [
       {
         question: "Compra internacional na Amazon paga imposto?",
         answer:
-          "Pode pagar, dependendo do valor, frete, enquadramento da compra, ICMS do estado e se os tributos aparecem no checkout.",
+          "Sim, compras internacionais na Amazon estão sujeitas ao Imposto de Importação e ao ICMS estadual. Dentro do Remessa Conforme, compras até US$50 (produto + frete) podem ter Imposto de Importação de 0%, mas o ICMS estadual de 17% a 20% continua sendo cobrado conforme o estado de destino. Acima de US$50 no RC, a alíquota federal é reduzida; fora do programa, o Imposto de Importação pode chegar a 60% sobre o valor aduaneiro, além do ICMS. Antes de finalizar o pedido, confirme se o checkout da Amazon mostra os tributos discriminados. Use a calculadora de importação para estimar o custo total e compare com produtos vendidos no Brasil.",
       },
       {
         question: "Amazon e marketplace são a mesma coisa para imposto?",
         answer:
-          "Não necessariamente. A Amazon pode vender diretamente ou intermediar vendedores. Verifique se a oferta é internacional e se os tributos estão incluídos.",
+          "Não necessariamente. A Amazon pode vender diretamente como importador ou intermediar vendedores terceiros que seguem fluxos diferentes de tributação e logística. Em compras de vendedores dentro do Remessa Conforme, os tributos tendem a aparecer no checkout com Imposto de Importação de 0% até US$50 ou alíquota reduzida acima desse valor, mais ICMS de 17% a 20% conforme o estado. Em ofertas de vendedores fora do programa, a cobrança pode ocorrer na chegada ao Brasil com Imposto de Importação de 60% e ICMS estadual. Por isso, sempre verifique se a oferta é internacional e se os tributos estão incluídos ou discriminados no checkout antes de pagar. Use a calculadora para simular diferentes cenários e compare com alternativas brasileiras.",
       },
       {
         question: "Devo comparar com produto vendido no Brasil?",
         answer:
-          "Sim. Compare o custo final importado com o preço nacional, prazo, garantia e possibilidade de troca.",
+          "Sim, comparar o custo final da importação com alternativas vendidas no Brasil é essencial antes de decidir. Mesmo com Imposto de Importação de 0% até US$50 no Remessa Conforme, o ICMS estadual (17% a 20%), o frete internacional e o câmbio podem elevar o valor total significativamente. Acima de US$50, o Imposto de Importação dentro do RC volta a incidir, e fora do RC pode chegar a 60%, fazendo o custo final se aproximar ou ultrapassar o preço nacional. A compra no Brasil oferece vantagens como prazo de entrega menor, garantia local e possibilidade de troca que a importação não garante. Use a calculadora de importação para estimar o custo total e compare com o preço do mesmo produto em lojas brasileiras antes de decidir.",
       },
     ],
   },
@@ -181,21 +346,29 @@ const pages = [
     title: "Compras Abaixo de US$50 Pagam Imposto? Regras 2026",
     description:
       "Entenda quando compras internacionais abaixo de US$50 pagam imposto no Brasil em 2026, com Remessa Conforme, ICMS e exemplos.",
+    h1: "Compras Internacionais Abaixo de US$50 Pagam Imposto?",
+    directAnswer: "Em compras de até US$50 feitas em plataformas certificadas no Remessa Conforme, o Imposto de Importação federal pode ser 0%, mas o ICMS estadual pode continuar sendo cobrado no checkout.",
+    introParagraph: "A dúvida sobre compras abaixo de US$50 é uma das mais importantes para quem compra em AliExpress, Shein, Shopee, Temu e Amazon. A resposta curta é: pode não haver Imposto de Importação federal, mas isso não significa custo final sem tributos.",
     faqs: [
       {
         question: "Compras abaixo de US$50 pagam imposto no Brasil?",
         answer:
-          "Em plataformas certificadas no Remessa Conforme, o Imposto de Importação federal pode ser 0%, mas o ICMS estadual pode continuar sendo cobrado.",
+          "Em plataformas certificadas no Remessa Conforme, o Imposto de Importação federal é 0% para compras até US$50, mas o ICMS estadual continua sendo cobrado com alíquotas entre 17% e 20%, dependendo do estado de destino. Fora do Remessa Conforme, compras abaixo de US$50 podem pagar Imposto de Importação de 60% sobre o valor aduaneiro, além do ICMS. Portanto, o limite de US$50 não garante isenção total — sempre simule o custo final com a calculadora antes de comprar.",
       },
       {
         question: "O limite de US$50 inclui frete?",
         answer:
-          "Para estimar a compra com segurança, considere produto, frete e seguro quando houver, pois esses valores podem compor a operação de importação.",
+          "Para estimar a compra com segurança, considere produto, frete e seguro quando houver, pois esses valores podem compor a base de cálculo da importação. Uma compra que parece abaixo de US$50 pelo preço do produto pode ultrapassar o limite quando o frete internacional é adicionado. Se o valor total (produto + frete + seguro) exceder US$50, a regra de Imposto de Importação de 0% pode não se aplicar, e a alíquota pode mudar para 20% dentro do RC ou 60% fora dele. Por isso, sempre use o valor total do carrinho ao verificar o enquadramento.",
       },
       {
         question: "Fora do Remessa Conforme a regra muda?",
         answer:
-          "Sim. Compras fora de plataformas certificadas podem seguir regra diferente e ter cobrança na chegada ao Brasil.",
+          "Sim. Compras fora de plataformas certificadas no Remessa Conforme podem pagar Imposto de Importação de 60% sobre o valor aduaneiro, cobrado quando a encomenda chega ao Brasil. Além disso, o ICMS estadual (17% a 20%) também é cobrado, e a cobrança aparece por meio dos Correios ou da transportadora, sem previsibilidade no checkout. Dentro do RC, o Imposto de Importação é 0% até US$50 e 20% acima, com tributos exibidos antes do pagamento. A diferença no custo final pode ser significativa entre os dois cenários.",
+      },
+      {
+        question: "Como saber se estou no Remessa Conforme?",
+        answer:
+          "Confira a lista pública de empresas certificadas no site da Receita Federal e, no momento da compra, veja se o checkout mostra os tributos antes do pagamento. Plataformas como AliExpress, Shein e Shopee participam do programa, mas em marketplaces, a operação pode depender do vendedor específico. Se os impostos aparecem discriminados no checkout (Imposto de Importação e ICMS), a compra está dentro do RC. Se não aparecem, a cobrança pode ocorrer na chegada ao Brasil com alíquota de 60% de Imposto de Importação.",
       },
     ],
   },
@@ -204,21 +377,29 @@ const pages = [
     title: "Lojas no Remessa Conforme 2026: Como Conferir",
     description:
       "Veja como conferir lojas e marketplaces no Programa Remessa Conforme em 2026 e por que isso muda o imposto de importação.",
+    h1: "Lojas no Remessa Conforme: Como Conferir Antes de Comprar",
+    directAnswer: "Para saber se uma loja está no Remessa Conforme, consulte a lista da Receita Federal e confirme se o checkout mostra os tributos antes do pagamento. Isso é essencial para estimar imposto e ICMS.",
+    introParagraph: "O Programa Remessa Conforme é importante porque muda a previsibilidade de compras internacionais. Em vez de descobrir o imposto apenas na chegada ao Brasil, o consumidor tende a ver a cobrança no checkout das plataformas participantes.",
     faqs: [
       {
         question: "Como saber se uma loja está no Remessa Conforme?",
         answer:
-          "Consulte a lista pública da Receita Federal e confirme no checkout se os tributos aparecem antes do pagamento.",
+          "Consulte a lista pública de empresas certificadas no site da Receita Federal e confirme no checkout se os tributos aparecem antes do pagamento. Plataformas como AliExpress, Shein e Shopee participam do programa, mas a lista pode mudar com o tempo. No checkout de uma loja certificada, você verá Imposto de Importação e ICMS discriminados — se estiver dentro do RC, compras até US$50 têm II de 0% e acima de US$50 pagam 20%, mais ICMS de 17% a 20%. Se os tributos não aparecem no checkout, a compra pode estar fora do programa e pagar 60% de Imposto de Importação na chegada ao Brasil.",
       },
       {
         question: "Toda oferta de marketplace segue a mesma regra?",
         answer:
-          "Não necessariamente. Em marketplaces, a operação pode depender do vendedor, da logística e do que aparece no checkout.",
+          "Não necessariamente. Em marketplaces, a operação pode depender do vendedor, da logística e do que aparece no checkout. Um marketplace certificado no Remessa Conforme pode ter vendedores que não seguem o programa, resultando em cobranças diferentes. Se os tributos aparecem discriminados no checkout (II de 0% até US$50 ou 20% acima, mais ICMS estadual de 17% a 20%), a oferta está dentro do RC. Se não aparecem, a cobrança pode ocorrer na chegada ao Brasil com Imposto de Importação de 60%. Confira sempre a tela de pagamento antes de finalizar o pedido.",
       },
       {
         question: "Estar no Remessa Conforme elimina o ICMS?",
         answer:
-          "Não. O Remessa Conforme pode mudar a cobrança do Imposto de Importação federal, mas o ICMS estadual pode continuar sendo cobrado.",
+          "Não. O Remessa Conforme pode mudar a cobrança do Imposto de Importação federal (0% até US$50 ou 20% acima), mas o ICMS estadual continua sendo cobrado com alíquotas entre 17% e 20%, dependendo do estado de destino. Mesmo em compras abaixo de US$50 em lojas certificadas, onde o Imposto de Importação é 0%, o ICMS aparece no checkout ou na chegada da encomenda. O programa oferece previsibilidade na cobrança, não isenção de tributos. Para estimar o custo real, sempre inclua o ICMS do estado de entrega na simulação.",
+      },
+      {
+        question: "A lista oficial muda?",
+        answer:
+          "Pode mudar. A Receita Federal atualiza periodicamente a lista de empresas certificadas no Programa Remessa Conforme, e novas plataformas podem ser adicionadas ou removidas. Por isso, a referência principal deve ser sempre a página oficial da Receita Federal, não listas copiadas em redes sociais ou sites terceiros. Antes de comprar, confirme se a loja ainda está certificada e verifique se os tributos aparecem no checkout. Use a calculadora de importação para estimar o custo total com o ICMS do estado de destino.",
       },
     ],
     howToSteps: [
@@ -234,6 +415,9 @@ const pages = [
     title: "ICMS Importação São Paulo 2026: Como Calcular",
     description:
       "Entenda como estimar ICMS de importação para São Paulo em 2026, com imposto de importação, frete, câmbio e Remessa Conforme.",
+    h1: "ICMS de Importação em São Paulo: Como Calcular em 2026",
+    directAnswer: "Para estimar o ICMS de importação em São Paulo, use o estado de destino SP na calculadora. A alíquota estimada usada para São Paulo é 18%, junto com produto, frete, câmbio, Imposto de Importação e Remessa Conforme.",
+    introParagraph: "O ICMS é um dos motivos pelos quais duas compras internacionais com o mesmo preço podem ter custos finais diferentes no Brasil. Para um comprador em São Paulo, o estado de destino precisa entrar na conta antes de decidir se vale a pena importar.",
     faqs: [
       {
         question: "Qual ICMS a calculadora usa para São Paulo?",
@@ -257,6 +441,9 @@ const pages = [
     title: "ICMS Importação Minas Gerais 2026: Como Calcular",
     description:
       "Entenda como estimar ICMS de importação para Minas Gerais em 2026, com imposto de importação, frete, câmbio e Remessa Conforme.",
+    h1: "ICMS de Importação em Minas Gerais: Como Calcular em 2026",
+    directAnswer: "Para estimar o ICMS de importação em Minas Gerais, use o estado de destino MG na calculadora. A alíquota estimada usada para Minas Gerais é 20%, junto com produto, frete, câmbio, Imposto de Importação e Remessa Conforme.",
+    introParagraph: "O ICMS é um dos motivos pelos quais duas compras internacionais com o mesmo preço podem ter custos finais diferentes no Brasil. Para um comprador em Minas Gerais, o estado de destino precisa entrar na conta antes de decidir se vale a pena importar.",
     faqs: [
       {
         question: "Qual ICMS a calculadora usa para Minas Gerais?",
@@ -280,6 +467,9 @@ const pages = [
     title: "ICMS Importação Paraná 2026: Como Calcular",
     description:
       "Entenda como estimar ICMS de importação para Paraná em 2026, com imposto de importação, frete, câmbio e Remessa Conforme.",
+    h1: "ICMS de Importação em Paraná: Como Calcular em 2026",
+    directAnswer: "Para estimar o ICMS de importação em Paraná, use o estado de destino PR na calculadora. A alíquota estimada usada para Paraná é 19,5%, junto com produto, frete, câmbio, Imposto de Importação e Remessa Conforme.",
+    introParagraph: "O ICMS é um dos motivos pelos quais duas compras internacionais com o mesmo preço podem ter custos finais diferentes no Brasil. Para um comprador em Paraná, o estado de destino precisa entrar na conta antes de decidir se vale a pena importar.",
     faqs: [
       {
         question: "Qual ICMS a calculadora usa para Paraná?",
@@ -303,6 +493,9 @@ const pages = [
     title: "ICMS Importação Rio de Janeiro 2026: Como Calcular",
     description:
       "Entenda como estimar ICMS de importação para Rio de Janeiro em 2026, com imposto de importação, frete, câmbio e Remessa Conforme.",
+    h1: "ICMS de Importação em Rio de Janeiro: Como Calcular em 2026",
+    directAnswer: "Para estimar o ICMS de importação em Rio de Janeiro, use o estado de destino RJ na calculadora. A alíquota estimada usada para Rio de Janeiro é 22%, junto com produto, frete, câmbio, Imposto de Importação e Remessa Conforme.",
+    introParagraph: "O ICMS é um dos motivos pelos quais duas compras internacionais com o mesmo preço podem ter custos finais diferentes no Brasil. Para um comprador em Rio de Janeiro, o estado de destino precisa entrar na conta antes de decidir se vale a pena importar.",
     faqs: [
       {
         question: "Qual ICMS a calculadora usa para Rio de Janeiro?",
@@ -326,6 +519,9 @@ const pages = [
     title: "ICMS Importação Santa Catarina 2026: Como Calcular",
     description:
       "Entenda como estimar ICMS de importação para Santa Catarina em 2026, com imposto de importação, frete, câmbio e Remessa Conforme.",
+    h1: "ICMS de Importação em Santa Catarina: Como Calcular em 2026",
+    directAnswer: "Para estimar o ICMS de importação em Santa Catarina, use o estado de destino SC na calculadora. A alíquota estimada usada para Santa Catarina é 17%, junto com produto, frete, câmbio, Imposto de Importação e Remessa Conforme.",
+    introParagraph: "O ICMS é um dos motivos pelos quais duas compras internacionais com o mesmo preço podem ter custos finais diferentes no Brasil. Para um comprador em Santa Catarina, o estado de destino precisa entrar na conta antes de decidir se vale a pena importar.",
     faqs: [
       {
         question: "Qual ICMS a calculadora usa para Santa Catarina?",
@@ -388,6 +584,9 @@ const generatedStatePages = states.map((state) => ({
   path: `/icms-importacao-${state.slug}`,
   title: `ICMS Importação ${state.name} 2026: Como Calcular`,
   description: `Entenda como estimar ICMS de importação para ${state.name} em 2026, com imposto de importação, frete, câmbio e Remessa Conforme.`,
+  h1: `ICMS de Importação em ${state.name}: Como Calcular em 2026`,
+  directAnswer: `Para estimar o ICMS de importação em ${state.name}, use o estado de destino ${state.code} na calculadora. A alíquota estimada usada para ${state.name} é ${state.rate}, junto com produto, frete, câmbio, Imposto de Importação e Remessa Conforme.`,
+  introParagraph: `O ICMS é um dos motivos pelos quais duas compras internacionais com o mesmo preço podem ter custos finais diferentes no Brasil. Para um comprador em ${state.name}, o estado de destino precisa entrar na conta antes de decidir se vale a pena importar.`,
   faqs: [
     {
       question: `Qual ICMS a calculadora usa para ${state.name}?`,
@@ -411,6 +610,9 @@ const generatedPlatformStatePages = platforms.flatMap((platform) =>
     path: `/imposto-${platform.slug}-${state.slug}`,
     title: `Imposto ${platform.name} ${state.name} 2026: Como Calcular`,
     description: `Calcule imposto de compras da ${platform.name} para ${state.name} em 2026, com ICMS de ${state.rate}, frete, câmbio e Remessa Conforme.`,
+    h1: `Imposto da ${platform.name} para ${state.name}: Como Calcular em 2026`,
+    directAnswer: `Para calcular imposto da ${platform.name} para ${state.name}, some produto, frete e seguro, converta para reais, considere a regra de Imposto de Importação e use ${state.rate} como ICMS estimado para o estado ${state.code}.`,
+    introParagraph: `Uma compra internacional da ${platform.name} pode ter custo final diferente dependendo do estado de entrega. Para ${state.name}, a calculadora usa ICMS estimado de ${state.rate}, além de frete, câmbio, valor do produto e regra do Remessa Conforme.`,
     faqs: [
       {
         question: `Como calcular imposto da ${platform.name} para ${state.name}?`,
@@ -572,7 +774,7 @@ function buildSchemaTag(page) {
 function updateHead(html, page) {
   const canonical = `${siteOrigin}${page.path}`;
 
-  return html
+  let updated = html
     .replace(/<title>.*?<\/title>/s, `<title>${escapeHtml(page.title)}</title>`)
     .replace(
       /<meta name="description" content=".*?" \/>/s,
@@ -581,8 +783,63 @@ function updateHead(html, page) {
     .replace(
       /<link rel="canonical" href=".*?" \/>/s,
       `<link rel="canonical" href="${canonical}" />`,
-    )
-    .replace("</head>", `    ${buildSchemaTag(page)}\n  </head>`);
+    );
+
+  // Insert Open Graph and Twitter Card meta tags before </head>
+  const ogTwitterTags = [
+    `<meta property="og:type" content="article" />`,
+    `<meta property="og:title" content="${escapeHtml(page.title)}" />`,
+    `<meta property="og:description" content="${escapeHtml(page.description)}" />`,
+    `<meta property="og:url" content="${canonical}" />`,
+    `<meta property="og:site_name" content="Taxa de Importação" />`,
+    `<meta property="og:locale" content="pt_BR" />`,
+    `<meta name="twitter:card" content="summary" />`,
+    `<meta name="twitter:title" content="${escapeHtml(page.title)}" />`,
+    `<meta name="twitter:description" content="${escapeHtml(page.description)}" />`,
+  ].join("\n    ");
+
+  updated = updated.replace("</head>", `    ${ogTwitterTags}\n    ${buildSchemaTag(page)}\n  </head>`);
+  return updated;
+}
+
+function buildBodyHtml(page) {
+  const h1 = page.h1 ? escapeHtml(page.h1) : escapeHtml(page.title);
+  const directAnswer = page.directAnswer ? escapeHtml(page.directAnswer) : "";
+  const introParagraph = page.introParagraph ? escapeHtml(page.introParagraph) : "";
+  const canonical = `${siteOrigin}${page.path}`;
+
+  let body = "";
+  body += `<main style="max-width:800px;margin:0 auto;padding:24px 16px 48px;font-family:Inter,system-ui,sans-serif;color:#071933;line-height:1.7">`;
+  body += `<h1 style="font-size:2rem;font-weight:700;margin-bottom:1.5rem">${h1}</h1>`;
+
+  if (directAnswer) {
+    body += `<section style="margin-bottom:2rem;border:1px solid rgba(0,130,114,0.2);border-radius:12px;background:linear-gradient(135deg,rgba(0,130,114,0.08),white,rgba(255,202,40,0.15));padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06)">`;
+    body += `<p style="margin-bottom:8px;font-size:0.85rem;font-weight:600;text-transform:uppercase;color:#008272">Resposta rápida</p>`;
+    body += `<div style="font-size:1.1rem;line-height:1.6">${directAnswer}</div>`;
+    body += `</section>`;
+  }
+
+  if (introParagraph) {
+    body += `<p style="font-size:1.1rem;margin-bottom:2rem">${introParagraph}</p>`;
+  }
+
+  if (page.faqs && page.faqs.length > 0) {
+    body += `<section style="margin-top:3rem">`;
+    body += `<h2 style="font-size:1.5rem;font-weight:600;margin-bottom:1.5rem">Perguntas frequentes</h2>`;
+    for (const faq of page.faqs) {
+      body += `<div style="margin-bottom:1rem">`;
+      body += `<h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.5rem">${escapeHtml(faq.question)}</h3>`;
+      body += `<p style="margin-bottom:1rem">${escapeHtml(faq.answer)}</p>`;
+      body += `</div>`;
+    }
+    body += `</section>`;
+  }
+
+  body += `<p style="font-size:0.85rem;color:#64748b;margin-top:3rem">Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras Internacionais e orientações sobre remessas internacionais.</p>`;
+  body += `<p style="margin-top:1.5rem"><a href="${siteOrigin}" style="display:inline-block;background:#008272;color:white;padding:14px 28px;border-radius:12px;font-size:1.1rem;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(0,130,114,0.3)">Calcular imposto de importação</a></p>`;
+  body += `</main>`;
+
+  return body;
 }
 
 function buildSitemap() {
@@ -615,11 +872,16 @@ console.log("Generated /sitemap.xml");
 
 for (const page of allPages) {
   const html = updateHead(baseHtml, page);
+  const bodyHtml = buildBodyHtml(page);
+  const htmlWithBody = html.replace(
+    `<div id="root"></div>`,
+    `<div id="root">${bodyHtml}</div>`,
+  );
   const outputPath = join(distPath, page.path, "index.html");
   const cleanOutputPath = join(distPath, `${page.path}.html`);
   await mkdir(dirname(outputPath), { recursive: true });
   await mkdir(dirname(cleanOutputPath), { recursive: true });
-  await writeFile(outputPath, html);
-  await writeFile(cleanOutputPath, html);
+  await writeFile(outputPath, htmlWithBody);
+  await writeFile(cleanOutputPath, htmlWithBody);
   console.log(`Generated ${page.path}/index.html`);
 }

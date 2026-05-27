@@ -1,6 +1,8 @@
 import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
 import DirectAnswer from "@/components/DirectAnswer";
+import OfficialSources from "@/components/OfficialSources";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export default function ImpostoShein() {
   return (
@@ -13,12 +15,17 @@ export default function ImpostoShein() {
           {
             question: "Compras da Shein abaixo de US$50 pagam imposto?",
             answer:
-              "Sim. Compras abaixo de US$50 podem pagar Imposto de Importação e ICMS, conforme a regra aplicada à compra e ao estado de destino.",
+              "Compras da Shein abaixo de US$50 podem pagar imposto dependendo da modalidade da compra e do estado de destino. Em compras feitas pelo Programa Remessa Conforme, o Imposto de Importação federal é de 0% para valores até US$50, mas o ICMS estadual continua sendo cobrado, com alíquotas que variam de 17% a 22% conforme o estado. Já em compras fora do Remessa Conforme, a regra pode incluir Imposto de Importação de 60% sobre o valor aduaneiro, além do ICMS. Por isso, mesmo pedidos pequenos podem ter um custo final significativamente maior que o preço do produto no site.",
           },
           {
             question: "Vale a pena comprar na Shein em 2026?",
             answer:
-              "Depende do preço final com produto, frete, Imposto de Importação e ICMS. A calculadora ajuda a comparar antes de comprar.",
+              "Vale a pena comprar na Shein em 2026 quando o preço final, já com impostos, continua abaixo de alternativas disponíveis no Brasil. Para pedidos até US$50 pelo Remessa Conforme, o Imposto de Importação é 0%, mas o ICMS (17% a 22%) ainda entra no custo. Para pedidos acima de US$50, o Imposto de Importação volta a ser cobrado e o custo final pode se aproximar ou ultrapassar o preço de lojas brasileiras. O comprador deve sempre simular o valor total antes de decidir, considerando produto, frete, câmbio e os tributos do estado de entrega.",
+          },
+          {
+            question: "O imposto aparece antes de pagar?",
+            answer:
+              "Em compras feitas pela Shein dentro do Programa Remessa Conforme, os tributos devem aparecer discriminados no checkout antes do pagamento, incluindo ICMS e, quando aplicável, o Imposto de Importação. Essa transparência é uma das vantagens de comprar em plataformas certificadas pela Receita Federal. Se os tributos não aparecem no checkout, há risco de cobrança na chegada ao Brasil, quando a encomenda pode ser tributada com Imposto de Importação de 60% e ICMS do estado. Antes de finalizar o pedido, confira sempre se o valor dos impostos está visível na tela de pagamento.",
           },
         ]}
       />
@@ -37,6 +44,11 @@ export default function ImpostoShein() {
           item isolado.
         </p>
       </DirectAnswer>
+
+      <Breadcrumb items={[
+        { label: "Início", href: "/" },
+        { label: "Imposto Shein Brasil" }
+      ]} />
 
       <p className="text-lg mb-8">
         Comprar na Shein ficou mais caro após as novas regras de importação
@@ -142,6 +154,46 @@ export default function ImpostoShein() {
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">
+        Exemplo de cálculo na Shein
+      </h2>
+
+      <p className="mb-4">
+        Veja um cálculo passo a passo com números reais. Neste exemplo, o
+        pedido fica abaixo de US$50 no Remessa Conforme, com entrega em
+        São Paulo (ICMS 18%).
+      </p>
+
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-6">
+        <p className="font-semibold mb-3">Simulação: blusa na Shein</p>
+        <ul className="space-y-1.5 text-sm mb-4 list-none pl-0">
+          <li><span className="font-medium">Produto:</span> US$35 = R$182,00</li>
+          <li><span className="font-medium">Frete internacional:</span> US$7 = R$36,40</li>
+          <li><span className="font-medium">Câmbio:</span> R$5,20 por US$1</li>
+          <li><span className="font-medium">Subtotal em reais:</span> R$218,40 (US$42 × R$5,20)</li>
+          <li><span className="font-medium">Total em dólar:</span> US$42 — abaixo do limite do Remessa Conforme (≤ US$50)</li>
+        </ul>
+        <div className="border-t border-gray-200 pt-3 mb-3">
+          <p className="text-sm mb-1"><span className="font-medium">Imposto de Importação (II):</span> R$0,00 — no Remessa Conforme, pedidos até US$50 têm II de 0%</p>
+          <p className="text-sm mb-1"><span className="font-medium">ICMS SP (18%):</span> R$218,40 × 18% = R$39,31</p>
+          <p className="text-sm mb-1"><span className="font-medium">Total de tributos:</span> R$39,31</p>
+        </div>
+        <p className="font-bold text-lg">Custo final estimado: R$257,71</p>
+        <p className="text-sm mt-2 text-gray-600">
+          Carga tributária efetiva: 18%. Se uma blusa similar no Brasil
+          custasse R$275, a importação compensaria (R$257,71 &lt; R$275).
+          Mas se o preço nacional fosse R$240, comprar no Brasil seria mais
+          vantajoso — e com entrega mais rápida e possibilidade de troca.
+        </p>
+      </div>
+
+      <p className="mb-6">
+        Perceba que, mesmo com II de 0%, o ICMS adiciona quase R$40 ao custo
+        final. Na Shein, é comum colocar vários itens no carrinho — se o total
+        ultrapassar US$50, a regra de tributação muda e o custo pode aumentar
+        bastante.
+      </p>
+
+      <h2 className="text-2xl font-semibold mt-10 mb-4">
         Quando comprar na Shein ainda pode valer a pena?
       </h2>
 
@@ -155,14 +207,14 @@ export default function ImpostoShein() {
 
       <p className="mb-6">
         Por outro lado, se a diferença for pequena, o risco de atraso, troca,
-        variação de tamanho e tributação adicional pode não compensar. Em SEO,
-        essa é justamente a intenção de busca do usuário: ele quer saber se a
-        compra continua vantajosa depois da regra tributária.
+        variação de tamanho e tributação adicional pode não compensar. O
+        comprador deve avaliar se a compra continua vantajosa depois da regra
+        tributária antes de finalizar o pedido.
       </p>
 
       <a
         href="/"
-        className="inline-block bg-black text-white px-6 py-3 rounded-xl mb-10"
+        className="inline-block bg-[#008272] hover:bg-[#06264b] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-md transition-colors mb-10"
       >
         Usar Calculadora de Imposto
       </a>
@@ -176,7 +228,15 @@ export default function ImpostoShein() {
       </h3>
 
       <p className="mb-4">
-        Compras abaixo de US$50 podem pagar ICMS dependendo do estado.
+        Compras da Shein abaixo de US$50 podem pagar imposto dependendo da
+        modalidade da compra e do estado de destino. Em compras feitas pelo
+        Programa Remessa Conforme, o Imposto de Importação federal é de 0%
+        para valores até US$50, mas o ICMS estadual continua sendo cobrado,
+        com alíquotas que variam de 17% a 22% conforme o estado. Já em
+        compras fora do Remessa Conforme, a regra pode incluir Imposto de
+        Importação de 60% sobre o valor aduaneiro, além do ICMS. Por isso,
+        mesmo pedidos pequenos podem ter um custo final significativamente
+        maior que o preço do produto no site.
       </p>
 
       <h3 className="text-xl font-semibold mt-6 mb-2">
@@ -184,7 +244,15 @@ export default function ImpostoShein() {
       </h3>
 
       <p className="mb-4">
-        Depende do produto e do valor final após os impostos.
+        Vale a pena comprar na Shein em 2026 quando o preço final, já com
+        impostos, continua abaixo de alternativas disponíveis no Brasil. Para
+        pedidos até US$50 pelo Remessa Conforme, o Imposto de Importação é
+        0%, mas o ICMS (17% a 22%) ainda entra no custo. Para pedidos acima
+        de US$50, o Imposto de Importação volta a ser cobrado e o custo final
+        pode se aproximar ou ultrapassar o preço de lojas brasileiras. O
+        comprador deve sempre simular o valor total antes de decidir,
+        considerando produto, frete, câmbio e os tributos do estado de
+        entrega.
       </p>
 
       <h3 className="text-xl font-semibold mt-6 mb-2">
@@ -192,9 +260,15 @@ export default function ImpostoShein() {
       </h3>
 
       <p className="mb-4">
-        Em compras dentro do fluxo de plataformas certificadas, os tributos
-        devem aparecer no checkout. Se não aparecerem, considere o risco de
-        cobrança na chegada ao Brasil.
+        Em compras feitas pela Shein dentro do Programa Remessa Conforme, os
+        tributos devem aparecer discriminados no checkout antes do pagamento,
+        incluindo ICMS e, quando aplicável, o Imposto de Importação. Essa
+        transparência é uma das vantagens de comprar em plataformas
+        certificadas pela Receita Federal. Se os tributos não aparecem no
+        checkout, há risco de cobrança na chegada ao Brasil, quando a
+        encomenda pode ser tributada com Imposto de Importação de 60% e ICMS
+        do estado. Antes de finalizar o pedido, confira sempre se o valor dos
+        impostos está visível na tela de pagamento.
       </p>
 
       <div className="mt-10">
@@ -236,6 +310,19 @@ export default function ImpostoShein() {
         Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras
         Internacionais e orientações sobre o Programa Remessa Conforme.
       </p>
+
+      <OfficialSources
+        sources={[
+          {
+            label: "Receita Federal - Empresas certificadas no Programa Remessa Conforme",
+            href: "https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/remessas-postal-e-expressa/empresas-certificadas-no-programa-remessa-conforme-prc",
+          },
+          {
+            label: "Receita Federal - Tributação de remessas internacionais",
+            href: "https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/remessas-postal-e-expressa/topicos/tributacao",
+          },
+        ]}
+      />
 
       <RelatedGuides currentPath="/imposto-shein-brasil" />
 

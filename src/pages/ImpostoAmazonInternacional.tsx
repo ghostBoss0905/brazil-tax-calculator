@@ -2,6 +2,7 @@ import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
 import DirectAnswer from "@/components/DirectAnswer";
 import OfficialSources from "@/components/OfficialSources";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export default function ImpostoAmazonInternacional() {
   return (
@@ -14,17 +15,17 @@ export default function ImpostoAmazonInternacional() {
           {
             question: "Compra internacional na Amazon paga imposto?",
             answer:
-              "Pode pagar, dependendo do valor, frete, enquadramento da compra, ICMS do estado e se os tributos aparecem no checkout.",
+              "Sim, compras internacionais na Amazon estão sujeitas ao Imposto de Importação e ao ICMS estadual. Dentro do Remessa Conforme, compras até US$50 (produto + frete) podem ter Imposto de Importação de 0%, mas o ICMS estadual de 17% a 20% continua sendo cobrado conforme o estado de destino. Acima de US$50 no RC, a alíquota federal é reduzida; fora do programa, o Imposto de Importação pode chegar a 60% sobre o valor aduaneiro, além do ICMS. Antes de finalizar o pedido, confirme se o checkout da Amazon mostra os tributos discriminados. Use a calculadora de importação para estimar o custo total e compare com produtos vendidos no Brasil.",
           },
           {
             question: "Amazon e marketplace são a mesma coisa para imposto?",
             answer:
-              "Não necessariamente. A Amazon pode vender diretamente ou intermediar vendedores. Verifique se a oferta é internacional e se os tributos estão incluídos.",
+              "Não necessariamente. A Amazon pode vender diretamente como importador ou intermediar vendedores terceiros que seguem fluxos diferentes de tributação e logística. Em compras de vendedores dentro do Remessa Conforme, os tributos tendem a aparecer no checkout com Imposto de Importação de 0% até US$50 ou alíquota reduzida acima desse valor, mais ICMS de 17% a 20% conforme o estado. Em ofertas de vendedores fora do programa, a cobrança pode ocorrer na chegada ao Brasil com Imposto de Importação de 60% e ICMS estadual. Por isso, sempre verifique se a oferta é internacional e se os tributos estão incluídos ou discriminados no checkout antes de pagar. Use a calculadora para simular diferentes cenários e compare com alternativas brasileiras.",
           },
           {
             question: "Devo comparar com produto vendido no Brasil?",
             answer:
-              "Sim. Compare o custo final importado com o preço nacional, prazo, garantia e possibilidade de troca.",
+              "Sim, comparar o custo final da importação com alternativas vendidas no Brasil é essencial antes de decidir. Mesmo com Imposto de Importação de 0% até US$50 no Remessa Conforme, o ICMS estadual (17% a 20%), o frete internacional e o câmbio podem elevar o valor total significativamente. Acima de US$50, o Imposto de Importação dentro do RC volta a incidir, e fora do RC pode chegar a 60%, fazendo o custo final se aproximar ou ultrapassar o preço nacional. A compra no Brasil oferece vantagens como prazo de entrega menor, garantia local e possibilidade de troca que a importação não garante. Use a calculadora de importação para estimar o custo total e compare com o preço do mesmo produto em lojas brasileiras antes de decidir.",
           },
         ]}
       />
@@ -42,6 +43,11 @@ export default function ImpostoAmazonInternacional() {
           </p>
         </DirectAnswer>
 
+        <Breadcrumb items={[
+          { label: "Início", href: "/" },
+          { label: "Imposto Amazon Internacional Brasil" }
+        ]} />
+
         <p className="text-lg mb-8">
           A Amazon pode exibir produtos vendidos no Brasil e produtos
           internacionais no mesmo ambiente. Para SEO e para o consumidor, a
@@ -58,7 +64,7 @@ export default function ImpostoAmazonInternacional() {
 
         <a
           href="/"
-          className="inline-block bg-black text-white px-6 py-3 rounded-xl mb-10"
+          className="inline-block bg-[#008272] hover:bg-[#06264b] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-md transition-colors mb-10"
         >
           Calcular imposto da Amazon
         </a>
@@ -113,20 +119,45 @@ export default function ImpostoAmazonInternacional() {
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
-          Exemplo de decisão
+          Exemplo de cálculo na Amazon Internacional
         </h2>
 
-        <p className="mb-6">
-          Um produto internacional de US$120 pode parecer mais barato que a
-          versão nacional. Mas depois de câmbio, frete, Imposto de Importação e
-          ICMS, a diferença pode diminuir. Se a economia final for pequena, a
-          compra nacional tende a ser mais simples por garantia e prazo.
+        <p className="mb-4">
+          Veja um cálculo completo com números reais. Neste exemplo, o pedido
+          fica acima de US$50 no Remessa Conforme, com entrega em São Paulo
+          (ICMS 18%). Acima do limite, o Imposto de Importação tem alíquota
+          de 60% com desconto de US$30.
         </p>
 
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-6">
+          <p className="font-semibold mb-3">Simulação: eletrônico na Amazon Internacional</p>
+          <ul className="space-y-1.5 text-sm mb-4 list-none pl-0">
+            <li><span className="font-medium">Produto:</span> US$120 = R$624,00</li>
+            <li><span className="font-medium">Frete internacional:</span> US$15 = R$78,00</li>
+            <li><span className="font-medium">Câmbio:</span> R$5,20 por US$1</li>
+            <li><span className="font-medium">Subtotal em reais:</span> R$702,00 (US$135 × R$5,20)</li>
+            <li><span className="font-medium">Total em dólar:</span> US$135 — acima do limite do Remessa Conforme (&gt; US$50)</li>
+          </ul>
+          <div className="border-t border-gray-200 pt-3 mb-3">
+            <p className="text-sm mb-1"><span className="font-medium">Imposto de Importação (II):</span> R$702,00 × 60% = R$421,20; desconto RC = US$30 × R$5,20 = R$156,00; II = R$421,20 − R$156,00 = R$265,20</p>
+            <p className="text-sm mb-1"><span className="font-medium">ICMS SP (18%):</span> (R$702,00 + R$265,20) × 18% = R$967,20 × 18% = R$174,10</p>
+            <p className="text-sm mb-1"><span className="font-medium">Total de tributos:</span> R$265,20 + R$174,10 = R$439,30</p>
+          </div>
+          <p className="font-bold text-lg">Custo final estimado: R$1.141,30</p>
+          <p className="text-sm mt-2 text-gray-600">
+            Carga tributária efetiva: 62,4%. Se o mesmo eletrônico no Brasil
+            custasse R$1.300, a importação compensaria (R$1.141 &lt; R$1.300).
+            Mas se o preço nacional fosse R$1.100, comprar no Brasil seria
+            mais vantajoso — e com garantia local e entrega em dias, não semanas.
+          </p>
+        </div>
+
         <p className="mb-6">
-          Se a economia continuar grande e o checkout mostrar tributos de forma
-          transparente, a compra internacional pode fazer sentido. A decisão
-          deve ser baseada no custo final, não no preço do anúncio.
+          Esse exemplo mostra por que, acima de US$50, o desconto de US$30 no
+          Remessa Conforme reduz o II, mas o custo final ainda fica alto
+          (62,4% de carga tributária). Fora do Remessa Conforme, o II seria
+          de 60% sem desconto, elevando o custo ainda mais. Por isso, acima de
+          US$50, comparar com o preço nacional é essencial antes de decidir.
         </p>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -137,25 +168,50 @@ export default function ImpostoAmazonInternacional() {
           Compra internacional na Amazon paga imposto?
         </h3>
         <p className="mb-4">
-          Pode pagar. A resposta depende do valor da operação, do frete, do
-          estado de entrega e do enquadramento da remessa.
+          Sim, compras internacionais na Amazon estão sujeitas ao Imposto de
+          Importação e ao ICMS estadual. Dentro do Remessa Conforme, compras até
+          US$50 (produto + frete) podem ter Imposto de Importação de 0%, mas o
+          ICMS estadual de 17% a 20% continua sendo cobrado conforme o estado de
+          destino. Acima de US$50 no RC, a alíquota federal é reduzida; fora do
+          programa, o Imposto de Importação pode chegar a 60% sobre o valor
+          aduaneiro, além do ICMS. Antes de finalizar o pedido, confirme se o
+          checkout da Amazon mostra os tributos discriminados. Use a calculadora
+          de importação para estimar o custo total e compare com produtos
+          vendidos no Brasil.
         </p>
 
         <h3 className="text-xl font-semibold mt-6 mb-2">
-          O imposto já vem no preço?
+          Amazon e marketplace são a mesma coisa para imposto?
         </h3>
         <p className="mb-4">
-          Em algumas ofertas, o checkout pode mostrar tributos ou valores de
-          importação. Verifique a tela final antes de pagar.
+          Não necessariamente. A Amazon pode vender diretamente como importador
+          ou intermediar vendedores terceiros que seguem fluxos diferentes de
+          tributação e logística. Em compras de vendedores dentro do Remessa
+          Conforme, os tributos tendem a aparecer no checkout com Imposto de
+          Importação de 0% até US$50 ou alíquota reduzida acima desse valor,
+          mais ICMS de 17% a 20% conforme o estado. Em ofertas de vendedores
+          fora do programa, a cobrança pode ocorrer na chegada ao Brasil com
+          Imposto de Importação de 60% e ICMS estadual. Por isso, sempre
+          verifique se a oferta é internacional e se os tributos estão incluídos
+          ou discriminados no checkout antes de pagar. Use a calculadora para
+          simular diferentes cenários e compare com alternativas brasileiras.
         </p>
 
         <h3 className="text-xl font-semibold mt-6 mb-2">
-          Posso usar a mesma tabela da Shein ou AliExpress?
+          Devo comparar com produto vendido no Brasil?
         </h3>
         <p className="mb-4">
-          A lógica geral é parecida, mas marketplaces podem ter vendedores e
-          fluxos diferentes. Sempre confirme o que aparece no checkout da oferta
-          específica.
+          Sim, comparar o custo final da importação com alternativas vendidas no
+          Brasil é essencial antes de decidir. Mesmo com Imposto de Importação
+          de 0% até US$50 no Remessa Conforme, o ICMS estadual (17% a 20%), o
+          frete internacional e o câmbio podem elevar o valor total
+          significativamente. Acima de US$50, o Imposto de Importação dentro do
+          RC volta a incidir, e fora do RC pode chegar a 60%, fazendo o custo
+          final se aproximar ou ultrapassar o preço nacional. A compra no Brasil
+          oferece vantagens como prazo de entrega menor, garantia local e
+          possibilidade de troca que a importação não garante. Use a calculadora
+          de importação para estimar o custo total e compare com o preço do
+          mesmo produto em lojas brasileiras antes de decidir.
         </p>
 
         <OfficialSources

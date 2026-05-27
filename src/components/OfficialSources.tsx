@@ -18,7 +18,7 @@ export default function OfficialSources({ sources }: OfficialSourcesProps) {
               href={source.href}
               className="text-blue-600 underline"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               {source.label}
             </a>

@@ -39,6 +39,20 @@ export default function SeoHead({
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
+
+      {/* Open Graph */}
+      <meta property="og:type" content="article" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={canonical} />
+      <meta property="og:site_name" content="Taxa de Importação" />
+      <meta property="og:locale" content="pt_BR" />
+
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+
       {faqSchema ? (
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}

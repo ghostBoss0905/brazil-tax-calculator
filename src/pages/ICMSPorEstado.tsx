@@ -4,6 +4,7 @@ import DirectAnswer from "@/components/DirectAnswer";
 import OfficialSources from "@/components/OfficialSources";
 import RelatedGuides from "@/components/RelatedGuides";
 import SeoHead from "@/components/SeoHead";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const statePages = [
   { slug: "acre", name: "Acre", code: "AC", rate: "17%" },
@@ -113,6 +114,12 @@ export default function ICMSPorEstado() {
           </p>
         </DirectAnswer>
 
+        <Breadcrumb items={[
+          { label: "Início", href: "/" },
+          { label: "ICMS na importação", href: "/icms-importacao-brasil" },
+          { label: `ICMS ${state.name}` }
+        ]} />
+
         <p className="text-lg mb-8">
           O ICMS é um dos motivos pelos quais duas compras internacionais com o
           mesmo preço podem ter custos finais diferentes no Brasil. Para um
@@ -134,7 +141,7 @@ export default function ICMSPorEstado() {
 
         <a
           href="/"
-          className="inline-block bg-black text-white px-6 py-3 rounded-xl mb-10"
+          className="inline-block bg-[#008272] hover:bg-[#06264b] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-md transition-colors mb-10"
         >
           Simular importação para {state.code}
         </a>

@@ -1,6 +1,8 @@
 import SeoHead from "@/components/SeoHead";
 import RelatedGuides from "@/components/RelatedGuides";
 import DirectAnswer from "@/components/DirectAnswer";
+import OfficialSources from "@/components/OfficialSources";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export default function ImpostoAliExpress() {
   return (
@@ -13,12 +15,17 @@ export default function ImpostoAliExpress() {
           {
             question: "Compras do AliExpress abaixo de US$50 pagam imposto?",
             answer:
-              "Sim. Compras abaixo de US$50 podem pagar Imposto de Importação reduzido em sites certificados e também ICMS estadual.",
+              "Sim. Compras abaixo de US$50 no AliExpress podem pagar imposto, dependendo do enquadramento da compra. Em plataformas certificadas no Programa Remessa Conforme, o Imposto de Importação federal é 0% para pedidos até US$50, mas o ICMS estadual continua sendo cobrado, com alíquotas que variam de 17% a 20% dependendo do estado de destino. Se a compra não estiver dentro do Remessa Conforme, o Imposto de Importação pode chegar a 60% sobre o valor aduaneiro, além do ICMS. Por isso, mesmo pedidos de baixo valor podem ter custo final significativamente maior que o preço anunciado. Antes de comprar, use uma calculadora de importação para estimar o valor total e compare com alternativas vendidas no Brasil.",
           },
           {
             question: "O AliExpress participa do Remessa Conforme?",
             answer:
-              "Sim. O AliExpress aparece entre as plataformas que operam com o Programa Remessa Conforme.",
+              "Sim. O AliExpress é uma das plataformas certificadas no Programa Remessa Conforme da Receita Federal. Isso significa que, em compras feitas pelo AliExpress dentro do programa, os tributos podem ser calculados e exibidos no checkout antes do pagamento, dando mais previsibilidade ao consumidor. No Remessa Conforme, compras até US$50 têm Imposto de Importação de 0%, e compras acima de US$50 têm alíquota reduzida, além do ICMS estadual que varia de 17% a 20% conforme o estado. Para confirmar o enquadramento, verifique se os tributos aparecem discriminados no checkout antes de finalizar o pedido.",
+          },
+          {
+            question: "O imposto é cobrado na hora ou quando chega ao Brasil?",
+            answer:
+              "Em compras feitas dentro das regras do Remessa Conforme no AliExpress, os tributos costumam aparecer no checkout antes do pagamento, com valores calculados antecipadamente. Fora desse fluxo, como em compras de vendedores não-certificados, a cobrança pode ocorrer quando a encomenda chega ao Brasil, por meio dos Correios ou da transportadora, com Imposto de Importação de 60% e ICMS estadual. Para evitar surpresas, sempre confira se o checkout mostra os tributos antes de finalizar o pedido e use uma calculadora de importação para estimar o custo total. Compare o valor final com alternativas vendidas no Brasil antes de decidir pela importação.",
           },
         ]}
       />
@@ -37,6 +44,11 @@ export default function ImpostoAliExpress() {
           no Brasil.
         </p>
       </DirectAnswer>
+
+      <Breadcrumb items={[
+        { label: "Início", href: "/" },
+        { label: "Imposto AliExpress Brasil" }
+      ]} />
 
       <p className="text-lg mb-8">
         Comprar no AliExpress ficou mais caro desde 2024. Mas com a informação
@@ -126,19 +138,40 @@ export default function ImpostoAliExpress() {
         Exemplo de cálculo no AliExpress
       </h2>
 
-      <p className="mb-6">
-        Imagine um produto anunciado por US$45, com frete internacional de
-        US$5. Antes de decidir se vale a pena, some produto e frete, converta
-        para reais e aplique a regra de tributação correspondente. Depois,
-        considere o ICMS do estado de entrega. Esse último ponto é importante
-        porque o ICMS pode mudar o custo final de forma relevante.
+      <p className="mb-4">
+        Veja um cálculo completo com números reais. Neste exemplo, o pedido
+        fica exatamente no limite de US$50 do Remessa Conforme, com entrega
+        em São Paulo (ICMS 18%).
       </p>
 
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-6">
+        <p className="font-semibold mb-3">Simulação: headset no AliExpress</p>
+        <ul className="space-y-1.5 text-sm mb-4 list-none pl-0">
+          <li><span className="font-medium">Produto:</span> US$45 = R$234,00</li>
+          <li><span className="font-medium">Frete internacional:</span> US$5 = R$26,00</li>
+          <li><span className="font-medium">Câmbio:</span> R$5,20 por US$1</li>
+          <li><span className="font-medium">Subtotal em reais:</span> R$260,00 (US$50 × R$5,20)</li>
+          <li><span className="font-medium">Total em dólar:</span> US$50 — está no limite do Remessa Conforme (≤ US$50)</li>
+        </ul>
+        <div className="border-t border-gray-200 pt-3 mb-3">
+          <p className="text-sm mb-1"><span className="font-medium">Imposto de Importação (II):</span> R$0,00 — no Remessa Conforme, pedidos até US$50 têm II de 0%</p>
+          <p className="text-sm mb-1"><span className="font-medium">ICMS SP (18%):</span> R$260,00 × 18% = R$46,80</p>
+          <p className="text-sm mb-1"><span className="font-medium">Total de tributos:</span> R$46,80</p>
+        </div>
+        <p className="font-bold text-lg">Custo final estimado: R$306,80</p>
+        <p className="text-sm mt-2 text-gray-600">
+          Carga tributária efetiva: 18%. Se o mesmo headset estivesse
+          disponível no Brasil por R$320, a importação compensaria
+          (R$306,80 &lt; R$320). Se o preço nacional fosse R$280, a compra
+          no Brasil seria mais vantajosa — e com prazo e garantia local.
+        </p>
+      </div>
+
       <p className="mb-6">
-        Se o mesmo produto estiver disponível no Brasil por um preço próximo,
-        a compra nacional pode ser mais vantajosa por causa do prazo, garantia
-        e menor risco de cobrança adicional. Se a diferença continuar grande
-        mesmo depois dos impostos, a importação pode compensar.
+        Esse exemplo mostra que, mesmo com II de 0%, o ICMS ainda eleva o
+        custo final. Por isso, o preço do anúncio nunca deve ser o único
+        fator na decisão. Compare sempre o custo total com alternativas no
+        Brasil antes de finalizar o pedido.
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">
@@ -155,7 +188,7 @@ export default function ImpostoAliExpress() {
 
       <a
         href="/"
-        className="inline-block bg-black text-white px-6 py-3 rounded-xl mb-10"
+        className="inline-block bg-[#008272] hover:bg-[#06264b] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-md transition-colors mb-10"
       >
         Usar Calculadora de Imposto de Importação
       </a>
@@ -169,7 +202,16 @@ export default function ImpostoAliExpress() {
       </h3>
 
       <p className="mb-4">
-        Sim. Compras abaixo de US$50 podem pagar ICMS dependendo do estado.
+        Sim. Compras abaixo de US$50 no AliExpress podem pagar imposto,
+        dependendo do enquadramento da compra. Em plataformas certificadas no
+        Programa Remessa Conforme, o Imposto de Importação federal é 0% para
+        pedidos até US$50, mas o ICMS estadual continua sendo cobrado, com
+        alíquotas que variam de 17% a 20% dependendo do estado de destino. Se a
+        compra não estiver dentro do Remessa Conforme, o Imposto de Importação
+        pode chegar a 60% sobre o valor aduaneiro, além do ICMS. Por isso, mesmo
+        pedidos de baixo valor podem ter custo final significativamente maior que
+        o preço anunciado. Antes de comprar, use uma calculadora de importação
+        para estimar o valor total e compare com alternativas vendidas no Brasil.
       </p>
 
       <h3 className="text-xl font-semibold mt-6 mb-2">
@@ -177,7 +219,15 @@ export default function ImpostoAliExpress() {
       </h3>
 
       <p className="mb-4">
-        Sim. O AliExpress participa oficialmente do programa.
+        Sim. O AliExpress é uma das plataformas certificadas no Programa Remessa
+        Conforme da Receita Federal. Isso significa que, em compras feitas pelo
+        AliExpress dentro do programa, os tributos podem ser calculados e exibidos
+        no checkout antes do pagamento, dando mais previsibilidade ao consumidor.
+        No Remessa Conforme, compras até US$50 têm Imposto de Importação de 0%,
+        e compras acima de US$50 têm alíquota reduzida, além do ICMS estadual
+        que varia de 17% a 20% conforme o estado. Para confirmar o
+        enquadramento, verifique se os tributos aparecem discriminados no checkout
+        antes de finalizar o pedido.
       </p>
 
       <h3 className="text-xl font-semibold mt-6 mb-2">
@@ -185,9 +235,16 @@ export default function ImpostoAliExpress() {
       </h3>
 
       <p className="mb-4">
-        Em compras feitas dentro das regras do Remessa Conforme, os tributos
-        podem aparecer no checkout. Fora desse fluxo, a cobrança pode ocorrer
-        na chegada da encomenda.
+        Em compras feitas dentro das regras do Remessa Conforme no AliExpress,
+        os tributos costumam aparecer no checkout antes do pagamento, com valores
+        calculados antecipadamente. Fora desse fluxo, como em compras de
+        vendedores não-certificados, a cobrança pode ocorrer quando a encomenda
+        chega ao Brasil, por meio dos Correios ou da transportadora, com Imposto
+        de Importação de 60% e ICMS estadual. Para evitar surpresas, sempre
+        confira se o checkout mostra os tributos antes de finalizar o pedido e use
+        uma calculadora de importação para estimar o custo total. Compare o valor
+        final com alternativas vendidas no Brasil antes de decidir pela
+        importação.
       </p>
 
       <div className="mt-10">
@@ -229,6 +286,19 @@ export default function ImpostoAliExpress() {
         Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras
         Internacionais e orientações sobre o Programa Remessa Conforme.
       </p>
+
+      <OfficialSources
+        sources={[
+          {
+            label: "Receita Federal - Empresas certificadas no Programa Remessa Conforme",
+            href: "https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/remessas-postal-e-expressa/empresas-certificadas-no-programa-remessa-conforme-prc",
+          },
+          {
+            label: "Receita Federal - Quais são os impostos devidos",
+            href: "https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/remessas-postal-e-expressa/preciso-pagar-impostos-nas-compras-internacionais/quais-sao-os-impostos-devidos",
+          },
+        ]}
+      />
 
       <RelatedGuides currentPath="/imposto-aliexpress-brasil" />
 
