@@ -715,7 +715,7 @@ function buildSchema(page) {
         "@id": breadcrumbId,
       },
       datePublished: "2026-05-23",
-      dateModified: "2026-05-24",
+      dateModified: "2026-05-28",
     },
     {
       "@type": "Article",
@@ -734,7 +734,7 @@ function buildSchema(page) {
         "@id": `${siteOrigin}/#organization`,
       },
       datePublished: "2026-05-23",
-      dateModified: "2026-05-24",
+      dateModified: "2026-05-28",
     },
   ];
 
@@ -868,7 +868,7 @@ ${urls
     (page) => `
   <url>
     <loc>${siteOrigin}${page.path}</loc>
-    <lastmod>2026-05-24</lastmod>
+    <lastmod>2026-05-28</lastmod>
   </url>`,
   )
   .join("\n")}
