@@ -422,22 +422,22 @@ const pages = [
       {
         question: "Qual ICMS a calculadora usa para São Paulo?",
         answer:
-          "Para São Paulo, a calculadora usa 18% como alíquota estimada de ICMS no estado de destino. Essa taxa é uma das mais baixas entre os estados com grande volume de importação, tornando o custo final mais favorável do que em Rio de Janeiro (22%) ou Minas Gerais (20%).",
+          "Para São Paulo, a calculadora usa 18% como alíquota estimada. Essa taxa é uma das mais baixas entre os estados com grande volume de importação, tornando o custo final mais favorável do que em Rio de Janeiro (22%) ou Minas Gerais (20%).",
       },
       {
-        question: "Compra abaixo de US$50 para SP paga ICMS?",
+        question: "O ICMS de São Paulo aparece no checkout?",
         answer:
-          "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS de São Paulo (18%) pode continuar aparecendo no checkout. Para um pedido de US$50 com câmbio de R$5,20, o ICMS SP seria aproximadamente R$46,80 — um custo que precisa ser comparado com alternativas nacionais.",
+          "Em compras dentro do Remessa Conforme, o ICMS pode aparecer antes do pagamento. Fora desse fluxo, a cobrança pode surgir no processo de importação.",
       },
       {
         question: "São Paulo tem vantagem na importação?",
         answer:
-          "Em relação ao ICMS, sim. A alíquota de 18% em São Paulo é mais baixa que a de Rio de Janeiro (22%) ou Minas Gerais (20%), resultando em custo final menor para o mesmo pedido. São Paulo também concentra hubs de entrega que podem reduzir o prazo de importação. Porém, o consumidor paulista dispõe de mais alternativas nacionais, o que exige uma comparação mais rigorosa entre o custo importado e o preço brasileiro.",
+          "Em relação ao ICMS, sim. A alíquota de 18% em São Paulo é mais baixa que a de Rio de Janeiro (22%) ou Minas Gerais (20%), resultando em custo final menor para o mesmo pedido. São Paulo também concentra hubs de entrega que podem reduzir o prazo. Porém, o consumidor paulista dispõe de mais alternativas nacionais, o que exige comparação rigorosa entre o custo importado e o preço brasileiro.",
       },
       {
-        question: "O valor final é oficial?",
+        question: "Esta estimativa substitui o valor oficial?",
         answer:
-          "Não. A página e a calculadora oferecem uma estimativa para decisão de compra. O valor oficial depende do checkout, da declaração da remessa e das autoridades competentes.",
+          "Não. Ela serve para decisão antes da compra. O valor oficial depende do checkout, da transportadora, dos Correios ou da autoridade competente.",
       },
     ],
   },
@@ -505,7 +505,12 @@ const pages = [
       {
         question: "Qual ICMS a calculadora usa para Rio de Janeiro?",
         answer:
-          "Para Rio de Janeiro, a calculadora usa 22% como alíquota estimada de ICMS no estado de destino. Essa taxa é uma das mais altas do Brasil, superior a São Paulo (18%) e Santa Catarina (17%), resultando em custo final mais elevado para o mesmo pedido internacional.",
+          "Para Rio de Janeiro, a calculadora usa 22% como alíquota estimada. Essa taxa é uma das mais altas do Brasil, superior a São Paulo (18%) e Santa Catarina (17%), resultando em custo final mais elevado para o mesmo pedido.",
+      },
+      {
+        question: "O ICMS de Rio de Janeiro aparece no checkout?",
+        answer:
+          "Em compras dentro do Remessa Conforme, o ICMS pode aparecer antes do pagamento. Fora desse fluxo, a cobrança pode surgir no processo de importação.",
       },
       {
         question: "Por que o ICMS do Rio de Janeiro é mais alto?",
@@ -513,14 +518,9 @@ const pages = [
           "A alíquota de 22% é definida pela legislação estadual do Rio de Janeiro e incide sobre a base de cálculo da importação, que pode incluir produto, frete, seguro e o próprio Imposto de Importação. A diferença de 4 pontos percentuais em relação a São Paulo (18%) pode representar R$20-30 a mais em pedidos de US$50, tornando a comparação com produtos nacionais ainda mais importante.",
       },
       {
-        question: "Compra abaixo de US$50 para RJ paga ICMS?",
+        question: "Esta estimativa substitui o valor oficial?",
         answer:
-          "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS do Rio de Janeiro (22%) pode continuar aparecendo no checkout. Para um pedido de US$50 com câmbio de R$5,20, o ICMS RJ seria aproximadamente R$57,20 — mais de R$10 acima do que o mesmo pedido custaria em São Paulo (R$46,80). Essa diferença pode tornar a importação menos vantajosa no RJ.",
-      },
-      {
-        question: "O valor final é oficial?",
-        answer:
-          "Não. A página e a calculadora oferecem uma estimativa para decisão de compra. O valor oficial depende do checkout, da declaração da remessa e das autoridades competentes.",
+          "Não. Ela serve para decisão antes da compra. O valor oficial depende do checkout, da transportadora, dos Correios ou da autoridade competente.",
       },
     ],
   },
@@ -600,17 +600,17 @@ const generatedStatePages = states.map((state) => ({
   faqs: [
     {
       question: `Qual ICMS a calculadora usa para ${state.name}?`,
-      answer: `Para ${state.name}, a calculadora usa ${state.rate} como alíquota estimada de ICMS no estado de destino.`,
+      answer: `A calculadora usa ${state.rate} como alíquota estimada para o estado de destino ${state.code}.`,
     },
     {
-      question: `Compra abaixo de US$50 para ${state.code} paga ICMS?`,
+      question: `O ICMS de ${state.name} aparece no checkout?`,
       answer:
-        "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS estadual pode continuar aparecendo no custo final.",
+        "Em compras dentro do Remessa Conforme, o ICMS pode aparecer antes do pagamento. Fora desse fluxo, a cobrança pode surgir no processo de importação.",
     },
     {
-      question: "O valor final é oficial?",
+      question: "Esta estimativa substitui o valor oficial?",
       answer:
-        "Não. A página e a calculadora oferecem uma estimativa para decisão de compra. O valor oficial depende do checkout, da declaração da remessa e das autoridades competentes.",
+        "Não. Ela serve para decisão antes da compra. O valor oficial depende do checkout, da transportadora, dos Correios ou da autoridade competente.",
     },
   ],
 }));
@@ -738,6 +738,10 @@ function buildSchema(page) {
     },
   ];
 
+  // FAQPage schema is provided by SeoHead (React hydration) to avoid
+  // duplicate FAQPage declarations that invalidate Google rich results.
+  // The prerender body HTML still renders FAQ content for crawlers.
+
   if (page.howToSteps) {
     graph.push({
       "@type": "HowTo",
@@ -756,20 +760,7 @@ function buildSchema(page) {
     });
   }
 
-  if (page.faqs) {
-    graph.push({
-      "@type": "FAQPage",
-      "@id": `${canonical}#faq`,
-      mainEntity: page.faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
-      })),
-    });
-  }
+  // FAQPage omitted from @graph — provided by SeoHead (React) to avoid duplicate
 
   return {
     "@context": "https://schema.org",

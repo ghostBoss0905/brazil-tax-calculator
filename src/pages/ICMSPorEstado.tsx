@@ -86,31 +86,26 @@ export default function ICMSPorEstado() {
           {
             question: `Qual ICMS a calculadora usa para ${state.name}?`,
             answer: state.slug === "sao-paulo"
-              ? `Para São Paulo, a calculadora usa 18% como alíquota estimada de ICMS no estado de destino. Essa taxa é uma das mais baixas entre os estados com grande volume de importação, tornando o custo final mais favorável do que em Rio de Janeiro (22%) ou Minas Gerais (20%).`
+              ? "Para São Paulo, a calculadora usa 18% como alíquota estimada. Essa taxa é uma das mais baixas entre os estados com grande volume de importação, tornando o custo final mais favorável do que em Rio de Janeiro (22%) ou Minas Gerais (20%)."
               : state.slug === "rio-de-janeiro"
-              ? `Para Rio de Janeiro, a calculadora usa 22% como alíquota estimada de ICMS no estado de destino. Essa taxa é uma das mais altas do Brasil, superior a São Paulo (18%) e Santa Catarina (17%), resultando em custo final mais elevado para o mesmo pedido internacional.`
-              : `Para ${state.name}, a calculadora usa ${state.rate} como alíquota estimada de ICMS no estado de destino.`,
+              ? "Para Rio de Janeiro, a calculadora usa 22% como alíquota estimada. Essa taxa é uma das mais altas do Brasil, superior a São Paulo (18%) e Santa Catarina (17%), resultando em custo final mais elevado para o mesmo pedido."
+              : `A calculadora usa ${state.rate} como alíquota estimada para o estado de destino ${state.code}.`,
           },
           {
-            question: `Compra abaixo de US$50 para ${state.code} paga ICMS?`,
-            answer: state.slug === "sao-paulo"
-              ? "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS de São Paulo (18%) pode continuar aparecendo no checkout. Para um pedido de US$50 com câmbio de R$5,20, o ICMS SP seria aproximadamente R$46,80 — um custo que precisa ser comparado com alternativas nacionais."
-              : state.slug === "rio-de-janeiro"
-              ? "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS do Rio de Janeiro (22%) pode continuar aparecendo no checkout. Para um pedido de US$50 com câmbio de R$5,20, o ICMS RJ seria aproximadamente R$57,20 — mais de R$10 acima do que o mesmo pedido custaria em São Paulo (R$46,80)."
-              : "Pode pagar. Mesmo quando o Imposto de Importação federal é 0% em plataforma certificada, o ICMS estadual pode continuar aparecendo no custo final.",
+            question: `O ICMS de ${state.name} aparece no checkout?`,
+            answer: "Em compras dentro do Remessa Conforme, o ICMS pode aparecer antes do pagamento. Fora desse fluxo, a cobrança pode surgir no processo de importação.",
           },
           ...(state.slug === "sao-paulo" ? [{
             question: "São Paulo tem vantagem na importação?",
-            answer: "Em relação ao ICMS, sim. A alíquota de 18% em São Paulo é mais baixa que a de Rio de Janeiro (22%) ou Minas Gerais (20%), resultando em custo final menor para o mesmo pedido. São Paulo também concentra hubs de entrega que podem reduzir o prazo de importação. Porém, o consumidor paulista dispõe de mais alternativas nacionais, o que exige uma comparação mais rigorosa entre o custo importado e o preço brasileiro.",
+            answer: "Em relação ao ICMS, sim. A alíquota de 18% em São Paulo é mais baixa que a de Rio de Janeiro (22%) ou Minas Gerais (20%), resultando em custo final menor para o mesmo pedido. São Paulo também concentra hubs de entrega que podem reduzir o prazo. Porém, o consumidor paulista dispõe de mais alternativas nacionais, o que exige comparação rigorosa entre o custo importado e o preço brasileiro.",
           }] : []),
           ...(state.slug === "rio-de-janeiro" ? [{
             question: "Por que o ICMS do Rio de Janeiro é mais alto?",
             answer: "A alíquota de 22% é definida pela legislação estadual do Rio de Janeiro e incide sobre a base de cálculo da importação, que pode incluir produto, frete, seguro e o próprio Imposto de Importação. A diferença de 4 pontos percentuais em relação a São Paulo (18%) pode representar R$20-30 a mais em pedidos de US$50, tornando a comparação com produtos nacionais ainda mais importante.",
           }] : []),
           {
-            question: "O valor final é oficial?",
-            answer:
-              "Não. A página e a calculadora oferecem uma estimativa para decisão de compra. O valor oficial depende do checkout, da declaração da remessa e das autoridades competentes.",
+            question: "Esta estimativa substitui o valor oficial?",
+            answer: "Não. Ela serve para decisão antes da compra. O valor oficial depende do checkout, da transportadora, dos Correios ou da autoridade competente.",
           },
         ]}
       />
