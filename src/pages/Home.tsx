@@ -558,7 +558,31 @@ export default function Home() {
             </div>
           </aside>
 
-          <div className="lg:col-span-12" id="results-panel">
+          <div className="lg:col-span-12">
+            <div className="text-center mb-7 mt-8">
+              <h2 className="text-3xl font-bold text-foreground">
+                Dúvidas Frequentes
+              </h2>
+              <p className="text-muted-foreground mt-2">
+                Entenda melhor como funcionam as regras de importação no Brasil.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {FAQS.map((faq, index) => (
+                <FaqAccordionItem
+                  key={index}
+                  question={faq.question}
+                  answer={faq.answer}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+          </div>
+        </section>
+
+        <section className="mt-8 sm:mt-10 max-w-3xl mx-auto" id="results-panel">
             <AnimatePresence mode="wait">
               {!results ? (
                 <motion.div
@@ -566,30 +590,11 @@ export default function Home() {
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
-                  className="border-2 border-dashed border-border rounded-2xl bg-secondary/20 p-6 sm:p-8 min-h-[180px] sm:min-h-[220px] flex items-center justify-center"
+                  className="border border-dashed border-border rounded-xl bg-secondary/20 px-5 py-3 text-center"
                 >
-                  <div className="text-center space-y-3 max-w-sm">
-                    <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center mx-auto shadow-sm">
-                      <ShieldCheck className="w-6 h-6 text-muted-foreground" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-foreground">
-                      Aguardando dados
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      Preencha os dados para ver produto, frete, imposto,
-                      ICMS e total estimado em reais.
-                    </p>
-                    <div className="rounded-xl bg-background p-4 text-left text-xs text-muted-foreground shadow-sm">
-                      <p className="font-semibold text-foreground">
-                        Como interpretar o resultado
-                      </p>
-                      <ul className="mt-2 list-disc space-y-1 pl-4">
-                        <li>O total ajuda a decidir antes da compra.</li>
-                        <li>O valor oficial pode mudar no checkout.</li>
-                        <li>Compare sempre com uma opção nacional.</li>
-                      </ul>
-                    </div>
-                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Preencha os dados acima para ver produto, frete, imposto, ICMS e total estimado em reais.
+                  </p>
                 </motion.div>
               ) : (
                 <motion.div
@@ -851,31 +856,7 @@ export default function Home() {
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
-        </div>
-          </div>
-        </section>
-
-        <section className="mt-14 sm:mt-16 mb-12 max-w-3xl mx-auto">
-          <div className="text-center mb-7">
-            <h2 className="text-3xl font-bold text-foreground">
-              Dúvidas Frequentes
-            </h2>
-            <p className="text-muted-foreground mt-2">
-              Entenda melhor como funcionam as regras de importação no Brasil.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            {FAQS.map((faq, index) => (
-              <FaqAccordionItem
-                key={index}
-                question={faq.question}
-                answer={faq.answer}
-              />
-            ))}
-          </div>
-        </section>
+          </section>
 
         <section className="max-w-5xl mx-auto mb-12 rounded-2xl border border-primary/10 bg-primary/5 p-5 sm:p-6">
           <div className="grid gap-5 lg:grid-cols-[1.3fr_1fr] lg:items-center">
