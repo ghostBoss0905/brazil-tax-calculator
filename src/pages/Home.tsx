@@ -277,9 +277,9 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f7f9fb] font-sans pb-20 selection:bg-[#f5c400]/30">
-      <main className="mx-auto max-w-7xl px-4 pb-10 pt-6 sm:px-6 lg:px-8 lg:pt-10">
-        <section className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-2xl shadow-slate-200/70">
+    <div className="min-h-screen overflow-x-hidden bg-[#f7f9fb] font-sans pb-20 selection:bg-[#f5c400]/30">
+      <main className="mx-auto w-full max-w-7xl min-w-0 px-3 pb-10 pt-5 sm:px-6 lg:px-8 lg:pt-10">
+        <section className="relative w-full max-w-full overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-2xl shadow-slate-200/70">
           <GeometricBrazilStrip />
           <div className="pointer-events-none absolute right-0 top-24 hidden h-80 w-80 opacity-60 lg:block">
             <div className="grid h-full grid-cols-4">
@@ -306,17 +306,17 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative px-4 py-5 sm:px-8 sm:py-8 lg:pl-28 lg:pr-8">
+          <div className="relative min-w-0 px-4 py-5 sm:px-8 sm:py-8 lg:pl-28 lg:pr-8">
             <header className="mb-8 flex flex-col gap-8 lg:mb-12">
-              <div className="flex items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
+              <div className="flex min-w-0 items-center justify-between gap-4">
+                <div className="flex min-w-0 items-center gap-3">
                   <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-[#06264b] text-white shadow-lg shadow-[#06264b]/20">
                     <span className="absolute left-0 top-0 h-6 w-6 bg-[#ffca28]" />
                     <span className="absolute bottom-0 left-0 h-6 w-6 bg-[#0b7f55]" />
                     <span className="absolute right-0 top-0 h-6 w-6 bg-[#f8e7a8]" />
                     <Calculator className="relative h-5 w-5 text-white drop-shadow" />
                   </div>
-                  <div className="text-left">
+                  <div className="min-w-0 text-left">
                     <p className="text-sm font-semibold text-[#06264b]">
                       Taxa de Importação
                     </p>
@@ -334,26 +334,26 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="mx-auto max-w-3xl text-center">
-                <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-[#071933] sm:text-5xl lg:text-6xl">
+              <div className="mx-auto max-w-3xl min-w-0 text-center">
+                <h1 className="text-balance text-3xl font-extrabold leading-tight tracking-tight text-[#071933] sm:text-5xl lg:text-6xl">
                   Calcule o custo final da importação
                 </h1>
-                <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+                <p className="mx-auto mt-5 max-w-2xl text-pretty break-words text-base leading-8 text-slate-600 sm:text-lg">
                   Estime Imposto de Importação, ICMS, frete e Remessa Conforme
                   antes de comprar.
                 </p>
               </div>
             </header>
 
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-8">
-            <Card className="rounded-[24px] border-slate-200 bg-white shadow-xl shadow-slate-200/70">
+        <div className="grid min-w-0 grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-8">
+          <div className="min-w-0 lg:col-span-8">
+            <Card className="max-w-full overflow-hidden rounded-[24px] border-slate-200 bg-white shadow-xl shadow-slate-200/70">
               <CardHeader className="border-b border-slate-100 bg-white pb-4">
-                <CardTitle className="flex items-center gap-2 text-xl text-[#071933]">
-                  <Calculator className="w-5 h-5 text-[#008272]" />
+                <CardTitle className="flex min-w-0 items-center gap-2 text-xl text-[#071933]">
+                  <Calculator className="h-5 w-5 shrink-0 text-[#008272]" />
                   Dados da importação
                 </CardTitle>
-                <CardDescription>
+                <CardDescription className="break-words">
                   Informe produto, frete, câmbio, estado e tipo de compra.
                 </CardDescription>
               </CardHeader>
@@ -364,13 +364,13 @@ export default function Home() {
                   onSubmit={handleSubmit(onSubmit)}
                   className="space-y-4"
                 >
-                  <div className="grid grid-cols-3 gap-3">
-                    <div className="space-y-2 col-span-1">
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                    <div className="min-w-0 space-y-2 sm:col-span-1">
                       <Label htmlFor="currency">Moeda</Label>
                       <div className="relative">
                         <select
                           {...register("currency")}
-                          className="flex h-12 w-full appearance-none rounded-xl border-2 border-input bg-background px-4 py-2 pr-8 text-sm ring-offset-background focus-visible:outline-none focus-visible:border-primary focus-visible:ring-4 focus-visible:ring-primary/10 font-medium"
+                          className="flex h-12 w-full appearance-none rounded-xl border-2 border-input bg-background px-4 py-2 pr-8 text-sm font-medium ring-offset-background focus-visible:border-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/10"
                         >
                           <option value="USD">USD ($)</option>
                           <option value="EUR">EUR (€)</option>
@@ -379,7 +379,7 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="space-y-2 col-span-2">
+                    <div className="min-w-0 space-y-2 sm:col-span-2">
                       <Label htmlFor="productValue">Valor do Produto</Label>
                       <Input
                         id="productValue"
@@ -408,8 +408,8 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div className="space-y-2">
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <div className="min-w-0 space-y-2">
                       <Label htmlFor="shippingCost">
                         Custo do Frete ({selectedCurrency})
                       </Label>
@@ -429,8 +429,8 @@ export default function Home() {
                       />
                     </div>
 
-                    <div className="space-y-2">
-                      <div className="flex justify-between items-center">
+                    <div className="min-w-0 space-y-2">
+                      <div className="flex min-w-0 items-center justify-between gap-3">
                         <Label htmlFor="exchangeRate">
                           Taxa de Câmbio (R$)
                         </Label>
@@ -464,7 +464,7 @@ export default function Home() {
                     <div className="relative">
                       <select
                         {...register("state")}
-                        className="flex h-12 w-full appearance-none rounded-xl border-2 border-input bg-background px-10 py-2 pr-8 text-sm ring-offset-background focus-visible:outline-none focus-visible:border-primary focus-visible:ring-4 focus-visible:ring-primary/10 transition-all duration-200"
+                        className="flex h-12 w-full appearance-none rounded-xl border-2 border-input bg-background px-10 py-2 pr-8 text-sm ring-offset-background transition-all duration-200 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/10"
                       >
                         {BRAZILIAN_STATES.map((state) => (
                           <option key={state.code} value={state.code}>
@@ -477,9 +477,9 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between p-4 bg-secondary/50 rounded-xl border border-secondary">
-                    <div className="space-y-0.5 pr-3">
-                      <Label className="text-base flex items-center gap-1.5 cursor-pointer">
+                  <div className="flex min-w-0 items-center justify-between gap-3 rounded-xl border border-secondary bg-secondary/50 p-4">
+                    <div className="min-w-0 space-y-0.5">
+                      <Label className="flex cursor-pointer items-center gap-1.5 text-base">
                         Remessa Conforme
                         <Tooltip>
                           <TooltipTrigger asChild>
@@ -493,7 +493,7 @@ export default function Home() {
                           </TooltipContent>
                         </Tooltip>
                       </Label>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="break-words text-xs text-muted-foreground">
                         Ative quando os tributos aparecem antes do pagamento.
                       </p>
                     </div>
@@ -513,57 +513,57 @@ export default function Home() {
                     type="submit"
                     variant="success"
                     size="lg"
-                    className="w-full text-lg h-14 shadow-lg shadow-accent/20"
+                    className="h-14 w-full whitespace-normal px-4 text-base shadow-lg shadow-accent/20 sm:text-lg"
                   >
-                    Ver custo final estimado
-                    <ArrowRight className="w-5 h-5 ml-2" />
+                    <span className="min-w-0">Ver custo final estimado</span>
+                    <ArrowRight className="ml-2 h-5 w-5 shrink-0" />
                   </Button>
                 </form>
               </CardContent>
             </Card>
           </div>
 
-          <aside className="lg:col-span-4 lg:h-full">
+          <aside className="min-w-0 lg:col-span-4 lg:h-full">
             <div className="grid h-full gap-3 lg:grid-rows-3">
               <a
                 href="/tabela-imposto-importacao-brasil"
-                className="group flex flex-col justify-center rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
+                className="group flex min-w-0 flex-col justify-center rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
               >
                 <BadgeCheck className="mb-3 h-7 w-7 text-[#008272]" />
-                <p className="font-semibold text-[#071933]">Regras 2026 atualizadas</p>
-                <p className="mt-1 text-sm text-slate-600">
+                <p className="break-words font-semibold text-[#071933]">Regras 2026 atualizadas</p>
+                <p className="mt-1 break-words text-sm text-slate-600">
                   Veja a tabela oficial usada como base da estimativa.
                 </p>
               </a>
               <a
                 href="/o-que-e-remessa-conforme"
-                className="group flex flex-col justify-center rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
+                className="group flex min-w-0 flex-col justify-center rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
               >
                 <ShoppingCart className="mb-3 h-7 w-7 text-[#008272]" />
-                <p className="font-semibold text-[#071933]">Remessa Conforme</p>
-                <p className="mt-1 text-sm text-slate-600">
+                <p className="break-words font-semibold text-[#071933]">Remessa Conforme</p>
+                <p className="mt-1 break-words text-sm text-slate-600">
                   Entenda quando os tributos aparecem no checkout.
                 </p>
               </a>
               <a
                 href="/icms-importacao-brasil"
-                className="group flex flex-col justify-center rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
+                className="group flex min-w-0 flex-col justify-center rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
               >
                 <Zap className="mb-3 h-7 w-7 text-[#008272]" />
-                <p className="font-semibold text-[#071933]">ICMS por estado</p>
-                <p className="mt-1 text-sm text-slate-600">
+                <p className="break-words font-semibold text-[#071933]">ICMS por estado</p>
+                <p className="mt-1 break-words text-sm text-slate-600">
                   Compare como o estado de destino afeta o custo final.
                 </p>
               </a>
             </div>
           </aside>
 
-          <div className="lg:col-span-12">
+          <div className="min-w-0 lg:col-span-12">
             <div className="text-center mb-7 mt-8">
-              <h2 className="text-3xl font-bold text-foreground">
+              <h2 className="text-balance text-3xl font-bold text-foreground">
                 Dúvidas Frequentes
               </h2>
-              <p className="text-muted-foreground mt-2">
+              <p className="mt-2 text-pretty text-muted-foreground">
                 Entenda melhor como funcionam as regras de importação no Brasil.
               </p>
             </div>
@@ -582,7 +582,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mt-8 sm:mt-10 max-w-3xl mx-auto" id="results-panel">
+        <section className="mx-auto mt-8 max-w-3xl min-w-0 sm:mt-10" id="results-panel">
             <AnimatePresence mode="wait">
               {!results ? (
                 <motion.div
@@ -590,9 +590,9 @@ export default function Home() {
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
-                  className="border border-dashed border-border rounded-xl bg-secondary/20 px-5 py-3 text-center"
+                  className="rounded-xl border border-dashed border-border bg-secondary/20 px-4 py-3 text-center sm:px-5"
                 >
-                  <p className="text-sm text-muted-foreground">
+                  <p className="break-words text-sm text-muted-foreground">
                     Preencha os dados acima para ver produto, frete, imposto, ICMS e total estimado em reais.
                   </p>
                 </motion.div>
@@ -858,45 +858,45 @@ export default function Home() {
             </AnimatePresence>
           </section>
 
-        <section className="max-w-5xl mx-auto mb-12 rounded-2xl border border-primary/10 bg-primary/5 p-5 sm:p-6">
-          <div className="grid gap-5 lg:grid-cols-[1.3fr_1fr] lg:items-center">
-            <div>
-              <h2 className="text-2xl font-bold text-foreground">
+        <section className="mx-auto mb-12 max-w-5xl min-w-0 rounded-2xl border border-primary/10 bg-primary/5 p-5 sm:p-6">
+          <div className="grid min-w-0 gap-5 lg:grid-cols-[1.3fr_1fr] lg:items-center">
+            <div className="min-w-0">
+              <h2 className="text-balance text-2xl font-bold text-foreground">
                 Não sabe se a compra vai compensar?
               </h2>
-              <p className="mt-2 text-muted-foreground leading-relaxed">
+              <p className="mt-2 break-words leading-relaxed text-muted-foreground">
                 Use o resultado como ponto de comparação: se o custo final
                 importado ficar perto do preço brasileiro, prazo, garantia e
                 troca podem pesar mais que a economia.
               </p>
             </div>
-            <div className="grid gap-2 text-sm">
+            <div className="grid min-w-0 gap-2 text-sm">
               <a
                 href="/calcular-taxas-importacao"
-                className="flex items-center justify-between rounded-xl bg-background px-4 py-3 font-medium text-foreground shadow-sm hover:text-primary"
+                className="flex min-w-0 items-center justify-between gap-3 rounded-xl bg-background px-4 py-3 font-medium text-foreground shadow-sm hover:text-primary"
               >
-                Como calcular taxas de importação
-                <ArrowRight className="h-4 w-4" />
+                <span className="min-w-0 break-words">Como calcular taxas de importação</span>
+                <ArrowRight className="h-4 w-4 shrink-0" />
               </a>
               <a
                 href="/tabela-imposto-importacao-brasil"
-                className="flex items-center justify-between rounded-xl bg-background px-4 py-3 font-medium text-foreground shadow-sm hover:text-primary"
+                className="flex min-w-0 items-center justify-between gap-3 rounded-xl bg-background px-4 py-3 font-medium text-foreground shadow-sm hover:text-primary"
               >
-                Ver tabela de imposto 2026
-                <ArrowRight className="h-4 w-4" />
+                <span className="min-w-0 break-words">Ver tabela de imposto 2026</span>
+                <ArrowRight className="h-4 w-4 shrink-0" />
               </a>
               <a
                 href="/taxa-correios-importacao"
-                className="flex items-center justify-between rounded-xl bg-background px-4 py-3 font-medium text-foreground shadow-sm hover:text-primary"
+                className="flex min-w-0 items-center justify-between gap-3 rounded-xl bg-background px-4 py-3 font-medium text-foreground shadow-sm hover:text-primary"
               >
-                Entender taxa dos Correios
-                <ArrowRight className="h-4 w-4" />
+                <span className="min-w-0 break-words">Entender taxa dos Correios</span>
+                <ArrowRight className="h-4 w-4 shrink-0" />
               </a>
             </div>
           </div>
         </section>
 
-        <section className="max-w-5xl mx-auto mb-12">
+        <section className="mx-auto mb-12 max-w-5xl min-w-0">
           <RelatedGuides
             currentPath="/"
             title="Guias de importação"
@@ -904,7 +904,7 @@ export default function Home() {
           />
         </section>
 
-        <div className="max-w-3xl mx-auto mb-12 px-5 py-4 rounded-xl border border-border bg-muted/40 text-xs text-muted-foreground space-y-1">
+        <div className="mx-auto mb-12 max-w-3xl min-w-0 space-y-1 rounded-xl border border-border bg-muted/40 px-4 py-4 text-xs text-muted-foreground sm:px-5">
           <p><strong>Versão das regras:</strong> 2026-05</p>
           <p><strong>Última verificação:</strong> Receita Federal do Brasil e Portal Compras Internacionais</p>
           <p><strong>Fonte oficial:</strong> Receita Federal, Correios e normas públicas aplicáveis</p>
@@ -925,12 +925,12 @@ function FaqAccordionItem({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/30 transition-colors shadow-sm">
+    <div className="min-w-0 overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-colors hover:border-primary/30">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left px-5 sm:px-6 py-4 flex items-center justify-between focus:outline-none focus-visible:bg-secondary"
+        className="flex w-full min-w-0 items-center justify-between px-5 py-4 text-left focus:outline-none focus-visible:bg-secondary sm:px-6"
       >
-        <span className="font-semibold text-foreground pr-4 text-base sm:text-lg">
+        <span className="min-w-0 break-words pr-4 text-base font-semibold text-foreground sm:text-lg">
           {question}
         </span>
         <motion.div
