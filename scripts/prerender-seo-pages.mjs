@@ -651,7 +651,42 @@ const allPages = Array.from(
 );
 
 const siteOrigin = "https://www.taxadeimportacao.com";
+const socialImage = `${siteOrigin}/opengraph.jpg`;
 const baseHtml = await readFile(baseHtmlPath, "utf8");
+
+const homePage = {
+  path: "/",
+  title: "Calculadora de Imposto de Importação no Brasil | Custo Final 2026",
+  description:
+    "Calcule o imposto de importação no Brasil e veja o custo final da sua compra internacional, incluindo ICMS e regras do Remessa Conforme.",
+  h1: "Calcule o custo final da importação",
+  directAnswer:
+    "Use a calculadora para estimar produto, frete, câmbio, Imposto de Importação, ICMS do estado de destino e regra do Remessa Conforme antes de finalizar uma compra internacional.",
+  introParagraph:
+    "A Taxa de Importação ajuda consumidores no Brasil a comparar o custo final de compras em AliExpress, Shein, Shopee, Temu, Amazon e outras lojas internacionais. Informe o valor do produto, frete, câmbio, estado de entrega e se os tributos aparecem no checkout para estimar o total em reais antes de comprar.",
+  faqs: [
+    {
+      question: "Quanto pago de imposto para importar no Brasil?",
+      answer:
+        "O valor depende do produto, do frete, do câmbio, do estado de destino e das regras do Remessa Conforme. A calculadora estima Imposto de Importação, ICMS e possíveis cobranças adicionais para dar uma visão do custo final antes da compra.",
+    },
+    {
+      question: "O ICMS muda de acordo com o estado?",
+      answer:
+        "Sim. O ICMS é estadual e pode variar conforme o destino da entrega. Por isso, duas compras com o mesmo preço podem ter custos finais diferentes em São Paulo, Rio de Janeiro, Minas Gerais, Santa Catarina ou outros estados.",
+    },
+    {
+      question: "Como funciona o Remessa Conforme?",
+      answer:
+        "No Remessa Conforme, lojas certificadas podem mostrar e recolher tributos no checkout, antes do pagamento. Isso aumenta a previsibilidade, mas não elimina o ICMS estadual nem garante que toda compra internacional ficará sem imposto.",
+    },
+    {
+      question: "Esta calculadora é exata?",
+      answer:
+        "Não. A calculadora oferece uma estimativa educacional para ajudar na decisão de compra. O valor oficial pode variar conforme declaração da remessa, regras vigentes, transportadora, Correios, checkout da loja e autoridade competente.",
+    },
+  ],
+};
 
 function escapeHtml(value) {
   return value
@@ -717,7 +752,10 @@ function buildSchema(page) {
       datePublished: "2026-05-23",
       dateModified: "2026-05-28",
     },
-    {
+  ];
+
+  if (page.path !== "/") {
+    graph.push({
       "@type": "Article",
       "@id": articleId,
       mainEntityOfPage: {
@@ -726,6 +764,7 @@ function buildSchema(page) {
       headline: page.title,
       description: page.description,
       inLanguage: "pt-BR",
+      image: socialImage,
       author: {
         "@type": "Organization",
         "@id": `${siteOrigin}/#organization`,
@@ -735,8 +774,8 @@ function buildSchema(page) {
       },
       datePublished: "2026-05-23",
       dateModified: "2026-05-28",
-    },
-  ];
+    });
+  }
 
   // FAQPage schema is provided by SeoHead (React hydration) to avoid
   // duplicate FAQPage declarations that invalidate Google rich results.
@@ -774,6 +813,7 @@ function buildSchemaTag(page) {
 
 function updateHead(html, page) {
   const canonical = `${siteOrigin}${page.path}`;
+  const ogType = page.path === "/" ? "website" : "article";
 
   let updated = html
     .replace(/<title>.*?<\/title>/s, `<title>${escapeHtml(page.title)}</title>`)
@@ -786,17 +826,25 @@ function updateHead(html, page) {
       `<link rel="canonical" href="${canonical}" />`,
     );
 
+  updated = updated
+    .replace(/\s*<meta property="og:[^"]+" content=".*?" \/>\n/g, "")
+    .replace(/\s*<meta name="twitter:[^"]+" content=".*?" \/>\n/g, "");
+
   // Insert Open Graph and Twitter Card meta tags before </head>
   const ogTwitterTags = [
-    `<meta property="og:type" content="article" />`,
+    `<meta property="og:type" content="${ogType}" />`,
     `<meta property="og:title" content="${escapeHtml(page.title)}" />`,
     `<meta property="og:description" content="${escapeHtml(page.description)}" />`,
     `<meta property="og:url" content="${canonical}" />`,
     `<meta property="og:site_name" content="Taxa de Importação" />`,
     `<meta property="og:locale" content="pt_BR" />`,
-    `<meta name="twitter:card" content="summary" />`,
+    `<meta property="og:image" content="${socialImage}" />`,
+    `<meta property="og:image:width" content="1280" />`,
+    `<meta property="og:image:height" content="720" />`,
+    `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${escapeHtml(page.title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(page.description)}" />`,
+    `<meta name="twitter:image" content="${socialImage}" />`,
   ].join("\n    ");
 
   updated = updated.replace("</head>", `    ${ogTwitterTags}\n    ${buildSchemaTag(page)}\n  </head>`);
@@ -870,6 +918,14 @@ ${urls
 
 await writeFile(join(distPath, "sitemap.xml"), buildSitemap());
 console.log("Generated /sitemap.xml");
+
+const homeHtml = updateHead(baseHtml, homePage);
+const homeHtmlWithBody = homeHtml.replace(
+  `<div id="root"></div>`,
+  `<div id="root">${buildBodyHtml(homePage)}</div>`,
+);
+await writeFile(join(distPath, "index.html"), homeHtmlWithBody);
+console.log("Generated /index.html");
 
 for (const page of allPages) {
   const html = updateHead(baseHtml, page);

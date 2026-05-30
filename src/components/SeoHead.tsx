@@ -10,6 +10,8 @@ type SeoHeadProps = {
   description: string;
   canonical: string;
   faqs?: FAQ[];
+  image?: string;
+  type?: "website" | "article";
 };
 
 export default function SeoHead({
@@ -17,6 +19,8 @@ export default function SeoHead({
   description,
   canonical,
   faqs = [],
+  image = "https://www.taxadeimportacao.com/opengraph.jpg",
+  type = "article",
 }: SeoHeadProps) {
   const faqSchema =
     faqs.length > 0
@@ -41,17 +45,21 @@ export default function SeoHead({
       <link rel="canonical" href={canonical} />
 
       {/* Open Graph */}
-      <meta property="og:type" content="article" />
+      <meta property="og:type" content={type} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
       <meta property="og:site_name" content="Taxa de Importação" />
       <meta property="og:locale" content="pt_BR" />
+      <meta property="og:image" content={image} />
+      <meta property="og:image:width" content="1280" />
+      <meta property="og:image:height" content="720" />
 
       {/* Twitter Card */}
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
 
       {faqSchema ? (
         <script type="application/ld+json">
