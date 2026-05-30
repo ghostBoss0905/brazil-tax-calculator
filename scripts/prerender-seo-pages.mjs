@@ -15,6 +15,35 @@ const pages = [
     h1: "Como Calcular o Imposto do AliExpress no Brasil (2026)",
     directAnswer: "O imposto do AliExpress depende do valor do produto, do frete, do câmbio, do estado de destino e se a compra está em plataforma certificada no Remessa Conforme. Para estimar, some produto e frete, converta para reais e aplique Imposto de Importação e ICMS.",
     introParagraph: "Comprar no AliExpress pode parecer barato, mas o custo final no Brasil pode incluir Imposto de Importação, ICMS, frete e câmbio. O AliExpress tem milhares de vendedores com certificação diferente no Remessa Conforme, o que muda a tributação. O frete varia de 15 a 60 dias e pode elevar o total acima de US$50, mudando a faixa de II. Cupons e AliCoins reduzem o preço pago, mas o imposto é calculado sobre o valor final. Antes de comprar, estime o valor total e compare com alternativas vendidas no Brasil.",
+    sections: [
+      {
+        heading: "Como usar este guia antes de comprar no AliExpress",
+        paragraphs: [
+          "O ponto mais importante é calcular o pedido completo, não apenas o preço do produto. Some produto, frete e seguro quando houver, confira se os tributos aparecem no checkout e selecione o estado de entrega para estimar o ICMS correto.",
+          "No AliExpress, vendedores, cupons, moedas e frete podem mudar bastante o custo final. Um carrinho que parece abaixo de US$50 pode ultrapassar o limite quando o frete entra na conta, alterando a regra de Imposto de Importação.",
+        ],
+      },
+      {
+        heading: "Quando a compra costuma compensar",
+        paragraphs: [
+          "A importação tende a fazer mais sentido quando o produto não existe facilmente no Brasil ou quando o preço final, já com impostos, fica claramente abaixo de uma alternativa nacional. Para eletrônicos, peças e acessórios, compare também prazo, garantia e risco de devolução.",
+          "Se a diferença final for pequena, comprar no Brasil pode ser melhor por causa de garantia local, entrega mais rápida e menor incerteza. A calculadora ajuda a transformar essa comparação em números antes do pagamento.",
+        ],
+      },
+    ],
+    calculationExample: {
+      title: "Exemplo rápido: pedido do AliExpress para São Paulo",
+      rows: [
+        "Produto: US$38",
+        "Frete internacional: US$7",
+        "Total considerado: US$45",
+        "Cenário: Remessa Conforme com ICMS de São Paulo",
+      ],
+      result:
+        "Como o total fica até US$50, o Imposto de Importação federal pode ser 0% no Remessa Conforme, mas o ICMS de SP ainda entra na estimativa.",
+      note:
+        "Se o frete ou outro item levar o pedido acima de US$50, a regra muda. Por isso o total do carrinho é mais importante que o preço de um item isolado.",
+    },
     faqs: [
       {
         question: "Compras do AliExpress abaixo de US$50 pagam imposto?",
@@ -41,6 +70,35 @@ const pages = [
     h1: "Como Calcular o Imposto da Shein no Brasil (2026)",
     directAnswer: "O imposto da Shein depende do valor da compra, do frete, do câmbio, do estado de destino e se a Shein está no Remessa Conforme. Some produto e frete, converta para reais, aplique Imposto de Importação e ICMS do estado.",
     introParagraph: "Comprar na Shein pode parecer vantajoso, mas o custo final no Brasil pode incluir Imposto de Importação, ICMS e frete. Na Shein, é comum adicionar vários itens pequenos ao carrinho — cada blusa, acessório ou item de casa pode parecer barato, mas o total ultrapassa US$50 rapidamente, mudando a tributação. Cupons da Shein reduzem o preço do produto, mas não a base de cálculo do imposto. Tamanhos asiáticos são menores que os brasileiros, e a qualidade pode não corresponder ao custo total após tributos.",
+    sections: [
+      {
+        heading: "O que observar no carrinho da Shein",
+        paragraphs: [
+          "Na Shein, a maioria das compras envolve vários itens pequenos. O risco é aprovar o pedido olhando só o desconto e perceber depois que produto mais frete passaram do limite de US$50.",
+          "Use o valor final depois dos cupons, some o frete internacional e confira se o checkout mostra ICMS e Imposto de Importação. Esse é o jeito mais seguro de comparar a Shein com lojas brasileiras.",
+        ],
+      },
+      {
+        heading: "Tamanho, troca e preço nacional",
+        paragraphs: [
+          "Roupas importadas exigem cuidado extra com tamanho e devolução. Mesmo quando o imposto parece baixo, uma peça que não serve pode perder a vantagem econômica por causa de prazo, troca e frete de retorno.",
+          "Antes de comprar acima de US$50, compare com Renner, C&A, Mercado Livre, Amazon Brasil e outras opções nacionais. Se a diferença final for pequena, a compra local pode ser mais segura.",
+        ],
+      },
+    ],
+    calculationExample: {
+      title: "Exemplo rápido: pedido da Shein abaixo de US$50",
+      rows: [
+        "Produtos: US$44",
+        "Frete: US$4",
+        "Total considerado: US$48",
+        "Cenário: Remessa Conforme com ICMS estadual",
+      ],
+      result:
+        "O Imposto de Importação federal pode ser 0% no Remessa Conforme, mas o ICMS do estado de entrega continua sendo cobrado.",
+      note:
+        "Adicionar uma peça pequena pode levar o total acima de US$50. A simulação deve ser feita com o carrinho final.",
+    },
     faqs: [
       {
         question: "Compras da Shein abaixo de US$50 pagam imposto?",
@@ -67,6 +125,35 @@ const pages = [
     h1: "Como Calcular o Imposto da Shopee no Brasil (2026)",
     directAnswer: "O imposto da Shopee internacional depende de produto, frete, câmbio, ICMS e forma de cobrança dos tributos. Confirme se o pedido é nacional ou internacional e se os impostos aparecem no checkout.",
     introParagraph: "Comprar produtos internacionais pela Shopee pode parecer barato, mas o custo final depende dos impostos cobrados no Brasil. Na Shopee, produtos nacionais e internacionais aparecem juntos na busca — confira se o item mostra 'Envio Internacional' ou 'Importado'. Shopee Coins reduzem o pagamento, mas não a base de cálculo do imposto. Vouchers de frete grátis podem manter o total abaixo de US$50, favorendo a faixa de II de 0%. Antes de finalizar, estime Imposto de Importação, ICMS e frete.",
+    sections: [
+      {
+        heading: "Como separar produto nacional de produto internacional",
+        paragraphs: [
+          "A Shopee mistura ofertas nacionais e internacionais na mesma busca. Antes de calcular imposto, confirme se o anúncio mostra envio internacional, importado, prazo longo de entrega ou tributos no checkout.",
+          "Se o produto já está no Brasil, a lógica de importação pode não se aplicar. Se vem do exterior, produto, frete, câmbio, ICMS e Remessa Conforme entram na decisão.",
+        ],
+      },
+      {
+        heading: "Vouchers, moedas e frete grátis",
+        paragraphs: [
+          "Descontos e moedas reduzem o valor pago, mas a simulação deve considerar o total final efetivamente cobrado. Frete grátis ajuda quando o componente de frete realmente fica zerado no checkout.",
+          "O melhor caminho é comparar o custo final da importação com um vendedor nacional na própria Shopee ou em marketplaces brasileiros. A diferença precisa compensar prazo maior e eventual dificuldade de troca.",
+        ],
+      },
+    ],
+    calculationExample: {
+      title: "Exemplo rápido: Shopee internacional",
+      rows: [
+        "Produto: US$31",
+        "Frete após voucher: US$0",
+        "Total considerado: US$31",
+        "Cenário: compra dentro do Remessa Conforme",
+      ],
+      result:
+        "O pedido pode ficar na faixa de Imposto de Importação federal de 0%, mas ainda precisa considerar o ICMS do estado de destino.",
+      note:
+        "Se o anúncio for nacional, compare pelo preço local. Se for internacional, use a calculadora antes de finalizar.",
+    },
     faqs: [
       {
         question: "Compras da Shopee internacional pagam imposto?",
@@ -108,6 +195,35 @@ const pages = [
     h1: "O Que é Remessa Conforme? (2026)",
     directAnswer: "Remessa Conforme é o programa da Receita Federal que permite a plataformas certificadas informar e recolher tributos de compras internacionais no checkout, dando mais previsibilidade ao consumidor.",
     introParagraph: "O Remessa Conforme é um programa da Receita Federal criado para simplificar a tributação de compras internacionais no Brasil. Em vez de descobrir a cobrança apenas quando a encomenda chega, o consumidor passa a ter mais previsibilidade quando compra em uma empresa certificada.",
+    sections: [
+      {
+        heading: "O que muda para o consumidor",
+        paragraphs: [
+          "A principal mudança é a previsibilidade. Em uma compra dentro do Remessa Conforme, a plataforma tende a mostrar produto, frete, Imposto de Importação e ICMS antes do pagamento.",
+          "Isso não significa compra sem imposto. Significa que o consumidor consegue ver melhor o custo total e decidir se a importação ainda vale a pena quando comparada com uma compra no Brasil.",
+        ],
+      },
+      {
+        heading: "Como conferir se a compra está no programa",
+        paragraphs: [
+          "Consulte a lista oficial da Receita Federal e, principalmente, confira o checkout. Se os tributos aparecem discriminados antes do pagamento, há mais previsibilidade sobre a cobrança.",
+          "Em marketplaces, a situação pode variar por vendedor, logística e oferta. Por isso, não basta presumir que toda compra de uma mesma plataforma terá a mesma regra.",
+        ],
+      },
+    ],
+    calculationExample: {
+      title: "Exemplo rápido: diferença entre dentro e fora do programa",
+      rows: [
+        "Pedido: US$45 em produto e frete",
+        "Dentro do Remessa Conforme: II federal pode ser 0%",
+        "Fora do Remessa Conforme: II pode chegar a 60%",
+        "Em ambos os cenários: ICMS estadual pode ser cobrado",
+      ],
+      result:
+        "O Remessa Conforme melhora a previsibilidade e pode reduzir o Imposto de Importação, mas não elimina o ICMS.",
+      note:
+        "Sempre simule o total antes de pagar, principalmente quando o pedido fica perto do limite de US$50.",
+    },
     faqs: [
       {
         question: "O que é Remessa Conforme?",
@@ -297,6 +413,35 @@ const pages = [
     h1: "Imposto da Temu no Brasil: Como Calcular em 2026",
     directAnswer: "Para calcular o imposto da Temu, some produto, frete e seguro, converta para reais, confirme se os tributos aparecem no checkout e estime o ICMS do estado de entrega antes de comparar com uma compra nacional.",
     introParagraph: "A Temu virou uma das buscas mais comuns para quem compra produtos internacionais baratos. O risco é olhar apenas o preço do anúncio e esquecer que o custo final no Brasil pode incluir ICMS, câmbio, frete e regras do Remessa Conforme. Na Temu, o limite de US$50 é especialmente decisivo: itens custam US$1-15, e 5-8 produtos no carrinho ultrapassam o limite rapidamente. Cupons agressivos (30% off primeira compra) podem reduzir o valor pago, mas o imposto é calculado sobre o valor final. Verifique se o frete 'grátis' está incluso no preço ou realmente zerado.",
+    sections: [
+      {
+        heading: "Por que a Temu exige atenção ao limite de US$50",
+        paragraphs: [
+          "A Temu incentiva pedidos com vários itens baratos. Isso ajuda no preço por produto, mas também aumenta o risco de o total do carrinho passar de US$50 quando o frete entra na soma.",
+          "A decisão correta é olhar produto, frete e desconto final juntos. Um pedido de US$48 pode parecer seguro, mas um item extra ou um frete pequeno muda a faixa de tributação.",
+        ],
+      },
+      {
+        heading: "Quando importar pela Temu costuma fazer sentido",
+        paragraphs: [
+          "A importação pela Temu costuma ser mais interessante para itens pequenos, acessórios, organizadores, decoração e produtos difíceis de encontrar no Brasil. Para itens comuns, a diferença pode desaparecer depois de ICMS, prazo e risco de troca.",
+          "Antes de pagar, compare o valor final estimado com Mercado Livre, Amazon Brasil, Lojas Americanas e lojas locais. O preço anunciado só importa depois que impostos e frete entram na conta.",
+        ],
+      },
+    ],
+    calculationExample: {
+      title: "Exemplo rápido: carrinho da Temu no limite",
+      rows: [
+        "Produtos: US$42",
+        "Frete: US$8",
+        "Total considerado: US$50",
+        "Cenário: Remessa Conforme com ICMS do estado",
+      ],
+      result:
+        "O pedido fica exatamente no limite de US$50. O Imposto de Importação federal pode ser 0%, mas o ICMS estadual ainda deve ser considerado.",
+      note:
+        "Se o mesmo pedido subir para US$51, a regra muda. Na Temu, pequenos acréscimos no carrinho podem alterar o custo final.",
+    },
     faqs: [
       {
         question: "A Temu participa do Remessa Conforme?",
@@ -323,6 +468,35 @@ const pages = [
     h1: "Imposto em Compra Internacional na Amazon Brasil",
     directAnswer: "Em compras internacionais na Amazon, calcule produto, frete, câmbio, Imposto de Importação e ICMS. O ponto decisivo é confirmar se a oferta mostra tributos no checkout antes do pagamento.",
     introParagraph: "A Amazon pode exibir produtos vendidos no Brasil e produtos internacionais no mesmo ambiente. A dúvida principal é: o preço mostrado já inclui impostos ou a cobrança pode aparecer depois? Ofertas vendidas pela Amazon seguem fluxo centralizado com tributos no checkout; ofertas de vendedores terceiros podem ter tributação diferente. Produtos importados acima de US$100 têm carga tributária significativa (II + ICMS), e a garantia pode não ser válida no Brasil. Antes de importar, compare com o mesmo produto na Amazon Brasil.",
+    sections: [
+      {
+        heading: "Como identificar uma oferta internacional na Amazon",
+        paragraphs: [
+          "Antes de calcular imposto, verifique se o produto é vendido no Brasil ou enviado do exterior. A Amazon pode mostrar ofertas nacionais e internacionais no mesmo ambiente, com prazos, garantias e tributos diferentes.",
+          "Observe os campos de vendedor, envio, prazo de entrega e impostos estimados no checkout. Se os tributos aparecem antes do pagamento, use esses valores como referência principal.",
+        ],
+      },
+      {
+        heading: "Garantia e comparação com a Amazon Brasil",
+        paragraphs: [
+          "Em produtos de maior valor, como eletrônicos, câmeras, acessórios profissionais e itens acima de US$100, a garantia pode pesar tanto quanto o imposto. Uma economia pequena pode não compensar se a troca ou assistência for difícil.",
+          "Compare sempre com uma oferta nacional da Amazon Brasil ou de outro varejista local. A importação só deve vencer quando o custo final, prazo e risco ainda forem melhores que a alternativa brasileira.",
+        ],
+      },
+    ],
+    calculationExample: {
+      title: "Exemplo rápido: eletrônico importado pela Amazon",
+      rows: [
+        "Produto: US$120",
+        "Frete internacional: US$15",
+        "Total considerado: US$135",
+        "Cenário: acima de US$50, com II e ICMS",
+      ],
+      result:
+        "Acima de US$50, o Imposto de Importação volta a pesar no custo final, e o ICMS estadual é calculado junto da operação.",
+      note:
+        "Para produtos de maior valor, compare também garantia local, prazo de entrega e política de devolução.",
+    },
     faqs: [
       {
         question: "Compra internacional na Amazon paga imposto?",
@@ -418,6 +592,35 @@ const pages = [
     h1: "ICMS de Importação em São Paulo: Como Calcular em 2026",
     directAnswer: "Para estimar o ICMS de importação em São Paulo, use o estado de destino SP na calculadora. A alíquota estimada usada para São Paulo é 18%, junto com produto, frete, câmbio, Imposto de Importação e Remessa Conforme.",
     introParagraph: "São Paulo é o estado com o maior volume de compras internacionais no Brasil. A alíquota de ICMS de 18% para importação é uma das mais baixas entre os grandes estados, o que torna as compras mais favoráveis em comparação com Rio de Janeiro (22%) ou Minas Gerais (20%). Além disso, a maior parte dos hubs de entrega e centros de processamento aduaneiro estão em São Paulo, o que pode resultar em prazos de entrega mais rápidos. Mas o consumidor paulista também tem mais alternativas nacionais disponíveis, tornando a comparação com lojas brasileiras ainda mais importante antes de decidir pela importação.",
+    sections: [
+      {
+        heading: "Por que São Paulo pode ter custo final menor",
+        paragraphs: [
+          "A alíquota estimada de 18% fica abaixo de estados como Rio de Janeiro e Minas Gerais. Para o mesmo produto, mesmo frete e mesmo câmbio, essa diferença pode reduzir o custo final da importação.",
+          "Ainda assim, São Paulo também concentra muitas alternativas nacionais com entrega rápida. Por isso, o cálculo precisa comparar importação com compra local, não apenas imposto com imposto.",
+        ],
+      },
+      {
+        heading: "Como decidir antes de comprar",
+        paragraphs: [
+          "Use São Paulo como estado de destino na calculadora, informe produto, frete e câmbio, e selecione se a compra está no Remessa Conforme. Depois compare o resultado com marketplaces brasileiros.",
+          "Se a economia final for pequena, a compra nacional pode vencer por prazo, garantia e facilidade de troca. Se o produto não existe no Brasil ou a diferença for grande, a importação pode continuar fazendo sentido.",
+        ],
+      },
+    ],
+    calculationExample: {
+      title: "Exemplo rápido: ICMS de SP em compra de US$50",
+      rows: [
+        "Produto + frete: US$50",
+        "Câmbio de exemplo: R$5,20",
+        "Base estimada: R$260",
+        "ICMS estimado para SP: 18%",
+      ],
+      result:
+        "Mesmo com Imposto de Importação federal de 0% no Remessa Conforme até US$50, o ICMS de São Paulo ainda entra no custo final.",
+      note:
+        "A estimativa ajuda na decisão antes da compra, mas o valor oficial depende do checkout e da autoridade competente.",
+    },
     faqs: [
       {
         question: "Qual ICMS a calculadora usa para São Paulo?",
@@ -501,6 +704,35 @@ const pages = [
     h1: "ICMS de Importação em Rio de Janeiro: Como Calcular em 2026",
     directAnswer: "Para estimar o ICMS de importação em Rio de Janeiro, use o estado de destino RJ na calculadora. A alíquota estimada usada para Rio de Janeiro é 22%, uma das mais altas do Brasil, junto com produto, frete, câmbio, Imposto de Importação e Remessa Conforme.",
     introParagraph: "Rio de Janeiro tem uma das alíquotas de ICMS mais altas para importação: 22%. Isso significa que o mesmo pedido internacional pode custar mais para um comprador fluminense do que para um comprador paulista (18%) ou catarinense (17%). A diferença de 4 pontos percentuais entre RJ e SP pode representar R$20-30 a mais em um pedido típico de US$50. Por isso, no Rio de Janeiro, a comparação com alternativas vendidas no Brasil é ainda mais decisiva — a carga tributária elevada reduz a vantagem do preço importado e, em muitos casos, torna a compra nacional mais econômica.",
+    sections: [
+      {
+        heading: "Por que o Rio de Janeiro exige comparação mais rigorosa",
+        paragraphs: [
+          "Com alíquota estimada de 22%, o Rio de Janeiro tende a elevar mais o custo final da importação do que estados com ICMS menor. A diferença aparece principalmente quando a compra passa de US$50 ou quando o frete é alto.",
+          "Por isso, o preço importado precisa ser significativamente menor para compensar. Se a diferença contra uma opção nacional for pequena, prazo, garantia e troca podem tornar a compra no Brasil mais vantajosa.",
+        ],
+      },
+      {
+        heading: "Como simular para RJ sem erro comum",
+        paragraphs: [
+          "Informe RJ como estado de destino e some produto, frete e seguro antes de avaliar a faixa de tributação. Não use apenas o preço do produto, porque o frete pode mudar a regra aplicável.",
+          "Depois de estimar II e ICMS, compare com lojas brasileiras. Para consumidores no Rio de Janeiro, essa etapa é especialmente importante em eletrônicos, roupas, acessórios e produtos acima de US$50.",
+        ],
+      },
+    ],
+    calculationExample: {
+      title: "Exemplo rápido: ICMS do RJ em compra de US$50",
+      rows: [
+        "Produto + frete: US$50",
+        "Câmbio de exemplo: R$5,20",
+        "Base estimada: R$260",
+        "ICMS estimado para RJ: 22%",
+      ],
+      result:
+        "Mesmo quando o Imposto de Importação federal pode ser 0% no Remessa Conforme, o ICMS do Rio de Janeiro continua elevando o total.",
+      note:
+        "A diferença contra estados com alíquota menor pode decidir se a importação ainda compensa.",
+    },
     faqs: [
       {
         question: "Qual ICMS a calculadora usa para Rio de Janeiro?",
@@ -750,7 +982,7 @@ function buildSchema(page) {
         "@id": breadcrumbId,
       },
       datePublished: "2026-05-23",
-      dateModified: "2026-05-28",
+      dateModified: "2026-05-30",
     },
   ];
 
@@ -773,7 +1005,7 @@ function buildSchema(page) {
         "@id": `${siteOrigin}/#organization`,
       },
       datePublished: "2026-05-23",
-      dateModified: "2026-05-28",
+      dateModified: "2026-05-30",
     });
   }
 
@@ -872,6 +1104,34 @@ function buildBodyHtml(page) {
     body += `<p style="font-size:1.1rem;margin-bottom:2rem">${introParagraph}</p>`;
   }
 
+  if (page.sections && page.sections.length > 0) {
+    for (const section of page.sections) {
+      body += `<section style="margin-top:2.25rem">`;
+      body += `<h2 style="font-size:1.45rem;font-weight:650;margin-bottom:1rem;color:#071933">${escapeHtml(section.heading)}</h2>`;
+      for (const paragraph of section.paragraphs ?? []) {
+        body += `<p style="margin-bottom:1rem">${escapeHtml(paragraph)}</p>`;
+      }
+      body += `</section>`;
+    }
+  }
+
+  if (page.calculationExample) {
+    body += `<section style="margin-top:2.5rem;border:1px solid #dbe5ef;border-radius:16px;background:#f8fafc;padding:20px">`;
+    body += `<h2 style="font-size:1.35rem;font-weight:650;margin-bottom:1rem;color:#071933">${escapeHtml(page.calculationExample.title)}</h2>`;
+    if (page.calculationExample.rows?.length) {
+      body += `<ul style="margin:0 0 1rem 1.25rem;padding:0">`;
+      for (const row of page.calculationExample.rows) {
+        body += `<li style="margin-bottom:0.35rem">${escapeHtml(row)}</li>`;
+      }
+      body += `</ul>`;
+    }
+    body += `<p style="font-weight:600;margin-bottom:0.75rem">${escapeHtml(page.calculationExample.result)}</p>`;
+    if (page.calculationExample.note) {
+      body += `<p style="font-size:0.95rem;color:#475569;margin-bottom:0">${escapeHtml(page.calculationExample.note)}</p>`;
+    }
+    body += `</section>`;
+  }
+
   if (page.faqs && page.faqs.length > 0) {
     body += `<section style="margin-top:3rem">`;
     body += `<h2 style="font-size:1.5rem;font-weight:600;margin-bottom:1.5rem">Perguntas frequentes</h2>`;
@@ -907,7 +1167,7 @@ ${urls
     (page) => `
   <url>
     <loc>${siteOrigin}${page.path}</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-30</lastmod>
   </url>`,
   )
   .join("\n")}
