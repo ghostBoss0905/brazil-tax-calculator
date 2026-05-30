@@ -1,4 +1,46 @@
-const guides = [
+type Guide = {
+  href: string;
+  title: string;
+  description: string;
+};
+
+const platformGuides = [
+  {
+    slug: "aliexpress",
+    name: "AliExpress",
+    href: "/imposto-aliexpress-brasil",
+  },
+  {
+    slug: "shein",
+    name: "Shein",
+    href: "/imposto-shein-brasil",
+  },
+  {
+    slug: "shopee",
+    name: "Shopee",
+    href: "/imposto-shopee-brasil",
+  },
+  {
+    slug: "temu",
+    name: "Temu",
+    href: "/imposto-temu-brasil",
+  },
+  {
+    slug: "amazon-internacional",
+    name: "Amazon internacional",
+    href: "/imposto-amazon-internacional-brasil",
+  },
+];
+
+const stateGuides = [
+  { slug: "sao-paulo", name: "São Paulo", code: "SP" },
+  { slug: "rio-de-janeiro", name: "Rio de Janeiro", code: "RJ" },
+  { slug: "minas-gerais", name: "Minas Gerais", code: "MG" },
+  { slug: "parana", name: "Paraná", code: "PR" },
+  { slug: "santa-catarina", name: "Santa Catarina", code: "SC" },
+];
+
+const guides: Guide[] = [
   {
     href: "/calcular-taxas-importacao",
     title: "Calcular taxas de importação",
@@ -91,6 +133,152 @@ const guides = [
   },
 ];
 
+const guideMap = new Map(guides.map((guide) => [guide.href, guide]));
+
+function findPlatformByPath(path: string) {
+  return platformGuides.find(
+    (platform) =>
+      path === platform.href || path.startsWith(`/imposto-${platform.slug}-`),
+  );
+}
+
+function findStateBySlug(slug: string) {
+  return stateGuides.find((state) => state.slug === slug);
+}
+
+function platformStateHref(platformSlug: string, stateSlug: string) {
+  return `/imposto-${platformSlug}-${stateSlug}`;
+}
+
+function buildDynamicGuide(href: string): Guide | undefined {
+  const staticGuide = guideMap.get(href);
+
+  if (staticGuide) {
+    return staticGuide;
+  }
+
+  const platformStateMatch = href.match(
+    /^\/imposto-(aliexpress|shein|shopee|temu|amazon-internacional)-(.+)$/,
+  );
+
+  if (platformStateMatch) {
+    const [, platformSlug, stateSlug] = platformStateMatch;
+    const platform = platformGuides.find((item) => item.slug === platformSlug);
+    const state = findStateBySlug(stateSlug);
+
+    if (platform && state) {
+      return {
+        href,
+        title: `Imposto ${platform.name} ${state.name}`,
+        description: `Veja custo final, ICMS de ${state.code} e Remessa Conforme para esta compra.`,
+      };
+    }
+  }
+
+  const stateMatch = href.match(/^\/icms-importacao-(.+)$/);
+
+  if (stateMatch) {
+    const state = findStateBySlug(stateMatch[1]);
+
+    if (state) {
+      return {
+        href,
+        title: `ICMS importação ${state.name}`,
+        description: `Entenda como o ICMS de ${state.code} muda o custo final.`,
+      };
+    }
+  }
+
+  return undefined;
+}
+
+function uniqueHrefs(hrefs: string[]) {
+  return Array.from(new Set(hrefs));
+}
+
+function getRelatedHrefs(currentPath?: string) {
+  if (!currentPath || currentPath === "/") {
+    return guides.map((guide) => guide.href);
+  }
+
+  const platformStateMatch = currentPath.match(
+    /^\/imposto-(aliexpress|shein|shopee|temu|amazon-internacional)-(.+)$/,
+  );
+
+  if (platformStateMatch) {
+    const [, platformSlug, stateSlug] = platformStateMatch;
+    const platform = platformGuides.find((item) => item.slug === platformSlug);
+    const state = findStateBySlug(stateSlug);
+
+    return uniqueHrefs([
+      platform?.href ?? "",
+      state ? `/icms-importacao-${state.slug}` : "",
+      "/o-que-e-remessa-conforme",
+      "/compras-internacionais-abaixo-50-dolares",
+      ...platformGuides
+        .filter((item) => item.slug !== platformSlug)
+        .map((item) => platformStateHref(item.slug, stateSlug)),
+      ...stateGuides
+        .filter((item) => item.slug !== stateSlug)
+        .slice(0, 2)
+        .map((item) => platformStateHref(platformSlug, item.slug)),
+    ]).filter(Boolean);
+  }
+
+  const platform = findPlatformByPath(currentPath);
+
+  if (platform && currentPath === platform.href) {
+    return uniqueHrefs([
+      "/o-que-e-remessa-conforme",
+      "/icms-importacao-brasil",
+      "/compras-internacionais-abaixo-50-dolares",
+      "/lojas-remessa-conforme",
+      ...stateGuides
+        .slice(0, 3)
+        .map((state) => platformStateHref(platform.slug, state.slug)),
+      ...platformGuides
+        .filter((item) => item.slug !== platform.slug)
+        .map((item) => item.href),
+    ]);
+  }
+
+  const stateMatch = currentPath.match(/^\/icms-importacao-(.+)$/);
+
+  if (stateMatch) {
+    const state = findStateBySlug(stateMatch[1]);
+
+    if (state) {
+      return uniqueHrefs([
+        "/icms-importacao-brasil",
+        ...platformGuides.map((item) => platformStateHref(item.slug, state.slug)),
+        "/o-que-e-remessa-conforme",
+        "/compras-internacionais-abaixo-50-dolares",
+      ]);
+    }
+  }
+
+  if (currentPath === "/o-que-e-remessa-conforme") {
+    return uniqueHrefs([
+      "/lojas-remessa-conforme",
+      "/compras-internacionais-abaixo-50-dolares",
+      "/tabela-imposto-importacao-brasil",
+      "/icms-importacao-brasil",
+      ...platformGuides.map((platformGuide) => platformGuide.href),
+    ]);
+  }
+
+  if (currentPath === "/icms-importacao-brasil") {
+    return uniqueHrefs([
+      ...stateGuides.map((state) => `/icms-importacao-${state.slug}`),
+      "/o-que-e-remessa-conforme",
+      "/calcular-taxas-importacao",
+      "/tabela-imposto-importacao-brasil",
+    ]);
+  }
+
+  return guides.map((guide) => guide.href);
+}
+
 type RelatedGuidesProps = {
   currentPath?: string;
   title?: string;
@@ -104,9 +292,19 @@ export default function RelatedGuides({
   intro = "Continue entendendo os principais custos de compras internacionais no Brasil.",
   limit,
 }: RelatedGuidesProps) {
-  const visibleGuides = guides
-    .filter((guide) => guide.href !== currentPath)
-    .slice(0, limit ?? guides.length);
+  const preferredGuides = getRelatedHrefs(currentPath)
+    .filter((href) => href !== currentPath)
+    .map(buildDynamicGuide)
+    .filter((guide): guide is Guide => Boolean(guide));
+  const fallbackGuides = guides.filter(
+    (guide) =>
+      guide.href !== currentPath &&
+      !preferredGuides.some((preferred) => preferred.href === guide.href),
+  );
+  const visibleGuides = [...preferredGuides, ...fallbackGuides].slice(
+    0,
+    limit ?? guides.length,
+  );
 
   return (
     <section className="mt-12">

@@ -920,6 +920,134 @@ const homePage = {
   ],
 };
 
+const pageLookup = new Map(
+  [homePage, ...allPages].map((page) => [page.path, page]),
+);
+const priorityStateSlugs = [
+  "sao-paulo",
+  "rio-de-janeiro",
+  "minas-gerais",
+  "parana",
+  "santa-catarina",
+];
+
+function uniqueValues(values) {
+  return Array.from(new Set(values));
+}
+
+function buildPlatformStatePath(platformSlug, stateSlug) {
+  return `/imposto-${platformSlug}-${stateSlug}`;
+}
+
+function findPlatformFromPath(path) {
+  return platforms.find(
+    (platform) =>
+      path === `/imposto-${platform.slug}-brasil` ||
+      path.startsWith(`/imposto-${platform.slug}-`),
+  );
+}
+
+function findStateFromSlug(slug) {
+  return states.find((state) => state.slug === slug);
+}
+
+function getRelatedPaths(path) {
+  if (path === "/") {
+    return pages.slice(0, 13).map((page) => page.path);
+  }
+
+  const platformStateMatch = path.match(
+    /^\/imposto-(aliexpress|shein|shopee|temu|amazon-internacional)-(.+)$/,
+  );
+
+  if (platformStateMatch) {
+    const [, platformSlug, stateSlug] = platformStateMatch;
+    const platform = platforms.find((item) => item.slug === platformSlug);
+    const state = findStateFromSlug(stateSlug);
+
+    return uniqueValues([
+      platform ? `/imposto-${platform.slug}-brasil` : "",
+      state ? `/icms-importacao-${state.slug}` : "",
+      "/o-que-e-remessa-conforme",
+      "/compras-internacionais-abaixo-50-dolares",
+      ...platforms
+        .filter((item) => item.slug !== platformSlug)
+        .map((item) => buildPlatformStatePath(item.slug, stateSlug)),
+      ...priorityStateSlugs
+        .filter((item) => item !== stateSlug)
+        .slice(0, 2)
+        .map((item) => buildPlatformStatePath(platformSlug, item)),
+    ]).filter(Boolean);
+  }
+
+  const platform = findPlatformFromPath(path);
+
+  if (platform && path === `/imposto-${platform.slug}-brasil`) {
+    return uniqueValues([
+      "/o-que-e-remessa-conforme",
+      "/icms-importacao-brasil",
+      "/compras-internacionais-abaixo-50-dolares",
+      "/lojas-remessa-conforme",
+      ...priorityStateSlugs
+        .slice(0, 3)
+        .map((stateSlug) => buildPlatformStatePath(platform.slug, stateSlug)),
+      ...platforms
+        .filter((item) => item.slug !== platform.slug)
+        .map((item) => `/imposto-${item.slug}-brasil`),
+    ]);
+  }
+
+  const stateMatch = path.match(/^\/icms-importacao-(.+)$/);
+
+  if (stateMatch) {
+    const stateSlug = stateMatch[1];
+    const state = findStateFromSlug(stateSlug);
+
+    if (state) {
+      return uniqueValues([
+        "/icms-importacao-brasil",
+        ...platforms.map((item) => buildPlatformStatePath(item.slug, state.slug)),
+        "/o-que-e-remessa-conforme",
+        "/compras-internacionais-abaixo-50-dolares",
+      ]);
+    }
+  }
+
+  if (path === "/o-que-e-remessa-conforme") {
+    return uniqueValues([
+      "/lojas-remessa-conforme",
+      "/compras-internacionais-abaixo-50-dolares",
+      "/tabela-imposto-importacao-brasil",
+      "/icms-importacao-brasil",
+      ...platforms.map((platform) => `/imposto-${platform.slug}-brasil`),
+    ]);
+  }
+
+  if (path === "/icms-importacao-brasil") {
+    return uniqueValues([
+      ...priorityStateSlugs.map((stateSlug) => `/icms-importacao-${stateSlug}`),
+      "/o-que-e-remessa-conforme",
+      "/calcular-taxas-importacao",
+      "/tabela-imposto-importacao-brasil",
+    ]);
+  }
+
+  return pages.map((page) => page.path);
+}
+
+function getRelatedLinks(page) {
+  return getRelatedPaths(page.path)
+    .filter((path) => path !== page.path && pageLookup.has(path))
+    .slice(0, 8)
+    .map((path) => {
+      const relatedPage = pageLookup.get(path);
+      return {
+        href: `${siteOrigin}${path}`,
+        label: relatedPage.h1 || relatedPage.title,
+      };
+    });
+}
+
 function escapeHtml(value) {
   return value
     .replaceAll("&", "&amp;")
@@ -1142,6 +1270,19 @@ function buildBodyHtml(page) {
       body += `</div>`;
     }
     body += `</section>`;
+  }
+
+  const relatedLinks = getRelatedLinks(page);
+
+  if (relatedLinks.length > 0) {
+    body += `<nav aria-label="Guias relacionados" style="margin-top:3rem">`;
+    body += `<h2 style="font-size:1.5rem;font-weight:600;margin-bottom:1rem">Guias relacionados</h2>`;
+    body += `<ul style="display:grid;gap:0.75rem;list-style:none;margin:0;padding:0">`;
+    for (const link of relatedLinks) {
+      body += `<li><a href="${link.href}" style="display:block;border:1px solid #e2e8f0;border-radius:12px;padding:12px 14px;color:#071933;text-decoration:none">${escapeHtml(link.label)}</a></li>`;
+    }
+    body += `</ul>`;
+    body += `</nav>`;
   }
 
   body += `<p style="font-size:0.85rem;color:#64748b;margin-top:3rem">Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras Internacionais e orientações sobre remessas internacionais.</p>`;
