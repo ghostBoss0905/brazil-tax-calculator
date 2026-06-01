@@ -148,6 +148,143 @@ function buildShareSummary(results: TaxResults, data: CalculatorFormValues) {
   ].join("\n");
 }
 
+function getTotalTributes(results: TaxResults) {
+  return results.ii + results.icms + results.cofins + results.fee;
+}
+
+function getDecisionText(results: TaxResults) {
+  const minimumBrazilPrice = results.total * 1.12;
+
+  if (results.effectiveRate <= 25) {
+    return {
+      label: "Boa faixa para comparar",
+      text: `Se no Brasil custar acima de ${formatBRL(minimumBrazilPrice)}, a importação pode compensar.`,
+    };
+  }
+
+  if (results.effectiveRate <= 55) {
+    return {
+      label: "Compare com cuidado",
+      text: `Procure preço nacional acima de ${formatBRL(minimumBrazilPrice)} para compensar prazo e garantia.`,
+    };
+  }
+
+  return {
+    label: "Atenção ao custo final",
+    text: `A tributação está alta. Só compensa se o preço no Brasil for bem maior que ${formatBRL(minimumBrazilPrice)}.`,
+  };
+}
+
+function escapeSvgText(value: string) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+}
+
+function buildShareImageSvg(results: TaxResults, data: CalculatorFormValues) {
+  const decision = getDecisionText(results);
+  const totalTributes = getTotalTributes(results);
+  const orderValue = `${data.currency} ${(data.productValue + data.shippingCost).toFixed(2)}`;
+  const remessa = data.isRemessaConforme ? "Sim" : "Não";
+  const rows = [
+    ["Pedido", orderValue],
+    ["Estado", data.state],
+    ["Remessa Conforme", remessa],
+    ["Subtotal", formatBRL(results.subtotalBrl)],
+    ["Tributos", formatBRL(totalTributes)],
+    ["ICMS", formatBRL(results.icms)],
+  ];
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f5f8fb"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="30" flood-color="#06264b" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#bg)"/>
+  <g opacity="0.95">
+    <polygon points="0,0 220,0 0,220" fill="#ffca28"/>
+    <polygon points="0,220 220,0 220,440 0,440" fill="#0b7f55"/>
+    <polygon points="0,440 220,440 0,660" fill="#06264b"/>
+    <polygon points="860,0 1080,0 1080,220" fill="#ffca28" opacity="0.35"/>
+    <polygon points="860,220 1080,0 1080,440" fill="#0b7f55" opacity="0.16"/>
+    <polygon points="860,440 1080,220 1080,660" fill="#06264b" opacity="0.12"/>
+  </g>
+  <rect x="90" y="110" width="900" height="1660" rx="56" fill="#ffffff" filter="url(#shadow)"/>
+  <g transform="translate(150 175)">
+    <rect x="0" y="0" width="92" height="92" rx="26" fill="#06264b"/>
+    <rect x="0" y="0" width="46" height="46" fill="#ffca28"/>
+    <rect x="0" y="46" width="46" height="46" fill="#0b7f55"/>
+    <rect x="46" y="0" width="46" height="46" fill="#f8e7a8"/>
+    <text x="122" y="38" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800" fill="#071933">Taxa de Importação</text>
+    <text x="122" y="75" font-family="Inter, Arial, sans-serif" font-size="22" fill="#66758f">Brasil 2026</text>
+  </g>
+  <text x="150" y="420" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#008272">${escapeSvgText(decision.label)}</text>
+  <text x="150" y="500" font-family="Inter, Arial, sans-serif" font-size="104" font-weight="900" fill="#06264b">${escapeSvgText(formatBRL(results.total))}</text>
+  <text x="150" y="565" font-family="Inter, Arial, sans-serif" font-size="30" fill="#66758f">Custo final estimado da importação</text>
+  <rect x="150" y="650" width="780" height="150" rx="30" fill="#f1f7f5"/>
+  <text x="190" y="710" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" fill="#071933">Decisão rápida</text>
+  <text x="190" y="760" font-family="Inter, Arial, sans-serif" font-size="26" fill="#41516b">${escapeSvgText(decision.text)}</text>
+  <g transform="translate(150 875)">
+    ${rows
+      .map(
+        ([label, value], index) => `
+    <g transform="translate(0 ${index * 105})">
+      <rect x="0" y="0" width="780" height="78" rx="20" fill="${index % 2 === 0 ? "#f8fafc" : "#ffffff"}" stroke="#e2e8f0"/>
+      <text x="28" y="49" font-family="Inter, Arial, sans-serif" font-size="26" fill="#66758f">${escapeSvgText(label)}</text>
+      <text x="752" y="49" text-anchor="end" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800" fill="#071933">${escapeSvgText(value)}</text>
+    </g>`,
+      )
+      .join("")}
+  </g>
+  <rect x="150" y="1535" width="780" height="125" rx="28" fill="#06264b"/>
+  <text x="190" y="1588" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800" fill="#ffca28">Simule antes de pagar</text>
+  <text x="190" y="1632" font-family="Inter, Arial, sans-serif" font-size="24" fill="#ffffff">taxadeimportacao.com</text>
+  <text x="150" y="1715" font-family="Inter, Arial, sans-serif" font-size="20" fill="#8a96aa">Estimativa educacional. O valor oficial depende do checkout, Correios, transportadora e autoridade competente.</text>
+</svg>`;
+}
+
+async function buildShareImageBlob(results: TaxResults, data: CalculatorFormValues) {
+  const svg = buildShareImageSvg(results, data);
+  const svgBlob = new Blob([svg], { type: "image/svg+xml;charset=utf-8" });
+  const url = URL.createObjectURL(svgBlob);
+
+  try {
+    const image = new Image();
+    image.decoding = "async";
+    await new Promise<void>((resolve, reject) => {
+      image.onload = () => resolve();
+      image.onerror = () => reject(new Error("Não foi possível gerar imagem."));
+      image.src = url;
+    });
+
+    const canvas = document.createElement("canvas");
+    canvas.width = 1080;
+    canvas.height = 1920;
+    const context = canvas.getContext("2d");
+
+    if (!context) {
+      throw new Error("Canvas indisponível.");
+    }
+
+    context.drawImage(image, 0, 0);
+
+    return await new Promise<Blob>((resolve, reject) => {
+      canvas.toBlob((blob) => {
+        blob ? resolve(blob) : reject(new Error("Falha ao exportar imagem."));
+      }, "image/png");
+    });
+  } finally {
+    URL.revokeObjectURL(url);
+  }
+}
+
 function GeometricBrazilStrip() {
   const tiles = [
     "bg-[#ffca28]",
@@ -188,6 +325,7 @@ function GeometricBrazilStrip() {
 export default function Home() {
   const [results, setResults] = useState<TaxResults | null>(null);
   const [copied, setCopied] = useState(false);
+  const [isSharingImage, setIsSharingImage] = useState(false);
 
   const {
     register,
@@ -209,6 +347,15 @@ export default function Home() {
 
   const selectedCurrency = watch("currency");
 
+  const currentFormData = (): CalculatorFormValues => ({
+    productValue: watch("productValue"),
+    currency: watch("currency"),
+    shippingCost: watch("shippingCost"),
+    exchangeRate: watch("exchangeRate"),
+    state: watch("state"),
+    isRemessaConforme: watch("isRemessaConforme"),
+  });
+
   const onSubmit = (data: CalculatorFormValues) => {
     const calcResults = calculateTaxes(data);
     setResults(calcResults);
@@ -226,14 +373,7 @@ export default function Home() {
   async function handleCopyResult() {
     if (!results) return;
 
-    const text = buildShareSummary(results, {
-      productValue: watch("productValue"),
-      currency: watch("currency"),
-      shippingCost: watch("shippingCost"),
-      exchangeRate: watch("exchangeRate"),
-      state: watch("state"),
-      isRemessaConforme: watch("isRemessaConforme"),
-    });
+    const text = buildShareSummary(results, currentFormData());
 
     try {
       await navigator.clipboard.writeText(text);
@@ -247,14 +387,7 @@ export default function Home() {
   async function handleShareResult() {
     if (!results) return;
 
-    const text = buildShareSummary(results, {
-      productValue: watch("productValue"),
-      currency: watch("currency"),
-      shippingCost: watch("shippingCost"),
-      exchangeRate: watch("exchangeRate"),
-      state: watch("state"),
-      isRemessaConforme: watch("isRemessaConforme"),
-    });
+    const text = buildShareSummary(results, currentFormData());
 
     if (navigator.share) {
       try {
@@ -273,6 +406,38 @@ export default function Home() {
       } catch {
         alert("Não foi possível compartilhar.");
       }
+    }
+  }
+
+  async function handleShareImage() {
+    if (!results || isSharingImage) return;
+
+    setIsSharingImage(true);
+
+    try {
+      const blob = await buildShareImageBlob(results, currentFormData());
+      const file = new File([blob], "estimativa-importacao-brasil.png", {
+        type: "image/png",
+      });
+
+      if (navigator.canShare?.({ files: [file] }) && navigator.share) {
+        await navigator.share({
+          title: "Estimativa de importação no Brasil",
+          text: "Veja meu cálculo de importação no Brasil.",
+          files: [file],
+        });
+      } else {
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "estimativa-importacao-brasil.png";
+        link.click();
+        URL.revokeObjectURL(url);
+      }
+    } catch {
+      alert("Não foi possível gerar a imagem agora.");
+    } finally {
+      setIsSharingImage(false);
     }
   }
 
@@ -553,6 +718,21 @@ export default function Home() {
                 </div>
               ) : (
                 <div className="p-5">
+                  {(() => {
+                    const decision = getDecisionText(results);
+
+                    return (
+                      <div className="mb-4 rounded-xl bg-[#ffca28] px-3 py-2 text-[#06264b]">
+                        <p className="text-sm font-extrabold">
+                          {decision.label}
+                        </p>
+                        <p className="mt-0.5 text-xs font-medium leading-snug">
+                          {decision.text}
+                        </p>
+                      </div>
+                    );
+                  })()}
+
                   <div className="mb-4 flex items-start justify-between gap-3">
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wider text-white/60">
@@ -593,24 +773,34 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="mt-4 grid grid-cols-2 gap-2">
+                  <div className="mt-4 grid grid-cols-3 gap-2">
                     <Button
                       type="button"
                       variant="secondary"
-                      className="h-11 bg-white text-[#06264b] hover:bg-white/90"
+                      className="h-11 bg-white px-2 text-[#06264b] hover:bg-white/90"
                       onClick={handleCopyResult}
                     >
-                      <Copy className="mr-2 h-4 w-4" />
+                      <Copy className="mr-1.5 h-4 w-4" />
                       {copied ? "Copiado" : "Copiar"}
                     </Button>
                     <Button
                       type="button"
                       variant="secondary"
-                      className="h-11 border border-white/20 bg-white/10 text-white hover:bg-white/20"
+                      className="h-11 border border-white/20 bg-white/10 px-2 text-white hover:bg-white/20"
                       onClick={handleShareResult}
                     >
-                      <Share2 className="mr-2 h-4 w-4" />
+                      <Share2 className="mr-1.5 h-4 w-4" />
                       Enviar
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="secondary"
+                      className="h-11 border border-white/20 bg-white/10 px-2 text-white hover:bg-white/20"
+                      onClick={handleShareImage}
+                      disabled={isSharingImage}
+                    >
+                      <Share2 className="mr-1.5 h-4 w-4" />
+                      {isSharingImage ? "..." : "Imagem"}
                     </Button>
                   </div>
 
@@ -748,6 +938,17 @@ export default function Home() {
                         >
                           <Share2 className="w-5 h-5 mr-2" />
                           Compartilhar
+                        </Button>
+
+                        <Button
+                          type="button"
+                          variant="secondary"
+                          className="h-14 w-full border border-white/20 bg-white/10 text-white hover:bg-white/20 text-lg"
+                          onClick={handleShareImage}
+                          disabled={isSharingImage}
+                        >
+                          <Share2 className="w-5 h-5 mr-2" />
+                          {isSharingImage ? "Gerando imagem..." : "Compartilhar imagem"}
                         </Button>
                       </div>
                     </div>
@@ -892,6 +1093,20 @@ export default function Home() {
                             </div>
 
                             <div className="rounded-2xl border border-primary/10 bg-primary/5 p-5">
+                              {(() => {
+                                const decision = getDecisionText(results);
+
+                                return (
+                                  <div className="mb-5 rounded-xl bg-[#ffca28] px-4 py-3 text-[#06264b]">
+                                    <p className="text-sm font-extrabold">
+                                      {decision.label}
+                                    </p>
+                                    <p className="mt-1 text-xs font-medium leading-relaxed">
+                                      {decision.text}
+                                    </p>
+                                  </div>
+                                );
+                              })()}
                               <p className="text-sm text-muted-foreground">
                                 Custo final estimado
                               </p>
