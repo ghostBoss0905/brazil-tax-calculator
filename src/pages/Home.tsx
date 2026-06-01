@@ -278,8 +278,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f7f9fb] font-sans pb-20 selection:bg-[#f5c400]/30">
-      <main className="mx-auto w-full max-w-7xl min-w-0 px-3 pb-10 pt-5 sm:px-6 lg:px-8 lg:pt-10">
-        <section className="relative w-full max-w-full overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-2xl shadow-slate-200/70">
+      <main className="mx-auto w-full max-w-7xl min-w-0 px-2 pb-10 pt-2 sm:px-6 sm:pt-5 lg:px-8 lg:pt-10">
+        <section className="relative w-full max-w-full overflow-hidden rounded-[18px] border border-slate-200 bg-white shadow-2xl shadow-slate-200/70 sm:rounded-[28px]">
           <GeometricBrazilStrip />
           <div className="pointer-events-none absolute right-0 top-24 hidden h-80 w-80 opacity-60 lg:block">
             <div className="grid h-full grid-cols-4">
@@ -306,21 +306,21 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative min-w-0 px-4 py-5 sm:px-8 sm:py-8 lg:pl-28 lg:pr-8">
-            <header className="mb-8 flex flex-col gap-8 lg:mb-12">
+          <div className="relative min-w-0 px-3 py-3 sm:px-8 sm:py-8 lg:pl-28 lg:pr-8">
+            <header className="mb-3 flex flex-col gap-3 sm:mb-8 sm:gap-8 lg:mb-12">
               <div className="flex min-w-0 items-center justify-between gap-4">
                 <div className="flex min-w-0 items-center gap-3">
-                  <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl bg-[#06264b] text-white shadow-lg shadow-[#06264b]/20">
-                    <span className="absolute left-0 top-0 h-6 w-6 bg-[#ffca28]" />
-                    <span className="absolute bottom-0 left-0 h-6 w-6 bg-[#0b7f55]" />
-                    <span className="absolute right-0 top-0 h-6 w-6 bg-[#f8e7a8]" />
-                    <Calculator className="relative h-5 w-5 text-white drop-shadow" />
+                  <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-[#06264b] text-white shadow-lg shadow-[#06264b]/20 sm:h-12 sm:w-12 sm:rounded-2xl">
+                    <span className="absolute left-0 top-0 h-5 w-5 bg-[#ffca28] sm:h-6 sm:w-6" />
+                    <span className="absolute bottom-0 left-0 h-5 w-5 bg-[#0b7f55] sm:h-6 sm:w-6" />
+                    <span className="absolute right-0 top-0 h-5 w-5 bg-[#f8e7a8] sm:h-6 sm:w-6" />
+                    <Calculator className="relative h-4 w-4 text-white drop-shadow sm:h-5 sm:w-5" />
                   </div>
                   <div className="min-w-0 text-left">
-                    <p className="text-sm font-semibold text-[#06264b]">
+                    <p className="text-sm font-semibold leading-tight text-[#06264b]">
                       Taxa de Importação
                     </p>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs leading-tight text-slate-500">
                       Brasil 2026
                     </p>
                   </div>
@@ -335,51 +335,56 @@ export default function Home() {
               </div>
 
               <div className="mx-auto max-w-3xl min-w-0 text-center">
-                <h1 className="text-balance text-3xl font-extrabold leading-tight tracking-tight text-[#071933] sm:text-5xl lg:text-6xl">
-                  Calcule o custo final da importação
+                <h1 className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#071933] sm:text-5xl lg:text-6xl">
+                  <span className="sm:hidden">Calcule sua importação</span>
+                  <span className="hidden sm:inline">
+                    Calcule o custo final da importação
+                  </span>
                 </h1>
-                <p className="mx-auto mt-5 max-w-[300px] text-pretty break-words text-base leading-8 text-slate-600 sm:max-w-2xl sm:text-lg">
+                <p className="mx-auto mt-1 max-w-[300px] text-pretty break-words text-sm leading-6 text-slate-600 sm:mt-5 sm:max-w-2xl sm:text-lg sm:leading-8">
                   Imposto, ICMS, frete e Remessa Conforme antes de comprar.
                 </p>
               </div>
             </header>
 
-        <div className="grid min-w-0 grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-8">
+        <div className="grid min-w-0 grid-cols-1 gap-3 sm:gap-5 lg:grid-cols-12 lg:gap-8">
           <div className="min-w-0 lg:col-span-8">
-            <Card className="max-w-full overflow-hidden rounded-[24px] border-slate-200 bg-white shadow-xl shadow-slate-200/70">
-              <CardHeader className="border-b border-slate-100 bg-white pb-4">
-                <CardTitle className="flex min-w-0 items-center gap-2 text-xl text-[#071933]">
-                  <Calculator className="h-5 w-5 shrink-0 text-[#008272]" />
+            <Card className="max-w-full overflow-hidden rounded-[18px] border-slate-200 bg-white shadow-xl shadow-slate-200/70 sm:rounded-[24px]">
+              <CardHeader className="border-b border-slate-100 bg-white px-4 py-3 sm:p-6 sm:pb-4">
+                <CardTitle className="flex min-w-0 items-center gap-2 text-lg text-[#071933] sm:text-xl">
+                  <Calculator className="h-4 w-4 shrink-0 text-[#008272] sm:h-5 sm:w-5" />
                   Dados da importação
                 </CardTitle>
-                <CardDescription className="break-words">
+                <CardDescription className="break-words text-xs sm:text-sm">
                   Produto, frete, câmbio, estado e tipo de compra.
                 </CardDescription>
               </CardHeader>
 
-              <CardContent className="pt-5">
+              <CardContent className="px-4 pb-4 pt-3 sm:p-6 sm:pt-5">
                 <form
                   id="tax-form"
                   onSubmit={handleSubmit(onSubmit)}
-                  className="space-y-4"
+                  className="space-y-2.5 sm:space-y-4"
                 >
-                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-                    <div className="min-w-0 space-y-2 sm:col-span-1">
-                      <Label htmlFor="currency">Moeda</Label>
+                  <div className="grid grid-cols-[0.78fr_1.22fr] gap-2 sm:grid-cols-3 sm:gap-3">
+                    <div className="min-w-0 space-y-1 sm:col-span-1 sm:space-y-2">
+                      <Label htmlFor="currency" className="text-sm">Moeda</Label>
                       <div className="relative">
                         <select
                           {...register("currency")}
-                          className="flex h-12 w-full appearance-none rounded-xl border-2 border-input bg-background px-4 py-2 pr-8 text-sm font-medium ring-offset-background focus-visible:border-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/10"
+                          className="flex h-10 w-full appearance-none rounded-xl border-2 border-input bg-background px-3 py-2 pr-7 text-sm font-medium ring-offset-background focus-visible:border-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/10 sm:h-12 sm:px-4 sm:pr-8"
                         >
                           <option value="USD">USD ($)</option>
                           <option value="EUR">EUR (€)</option>
                         </select>
-                        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
+                        <ChevronDown className="absolute right-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground pointer-events-none sm:right-3" />
                       </div>
                     </div>
 
-                    <div className="min-w-0 space-y-2 sm:col-span-2">
-                      <Label htmlFor="productValue">Valor do Produto</Label>
+                    <div className="min-w-0 space-y-1 sm:col-span-2 sm:space-y-2">
+                      <Label htmlFor="productValue" className="text-sm">
+                        Produto
+                      </Label>
                       <Input
                         id="productValue"
                         type="number"
@@ -395,8 +400,8 @@ export default function Home() {
                         {...register("productValue")}
                         className={
                           errors.productValue
-                            ? "border-destructive focus-visible:ring-destructive/20"
-                            : ""
+                            ? "h-10 border-destructive focus-visible:ring-destructive/20 sm:h-12"
+                            : "h-10 sm:h-12"
                         }
                       />
                       {errors.productValue && (
@@ -407,10 +412,10 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                    <div className="min-w-0 space-y-2">
-                      <Label htmlFor="shippingCost">
-                        Custo do Frete ({selectedCurrency})
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                    <div className="min-w-0 space-y-1 sm:space-y-2">
+                      <Label htmlFor="shippingCost" className="text-sm">
+                        Frete ({selectedCurrency})
                       </Label>
                       <Input
                         id="shippingCost"
@@ -425,15 +430,16 @@ export default function Home() {
                           )
                         }
                         {...register("shippingCost")}
+                        className="h-10 sm:h-12"
                       />
                     </div>
 
-                    <div className="min-w-0 space-y-2">
+                    <div className="min-w-0 space-y-1 sm:space-y-2">
                       <div className="flex min-w-0 items-center justify-between gap-3">
-                        <Label htmlFor="exchangeRate">
-                          Taxa de Câmbio (R$)
+                        <Label htmlFor="exchangeRate" className="text-sm">
+                          Câmbio
                         </Label>
-                        <span className="text-[11px] text-muted-foreground bg-secondary px-2 py-0.5 rounded-md">
+                        <span className="hidden rounded-md bg-secondary px-2 py-0.5 text-[11px] text-muted-foreground min-[390px]:inline">
                           Manual
                         </span>
                       </div>
@@ -446,8 +452,8 @@ export default function Home() {
                         {...register("exchangeRate")}
                         className={
                           errors.exchangeRate
-                            ? "border-destructive focus-visible:ring-destructive/20"
-                            : ""
+                            ? "h-10 border-destructive focus-visible:ring-destructive/20 sm:h-12"
+                            : "h-10 sm:h-12"
                         }
                       />
                       {errors.exchangeRate && (
@@ -458,12 +464,14 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="state">Estado de Destino</Label>
+                  <div className="space-y-1 sm:space-y-2">
+                    <Label htmlFor="state" className="text-sm">
+                      Estado de Destino
+                    </Label>
                     <div className="relative">
                       <select
                         {...register("state")}
-                        className="flex h-12 w-full appearance-none rounded-xl border-2 border-input bg-background px-10 py-2 pr-8 text-sm ring-offset-background transition-all duration-200 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/10"
+                        className="flex h-10 w-full appearance-none rounded-xl border-2 border-input bg-background px-9 py-2 pr-8 text-sm ring-offset-background transition-all duration-200 focus-visible:border-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/10 sm:h-12 sm:px-10"
                       >
                         {BRAZILIAN_STATES.map((state) => (
                           <option key={state.code} value={state.code}>
@@ -476,9 +484,9 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="flex min-w-0 items-center justify-between gap-3 rounded-xl border border-secondary bg-secondary/50 p-4">
+                  <div className="flex min-w-0 items-center justify-between gap-3 rounded-xl border border-secondary bg-secondary/50 p-3 sm:p-4">
                     <div className="min-w-0 space-y-0.5">
-                      <Label className="flex cursor-pointer items-center gap-1.5 text-base">
+                      <Label className="flex cursor-pointer items-center gap-1.5 text-sm sm:text-base">
                         Remessa Conforme
                         <Tooltip>
                           <TooltipTrigger asChild>
@@ -492,7 +500,7 @@ export default function Home() {
                           </TooltipContent>
                         </Tooltip>
                       </Label>
-                      <p className="break-words text-xs text-muted-foreground">
+                      <p className="break-words text-[11px] leading-snug text-muted-foreground sm:text-xs">
                         Ative quando os tributos aparecem antes do pagamento.
                       </p>
                     </div>
@@ -512,7 +520,7 @@ export default function Home() {
                     type="submit"
                     variant="success"
                     size="lg"
-                    className="h-14 w-full whitespace-normal px-4 text-base shadow-lg shadow-accent/20 sm:text-lg"
+                    className="h-11 w-full whitespace-normal px-4 text-base shadow-lg shadow-accent/20 sm:h-14 sm:text-lg"
                   >
                     <span className="min-w-0">Ver custo final estimado</span>
                     <ArrowRight className="ml-2 h-5 w-5 shrink-0" />
