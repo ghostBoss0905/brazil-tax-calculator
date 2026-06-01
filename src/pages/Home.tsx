@@ -322,6 +322,34 @@ function GeometricBrazilStrip() {
   );
 }
 
+const platformQuickLinks = [
+  {
+    name: "AliExpress",
+    href: "/imposto-aliexpress-brasil",
+    description: "Imposto, frete e ICMS antes de comprar.",
+  },
+  {
+    name: "Shein",
+    href: "/imposto-shein-brasil",
+    description: "Veja se roupas e acessórios ainda compensam.",
+  },
+  {
+    name: "Shopee",
+    href: "/imposto-shopee-brasil",
+    description: "Compare produto nacional e internacional.",
+  },
+  {
+    name: "Temu",
+    href: "/imposto-temu-brasil",
+    description: "Atenção ao carrinho perto de US$50.",
+  },
+  {
+    name: "Amazon",
+    href: "/imposto-amazon-internacional-brasil",
+    description: "Confira importação, garantia e checkout.",
+  },
+];
+
 export default function Home() {
   const [results, setResults] = useState<TaxResults | null>(null);
   const [copied, setCopied] = useState(false);
@@ -499,14 +527,14 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="mx-auto max-w-3xl min-w-0 text-center">
-                <h1 className="text-balance text-2xl font-extrabold leading-tight tracking-tight text-[#071933] sm:text-5xl lg:text-6xl">
+              <div className="mx-auto max-w-3xl min-w-0 px-1 text-center">
+                <h1 className="text-balance text-[1.55rem] font-extrabold leading-tight tracking-tight text-[#071933] min-[390px]:text-2xl sm:text-5xl lg:text-6xl">
                   <span className="sm:hidden">Calcule sua importação</span>
                   <span className="hidden sm:inline">
                     Calcule o custo final da importação
                   </span>
                 </h1>
-                <p className="mx-auto mt-1 max-w-[300px] text-pretty break-words text-sm leading-6 text-slate-600 sm:mt-5 sm:max-w-2xl sm:text-lg sm:leading-8">
+                <p className="mx-auto mt-1 max-w-[280px] text-pretty break-words text-sm leading-6 text-slate-600 min-[390px]:max-w-[320px] sm:mt-5 sm:max-w-2xl sm:text-lg sm:leading-8">
                   Imposto, ICMS, frete e Remessa Conforme antes de comprar.
                 </p>
               </div>
@@ -516,7 +544,7 @@ export default function Home() {
           <div className="min-w-0 lg:col-span-8">
             <Card className="max-w-full overflow-hidden rounded-[18px] border-slate-200 bg-white shadow-xl shadow-slate-200/70 sm:rounded-[24px]">
               <CardHeader className="border-b border-slate-100 bg-white px-4 py-3 sm:p-6 sm:pb-4">
-                <CardTitle className="flex min-w-0 items-center gap-2 text-lg text-[#071933] sm:text-xl">
+                <CardTitle className="flex min-w-0 items-center gap-2 text-[1.05rem] text-[#071933] min-[390px]:text-lg sm:text-xl">
                   <Calculator className="h-4 w-4 shrink-0 text-[#008272] sm:h-5 sm:w-5" />
                   Dados da importação
                 </CardTitle>
@@ -685,9 +713,11 @@ export default function Home() {
                     type="submit"
                     variant="success"
                     size="lg"
-                    className="h-11 w-full whitespace-normal px-4 text-base shadow-lg shadow-accent/20 sm:h-14 sm:text-lg"
+                    className="h-11 w-full max-w-full overflow-hidden whitespace-normal px-3 text-sm shadow-lg shadow-accent/20 min-[390px]:text-base sm:h-14 sm:px-4 sm:text-lg"
                   >
-                    <span className="min-w-0">Ver custo final estimado</span>
+                    <span className="min-w-0 truncate">
+                      Ver custo final estimado
+                    </span>
                     <ArrowRight className="ml-2 h-5 w-5 shrink-0" />
                   </Button>
                 </form>
@@ -848,6 +878,40 @@ export default function Home() {
               </a>
             </div>
           </aside>
+
+          <div className="min-w-0 lg:col-span-12">
+            <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+              <div className="mb-3 flex min-w-0 items-center justify-between gap-3">
+                <div className="min-w-0">
+                  <h2 className="text-lg font-bold text-[#071933]">
+                    Calcule por loja
+                  </h2>
+                  <p className="text-sm text-slate-600">
+                    Guias rápidos para as compras mais comuns.
+                  </p>
+                </div>
+                <ShoppingCart className="h-5 w-5 shrink-0 text-[#008272]" />
+              </div>
+
+              <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
+                {platformQuickLinks.map((platform) => (
+                  <a
+                    key={platform.href}
+                    href={platform.href}
+                    className="group relative min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 transition-colors hover:border-[#008272] hover:bg-white"
+                  >
+                    <span className="absolute right-0 top-0 h-10 w-10 bg-[#ffca28]/25 [clip-path:polygon(0_0,100%_0,100%_100%)]" />
+                    <span className="relative block text-sm font-extrabold text-[#071933] group-hover:text-[#008272]">
+                      {platform.name}
+                    </span>
+                    <span className="relative mt-1 block text-xs leading-snug text-slate-600">
+                      {platform.description}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </section>
+          </div>
 
           <div className="min-w-0 lg:col-span-12">
             <div className="text-center mb-7 mt-8">
