@@ -9,9 +9,9 @@ const distPath = fileURLToPath(distDir);
 const pages = [
   {
     path: "/imposto-aliexpress-brasil",
-    title: "Imposto AliExpress Brasil 2026: Como Calcular Taxas",
+    title: "Imposto AliExpress Brasil 2026 | Calcule Taxas em Segundos",
     description:
-      "Entenda como calcular o imposto do AliExpress no Brasil em 2026, com Remessa Conforme, ICMS, frete e custo final antes da compra.",
+      "Calcule o imposto do AliExpress em 3 segundos. Atualizado jun/2026. ICMS, Remessa Conforme e custo final — sem surpresa.",
     h1: "Como Calcular o Imposto do AliExpress no Brasil (2026)",
     directAnswer: "O imposto do AliExpress depende do valor do produto, do frete, do câmbio, do estado de destino e se a compra está em plataforma certificada no Remessa Conforme. Para estimar, some produto e frete, converta para reais e aplique Imposto de Importação e ICMS.",
     introParagraph: "Comprar no AliExpress pode parecer barato, mas o custo final no Brasil pode incluir Imposto de Importação, ICMS, frete e câmbio. O AliExpress tem milhares de vendedores com certificação diferente no Remessa Conforme, o que muda a tributação. O frete varia de 15 a 60 dias e pode elevar o total acima de US$50, mudando a faixa de II. Cupons e AliCoins reduzem o preço pago, mas o imposto é calculado sobre o valor final. Antes de comprar, estime o valor total e compare com alternativas vendidas no Brasil.",
@@ -64,9 +64,9 @@ const pages = [
   },
   {
     path: "/imposto-shein-brasil",
-    title: "Imposto Shein Brasil 2026: Como Calcular Taxas",
+    title: "Imposto Shein Brasil 2026 | Calcule Taxas em Segundos",
     description:
-      "Veja como funciona o imposto da Shein no Brasil em 2026, incluindo Remessa Conforme, ICMS e como estimar o valor final da compra.",
+      "Calcule o imposto da Shein em 3 segundos. Atualizado jun/2026. Simples, rápido e atualizado com as regras do Remessa Conforme.",
     h1: "Como Calcular o Imposto da Shein no Brasil (2026)",
     directAnswer: "O imposto da Shein depende do valor da compra, do frete, do câmbio, do estado de destino e se a Shein está no Remessa Conforme. Some produto e frete, converta para reais, aplique Imposto de Importação e ICMS do estado.",
     introParagraph: "Comprar na Shein pode parecer vantajoso, mas o custo final no Brasil pode incluir Imposto de Importação, ICMS e frete. Na Shein, é comum adicionar vários itens pequenos ao carrinho — cada blusa, acessório ou item de casa pode parecer barato, mas o total ultrapassa US$50 rapidamente, mudando a tributação. Cupons da Shein reduzem o preço do produto, mas não a base de cálculo do imposto. Tamanhos asiáticos são menores que os brasileiros, e a qualidade pode não corresponder ao custo total após tributos.",
@@ -119,9 +119,9 @@ const pages = [
   },
   {
     path: "/imposto-shopee-brasil",
-    title: "Imposto Shopee Brasil 2026: Como Calcular Taxas",
+    title: "Imposto Shopee Brasil 2026 | Calcule Taxas em Segundos",
     description:
-      "Entenda como calcular o imposto da Shopee no Brasil em 2026, com Remessa Conforme, ICMS, frete e custo final da compra.",
+      "Calcule o imposto da Shopee em 3 segundos. Atualizado jun/2026. ICMS, Remessa Conforme e custo final — compare antes de comprar.",
     h1: "Como Calcular o Imposto da Shopee no Brasil (2026)",
     directAnswer: "O imposto da Shopee internacional depende de produto, frete, câmbio, ICMS e forma de cobrança dos tributos. Confirme se o pedido é nacional ou internacional e se os impostos aparecem no checkout.",
     introParagraph: "Comprar produtos internacionais pela Shopee pode parecer barato, mas o custo final depende dos impostos cobrados no Brasil. Na Shopee, produtos nacionais e internacionais aparecem juntos na busca — confira se o item mostra 'Envio Internacional' ou 'Importado'. Shopee Coins reduzem o pagamento, mas não a base de cálculo do imposto. Vouchers de frete grátis podem manter o total abaixo de US$50, favorendo a faixa de II de 0%. Antes de finalizar, estime Imposto de Importação, ICMS e frete.",
@@ -189,9 +189,9 @@ const pages = [
   },
   {
     path: "/o-que-e-remessa-conforme",
-    title: "O Que é Remessa Conforme? Regras e Impostos 2026",
+    title: "Remessa Conforme 2026 | O Que É, Regras e Como Funciona",
     description:
-      "Entenda o Programa Remessa Conforme, como funciona a cobrança de impostos em compras internacionais e quando usar a calculadora.",
+      "Entenda o Remessa Conforme em 5 minutos. Regras 2026, quais lojas participam, como funciona a cobrança de ICMS e quando paga imposto.",
     h1: "O Que é Remessa Conforme? (2026)",
     directAnswer: "Remessa Conforme é o programa da Receita Federal que permite a plataformas certificadas informar e recolher tributos de compras internacionais no checkout, dando mais previsibilidade ao consumidor.",
     introParagraph: "O Remessa Conforme é um programa da Receita Federal criado para simplificar a tributação de compras internacionais no Brasil. Em vez de descobrir a cobrança apenas quando a encomenda chega, o consumidor passa a ter mais previsibilidade quando compra em uma empresa certificada.",
@@ -254,9 +254,9 @@ const pages = [
   },
   {
     path: "/icms-importacao-brasil",
-    title: "ICMS Importação Brasil 2026: Como Calcular",
+    title: "ICMS Importação Brasil 2026 | Tabela por Estado e Cálculo",
     description:
-      "Entenda como o ICMS de importação entra no cálculo de compras internacionais no Brasil e como estimar o custo final.",
+      "ICMS de importação por estado. Tabela 2026 atualizada. Veja a alíquota do seu estado e calcule o custo final da importação.",
     h1: "ICMS na Importação do Brasil (2026)",
     directAnswer: "ICMS na importação é um imposto estadual que pode entrar no custo de compras internacionais. Ele varia conforme o estado de destino e deve ser considerado junto com produto, frete, seguro e Imposto de Importação.",
     introParagraph: "O ICMS é um dos principais impostos cobrados em compras internacionais no Brasil. Mesmo compras abaixo de US$50 podem pagar ICMS dependendo do estado.",
@@ -320,9 +320,9 @@ const pages = [
   },
   {
     path: "/tabela-imposto-importacao-brasil",
-    title: "Tabela de Imposto de Importação Brasil 2026",
+    title: "Tabela Imposto Importação Brasil 2026 | ICMS, IPI e Taxas",
     description:
-      "Veja a tabela de imposto de importação no Brasil em 2026 para compras internacionais, com Remessa Conforme, ICMS e exemplos práticos.",
+      "Tabela completa de imposto de importação 2026. ICMS, IPI, Remessa Conforme e taxas por estado. Calcule o custo final em 3 segundos.",
     h1: "Tabela de Imposto de Importação no Brasil (2026)",
     directAnswer: "A tabela de imposto de importação em 2026 ajuda a estimar se a compra entra na regra de até US$50, acima de US$50 ou fora do Remessa Conforme. O ICMS estadual continua sendo parte importante do custo final.",
     introParagraph: "A tabela de imposto de importação ajuda a entender quanto uma compra internacional pode custar antes de chegar ao Brasil. Em 2026, o cálculo depende do valor aduaneiro, da participação da loja no Remessa Conforme e do ICMS do estado.",
@@ -407,9 +407,9 @@ const pages = [
   },
   {
     path: "/imposto-temu-brasil",
-    title: "Imposto Temu Brasil 2026: Como Calcular Taxas",
+    title: "Imposto Temu Brasil 2026 | Calcule Taxas em Segundos",
     description:
-      "Entenda como calcular imposto da Temu no Brasil em 2026, com Remessa Conforme, ICMS, frete, câmbio e comparação antes da compra.",
+      "Calcule o imposto da Temu em 3 segundos. Atualizado jun/2026. Simples, rápido e atualizado com as regras do Remessa Conforme.",
     h1: "Imposto da Temu no Brasil: Como Calcular em 2026",
     directAnswer: "Para calcular o imposto da Temu, some produto, frete e seguro, converta para reais, confirme se os tributos aparecem no checkout e estime o ICMS do estado de entrega antes de comparar com uma compra nacional.",
     introParagraph: "A Temu virou uma das buscas mais comuns para quem compra produtos internacionais baratos. O risco é olhar apenas o preço do anúncio e esquecer que o custo final no Brasil pode incluir ICMS, câmbio, frete e regras do Remessa Conforme. Na Temu, o limite de US$50 é especialmente decisivo: itens custam US$1-15, e 5-8 produtos no carrinho ultrapassam o limite rapidamente. Cupons agressivos (30% off primeira compra) podem reduzir o valor pago, mas o imposto é calculado sobre o valor final. Verifique se o frete 'grátis' está incluso no preço ou realmente zerado.",
