@@ -1159,7 +1159,21 @@ function buildSchema(page) {
     });
   }
 
-  // FAQPage omitted from @graph — provided by SeoHead (React) to avoid duplicate
+  // FAQPage added to static HTML for Googlebot crawling
+  if (page.faqs && page.faqs.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": pageId,
+      mainEntity: page.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    });
+  }
 
   return {
     "@context": "https://schema.org",
