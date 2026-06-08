@@ -8,8 +8,8 @@ export default function ImpostoShein() {
   return (
     <>
       <SeoHead
-        title="Imposto Shein Brasil 2026: Como Calcular Taxas"
-        description="Veja como funciona o imposto da Shein no Brasil em 2026, incluindo Remessa Conforme, ICMS e como estimar o valor final da compra."
+        title="Imposto Shein Brasil 2026 | Calcule Taxas em Segundos"
+        description="Calcule o imposto da Shein em 3 segundos. Atualizado jun/2026. Simples, rápido e atualizado com as regras do Remessa Conforme.", incluindo Remessa Conforme, ICMS e como estimar o valor final da compra."
         canonical="https://www.taxadeimportacao.com/imposto-shein-brasil"
         faqs={[
           {

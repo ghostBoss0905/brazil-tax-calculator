@@ -8,8 +8,8 @@ export default function ImpostoTemu() {
   return (
     <>
       <SeoHead
-        title="Imposto Temu Brasil 2026: Como Calcular Taxas"
-        description="Entenda como calcular imposto da Temu no Brasil em 2026, com Remessa Conforme, ICMS, frete, câmbio e comparação antes da compra."
+        title="Imposto Temu Brasil 2026 | Calcule Taxas em Segundos"
+        description="Calcule o imposto da Temu em 3 segundos. Atualizado jun/2026. Simples, rápido e atualizado com as regras do Remessa Conforme.", com Remessa Conforme, ICMS, frete, câmbio e comparação antes da compra."
         canonical="https://www.taxadeimportacao.com/imposto-temu-brasil"
         faqs={[
           {

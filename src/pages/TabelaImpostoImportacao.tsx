@@ -8,8 +8,8 @@ export default function TabelaImpostoImportacao() {
   return (
     <>
       <SeoHead
-        title="Tabela de Imposto de Importação Brasil 2026"
-        description="Veja a tabela de imposto de importação no Brasil em 2026 para compras internacionais, com Remessa Conforme, ICMS e exemplos práticos."
+        title="Tabela Imposto Importação Brasil 2026 | ICMS, IPI e Taxas"
+        description="Tabela completa de imposto de importação 2026. ICMS, IPI, Remessa Conforme e taxas por estado. Calcule o custo final em 3 segundos." em 2026 para compras internacionais, com Remessa Conforme, ICMS e exemplos práticos."
         canonical="https://www.taxadeimportacao.com/tabela-imposto-importacao-brasil"
         faqs={[
           {
