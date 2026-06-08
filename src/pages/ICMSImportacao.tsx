@@ -9,7 +9,7 @@ export default function ICMSImportacao() {
     <>
       <SeoHead
         title="ICMS Importação Brasil 2026 | Tabela por Estado e Cálculo"
-        description="ICMS de importação por estado. Tabela 2026 atualizada. Veja a alíquota do seu estado e calcule o custo final da importação." no cálculo de compras internacionais no Brasil e como estimar o custo final."
+        description="ICMS de importação por estado. Tabela 2026 atualizada. Veja a alíquota do seu estado e calcule o custo final da importação."
         canonical="https://www.taxadeimportacao.com/icms-importacao-brasil"
         faqs={[
           {

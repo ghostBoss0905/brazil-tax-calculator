@@ -9,7 +9,7 @@ export default function ImpostoAliExpress() {
     <>
       <SeoHead
         title="Imposto AliExpress Brasil 2026 | Calcule Taxas em Segundos"
-        description="Calcule o imposto do AliExpress em 3 segundos. Atualizado jun/2026. ICMS, Remessa Conforme e custo final — sem surpresa.", com Remessa Conforme, ICMS, frete e custo final antes da compra."
+        description="Calcule o imposto do AliExpress em 3 segundos. Atualizado jun/2026. ICMS, Remessa Conforme e custo final — sem surpresa."
         canonical="https://www.taxadeimportacao.com/imposto-aliexpress-brasil"
         faqs={[
           {

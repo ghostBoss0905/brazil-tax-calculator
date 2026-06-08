@@ -8,7 +8,7 @@ export default function RemessaConforme() {
     <>
       <SeoHead
         title="Remessa Conforme 2026 | O Que É, Regras e Como Funciona"
-        description="Entenda o Remessa Conforme em 5 minutos. Regras 2026, quais lojas participam, como funciona a cobrança de ICMS e quando paga imposto." de impostos em compras internacionais e quando usar a calculadora."
+        description="Entenda o Remessa Conforme em 5 minutos. Regras 2026, quais lojas participam, como funciona a cobrança de ICMS e quando paga imposto."
         canonical="https://www.taxadeimportacao.com/o-que-e-remessa-conforme"
         faqs={[
           {

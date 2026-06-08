@@ -9,7 +9,7 @@ export default function ImpostoTemu() {
     <>
       <SeoHead
         title="Imposto Temu Brasil 2026 | Calcule Taxas em Segundos"
-        description="Calcule o imposto da Temu em 3 segundos. Atualizado jun/2026. Simples, rápido e atualizado com as regras do Remessa Conforme.", com Remessa Conforme, ICMS, frete, câmbio e comparação antes da compra."
+        description="Calcule o imposto da Temu em 3 segundos. Atualizado jun/2026. Simples, rápido e atualizado com as regras do Remessa Conforme."
         canonical="https://www.taxadeimportacao.com/imposto-temu-brasil"
         faqs={[
           {

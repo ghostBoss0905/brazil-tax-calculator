@@ -9,7 +9,7 @@ export default function ImpostoShein() {
     <>
       <SeoHead
         title="Imposto Shein Brasil 2026 | Calcule Taxas em Segundos"
-        description="Calcule o imposto da Shein em 3 segundos. Atualizado jun/2026. Simples, rápido e atualizado com as regras do Remessa Conforme.", incluindo Remessa Conforme, ICMS e como estimar o valor final da compra."
+        description="Calcule o imposto da Shein em 3 segundos. Atualizado jun/2026. Simples, rápido e atualizado com as regras do Remessa Conforme."
         canonical="https://www.taxadeimportacao.com/imposto-shein-brasil"
         faqs={[
           {

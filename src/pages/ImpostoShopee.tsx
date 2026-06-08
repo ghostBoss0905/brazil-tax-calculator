@@ -9,7 +9,7 @@ export default function ImpostoShopee() {
     <>
       <SeoHead
         title="Imposto Shopee Brasil 2026 | Calcule Taxas em Segundos"
-        description="Calcule o imposto da Shopee em 3 segundos. Atualizado jun/2026. ICMS, Remessa Conforme e custo final — compare antes de comprar.", com Remessa Conforme, ICMS, frete e custo final da compra."
+        description="Calcule o imposto da Shopee em 3 segundos. Atualizado jun/2026. ICMS, Remessa Conforme e custo final — compare antes de comprar."
         canonical="https://www.taxadeimportacao.com/imposto-shopee-brasil"
         faqs={[
           {
