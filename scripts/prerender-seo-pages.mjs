@@ -888,9 +888,9 @@ const baseHtml = await readFile(baseHtmlPath, "utf8");
 
 const homePage = {
   path: "/",
-  title: "Calculadora de Imposto de Importação no Brasil | Custo Final 2026",
+  title: "Calculadora Imposto Importação Brasil 2026 | ICMS, IPI & Taxas Grátis",
   description:
-    "Calcule o imposto de importação no Brasil e veja o custo final da sua compra internacional, incluindo ICMS e regras do Remessa Conforme.",
+    "Calcule imposto de importação em 3 segundos. Atualizado jun/2026. Simples, rápido e gratuito para AliExpress, Shein, Shopee, Temu.",
   h1: "Calcule o custo final da importação",
   directAnswer:
     "Use a calculadora para estimar produto, frete, câmbio, Imposto de Importação, ICMS do estado de destino e regra do Remessa Conforme antes de finalizar uma compra internacional.",
