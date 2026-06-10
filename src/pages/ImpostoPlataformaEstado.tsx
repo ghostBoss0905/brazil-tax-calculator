@@ -235,7 +235,7 @@ export default function ImpostoPlataformaEstado() {
         </div>
 
         <p className="text-sm text-gray-500 mt-12">
-          Atualizado em Maio de 2026. A página usa a alíquota estimada aplicada
+          Atualizado em Junho de 2026. A página usa a alíquota estimada aplicada
           pela calculadora para {state.name}; confirme sempre o valor exibido no
           checkout ou na cobrança oficial.
         </p>

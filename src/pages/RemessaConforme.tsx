@@ -14,7 +14,7 @@ export default function RemessaConforme() {
           {
             question: "O que é Remessa Conforme?",
             answer:
-              "O Remessa Conforme é um programa da Receita Federal que permite a plataformas certificadas informar e recolher os tributos de compras internacionais no checkout, antes do pagamento. Sem o programa, o Imposto de Importação pode chegar a 60% sobre o valor aduaneiro, cobrado quando a encomenda chega ao Brasil. Dentro do Remessa Conforme, compras até US$50 podem ter Imposto de Importação de 0%, e compras acima de US$50 têm alíquota reduzida a 20%. O ICMS estadual, que varia de 17% a 20% conforme o estado de destino, continua sendo cobrado em ambos os casos.",
+              "O Remessa Conforme é um programa da Receita Federal que permite a plataformas certificadas informar e recolher os tributos de compras internacionais no checkout, antes do pagamento. Sem o programa, o Imposto de Importação pode chegar a 60% sobre o valor aduaneiro, cobrado quando a encomenda chega ao Brasil. Dentro do Remessa Conforme, compras até US$50 podem ter Imposto de Importação de 0%, e compras acima de US$50 têm alíquota de 60% com desconto de US$30 a 20%. O ICMS estadual, que varia de 17% a 20% conforme o estado de destino, continua sendo cobrado em ambos os casos.",
           },
           {
             question: "Compras abaixo de US$50 pagam imposto?",
@@ -24,17 +24,17 @@ export default function RemessaConforme() {
           {
             question: "Como calcular o imposto antes de comprar?",
             answer:
-              "Use uma calculadora de imposto de importação informando o valor do produto, frete, câmbio do dia, estado de destino e se a loja participa do Remessa Conforme. O cálculo considera o Imposto de Importação (0% até US$50 com RC, 20% acima de US$50 com RC ou 60% sem RC) e o ICMS estadual (17% a 20%). Simular antes de comprar permite comparar o custo final com alternativas vendidas no Brasil e evitar surpresas na chegada da encomenda.",
+              "Use uma calculadora de imposto de importação informando o valor do produto, frete, câmbio do dia, estado de destino e se a loja participa do Remessa Conforme. O cálculo considera o Imposto de Importação (0% até US$50 com RC, 60% com desconto de US$30 acima de US$50 com RC ou 60% sem RC) e o ICMS estadual (17% a 20%). Simular antes de comprar permite comparar o custo final com alternativas vendidas no Brasil e evitar surpresas na chegada da encomenda.",
           },
           {
             question: "O AliExpress participa do Remessa Conforme?",
             answer:
-              "Sim. O AliExpress é uma das plataformas certificadas no Programa Remessa Conforme da Receita Federal. Isso significa que, em compras dentro do programa, os tributos aparecem discriminados no checkout antes do pagamento. Compras até US$50 têm Imposto de Importação de 0%, enquanto compras acima de US$50 pagam 20% de Imposto de Importação, mais ICMS estadual (17% a 20%). Para confirmar, verifique se os tributos estão visíveis na tela de pagamento antes de finalizar o pedido.",
+              "Sim. O AliExpress é uma das plataformas certificadas no Programa Remessa Conforme da Receita Federal. Isso significa que, em compras dentro do programa, os tributos aparecem discriminados no checkout antes do pagamento. Compras até US$50 têm Imposto de Importação de 0%, enquanto compras acima de US$50 pagam 60% de Imposto de Importação com desconto de US$30, mais ICMS estadual (17% a 20%). Para confirmar, verifique se os tributos estão visíveis na tela de pagamento antes de finalizar o pedido.",
           },
           {
             question: "Remessa Conforme significa compra sem imposto?",
             answer:
-              "Não. O Remessa Conforme organiza e antecipa a cobrança dos tributos em empresas certificadas, mas não elimina impostos. Em compras até US$50, o Imposto de Importação federal pode ser 0%, mas o ICMS estadual (17% a 20%) continua sendo cobrado. Acima de US$50, o Imposto de Importação é 20% dentro do programa, contra 60% fora dele. O programa oferece previsibilidade, não isenção — sempre calcule o custo total antes de comprar.",
+              "Não. O Remessa Conforme organiza e antecipa a cobrança dos tributos em empresas certificadas, mas não elimina impostos. Em compras até US$50, o Imposto de Importação federal pode ser 0%, mas o ICMS estadual (17% a 20%) continua sendo cobrado. Acima de US$50, o Imposto de Importação é 60% com desconto de US$30 dentro do programa; fora dele, a cobrança pode chegar a 60% sem esse desconto. O programa oferece previsibilidade, não isenção — sempre calcule o custo total antes de comprar.",
           },
         ]}
       />
@@ -204,7 +204,7 @@ export default function RemessaConforme() {
         Imposto de Importação pode chegar a 60% sobre o valor aduaneiro,
         cobrado quando a encomenda chega ao Brasil. Dentro do Remessa
         Conforme, compras até US$50 podem ter Imposto de Importação de 0%, e
-        compras acima de US$50 têm alíquota reduzida a 20%. O ICMS estadual,
+        compras acima de US$50 têm alíquota de 60% com desconto de US$30 a 20%. O ICMS estadual,
         que varia de 17% a 20% conforme o estado de destino, continua sendo
         cobrado em ambos os casos.
       </p>
@@ -231,7 +231,7 @@ export default function RemessaConforme() {
         Use uma calculadora de imposto de importação informando o valor do
         produto, frete, câmbio do dia, estado de destino e se a loja participa
         do Remessa Conforme. O cálculo considera o Imposto de Importação (0%
-        até US$50 com RC, 20% acima de US$50 com RC ou 60% sem RC) e o ICMS
+        até US$50 com RC, 60% com desconto de US$30 acima de US$50 com RC ou 60% sem RC) e o ICMS
         estadual (17% a 20%). Simular antes de comprar permite comparar o
         custo final com alternativas vendidas no Brasil e evitar surpresas na
         chegada da encomenda.
@@ -246,7 +246,7 @@ export default function RemessaConforme() {
         Remessa Conforme da Receita Federal. Isso significa que, em compras
         dentro do programa, os tributos aparecem discriminados no checkout
         antes do pagamento. Compras até US$50 têm Imposto de Importação de 0%,
-        enquanto compras acima de US$50 pagam 20% de Imposto de Importação,
+        enquanto compras acima de US$50 pagam 60% de Imposto de Importação com desconto de US$30,
         mais ICMS estadual (17% a 20%). Para confirmar, verifique se os
         tributos estão visíveis na tela de pagamento antes de finalizar o
         pedido.
@@ -261,13 +261,14 @@ export default function RemessaConforme() {
         empresas certificadas, mas não elimina impostos. Em compras até US$50,
         o Imposto de Importação federal pode ser 0%, mas o ICMS estadual (17%
         a 20%) continua sendo cobrado. Acima de US$50, o Imposto de
-        Importação é 20% dentro do programa, contra 60% fora dele. O programa
+        Importação é 60% com desconto de US$30 dentro do programa; fora dele,
+        a cobrança pode chegar a 60% sem esse desconto. O programa
         oferece previsibilidade, não isenção — sempre calcule o custo total
         antes de comprar.
       </p>
 
       <p className="text-sm text-gray-500 mt-12">
-        Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras
+        Atualizado em Junho de 2026. Fonte: Receita Federal, Portal Compras
         Internacionais e orientações sobre o Programa Remessa Conforme.
       </p>
 

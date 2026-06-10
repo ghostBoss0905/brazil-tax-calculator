@@ -20,7 +20,7 @@ export default function ImpostoAmazonInternacional() {
           {
             question: "Amazon e marketplace são a mesma coisa para imposto?",
             answer:
-              "Não necessariamente. A Amazon pode vender diretamente como importador ou intermediar vendedores terceiros que seguem fluxos diferentes de tributação e logística. Em compras de vendedores dentro do Remessa Conforme, os tributos tendem a aparecer no checkout com Imposto de Importação de 0% até US$50 ou alíquota reduzida acima desse valor, mais ICMS de 17% a 20% conforme o estado. Em ofertas de vendedores fora do programa, a cobrança pode ocorrer na chegada ao Brasil com Imposto de Importação de 60% e ICMS estadual. Por isso, sempre verifique se a oferta é internacional e se os tributos estão incluídos ou discriminados no checkout antes de pagar. Use a calculadora para simular diferentes cenários e compare com alternativas brasileiras.",
+              "Não necessariamente. A Amazon pode vender diretamente como importador ou intermediar vendedores terceiros que seguem fluxos diferentes de tributação e logística. Em compras de vendedores dentro do Remessa Conforme, os tributos tendem a aparecer no checkout com Imposto de Importação de 0% até US$50 ou alíquota de 60% com desconto de US$30 acima desse valor, mais ICMS de 17% a 20% conforme o estado. Em ofertas de vendedores fora do programa, a cobrança pode ocorrer na chegada ao Brasil com Imposto de Importação de 60% e ICMS estadual. Por isso, sempre verifique se a oferta é internacional e se os tributos estão incluídos ou discriminados no checkout antes de pagar. Use a calculadora para simular diferentes cenários e compare com alternativas brasileiras.",
           },
           {
             question: "Devo comparar com produto vendido no Brasil?",
@@ -276,7 +276,7 @@ export default function ImpostoAmazonInternacional() {
           ou intermediar vendedores terceiros que seguem fluxos diferentes de
           tributação e logística. Em compras de vendedores dentro do Remessa
           Conforme, os tributos tendem a aparecer no checkout com Imposto de
-          Importação de 0% até US$50 ou alíquota reduzida acima desse valor,
+          Importação de 0% até US$50 ou alíquota de 60% com desconto de US$30 acima desse valor,
           mais ICMS de 17% a 20% conforme o estado. Em ofertas de vendedores
           fora do programa, a cobrança pode ocorrer na chegada ao Brasil com
           Imposto de Importação de 60% e ICMS estadual. Por isso, sempre
@@ -316,7 +316,7 @@ export default function ImpostoAmazonInternacional() {
         />
 
         <p className="text-sm text-gray-500 mt-12">
-          Atualizado em Maio de 2026. A simulação é uma estimativa; o valor
+          Atualizado em Junho de 2026. A simulação é uma estimativa; o valor
           oficial depende da oferta, do checkout e da importação.
         </p>
 

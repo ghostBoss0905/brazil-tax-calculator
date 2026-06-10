@@ -28,12 +28,12 @@ export default function LojasRemessaConforme() {
           {
             question: "Toda oferta de marketplace segue a mesma regra?",
             answer:
-              "Não necessariamente. Em marketplaces, a operação pode depender do vendedor, da logística e do que aparece no checkout. Um marketplace certificado no Remessa Conforme pode ter vendedores que não seguem o programa, resultando em cobranças diferentes. Se os tributos aparecem discriminados no checkout (II de 0% até US$50 ou 20% acima, mais ICMS estadual de 17% a 20%), a oferta está dentro do RC. Se não aparecem, a cobrança pode ocorrer na chegada ao Brasil com Imposto de Importação de 60%. Confira sempre a tela de pagamento antes de finalizar o pedido.",
+              "Não necessariamente. Em marketplaces, a operação pode depender do vendedor, da logística e do que aparece no checkout. Um marketplace certificado no Remessa Conforme pode ter vendedores que não seguem o programa, resultando em cobranças diferentes. Se os tributos aparecem discriminados no checkout (II de 0% até US$50 ou 60% com desconto de US$30 acima, mais ICMS estadual de 17% a 20%), a oferta está dentro do RC. Se não aparecem, a cobrança pode ocorrer na chegada ao Brasil com Imposto de Importação de 60%. Confira sempre a tela de pagamento antes de finalizar o pedido.",
           },
           {
             question: "Estar no Remessa Conforme elimina o ICMS?",
             answer:
-              "Não. O Remessa Conforme pode mudar a cobrança do Imposto de Importação federal (0% até US$50 ou 20% acima), mas o ICMS estadual continua sendo cobrado com alíquotas entre 17% e 20%, dependendo do estado de destino. Mesmo em compras abaixo de US$50 em lojas certificadas, onde o Imposto de Importação é 0%, o ICMS aparece no checkout ou na chegada da encomenda. O programa oferece previsibilidade na cobrança, não isenção de tributos. Para estimar o custo real, sempre inclua o ICMS do estado de entrega na simulação.",
+              "Não. O Remessa Conforme pode mudar a cobrança do Imposto de Importação federal (0% até US$50 ou 60% com desconto de US$30 acima), mas o ICMS estadual continua sendo cobrado com alíquotas entre 17% e 20%, dependendo do estado de destino. Mesmo em compras abaixo de US$50 em lojas certificadas, onde o Imposto de Importação é 0%, o ICMS aparece no checkout ou na chegada da encomenda. O programa oferece previsibilidade na cobrança, não isenção de tributos. Para estimar o custo real, sempre inclua o ICMS do estado de entrega na simulação.",
           },
           {
             question: "A lista oficial muda?",
@@ -158,7 +158,7 @@ export default function LojasRemessaConforme() {
           vendedor, da logística e do que aparece no checkout. Um marketplace
           certificado no Remessa Conforme pode ter vendedores que não seguem o
           programa, resultando em cobranças diferentes. Se os tributos aparecem
-          discriminados no checkout (II de 0% até US$50 ou 20% acima, mais ICMS
+          discriminados no checkout (II de 0% até US$50 ou 60% com desconto de US$30 acima, mais ICMS
           estadual de 17% a 20%), a oferta está dentro do RC. Se não aparecem,
           a cobrança pode ocorrer na chegada ao Brasil com Imposto de Importação
           de 60%. Confira sempre a tela de pagamento antes de finalizar o
@@ -170,7 +170,7 @@ export default function LojasRemessaConforme() {
         </h3>
         <p className="mb-4">
           Não. O Remessa Conforme pode mudar a cobrança do Imposto de
-          Importação federal (0% até US$50 ou 20% acima), mas o ICMS estadual
+          Importação federal (0% até US$50 ou 60% com desconto de US$30 acima), mas o ICMS estadual
           continua sendo cobrado com alíquotas entre 17% e 20%, dependendo do
           estado de destino. Mesmo em compras abaixo de US$50 em lojas
           certificadas, onde o Imposto de Importação é 0%, o ICMS aparece no
@@ -207,7 +207,7 @@ export default function LojasRemessaConforme() {
         />
 
         <p className="text-sm text-gray-500 mt-12">
-          Atualizado em Maio de 2026. Consulte sempre a Receita Federal e o
+          Atualizado em Junho de 2026. Consulte sempre a Receita Federal e o
           checkout da compra antes de pagar.
         </p>
 

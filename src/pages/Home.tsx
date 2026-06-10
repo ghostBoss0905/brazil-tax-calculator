@@ -1285,10 +1285,21 @@ export default function Home() {
         </section>
 
         <div className="mx-auto mb-12 max-w-3xl min-w-0 space-y-1 rounded-xl border border-border bg-muted/40 px-4 py-4 text-xs text-muted-foreground sm:px-5">
-          <p><strong>Versão das regras:</strong> 2026-05</p>
+          <p><strong>Versão das regras:</strong> 2026-06</p>
           <p><strong>Última verificação:</strong> Receita Federal do Brasil e Portal Compras Internacionais</p>
           <p><strong>Fonte oficial:</strong> Receita Federal, Correios e normas públicas aplicáveis</p>
           <p><strong>Aviso legal:</strong> Esta calculadora fornece uma estimativa. O valor final é definido pelas autoridades competentes no Brasil.</p>
+          <div className="flex flex-wrap gap-x-4 gap-y-1 pt-2">
+            <a className="underline-offset-2 hover:underline" href="/politica-de-privacidade">
+              Política de Privacidade
+            </a>
+            <a className="underline-offset-2 hover:underline" href="/politica-de-cookies">
+              Política de Cookies
+            </a>
+            <a className="underline-offset-2 hover:underline" href="/aviso-legal">
+              Aviso Legal
+            </a>
+          </div>
         </div>
       </main>
     </div>

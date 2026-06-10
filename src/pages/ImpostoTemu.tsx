@@ -15,7 +15,7 @@ export default function ImpostoTemu() {
           {
             question: "A Temu participa do Remessa Conforme?",
             answer:
-              "A Receita Federal mantém uma lista pública de empresas e plataformas certificadas no Programa Remessa Conforme, e a Temu pode estar entre elas. Em compras dentro do programa, o Imposto de Importação federal pode ser 0% para valores até US$50, com ICMS estadual de 17% a 20% dependendo do estado; acima de US$50, a alíquota federal é reduzida dentro do RC. Fora do Remessa Conforme, o Imposto de Importação pode chegar a 60% sobre o valor aduaneiro, além do ICMS. Antes de comprar, confirme no checkout se os tributos aparecem discriminados e use a calculadora de importação para estimar o custo total. Compare o valor final com alternativas vendidas no Brasil antes de decidir.",
+              "A Receita Federal mantém uma lista pública de empresas e plataformas certificadas no Programa Remessa Conforme, e a Temu pode estar entre elas. Em compras dentro do programa, o Imposto de Importação federal pode ser 0% para valores até US$50, com ICMS estadual de 17% a 20% dependendo do estado; acima de US$50, a alíquota federal é 60% com desconto de US$30 dentro do RC. Fora do Remessa Conforme, o Imposto de Importação pode chegar a 60% sobre o valor aduaneiro, além do ICMS. Antes de comprar, confirme no checkout se os tributos aparecem discriminados e use a calculadora de importação para estimar o custo total. Compare o valor final com alternativas vendidas no Brasil antes de decidir.",
           },
           {
             question: "Compra da Temu abaixo de US$50 fica sem imposto?",
@@ -25,7 +25,7 @@ export default function ImpostoTemu() {
           {
             question: "Frete da Temu entra no cálculo?",
             answer:
-              "Sim, o frete internacional entra no valor aduaneiro usado como base para calcular o Imposto de Importação e o ICMS. Produto, frete e seguro, quando houver, compõem o total da operação que define a faixa de tributação — dentro ou acima de US$50 no Remessa Conforme. Um carrinho com produto de US$42 e frete de US$8, por exemplo, ultrapassa o limite de US$50 e muda a regra de Imposto de Importação de 0% para a alíquota reduzida dentro do RC, ou 60% fora dele. Por isso, sempre some produto e frete antes de avaliar se a compra fica em faixa de tributação mais favorável. Use a calculadora de importação para simular o custo total e compare com alternativas no Brasil.",
+              "Sim, o frete internacional entra no valor aduaneiro usado como base para calcular o Imposto de Importação e o ICMS. Produto, frete e seguro, quando houver, compõem o total da operação que define a faixa de tributação — dentro ou acima de US$50 no Remessa Conforme. Um carrinho com produto de US$42 e frete de US$8, por exemplo, ultrapassa o limite de US$50 e muda a regra de Imposto de Importação de 0% para a alíquota de 60% com desconto de US$30 dentro do RC, ou 60% fora dele. Por isso, sempre some produto e frete antes de avaliar se a compra fica em faixa de tributação mais favorável. Use a calculadora de importação para simular o custo total e compare com alternativas no Brasil.",
           },
         ]}
       />
@@ -312,7 +312,7 @@ export default function ImpostoTemu() {
           de tributação — dentro ou acima de US$50 no Remessa Conforme. Um
           carrinho com produto de US$42 e frete de US$8, por exemplo, ultrapassa
           o limite de US$50 e muda a regra de Imposto de Importação de 0% para
-          a alíquota reduzida dentro do RC, ou 60% fora dele. Por isso, sempre
+          a alíquota de 60% com desconto de US$30 dentro do RC, ou 60% fora dele. Por isso, sempre
           some produto e frete antes de avaliar se a compra fica em faixa de
           tributação mais favorável. Use a calculadora de importação para
           simular o custo total e compare com alternativas no Brasil.
@@ -332,7 +332,7 @@ export default function ImpostoTemu() {
         />
 
         <p className="text-sm text-gray-500 mt-12">
-          Atualizado em Maio de 2026. Use esta página como estimativa antes da
+          Atualizado em Junho de 2026. Use esta página como estimativa antes da
           compra; o valor oficial depende do checkout e do processo de
           importação.
         </p>

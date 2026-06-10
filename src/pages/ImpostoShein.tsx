@@ -15,12 +15,12 @@ export default function ImpostoShein() {
           {
             question: "Compras da Shein abaixo de US$50 pagam imposto?",
             answer:
-              "Compras da Shein abaixo de US$50 podem pagar imposto dependendo da modalidade da compra e do estado de destino. Em compras feitas pelo Programa Remessa Conforme, o Imposto de Importação federal é de 0% para valores até US$50, mas o ICMS estadual continua sendo cobrado, com alíquotas que variam de 17% a 22% conforme o estado. Já em compras fora do Remessa Conforme, a regra pode incluir Imposto de Importação de 60% sobre o valor aduaneiro, além do ICMS. Por isso, mesmo pedidos pequenos podem ter um custo final significativamente maior que o preço do produto no site.",
+              "Compras da Shein abaixo de US$50 podem pagar imposto dependendo da modalidade da compra e do estado de destino. Em compras feitas pelo Programa Remessa Conforme, o Imposto de Importação federal é de 0% para valores até US$50, mas o ICMS estadual continua sendo cobrado, com alíquotas que variam de 17% a 20% conforme o estado. Já em compras fora do Remessa Conforme, a regra pode incluir Imposto de Importação de 60% sobre o valor aduaneiro, além do ICMS. Por isso, mesmo pedidos pequenos podem ter um custo final significativamente maior que o preço do produto no site.",
           },
           {
             question: "Vale a pena comprar na Shein em 2026?",
             answer:
-              "Vale a pena comprar na Shein em 2026 quando o preço final, já com impostos, continua abaixo de alternativas disponíveis no Brasil. Para pedidos até US$50 pelo Remessa Conforme, o Imposto de Importação é 0%, mas o ICMS (17% a 22%) ainda entra no custo. Para pedidos acima de US$50, o Imposto de Importação volta a ser cobrado e o custo final pode se aproximar ou ultrapassar o preço de lojas brasileiras. O comprador deve sempre simular o valor total antes de decidir, considerando produto, frete, câmbio e os tributos do estado de entrega.",
+              "Vale a pena comprar na Shein em 2026 quando o preço final, já com impostos, continua abaixo de alternativas disponíveis no Brasil. Para pedidos até US$50 pelo Remessa Conforme, o Imposto de Importação é 0%, mas o ICMS (17% a 20%) ainda entra no custo. Para pedidos acima de US$50, o Imposto de Importação volta a ser cobrado e o custo final pode se aproximar ou ultrapassar o preço de lojas brasileiras. O comprador deve sempre simular o valor total antes de decidir, considerando produto, frete, câmbio e os tributos do estado de entrega.",
           },
           {
             question: "O imposto aparece antes de pagar?",
@@ -319,7 +319,7 @@ export default function ImpostoShein() {
         modalidade da compra e do estado de destino. Em compras feitas pelo
         Programa Remessa Conforme, o Imposto de Importação federal é de 0%
         para valores até US$50, mas o ICMS estadual continua sendo cobrado,
-        com alíquotas que variam de 17% a 22% conforme o estado. Já em
+        com alíquotas que variam de 17% a 20% conforme o estado. Já em
         compras fora do Remessa Conforme, a regra pode incluir Imposto de
         Importação de 60% sobre o valor aduaneiro, além do ICMS. Por isso,
         mesmo pedidos pequenos podem ter um custo final significativamente
@@ -334,7 +334,7 @@ export default function ImpostoShein() {
         Vale a pena comprar na Shein em 2026 quando o preço final, já com
         impostos, continua abaixo de alternativas disponíveis no Brasil. Para
         pedidos até US$50 pelo Remessa Conforme, o Imposto de Importação é
-        0%, mas o ICMS (17% a 22%) ainda entra no custo. Para pedidos acima
+        0%, mas o ICMS (17% a 20%) ainda entra no custo. Para pedidos acima
         de US$50, o Imposto de Importação volta a ser cobrado e o custo final
         pode se aproximar ou ultrapassar o preço de lojas brasileiras. O
         comprador deve sempre simular o valor total antes de decidir,
@@ -394,7 +394,7 @@ export default function ImpostoShein() {
       </div>
 
       <p className="text-sm text-gray-500 mt-12">
-        Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras
+        Atualizado em Junho de 2026. Fonte: Receita Federal, Portal Compras
         Internacionais e orientações sobre o Programa Remessa Conforme.
       </p>
 

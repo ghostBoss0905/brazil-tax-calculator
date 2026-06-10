@@ -20,12 +20,12 @@ export default function ComprasAbaixo50Dolares() {
           {
             question: "O limite de US$50 inclui frete?",
             answer:
-              "Para estimar a compra com segurança, considere produto, frete e seguro quando houver, pois esses valores podem compor a base de cálculo da importação. Uma compra que parece abaixo de US$50 pelo preço do produto pode ultrapassar o limite quando o frete internacional é adicionado. Se o valor total (produto + frete + seguro) exceder US$50, a regra de Imposto de Importação de 0% pode não se aplicar, e a alíquota pode mudar para 20% dentro do RC ou 60% fora dele. Por isso, sempre use o valor total do carrinho ao verificar o enquadramento.",
+              "Para estimar a compra com segurança, considere produto, frete e seguro quando houver, pois esses valores podem compor a base de cálculo da importação. Uma compra que parece abaixo de US$50 pelo preço do produto pode ultrapassar o limite quando o frete internacional é adicionado. Se o valor total (produto + frete + seguro) exceder US$50, a regra de Imposto de Importação de 0% pode não se aplicar, e a alíquota pode mudar para 60% com desconto de US$30 dentro do RC ou 60% fora dele. Por isso, sempre use o valor total do carrinho ao verificar o enquadramento.",
           },
           {
             question: "Fora do Remessa Conforme a regra muda?",
             answer:
-              "Sim. Compras fora de plataformas certificadas no Remessa Conforme podem pagar Imposto de Importação de 60% sobre o valor aduaneiro, cobrado quando a encomenda chega ao Brasil. Além disso, o ICMS estadual (17% a 20%) também é cobrado, e a cobrança aparece por meio dos Correios ou da transportadora, sem previsibilidade no checkout. Dentro do RC, o Imposto de Importação é 0% até US$50 e 20% acima, com tributos exibidos antes do pagamento. A diferença no custo final pode ser significativa entre os dois cenários.",
+              "Sim. Compras fora de plataformas certificadas no Remessa Conforme podem pagar Imposto de Importação de 60% sobre o valor aduaneiro, cobrado quando a encomenda chega ao Brasil. Além disso, o ICMS estadual (17% a 20%) também é cobrado, e a cobrança aparece por meio dos Correios ou da transportadora, sem previsibilidade no checkout. Dentro do RC, o Imposto de Importação é 0% até US$50 e 60% com desconto de US$30 acima, com tributos exibidos antes do pagamento. A diferença no custo final pode ser significativa entre os dois cenários.",
           },
           {
             question: "Como saber se estou no Remessa Conforme?",
@@ -168,7 +168,7 @@ export default function ComprasAbaixo50Dolares() {
           produto pode ultrapassar o limite quando o frete internacional é
           adicionado. Se o valor total (produto + frete + seguro) exceder US$50,
           a regra de Imposto de Importação de 0% pode não se aplicar, e a
-          alíquota pode mudar para 20% dentro do RC ou 60% fora dele. Por isso,
+          alíquota pode mudar para 60% com desconto de US$30 dentro do RC ou 60% fora dele. Por isso,
           sempre use o valor total do carrinho ao verificar o enquadramento.
         </p>
 
@@ -181,7 +181,7 @@ export default function ComprasAbaixo50Dolares() {
           cobrado quando a encomenda chega ao Brasil. Além disso, o ICMS
           estadual (17% a 20%) também é cobrado, e a cobrança aparece por meio
           dos Correios ou da transportadora, sem previsibilidade no checkout.
-          Dentro do RC, o Imposto de Importação é 0% até US$50 e 20% acima, com
+          Dentro do RC, o Imposto de Importação é 0% até US$50 e 60% com desconto de US$30 acima, com
           tributos exibidos antes do pagamento. A diferença no custo final pode
           ser significativa entre os dois cenários.
         </p>
@@ -214,7 +214,7 @@ export default function ComprasAbaixo50Dolares() {
         />
 
         <p className="text-sm text-gray-500 mt-12">
-          Atualizado em Maio de 2026. A regra pode depender do enquadramento da
+          Atualizado em Junho de 2026. A regra pode depender do enquadramento da
           compra, da plataforma e do estado de destino.
         </p>
 

@@ -12,6 +12,7 @@ type SeoHeadProps = {
   faqs?: FAQ[];
   image?: string;
   type?: "website" | "article";
+  dateModified?: string;
 };
 
 export default function SeoHead({
@@ -21,7 +22,37 @@ export default function SeoHead({
   faqs = [],
   image = "https://www.taxadeimportacao.com/opengraph.jpg",
   type = "article",
+  dateModified = "2026-06-10",
 }: SeoHeadProps) {
+  const articleSchema =
+    type === "article"
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: title,
+          description,
+          image,
+          mainEntityOfPage: canonical,
+          inLanguage: "pt-BR",
+          datePublished: "2026-05-24",
+          dateModified,
+          author: {
+            "@type": "Organization",
+            name: "Taxa de Importação",
+            url: "https://www.taxadeimportacao.com/",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Taxa de Importação",
+            url: "https://www.taxadeimportacao.com/",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://www.taxadeimportacao.com/images/logo-icon.png",
+            },
+          },
+        }
+      : null;
+
   const faqSchema =
     faqs.length > 0
       ? {
@@ -60,6 +91,12 @@ export default function SeoHead({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
+
+      {articleSchema ? (
+        <script type="application/ld+json">
+          {JSON.stringify(articleSchema)}
+        </script>
+      ) : null}
 
       {faqSchema ? (
         <script type="application/ld+json">

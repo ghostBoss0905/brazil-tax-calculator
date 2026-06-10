@@ -289,7 +289,7 @@ export default function CalcularTaxasImportacao() {
         />
 
         <p className="text-sm text-gray-500 mt-12">
-          Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras
+          Atualizado em Junho de 2026. Fonte: Receita Federal, Portal Compras
           Internacionais e orientações públicas sobre remessas internacionais.
         </p>
         <RelatedGuides currentPath="/calcular-taxas-importacao" />

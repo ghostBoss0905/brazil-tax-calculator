@@ -20,7 +20,7 @@ export default function ImpostoAliExpress() {
           {
             question: "O AliExpress participa do Remessa Conforme?",
             answer:
-              "Sim. O AliExpress é uma das plataformas certificadas no Programa Remessa Conforme da Receita Federal. Isso significa que, em compras feitas pelo AliExpress dentro do programa, os tributos podem ser calculados e exibidos no checkout antes do pagamento, dando mais previsibilidade ao consumidor. No Remessa Conforme, compras até US$50 têm Imposto de Importação de 0%, e compras acima de US$50 têm alíquota reduzida, além do ICMS estadual que varia de 17% a 20% conforme o estado. Para confirmar o enquadramento, verifique se os tributos aparecem discriminados no checkout antes de finalizar o pedido.",
+              "Sim. O AliExpress é uma das plataformas certificadas no Programa Remessa Conforme da Receita Federal. Isso significa que, em compras feitas pelo AliExpress dentro do programa, os tributos podem ser calculados e exibidos no checkout antes do pagamento, dando mais previsibilidade ao consumidor. No Remessa Conforme, compras até US$50 têm Imposto de Importação de 0%, e compras acima de US$50 têm alíquota de 60% com desconto de US$30, além do ICMS estadual que varia de 17% a 20% conforme o estado. Para confirmar o enquadramento, verifique se os tributos aparecem discriminados no checkout antes de finalizar o pedido.",
           },
           {
             question: "O imposto é cobrado na hora ou quando chega ao Brasil?",
@@ -100,7 +100,7 @@ export default function ImpostoAliExpress() {
       </h2>
 
       <p className="mb-6">
-        O Remessa Conforme reduz o imposto para 20% em lojas participantes
+        O Remessa Conforme mantém II de 0% até US$50 e aplica 60% com desconto de US$30 acima desse valor em lojas participantes
         como o AliExpress.
       </p>
 
@@ -306,7 +306,7 @@ export default function ImpostoAliExpress() {
         AliExpress dentro do programa, os tributos podem ser calculados e exibidos
         no checkout antes do pagamento, dando mais previsibilidade ao consumidor.
         No Remessa Conforme, compras até US$50 têm Imposto de Importação de 0%,
-        e compras acima de US$50 têm alíquota reduzida, além do ICMS estadual
+        e compras acima de US$50 têm alíquota de 60% com desconto de US$30, além do ICMS estadual
         que varia de 17% a 20% conforme o estado. Para confirmar o
         enquadramento, verifique se os tributos aparecem discriminados no checkout
         antes de finalizar o pedido.
@@ -365,7 +365,7 @@ export default function ImpostoAliExpress() {
       </div>
 
       <p className="text-sm text-gray-500 mt-12">
-        Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras
+        Atualizado em Junho de 2026. Fonte: Receita Federal, Portal Compras
         Internacionais e orientações sobre o Programa Remessa Conforme.
       </p>
 

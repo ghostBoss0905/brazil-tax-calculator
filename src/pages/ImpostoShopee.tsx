@@ -15,7 +15,7 @@ export default function ImpostoShopee() {
           {
             question: "Compras da Shopee internacional pagam imposto?",
             answer:
-              "Sim. Compras internacionais feitas pela Shopee estão sujeitas ao Imposto de Importação e ao ICMS estadual. Dentro do Remessa Conforme, compras até US$50 (produto + frete) podem ter Imposto de Importação de 0%, mas o ICMS estadual — entre 17% e 20% conforme o estado — continua sendo cobrado. Acima de US$50 no Remessa Conforme, a alíquota federal é 20% sobre o valor aduaneiro, mais ICMS. Fora do Remessa Conforme, o Imposto de Importação pode chegar a 60%, tornando o custo final significativamente maior.",
+              "Sim. Compras internacionais feitas pela Shopee estão sujeitas ao Imposto de Importação e ao ICMS estadual. Dentro do Remessa Conforme, compras até US$50 (produto + frete) podem ter Imposto de Importação de 0%, mas o ICMS estadual — entre 17% e 20% conforme o estado — continua sendo cobrado. Acima de US$50 no Remessa Conforme, a regra federal usa 60% com desconto de US$30, mais ICMS. Fora do Remessa Conforme, o Imposto de Importação pode chegar a 60% sem esse desconto, tornando o custo final significativamente maior.",
           },
           {
             question: "A Shopee participa do Remessa Conforme?",
@@ -25,7 +25,7 @@ export default function ImpostoShopee() {
           {
             question: "Como calcular o imposto da Shopee antes de comprar?",
             answer:
-              "Some o valor do produto e o frete internacional, converta para reais usando o câmbio do dia e identifique o estado de destino para o ICMS. Em compras dentro do Remessa Conforme até US$50, o Imposto de Importação federal é 0%, mas o ICMS (17% a 20%) incide sobre a base de cálculo. Acima de US$50 no Remessa Conforme, aplique 20% de Imposto de Importação sobre o valor aduaneiro e depois calcule o ICMS estadual. Fora do Remessa Conforme, o Imposto de Importação pode ser 60% sobre o valor total. Use a calculadora deste site para simular todos os cenários antes de finalizar a compra.",
+              "Some o valor do produto e o frete internacional, converta para reais usando o câmbio do dia e identifique o estado de destino para o ICMS. Em compras dentro do Remessa Conforme até US$50, o Imposto de Importação federal é 0%, mas o ICMS (17% a 20%) incide sobre a base de cálculo. Acima de US$50 no Remessa Conforme, aplique 60% de Imposto de Importação com desconto de US$30 sobre o valor aduaneiro e depois calcule o ICMS estadual. Fora do Remessa Conforme, o Imposto de Importação pode ser 60% sobre o valor total. Use a calculadora deste site para simular todos os cenários antes de finalizar a compra.",
           },
           {
             question: "Compras da Shopee abaixo de US$50 pagam imposto?",
@@ -40,7 +40,7 @@ export default function ImpostoShopee() {
           {
             question: "Vale a pena comprar produto internacional na Shopee?",
             answer:
-              "Depende do custo final comparado com uma alternativa nacional. Para compras dentro do Remessa Conforme até US$50, o Imposto de Importação pode ser 0%, mas o ICMS (17% a 20%) e o frete internacional ainda incidem. Acima de US$50, o Imposto de Importação de 20% dentro do RC ou 60% fora do RC pode elevar bastante o valor total. Em muitos casos, mesmo com tributação, o preço importado ainda fica abaixo da opção nacional, especialmente para eletrônicos e acessórios. Simule o custo total com a calculadora deste site e compare com produtos vendidos por lojistas brasileiros antes de decidir.",
+              "Depende do custo final comparado com uma alternativa nacional. Para compras dentro do Remessa Conforme até US$50, o Imposto de Importação pode ser 0%, mas o ICMS (17% a 20%) e o frete internacional ainda incidem. Acima de US$50, o Imposto de Importação de 60% com desconto de US$30 dentro do RC ou 60% fora do RC pode elevar bastante o valor total. Em muitos casos, mesmo com tributação, o preço importado ainda fica abaixo da opção nacional, especialmente para eletrônicos e acessórios. Simule o custo total com a calculadora deste site e compare com produtos vendidos por lojistas brasileiros antes de decidir.",
           },
         ]}
       />
@@ -293,9 +293,9 @@ export default function ImpostoShopee() {
           compras até US$50 (produto + frete) podem ter Imposto de Importação de
           0%, mas o ICMS estadual — entre 17% e 20% conforme o estado —
           continua sendo cobrado. Acima de US$50 no Remessa Conforme, a
-          alíquota federal é 20% sobre o valor aduaneiro, mais ICMS. Fora do
-          Remessa Conforme, o Imposto de Importação pode chegar a 60%, tornando
-          o custo final significativamente maior.
+          regra federal usa 60% com desconto de US$30, mais ICMS. Fora do
+          Remessa Conforme, o Imposto de Importação pode chegar a 60% sem esse
+          desconto, tornando o custo final significativamente maior.
         </p>
 
         <h3 className="text-xl font-semibold mt-6 mb-2">
@@ -323,11 +323,12 @@ export default function ImpostoShopee() {
           usando o câmbio do dia e identifique o estado de destino para o ICMS.
           Em compras dentro do Remessa Conforme até US$50, o Imposto de
           Importação federal é 0%, mas o ICMS (17% a 20%) incide sobre a base de
-          cálculo. Acima de US$50 no Remessa Conforme, aplique 20% de Imposto
-          de Importação sobre o valor aduaneiro e depois calcule o ICMS
-          estadual. Fora do Remessa Conforme, o Imposto de Importação pode ser
-          60% sobre o valor total. Use a calculadora deste site para simular
-          todos os cenários antes de finalizar a compra.
+          cálculo. Acima de US$50 no Remessa Conforme, aplique 60% de Imposto
+          de Importação sobre o valor aduaneiro, desconte US$30 do imposto e
+          depois calcule o ICMS estadual. Fora do Remessa Conforme, o Imposto
+          de Importação pode ser 60% sobre o valor total, sem o desconto do
+          programa. Use a calculadora deste site para simular todos os cenários
+          antes de finalizar a compra.
         </p>
 
         <h3 className="text-xl font-semibold mt-6 mb-2">
@@ -369,7 +370,7 @@ export default function ImpostoShopee() {
           Depende do custo final comparado com uma alternativa nacional. Para
           compras dentro do Remessa Conforme até US$50, o Imposto de Importação
           pode ser 0%, mas o ICMS (17% a 20%) e o frete internacional ainda
-          incidem. Acima de US$50, o Imposto de Importação de 20% dentro do RC
+          incidem. Acima de US$50, o Imposto de Importação de 60% com desconto de US$30 dentro do RC
           ou 60% fora do RC pode elevar bastante o valor total. Em muitos casos,
           mesmo com tributação, o preço importado ainda fica abaixo da opção
           nacional, especialmente para eletrônicos e acessórios. Simule o custo
@@ -378,7 +379,7 @@ export default function ImpostoShopee() {
         </p>
 
         <p className="text-sm text-gray-500 mt-12">
-          Atualizado em Maio de 2026. Fonte: orientações públicas da Receita
+          Atualizado em Junho de 2026. Fonte: orientações públicas da Receita
           Federal sobre compras internacionais e Programa Remessa Conforme.
         </p>
         <OfficialSources

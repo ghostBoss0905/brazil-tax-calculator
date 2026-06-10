@@ -258,7 +258,7 @@ export default function ICMSImportacao() {
       </p>
 
       <p className="text-sm text-gray-500 mt-12">
-        Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras
+        Atualizado em Junho de 2026. Fonte: Receita Federal, Portal Compras
         Internacionais e orientações públicas sobre ICMS em remessas
         internacionais.
       </p>

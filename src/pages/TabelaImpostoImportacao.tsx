@@ -297,7 +297,7 @@ export default function TabelaImpostoImportacao() {
         />
 
         <p className="text-sm text-gray-500 mt-12">
-          Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras
+          Atualizado em Junho de 2026. Fonte: Receita Federal, Portal Compras
           Internacionais, página "Quanto vou pagar de impostos?" e orientações
           sobre o Programa Remessa Conforme.
         </p>

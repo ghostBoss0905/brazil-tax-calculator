@@ -291,7 +291,7 @@ export default function TaxaCorreiosImportacao() {
         />
 
         <p className="text-sm text-gray-500 mt-12">
-          Atualizado em Maio de 2026. Fonte: Correios, ambiente Minhas
+          Atualizado em Junho de 2026. Fonte: Correios, ambiente Minhas
           Importações, Receita Federal e orientações públicas sobre encomendas
           internacionais.
         </p>

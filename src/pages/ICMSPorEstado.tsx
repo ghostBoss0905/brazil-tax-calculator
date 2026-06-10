@@ -11,12 +11,12 @@ const statePages = [
   { slug: "alagoas", name: "Alagoas", code: "AL", rate: "20%" },
   { slug: "amazonas", name: "Amazonas", code: "AM", rate: "20%" },
   { slug: "amapa", name: "Amapá", code: "AP", rate: "18%" },
-  { slug: "bahia", name: "Bahia", code: "BA", rate: "20,5%" },
+  { slug: "bahia", name: "Bahia", code: "BA", rate: "20%" },
   { slug: "ceara", name: "Ceará", code: "CE", rate: "20%" },
   { slug: "distrito-federal", name: "Distrito Federal", code: "DF", rate: "20%" },
   { slug: "espirito-santo", name: "Espírito Santo", code: "ES", rate: "17%" },
   { slug: "goias", name: "Goiás", code: "GO", rate: "19%" },
-  { slug: "maranhao", name: "Maranhão", code: "MA", rate: "22%" },
+  { slug: "maranhao", name: "Maranhão", code: "MA", rate: "20%" },
   {
     slug: "sao-paulo",
     name: "São Paulo",
@@ -33,8 +33,8 @@ const statePages = [
   { slug: "mato-grosso", name: "Mato Grosso", code: "MT", rate: "17%" },
   { slug: "para", name: "Pará", code: "PA", rate: "19%" },
   { slug: "paraiba", name: "Paraíba", code: "PB", rate: "20%" },
-  { slug: "pernambuco", name: "Pernambuco", code: "PE", rate: "20,5%" },
-  { slug: "piaui", name: "Piauí", code: "PI", rate: "21%" },
+  { slug: "pernambuco", name: "Pernambuco", code: "PE", rate: "20%" },
+  { slug: "piaui", name: "Piauí", code: "PI", rate: "20%" },
   {
     slug: "parana",
     name: "Paraná",
@@ -45,7 +45,7 @@ const statePages = [
     slug: "rio-de-janeiro",
     name: "Rio de Janeiro",
     code: "RJ",
-    rate: "22%",
+    rate: "20%",
   },
   { slug: "rio-grande-do-norte", name: "Rio Grande do Norte", code: "RN", rate: "20%" },
   { slug: "rondonia", name: "Rondônia", code: "RO", rate: "17,5%" },
@@ -86,9 +86,9 @@ export default function ICMSPorEstado() {
           {
             question: `Qual ICMS a calculadora usa para ${state.name}?`,
             answer: state.slug === "sao-paulo"
-              ? "Para São Paulo, a calculadora usa 18% como alíquota estimada. Essa taxa é uma das mais baixas entre os estados com grande volume de importação, tornando o custo final mais favorável do que em Rio de Janeiro (22%) ou Minas Gerais (20%)."
+              ? "Para São Paulo, a calculadora usa 18% como alíquota estimada. Essa taxa é uma das mais baixas entre os estados com grande volume de importação, tornando o custo final mais favorável do que em estados calculados a 20%."
               : state.slug === "rio-de-janeiro"
-              ? "Para Rio de Janeiro, a calculadora usa 22% como alíquota estimada. Essa taxa é uma das mais altas do Brasil, superior a São Paulo (18%) e Santa Catarina (17%), resultando em custo final mais elevado para o mesmo pedido."
+              ? "Para Rio de Janeiro, a calculadora usa 20% como alíquota estimada nesta versão, alinhada ao intervalo de 17% a 20% citado pela Receita Federal para simulações de remessas internacionais."
               : `A calculadora usa ${state.rate} como alíquota estimada para o estado de destino ${state.code}.`,
           },
           {
@@ -97,11 +97,11 @@ export default function ICMSPorEstado() {
           },
           ...(state.slug === "sao-paulo" ? [{
             question: "São Paulo tem vantagem na importação?",
-            answer: "Em relação ao ICMS, sim. A alíquota de 18% em São Paulo é mais baixa que a de Rio de Janeiro (22%) ou Minas Gerais (20%), resultando em custo final menor para o mesmo pedido. São Paulo também concentra hubs de entrega que podem reduzir o prazo. Porém, o consumidor paulista dispõe de mais alternativas nacionais, o que exige comparação rigorosa entre o custo importado e o preço brasileiro.",
+            answer: "Em relação ao ICMS, sim. A alíquota estimada de 18% em São Paulo fica abaixo de estados calculados a 20%, resultando em custo final menor para o mesmo pedido. São Paulo também concentra hubs de entrega que podem reduzir o prazo. Porém, o consumidor paulista dispõe de mais alternativas nacionais, o que exige comparação rigorosa entre o custo importado e o preço brasileiro.",
           }] : []),
           ...(state.slug === "rio-de-janeiro" ? [{
-            question: "Por que o ICMS do Rio de Janeiro é mais alto?",
-            answer: "A alíquota de 22% é definida pela legislação estadual do Rio de Janeiro e incide sobre a base de cálculo da importação, que pode incluir produto, frete, seguro e o próprio Imposto de Importação. A diferença de 4 pontos percentuais em relação a São Paulo (18%) pode representar R$20-30 a mais em pedidos de US$50, tornando a comparação com produtos nacionais ainda mais importante.",
+            question: "Como interpretar o ICMS do Rio de Janeiro?",
+            answer: "Nesta versão, a calculadora usa 20% para Rio de Janeiro como estimativa conservadora dentro do intervalo de 17% a 20% citado pela Receita Federal para simulações. A alíquota efetiva pode depender de regras estaduais e do fluxo da encomenda, por isso o valor final deve ser confirmado no checkout, nos Correios ou na transportadora.",
           }] : []),
           {
             question: "Esta estimativa substitui o valor oficial?",
@@ -158,10 +158,10 @@ export default function ICMSPorEstado() {
               São Paulo é o estado com o maior volume de compras internacionais
               no Brasil. A alíquota de ICMS de 18% para importação é uma das
               mais baixas entre os grandes estados — o que torna as compras
-              mais favoráveis em comparação com Rio de Janeiro (22%) ou Minas
-              Gerais (20%). A maior parte dos hubs de entrega e centros de
-              processamento aduaneiro estão em São Paulo, o que pode resultar em
-              prazos de entrega mais rápidos para pedidos internacionais.
+              mais favoráveis em comparação com estados calculados a 20%. A
+              maior parte dos hubs de entrega e centros de processamento
+              aduaneiro estão em São Paulo, o que pode resultar em prazos de
+              entrega mais rápidos para pedidos internacionais.
             </p>
             <p className="mb-6">
               Porém, o consumidor paulista também dispõe de mais alternativas
@@ -179,16 +179,14 @@ export default function ICMSPorEstado() {
         {state.slug === "rio-de-janeiro" && (
           <>
             <h2 className="text-2xl font-semibold mt-10 mb-4">
-              Rio de Janeiro: ICMS alto e quando importar compensa
+              Rio de Janeiro: ICMS e quando importar compensa
             </h2>
             <p className="mb-6">
-              Rio de Janeiro tem uma das alíquotas de ICMS mais altas para
-              importação: 22%. Isso significa que o mesmo pedido internacional
-              pode custar mais para um comprador fluminense do que para um
-              paulista (18%) ou catarinense (17%). A diferença de 4 pontos
-              percentuais entre RJ e SP pode representar R$20-30 a mais em um
-              pedido típico de US$50 — uma diferença significativa que pode
-              eliminar a vantagem do preço importado.
+              Rio de Janeiro é calculado com ICMS estimado de 20% nesta versão.
+              Isso significa que o mesmo pedido internacional pode custar mais
+              para um comprador fluminense do que para um paulista (18%) ou
+              catarinense (17%). A diferença de 2 pontos percentuais em relação
+              a SP pode reduzir a vantagem do preço importado.
             </p>
             <p className="mb-6">
               No Rio de Janeiro, a comparação com alternativas vendidas no
@@ -281,9 +279,9 @@ export default function ICMSPorEstado() {
         </h3>
         <p className="mb-4">
           {state.slug === "sao-paulo"
-            ? "Para São Paulo, a calculadora usa 18% como alíquota estimada. Essa taxa é uma das mais baixas entre os estados com grande volume de importação, tornando o custo final mais favorável do que em Rio de Janeiro (22%) ou Minas Gerais (20%)."
+            ? "Para São Paulo, a calculadora usa 18% como alíquota estimada. Essa taxa é uma das mais baixas entre os estados com grande volume de importação, tornando o custo final mais favorável do que em estados calculados a 20%."
             : state.slug === "rio-de-janeiro"
-            ? "Para Rio de Janeiro, a calculadora usa 22% como alíquota estimada. Essa taxa é uma das mais altas do Brasil, superior a São Paulo (18%) e Santa Catarina (17%), resultando em custo final mais elevado para o mesmo pedido."
+            ? "Para Rio de Janeiro, a calculadora usa 20% como alíquota estimada nesta versão, alinhada ao intervalo de 17% a 20% citado pela Receita Federal para simulações de remessas internacionais."
             : `A calculadora usa ${state.rate} como alíquota estimada para o estado de destino ${state.code}.`}
         </p>
 
@@ -303,7 +301,7 @@ export default function ICMSPorEstado() {
             </h3>
             <p className="mb-4">
               Em relação ao ICMS, sim. A alíquota de 18% em São Paulo é mais
-              baixa que a de Rio de Janeiro (22%) ou Minas Gerais (20%),
+              baixa que a de estados calculados a 20%,
               resultando em custo final menor para o mesmo pedido. São Paulo
               também concentra hubs de entrega que podem reduzir o prazo. Porém,
               o consumidor paulista dispõe de mais alternativas nacionais, o que
@@ -316,15 +314,15 @@ export default function ICMSPorEstado() {
         {state.slug === "rio-de-janeiro" && (
           <>
             <h3 className="text-xl font-semibold mt-6 mb-2">
-              Por que o ICMS do Rio de Janeiro é mais alto?
+              Como interpretar o ICMS do Rio de Janeiro?
             </h3>
             <p className="mb-4">
-              A alíquota de 22% é definida pela legislação estadual do Rio de
-              Janeiro e incide sobre a base de cálculo da importação, que pode
-              incluir produto, frete, seguro e o próprio Imposto de Importação.
-              A diferença de 4 pontos percentuais em relação a São Paulo (18%)
-              pode representar R$20-30 a mais em pedidos de US$50, tornando a
-              comparação com produtos nacionais ainda mais importante.
+              Nesta versão, a calculadora usa 20% para Rio de Janeiro como
+              estimativa conservadora dentro do intervalo de 17% a 20% citado
+              pela Receita Federal para simulações. A alíquota efetiva pode
+              depender de regras estaduais e do fluxo da encomenda, por isso o
+              valor final deve ser confirmado no checkout, nos Correios ou na
+              transportadora.
             </p>
           </>
         )}
@@ -352,7 +350,7 @@ export default function ICMSPorEstado() {
         />
 
         <p className="text-sm text-gray-500 mt-12">
-          Atualizado em Maio de 2026. A página usa a alíquota estimada aplicada
+          Atualizado em Junho de 2026. A página usa a alíquota estimada aplicada
           pela calculadora para {state.name}; confirme sempre o valor informado
           no checkout ou na cobrança oficial.
         </p>

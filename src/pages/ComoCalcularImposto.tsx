@@ -14,17 +14,17 @@ export default function ComoCalcularImposto() {
           {
             question: "Quais impostos são cobrados em compras internacionais?",
             answer:
-              "As compras internacionais para o Brasil podem pagar Imposto de Importação e ICMS estadual, além de custos de frete e seguro incluídos na base de cálculo. O Imposto de Importação é 0% até US$50 em plataformas certificadas no Remessa Conforme, 20% acima de US$50 no RC, ou 60% fora do programa. O ICMS estadual varia de 17% a 20% conforme o estado de destino e incide sobre uma base que pode incluir produto, frete, seguro e o próprio Imposto de Importação. Por isso, o custo final pode ser significativamente maior que o preço anunciado no site.",
+              "As compras internacionais para o Brasil podem pagar Imposto de Importação e ICMS estadual, além de custos de frete e seguro incluídos na base de cálculo. O Imposto de Importação é 0% até US$50 em plataformas certificadas no Remessa Conforme, 60% com desconto de US$30 acima de US$50 no RC, ou 60% fora do programa. O ICMS estadual varia de 17% a 20% conforme o estado de destino e incide sobre uma base que pode incluir produto, frete, seguro e o próprio Imposto de Importação. Por isso, o custo final pode ser significativamente maior que o preço anunciado no site.",
           },
           {
             question: "Como funciona o Remessa Conforme?",
             answer:
-              "O Remessa Conforme é um programa da Receita Federal que permite a plataformas certificadas informar e cobrar os tributos no momento da compra, antes do pagamento. Compras até US$50 em plataformas certificadas têm Imposto de Importação de 0%, enquanto acima de US$50 a alíquota é 20%. Sem o programa, o Imposto de Importação pode chegar a 60% sobre o valor aduaneiro, cobrado na chegada ao Brasil. O ICMS estadual (17% a 20%) é cobrado em todos os cenários, dentro ou fora do programa.",
+              "O Remessa Conforme é um programa da Receita Federal que permite a plataformas certificadas informar e cobrar os tributos no momento da compra, antes do pagamento. Compras até US$50 em plataformas certificadas têm Imposto de Importação de 0%, enquanto acima de US$50 a regra usa 60% com desconto de US$30. Sem o programa, o Imposto de Importação pode chegar a 60% sobre o valor aduaneiro, sem esse desconto, cobrado na chegada ao Brasil. O ICMS estadual (17% a 20%) é cobrado em todos os cenários, dentro ou fora do programa.",
           },
           {
             question: "Como calcular o imposto antes de comprar?",
             answer:
-              "Informe o valor do produto, frete internacional, câmbio do dia, estado de destino e se a loja participa do Remessa Conforme. Some produto e frete, converta para reais, aplique o Imposto de Importação (0% até US$50 com RC, 20% acima de US$50 com RC, ou 60% sem RC) e depois calcule o ICMS estadual (17% a 20%). Use a calculadora deste site para automatizar o processo e compare o custo final com uma compra nacional antes de decidir pela importação.",
+              "Informe o valor do produto, frete internacional, câmbio do dia, estado de destino e se a loja participa do Remessa Conforme. Some produto e frete, converta para reais, aplique o Imposto de Importação (0% até US$50 com RC, 60% com desconto de US$30 acima de US$50 com RC, ou 60% sem RC) e depois calcule o ICMS estadual (17% a 20%). Use a calculadora deste site para automatizar o processo e compare o custo final com uma compra nacional antes de decidir pela importação.",
           },
         ]}
       />
@@ -213,7 +213,7 @@ export default function ComoCalcularImposto() {
           As compras internacionais para o Brasil podem pagar Imposto de
           Importação e ICMS estadual, além de custos de frete e seguro
           incluídos na base de cálculo. O Imposto de Importação é 0% até US$50
-          em plataformas certificadas no Remessa Conforme, 20% acima de US$50
+          em plataformas certificadas no Remessa Conforme, 60% com desconto de US$30 acima de US$50
           no RC, ou 60% fora do programa. O ICMS estadual varia de 17% a 20%
           conforme o estado de destino e incide sobre uma base que pode incluir
           produto, frete, seguro e o próprio Imposto de Importação. Por isso, o
@@ -229,10 +229,10 @@ export default function ComoCalcularImposto() {
           plataformas certificadas informar e cobrar os tributos no momento da
           compra, antes do pagamento. Compras até US$50 em plataformas
           certificadas têm Imposto de Importação de 0%, enquanto acima de US$50
-          a alíquota é 20%. Sem o programa, o Imposto de Importação pode
-          chegar a 60% sobre o valor aduaneiro, cobrado na chegada ao Brasil. O
-          ICMS estadual (17% a 20%) é cobrado em todos os cenários, dentro ou
-          fora do programa.
+          a regra usa 60% com desconto de US$30. Sem o programa, o Imposto de
+          Importação pode chegar a 60% sobre o valor aduaneiro, sem esse
+          desconto, cobrado na chegada ao Brasil. O ICMS estadual (17% a 20%) é
+          cobrado em todos os cenários, dentro ou fora do programa.
         </p>
 
         <h3 className="text-xl font-semibold mt-6 mb-2">
@@ -242,14 +242,14 @@ export default function ComoCalcularImposto() {
           Informe o valor do produto, frete internacional, câmbio do dia, estado
           de destino e se a loja participa do Remessa Conforme. Some produto e
           frete, converta para reais, aplique o Imposto de Importação (0% até
-          US$50 com RC, 20% acima de US$50 com RC, ou 60% sem RC) e depois
+          US$50 com RC, 60% com desconto de US$30 acima de US$50 com RC, ou 60% sem RC) e depois
           calcule o ICMS estadual (17% a 20%). Use a calculadora deste site para
           automatizar o processo e compare o custo final com uma compra nacional
           antes de decidir pela importação.
         </p>
 
         <p className="text-sm text-gray-500 mt-12">
-          Atualizado em Maio de 2026. Fonte: Receita Federal, Portal Compras
+          Atualizado em Junho de 2026. Fonte: Receita Federal, Portal Compras
           Internacionais e orientações sobre remessas internacionais.
         </p>
         <RelatedGuides currentPath="/como-calcular-imposto-importacao-brasil" />

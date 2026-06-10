@@ -21,6 +21,7 @@ import ComprasAbaixo50Dolares from "@/pages/ComprasAbaixo50Dolares";
 import LojasRemessaConforme from "@/pages/LojasRemessaConforme";
 import ICMSPorEstado from "@/pages/ICMSPorEstado";
 import DynamicSeoPage from "@/pages/DynamicSeoPage";
+import LegalPage from "@/pages/LegalPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -113,6 +114,12 @@ function Router() {
       <Route path="/icms-importacao-rio-de-janeiro" component={ICMSPorEstado} />
 
       <Route path="/icms-importacao-santa-catarina" component={ICMSPorEstado} />
+
+      <Route path="/politica-de-privacidade" component={LegalPage} />
+
+      <Route path="/politica-de-cookies" component={LegalPage} />
+
+      <Route path="/aviso-legal" component={LegalPage} />
 
       <Route path="/:page" component={DynamicSeoPage} />
 
