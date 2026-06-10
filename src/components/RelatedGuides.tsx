@@ -42,6 +42,21 @@ const stateGuides = [
 
 const guides: Guide[] = [
   {
+    href: "/guias/regras-importacao",
+    title: "Centro de regras de importação",
+    description: "Veja Remessa Conforme, US$50, US$30 de desconto, ICMS e Correios.",
+  },
+  {
+    href: "/guias/lojas-internacionais",
+    title: "Centro de lojas internacionais",
+    description: "Acesse guias para AliExpress, Shein, Shopee, Temu e Amazon.",
+  },
+  {
+    href: "/guias/icms-por-estado",
+    title: "Centro de ICMS por estado",
+    description: "Compare São Paulo, Rio de Janeiro, Minas Gerais, Paraná e outros estados.",
+  },
+  {
     href: "/calcular-taxas-importacao",
     title: "Calcular taxas de importação",
     description: "Veja o passo a passo para estimar imposto, ICMS, frete e câmbio.",
@@ -201,6 +216,36 @@ function getRelatedHrefs(currentPath?: string) {
     return guides.map((guide) => guide.href);
   }
 
+  if (currentPath === "/guias/regras-importacao") {
+    return uniqueHrefs([
+      "/o-que-e-remessa-conforme",
+      "/compras-internacionais-abaixo-50-dolares",
+      "/tabela-imposto-importacao-brasil",
+      "/taxa-correios-importacao",
+      "/icms-importacao-brasil",
+      "/guias/lojas-internacionais",
+      "/guias/icms-por-estado",
+    ]);
+  }
+
+  if (currentPath === "/guias/lojas-internacionais") {
+    return uniqueHrefs([
+      ...platformGuides.map((platformGuide) => platformGuide.href),
+      "/lojas-remessa-conforme",
+      "/guias/regras-importacao",
+      "/guias/icms-por-estado",
+    ]);
+  }
+
+  if (currentPath === "/guias/icms-por-estado") {
+    return uniqueHrefs([
+      "/icms-importacao-brasil",
+      ...stateGuides.map((state) => `/icms-importacao-${state.slug}`),
+      "/guias/regras-importacao",
+      "/guias/lojas-internacionais",
+    ]);
+  }
+
   const platformStateMatch = currentPath.match(
     /^\/imposto-(aliexpress|shein|shopee|temu|amazon-internacional)-(.+)$/,
   );
@@ -229,6 +274,7 @@ function getRelatedHrefs(currentPath?: string) {
 
   if (platform && currentPath === platform.href) {
     return uniqueHrefs([
+      "/guias/lojas-internacionais",
       "/o-que-e-remessa-conforme",
       "/icms-importacao-brasil",
       "/compras-internacionais-abaixo-50-dolares",
@@ -249,6 +295,7 @@ function getRelatedHrefs(currentPath?: string) {
 
     if (state) {
       return uniqueHrefs([
+        "/guias/icms-por-estado",
         "/icms-importacao-brasil",
         ...platformGuides.map((item) => platformStateHref(item.slug, state.slug)),
         "/o-que-e-remessa-conforme",
@@ -259,6 +306,7 @@ function getRelatedHrefs(currentPath?: string) {
 
   if (currentPath === "/o-que-e-remessa-conforme") {
     return uniqueHrefs([
+      "/guias/regras-importacao",
       "/lojas-remessa-conforme",
       "/compras-internacionais-abaixo-50-dolares",
       "/tabela-imposto-importacao-brasil",
@@ -269,6 +317,7 @@ function getRelatedHrefs(currentPath?: string) {
 
   if (currentPath === "/icms-importacao-brasil") {
     return uniqueHrefs([
+      "/guias/icms-por-estado",
       ...stateGuides.map((state) => `/icms-importacao-${state.slug}`),
       "/o-que-e-remessa-conforme",
       "/calcular-taxas-importacao",

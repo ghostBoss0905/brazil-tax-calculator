@@ -1284,6 +1284,36 @@ export default function Home() {
           />
         </section>
 
+        <section className="mx-auto mb-12 max-w-5xl min-w-0 rounded-2xl border border-border bg-background p-5 shadow-sm sm:p-6">
+          <h2 className="text-2xl font-bold text-foreground">
+            Centros de consulta
+          </h2>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Use os centros para navegar por regra, loja ou estado antes de
+            simular o custo final.
+          </p>
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            <a
+              href="/guias/regras-importacao"
+              className="rounded-xl border border-border bg-muted/30 p-4 font-semibold text-foreground hover:border-primary hover:text-primary"
+            >
+              Regras de importação
+            </a>
+            <a
+              href="/guias/lojas-internacionais"
+              className="rounded-xl border border-border bg-muted/30 p-4 font-semibold text-foreground hover:border-primary hover:text-primary"
+            >
+              Lojas internacionais
+            </a>
+            <a
+              href="/guias/icms-por-estado"
+              className="rounded-xl border border-border bg-muted/30 p-4 font-semibold text-foreground hover:border-primary hover:text-primary"
+            >
+              ICMS por estado
+            </a>
+          </div>
+        </section>
+
         <div className="mx-auto mb-12 max-w-3xl min-w-0 space-y-1 rounded-xl border border-border bg-muted/40 px-4 py-4 text-xs text-muted-foreground sm:px-5">
           <p><strong>Versão das regras:</strong> 2026-06</p>
           <p><strong>Última verificação:</strong> Receita Federal do Brasil e Portal Compras Internacionais</p>

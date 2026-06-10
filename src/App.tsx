@@ -22,6 +22,7 @@ import LojasRemessaConforme from "@/pages/LojasRemessaConforme";
 import ICMSPorEstado from "@/pages/ICMSPorEstado";
 import DynamicSeoPage from "@/pages/DynamicSeoPage";
 import LegalPage from "@/pages/LegalPage";
+import HubPage from "@/pages/HubPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -120,6 +121,12 @@ function Router() {
       <Route path="/politica-de-cookies" component={LegalPage} />
 
       <Route path="/aviso-legal" component={LegalPage} />
+
+      <Route path="/guias/regras-importacao" component={HubPage} />
+
+      <Route path="/guias/lojas-internacionais" component={HubPage} />
+
+      <Route path="/guias/icms-por-estado" component={HubPage} />
 
       <Route path="/:page" component={DynamicSeoPage} />
 

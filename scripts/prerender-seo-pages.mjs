@@ -822,6 +822,54 @@ const platforms = [
   { slug: "amazon-internacional", name: "Amazon Internacional" },
 ];
 
+const platformInsights = {
+  aliexpress: {
+    purchasePattern:
+      "No AliExpress, o risco mais comum é montar um carrinho com itens pequenos, cupons e fretes diferentes por vendedor. Some cada frete antes de avaliar o limite de US$50.",
+    compareTip:
+      "Compare principalmente eletrônicos, peças, acessórios e produtos sem garantia local. Se a diferença contra Mercado Livre ou Amazon Brasil for pequena, prazo e troca podem pesar mais.",
+  },
+  shein: {
+    purchasePattern:
+      "Na Shein, vários itens baratos podem ultrapassar US$50 rapidamente. O carrinho final depois de cupons é mais importante que o preço isolado de uma peça.",
+    compareTip:
+      "Compare roupas e itens de casa com opções nacionais quando houver dúvida de tamanho, troca ou qualidade. Uma economia pequena pode desaparecer se a peça não servir.",
+  },
+  shopee: {
+    purchasePattern:
+      "Na Shopee, confira primeiro se o anúncio é nacional ou internacional. Produtos enviados do Brasil não seguem a mesma lógica de importação.",
+    compareTip:
+      "Compare com vendedores nacionais dentro da própria Shopee. Às vezes o preço local fica próximo depois de ICMS, frete e prazo de entrega.",
+  },
+  temu: {
+    purchasePattern:
+      "Na Temu, pedidos com muitos itens de baixo valor podem mudar de faixa por poucos dólares. O frete grátis deve ser confirmado no checkout, não presumido.",
+    compareTip:
+      "A Temu costuma fazer mais sentido para acessórios, organização e itens difíceis de achar no Brasil. Para produtos comuns, compare com marketplaces nacionais.",
+  },
+  "amazon-internacional": {
+    purchasePattern:
+      "Na Amazon internacional, verifique vendedor, envio, garantia e tributos estimados no checkout. Ofertas internacionais podem aparecer ao lado de produtos já vendidos no Brasil.",
+    compareTip:
+      "Para eletrônicos e produtos acima de US$100, compare imposto, garantia local e devolução. Uma oferta importada só compensa se a diferença final for clara.",
+  },
+};
+
+const stateInsights = {
+  "sao-paulo": {
+    marketContext:
+      "São Paulo tende a ter mais alternativas nacionais, entrega rápida e vendedores locais. Por isso, a importação precisa vencer não só no preço, mas também no prazo e na segurança.",
+    decisionRule:
+      "Para SP, uma diferença pequena contra o preço brasileiro raramente justifica prazo longo. Use a importação quando o item não existir no Brasil ou quando a economia final for consistente.",
+  },
+  "rio-de-janeiro": {
+    marketContext:
+      "No Rio de Janeiro, o ICMS estimado de 20% aumenta a necessidade de comparar com produto nacional. A diferença contra SP pode reduzir a vantagem de pedidos acima de US$50.",
+    decisionRule:
+      "Para RJ, seja mais conservador: se o produto existir no Brasil com entrega rápida e garantia, a importação precisa oferecer economia maior para compensar.",
+  },
+};
+
 const generatedStatePages = states.map((state) => ({
   path: `/icms-importacao-${state.slug}`,
   title: `ICMS Importação ${state.name} 2026: Como Calcular`,
@@ -847,8 +895,11 @@ const generatedStatePages = states.map((state) => ({
   ],
 }));
 
-const generatedPlatformStatePages = platforms.flatMap((platform) =>
-  states.map((state) => ({
+function buildPlatformStatePage(platform, state) {
+  const platformInsight = platformInsights[platform.slug];
+  const stateInsight = stateInsights[state.slug];
+  const isPriorityPage = Boolean(platformInsight && stateInsight);
+  const page = {
     path: `/imposto-${platform.slug}-${state.slug}`,
     title: `Imposto ${platform.name} ${state.name} 2026: Como Calcular`,
     description: `Calcule imposto de compras da ${platform.name} para ${state.name} em 2026, com ICMS de ${state.rate}, frete, câmbio e Remessa Conforme.`,
@@ -871,7 +922,56 @@ const generatedPlatformStatePages = platforms.flatMap((platform) =>
           "Em compras dentro do Remessa Conforme, os tributos podem aparecer antes do pagamento. Em outros fluxos, a cobrança pode ocorrer na chegada ao Brasil.",
       },
     ],
-  })),
+  };
+
+  if (!isPriorityPage) {
+    return page;
+  }
+
+  return {
+    ...page,
+    introParagraph: `${page.introParagraph} ${platformInsight.purchasePattern} ${stateInsight.marketContext}`,
+    sections: [
+      {
+        heading: `O que observar na ${platform.name}`,
+        paragraphs: [
+          platformInsight.purchasePattern,
+          platformInsight.compareTip,
+        ],
+      },
+      {
+        heading: `Decisão de compra para ${state.name}`,
+        paragraphs: [
+          stateInsight.marketContext,
+          stateInsight.decisionRule,
+        ],
+      },
+      {
+        heading: "Checklist antes de finalizar",
+        paragraphs: [
+          "Confirme se o produto é internacional ou já está no Brasil. Some produto, frete e seguro antes de olhar o limite de US$50.",
+          "Confira se Imposto de Importação e ICMS aparecem no checkout. Depois compare o total estimado com uma alternativa vendida no Brasil.",
+        ],
+      },
+    ],
+    calculationExample: {
+      title: `Exemplo rápido: ${platform.name} para ${state.code}`,
+      rows: [
+        "Produto: US$60",
+        "Frete internacional: US$8",
+        `Estado de destino: ${state.name} (${state.rate} de ICMS estimado)`,
+        "Cenário: acima de US$50 no Remessa Conforme",
+      ],
+      result:
+        "O Imposto de Importação entra na regra de 60% com desconto de US$30, e o ICMS estadual deve ser somado para comparar com o preço brasileiro.",
+      note:
+        "Use a calculadora para trocar câmbio, frete e estado antes de decidir.",
+    },
+  };
+}
+
+const generatedPlatformStatePages = platforms.flatMap((platform) =>
+  states.map((state) => buildPlatformStatePage(platform, state)),
 );
 
 const legalPages = [
@@ -954,9 +1054,128 @@ const legalPages = [
   },
 ];
 
+const hubPages = [
+  {
+    path: "/guias/regras-importacao",
+    title: "Regras de Importação 2026: Remessa Conforme, US$50 e ICMS",
+    description:
+      "Centro de guias sobre regras de importação no Brasil em 2026: Remessa Conforme, limite de US$50, desconto de US$30, ICMS e Correios.",
+    h1: "Regras de importação no Brasil em 2026",
+    directAnswer:
+      "Use este centro para entender quando o Imposto de Importação é 0%, quando entra a regra de 60% com desconto de US$30 e como o ICMS estadual muda o custo final.",
+    introParagraph:
+      "As regras de importação mudam a decisão de compra antes do pagamento. Este centro organiza os guias mais importantes para entender Remessa Conforme, limite de US$50, ICMS, Correios e comparação com preço nacional.",
+    sections: [
+      {
+        heading: "Comece pela regra que muda o cálculo",
+        paragraphs: [
+          "Em plataformas certificadas no Remessa Conforme, compras até US$50 podem ter Imposto de Importação federal de 0%, mas o ICMS continua sendo cobrado.",
+          "Acima de US$50, a regra federal usa 60% com desconto de US$30. Fora do programa, a cobrança pode chegar a 60% sem esse desconto.",
+        ],
+      },
+      {
+        heading: "Depois confira cobrança e pagamento",
+        paragraphs: [
+          "Mesmo quando a compra parece barata, frete, seguro, câmbio, Correios e transportadora podem alterar a decisão.",
+          "Antes de pagar, confira se os tributos aparecem no checkout e compare com o preço nacional.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Qual guia devo ler primeiro?",
+        answer:
+          "Comece pelo guia de Remessa Conforme e depois veja a tabela de imposto de importação. Se já souber o estado de entrega, avance para o guia de ICMS.",
+      },
+      {
+        question: "O Hub substitui a calculadora?",
+        answer:
+          "Não. O Hub explica a regra; a calculadora estima o custo final com produto, frete, câmbio, estado e Remessa Conforme.",
+      },
+    ],
+  },
+  {
+    path: "/guias/lojas-internacionais",
+    title: "Lojas Internacionais: Imposto AliExpress, Shein, Shopee, Temu e Amazon",
+    description:
+      "Centro de guias para calcular imposto em AliExpress, Shein, Shopee, Temu e Amazon internacional no Brasil.",
+    h1: "Imposto por loja internacional",
+    directAnswer:
+      "Cada plataforma pode mostrar tributos de forma diferente no checkout. Use este centro para escolher a loja, entender o risco e voltar à calculadora com os dados certos.",
+    introParagraph:
+      "AliExpress, Shein, Shopee, Temu e Amazon internacional têm padrões diferentes de carrinho, frete, vendedores e checkout. Este centro organiza os guias por plataforma para evitar comparação incompleta.",
+    sections: [
+      {
+        heading: "Guias por plataforma",
+        paragraphs: [
+          "Antes de comparar preços, confirme se o item é internacional, se há frete, se os tributos aparecem no checkout e se a oferta está dentro do Remessa Conforme.",
+          "A mesma regra federal pode gerar decisões diferentes conforme produto, garantia, prazo, estado de entrega e alternativa vendida no Brasil.",
+        ],
+      },
+      {
+        heading: "Combinações de loja e estado",
+        paragraphs: [
+          "Quando o usuário já sabe a loja e o estado de entrega, as páginas combinadas ajudam a estimar ICMS e decidir se a compra importada ainda compensa.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "A regra é igual em todas as lojas?",
+        answer:
+          "A regra federal é a mesma, mas a experiência muda por checkout, vendedor, frete, certificação e clareza dos tributos antes do pagamento.",
+      },
+      {
+        question: "Qual loja devo comparar primeiro?",
+        answer:
+          "Compare a loja em que o produto será comprado e depois veja uma alternativa nacional. O melhor preço é o custo final, não apenas o preço do anúncio.",
+      },
+    ],
+  },
+  {
+    path: "/guias/icms-por-estado",
+    title: "ICMS por Estado na Importação: São Paulo, Rio de Janeiro e Brasil",
+    description:
+      "Centro de guias sobre ICMS de importação por estado, com páginas para São Paulo, Rio de Janeiro, Minas Gerais, Paraná e Santa Catarina.",
+    h1: "ICMS de importação por estado",
+    directAnswer:
+      "O ICMS é estadual. O mesmo produto importado pode ter custo final diferente em São Paulo, Rio de Janeiro, Minas Gerais, Paraná, Santa Catarina ou outro estado.",
+    introParagraph:
+      "O estado de entrega muda a estimativa de ICMS e, por consequência, a comparação entre importação e compra nacional. Este centro reúne os estados mais importantes e o guia geral de ICMS.",
+    sections: [
+      {
+        heading: "Estados prioritários",
+        paragraphs: [
+          "Comece pelos estados com maior intenção de busca e maior impacto na decisão de compra: São Paulo, Rio de Janeiro, Minas Gerais, Paraná e Santa Catarina.",
+          "Depois use a calculadora para simular o pedido completo com produto, frete, câmbio, estado e Remessa Conforme.",
+        ],
+      },
+      {
+        heading: "Como usar o estado na decisão",
+        paragraphs: [
+          "O estado de entrega deve entrar na simulação junto com produto, frete, câmbio, Remessa Conforme e comparação nacional.",
+          "Essa combinação evita decisões baseadas apenas no preço em dólar.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Por que o ICMS muda por estado?",
+        answer:
+          "Porque o ICMS é um imposto estadual. A alíquota e a forma de cobrança podem mudar a estimativa final para o mesmo produto.",
+      },
+      {
+        question: "Qual estado devo selecionar?",
+        answer:
+          "Selecione o estado onde a encomenda será entregue, não o estado da loja ou da plataforma.",
+      },
+    ],
+  },
+];
+
 const allPages = Array.from(
   new Map(
-    [...generatedStatePages, ...generatedPlatformStatePages, ...pages, ...legalPages].map(
+    [...generatedStatePages, ...generatedPlatformStatePages, ...pages, ...legalPages, ...hubPages].map(
       (page) => [page.path, page],
     ),
   ).values(),
@@ -1036,6 +1255,36 @@ function getRelatedPaths(path) {
     return pages.slice(0, 13).map((page) => page.path);
   }
 
+  if (path === "/guias/regras-importacao") {
+    return uniqueValues([
+      "/o-que-e-remessa-conforme",
+      "/compras-internacionais-abaixo-50-dolares",
+      "/tabela-imposto-importacao-brasil",
+      "/taxa-correios-importacao",
+      "/icms-importacao-brasil",
+      "/guias/lojas-internacionais",
+      "/guias/icms-por-estado",
+    ]);
+  }
+
+  if (path === "/guias/lojas-internacionais") {
+    return uniqueValues([
+      ...platforms.map((platform) => `/imposto-${platform.slug}-brasil`),
+      "/lojas-remessa-conforme",
+      "/guias/regras-importacao",
+      "/guias/icms-por-estado",
+    ]);
+  }
+
+  if (path === "/guias/icms-por-estado") {
+    return uniqueValues([
+      "/icms-importacao-brasil",
+      ...priorityStateSlugs.map((stateSlug) => `/icms-importacao-${stateSlug}`),
+      "/guias/regras-importacao",
+      "/guias/lojas-internacionais",
+    ]);
+  }
+
   const platformStateMatch = path.match(
     /^\/imposto-(aliexpress|shein|shopee|temu|amazon-internacional)-(.+)$/,
   );
@@ -1064,6 +1313,7 @@ function getRelatedPaths(path) {
 
   if (platform && path === `/imposto-${platform.slug}-brasil`) {
     return uniqueValues([
+      "/guias/lojas-internacionais",
       "/o-que-e-remessa-conforme",
       "/icms-importacao-brasil",
       "/compras-internacionais-abaixo-50-dolares",
@@ -1085,6 +1335,7 @@ function getRelatedPaths(path) {
 
     if (state) {
       return uniqueValues([
+        "/guias/icms-por-estado",
         "/icms-importacao-brasil",
         ...platforms.map((item) => buildPlatformStatePath(item.slug, state.slug)),
         "/o-que-e-remessa-conforme",
@@ -1095,6 +1346,7 @@ function getRelatedPaths(path) {
 
   if (path === "/o-que-e-remessa-conforme") {
     return uniqueValues([
+      "/guias/regras-importacao",
       "/lojas-remessa-conforme",
       "/compras-internacionais-abaixo-50-dolares",
       "/tabela-imposto-importacao-brasil",
@@ -1105,6 +1357,7 @@ function getRelatedPaths(path) {
 
   if (path === "/icms-importacao-brasil") {
     return uniqueValues([
+      "/guias/icms-por-estado",
       ...priorityStateSlugs.map((stateSlug) => `/icms-importacao-${stateSlug}`),
       "/o-que-e-remessa-conforme",
       "/calcular-taxas-importacao",

@@ -48,6 +48,62 @@ const platforms = [
 
 const states = icmsStatePages.map(({ state }) => state);
 
+const platformInsights = {
+  aliexpress: {
+    purchasePattern:
+      "No AliExpress, o risco mais comum é montar um carrinho com itens pequenos, cupons e fretes diferentes por vendedor. Some cada frete antes de avaliar o limite de US$50.",
+    compareTip:
+      "Compare principalmente eletrônicos, peças, acessórios e produtos sem garantia local. Se a diferença contra Mercado Livre ou Amazon Brasil for pequena, prazo e troca podem pesar mais.",
+  },
+  shein: {
+    purchasePattern:
+      "Na Shein, vários itens baratos podem ultrapassar US$50 rapidamente. O carrinho final depois de cupons é mais importante que o preço isolado de uma peça.",
+    compareTip:
+      "Compare roupas e itens de casa com opções nacionais quando houver dúvida de tamanho, troca ou qualidade. Uma economia pequena pode desaparecer se a peça não servir.",
+  },
+  shopee: {
+    purchasePattern:
+      "Na Shopee, confira primeiro se o anúncio é nacional ou internacional. Produtos enviados do Brasil não seguem a mesma lógica de importação.",
+    compareTip:
+      "Compare com vendedores nacionais dentro da própria Shopee. Às vezes o preço local fica próximo depois de ICMS, frete e prazo de entrega.",
+  },
+  temu: {
+    purchasePattern:
+      "Na Temu, pedidos com muitos itens de baixo valor podem mudar de faixa por poucos dólares. O frete grátis deve ser confirmado no checkout, não presumido.",
+    compareTip:
+      "A Temu costuma fazer mais sentido para acessórios, organização e itens difíceis de achar no Brasil. Para produtos comuns, compare com marketplaces nacionais.",
+  },
+  "amazon-internacional": {
+    purchasePattern:
+      "Na Amazon internacional, verifique vendedor, envio, garantia e tributos estimados no checkout. Ofertas internacionais podem aparecer ao lado de produtos já vendidos no Brasil.",
+    compareTip:
+      "Para eletrônicos e produtos acima de US$100, compare imposto, garantia local e devolução. Uma oferta importada só compensa se a diferença final for clara.",
+  },
+} as const;
+
+const stateInsights = {
+  "sao-paulo": {
+    marketContext:
+      "São Paulo tende a ter mais alternativas nacionais, entrega rápida e vendedores locais. Por isso, a importação precisa vencer não só no preço, mas também no prazo e na segurança.",
+    decisionRule:
+      "Para SP, uma diferença pequena contra o preço brasileiro raramente justifica prazo longo. Use a importação quando o item não existir no Brasil ou quando a economia final for consistente.",
+  },
+  "rio-de-janeiro": {
+    marketContext:
+      "No Rio de Janeiro, o ICMS estimado de 20% aumenta a necessidade de comparar com produto nacional. A diferença contra SP pode reduzir a vantagem de pedidos acima de US$50.",
+    decisionRule:
+      "Para RJ, seja mais conservador: se o produto existir no Brasil com entrega rápida e garantia, a importação precisa oferecer economia maior para compensar.",
+  },
+} as const;
+
+function getPlatformInsight(slug: string) {
+  return platformInsights[slug as keyof typeof platformInsights];
+}
+
+function getStateInsight(slug: string) {
+  return stateInsights[slug as keyof typeof stateInsights];
+}
+
 export const platformStatePages = platforms.flatMap((platform) =>
   states.map((state) => ({
     path: `/imposto-${platform.slug}-${state.slug}`,
@@ -72,6 +128,9 @@ export default function ImpostoPlataformaEstado() {
 
   const { platform, state } = page;
   const canonical = `https://www.taxadeimportacao.com${page.path}`;
+  const platformInsight = getPlatformInsight(platform.slug);
+  const stateInsight = getStateInsight(state.slug);
+  const hasPriorityInsight = Boolean(platformInsight && stateInsight);
 
   return (
     <>
@@ -130,6 +189,27 @@ export default function ImpostoPlataformaEstado() {
           apenas o preço em dólar no anúncio.
         </p>
 
+        {hasPriorityInsight && (
+          <section className="mb-10 grid gap-4 md:grid-cols-2">
+            <div className="rounded-2xl border border-[#008272]/20 bg-[#008272]/5 p-5">
+              <h2 className="mb-2 text-xl font-semibold text-[#071933]">
+                Atenção na {platform.name}
+              </h2>
+              <p className="leading-relaxed text-slate-700">
+                {platformInsight?.purchasePattern}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-[#ffca28]/30 bg-[#ffca28]/10 p-5">
+              <h2 className="mb-2 text-xl font-semibold text-[#071933]">
+                Decisão para {state.code}
+              </h2>
+              <p className="leading-relaxed text-slate-700">
+                {stateInsight?.marketContext}
+              </p>
+            </div>
+          </section>
+        )}
+
         <a
           href="/"
           className="inline-block bg-[#008272] hover:bg-[#06264b] text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-md transition-colors mb-10"
@@ -176,6 +256,28 @@ export default function ImpostoPlataformaEstado() {
           reais. Em seguida, considere a regra de Imposto de Importação e o ICMS
           estimado de {state.rate}. Só então compare com o preço nacional.
         </p>
+
+        {hasPriorityInsight && (
+          <>
+            <h2 className="text-2xl font-semibold mt-10 mb-4">
+              Quando a compra tende a compensar
+            </h2>
+            <p className="mb-6">{platformInsight?.compareTip}</p>
+            <p className="mb-6">{stateInsight?.decisionRule}</p>
+          </>
+        )}
+
+        <div className="mt-10 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <h2 className="mb-2 text-2xl font-semibold text-[#071933]">
+            Checklist antes de finalizar
+          </h2>
+          <ul className="list-disc space-y-2 pl-6 text-slate-700">
+            <li>Confirme se o produto é internacional ou já está no Brasil.</li>
+            <li>Some produto, frete e seguro antes de olhar o limite de US$50.</li>
+            <li>Confira se Imposto de Importação e ICMS aparecem no checkout.</li>
+            <li>Compare o total estimado com uma alternativa vendida no Brasil.</li>
+          </ul>
+        </div>
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
           Perguntas frequentes
