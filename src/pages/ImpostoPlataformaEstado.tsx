@@ -94,6 +94,24 @@ const stateInsights = {
     decisionRule:
       "Para RJ, seja mais conservador: se o produto existir no Brasil com entrega rápida e garantia, a importação precisa oferecer economia maior para compensar.",
   },
+  "minas-gerais": {
+    marketContext:
+      "Minas Gerais usa ICMS estimado de 20% na calculadora, então a comparação com lojas nacionais precisa considerar produto, frete, prazo e eventual troca. Em cidades fora dos grandes centros, o prazo de entrega também pode pesar na decisão.",
+    decisionRule:
+      "Para MG, a importação tende a fazer mais sentido quando o item tem preço final claramente menor ou não está disponível no varejo brasileiro. Se a diferença for pequena, entrega nacional e garantia local podem ser melhores.",
+  },
+  parana: {
+    marketContext:
+      "Paraná usa ICMS estimado de 19,5%, um pouco abaixo dos estados calculados a 20%. A diferença ajuda, mas não elimina o impacto de frete, câmbio e regra acima de US$50.",
+    decisionRule:
+      "Para PR, vale simular com cuidado quando o carrinho fica perto de US$50. Pequenas mudanças no frete ou no câmbio podem decidir se a importação ainda compensa.",
+  },
+  "santa-catarina": {
+    marketContext:
+      "Santa Catarina usa ICMS estimado de 17%, uma das menores alíquotas da calculadora. Isso pode melhorar a comparação da importação, especialmente em compras até US$50 dentro do Remessa Conforme.",
+    decisionRule:
+      "Para SC, a importação pode ser competitiva em acessórios, peças e itens difíceis de achar localmente. Mesmo assim, compare com preço brasileiro quando houver garantia ou entrega rápida.",
+  },
 } as const;
 
 function getPlatformInsight(slug: string) {
