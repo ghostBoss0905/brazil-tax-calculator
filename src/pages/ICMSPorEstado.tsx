@@ -63,6 +63,76 @@ const statePages = [
 
 const defaultState = statePages[0];
 
+const platformLinks = [
+  { slug: "aliexpress", name: "AliExpress" },
+  { slug: "shein", name: "Shein" },
+  { slug: "shopee", name: "Shopee" },
+  { slug: "temu", name: "Temu" },
+  { slug: "amazon-internacional", name: "Amazon Internacional" },
+];
+
+const stateHubInsights: Record<string, {
+  market: string;
+  decision: string;
+  checklist: string[];
+}> = {
+  "sao-paulo": {
+    market:
+      "São Paulo combina ICMS estimado de 18% com muitas alternativas nacionais, entrega rápida e garantia local. A importação precisa vencer no custo final, não apenas no preço em dólar.",
+    decision:
+      "Para SP, importar costuma fazer sentido quando o produto não existe no Brasil ou quando a economia final continua clara depois de imposto, frete e prazo.",
+    checklist: [
+      "Compare com Mercado Livre, Amazon Brasil e varejo nacional antes de pagar.",
+      "Dê atenção extra a eletrônicos, peças e acessórios com garantia local.",
+      "Se a economia for pequena, a compra nacional pode ser mais segura.",
+    ],
+  },
+  "rio-de-janeiro": {
+    market:
+      "Rio de Janeiro usa ICMS estimado de 20%, o que reduz a folga da importação em relação a estados com alíquota menor. O preço importado precisa compensar mais.",
+    decision:
+      "Para RJ, a compra internacional deve mostrar economia relevante, principalmente acima de US$50 ou quando o frete pesa no carrinho.",
+    checklist: [
+      "Some produto e frete antes de avaliar a faixa de tributação.",
+      "Compare o total com lojas brasileiras que entregam no Rio de Janeiro.",
+      "Evite importar quando a diferença final for pequena e houver garantia nacional.",
+    ],
+  },
+  "minas-gerais": {
+    market:
+      "Minas Gerais usa ICMS estimado de 20%. Em cidades fora dos grandes centros, prazo e logística também podem pesar na comparação com uma compra nacional.",
+    decision:
+      "Para MG, a importação tende a fazer sentido quando o item é difícil de achar no Brasil ou quando o preço final fica claramente abaixo da alternativa nacional.",
+    checklist: [
+      "Considere prazo de entrega para Belo Horizonte, interior e cidades menores.",
+      "Compare eletrônicos e acessórios com vendedores nacionais antes de fechar.",
+      "Use a calculadora quando o carrinho ficar perto de US$50.",
+    ],
+  },
+  parana: {
+    market:
+      "Paraná usa ICMS estimado de 19,5%, um pouco abaixo dos estados calculados a 20%. Essa diferença ajuda, mas frete, câmbio e limite de US$50 ainda podem mudar a decisão.",
+    decision:
+      "Para PR, a melhor decisão vem de simular o carrinho completo e comparar o total com uma opção vendida no Brasil.",
+    checklist: [
+      "Confira se frete ou seguro empurram o pedido acima de US$50.",
+      "Compare acessórios e itens de casa com marketplaces nacionais.",
+      "Recalcule quando o câmbio ou o frete mudarem no checkout.",
+    ],
+  },
+  "santa-catarina": {
+    market:
+      "Santa Catarina usa ICMS estimado de 17%, uma das menores alíquotas da calculadora. Isso pode tornar a importação mais competitiva, especialmente em compras até US$50 dentro do Remessa Conforme.",
+    decision:
+      "Para SC, importar pode ser interessante em acessórios, peças e itens específicos, mas ainda vale comparar garantia, prazo e devolução.",
+    checklist: [
+      "Aproveite a simulação com SC para comparar contra estados de ICMS maior.",
+      "Cheque se a plataforma mostra tributos antes do pagamento.",
+      "Mesmo com ICMS menor, compare garantia e entrega nacional.",
+    ],
+  },
+};
+
 export const icmsStatePages = statePages.map((state) => ({
   path: `/icms-importacao-${state.slug}`,
   title: `ICMS Importação ${state.name} 2026: Como Calcular`,
@@ -75,6 +145,7 @@ export default function ICMSPorEstado() {
   const state =
     statePages.find((item) => location.endsWith(item.slug)) ?? defaultState;
   const canonical = `https://www.taxadeimportacao.com/icms-importacao-${state.slug}`;
+  const stateHubInsight = stateHubInsights[state.slug];
 
   return (
     <>
@@ -103,6 +174,16 @@ export default function ICMSPorEstado() {
             question: "Como interpretar o ICMS do Rio de Janeiro?",
             answer: "Nesta versão, a calculadora usa 20% para Rio de Janeiro como estimativa conservadora dentro do intervalo de 17% a 20% citado pela Receita Federal para simulações. A alíquota efetiva pode depender de regras estaduais e do fluxo da encomenda, por isso o valor final deve ser confirmado no checkout, nos Correios ou na transportadora.",
           }] : []),
+          ...(stateHubInsight ? [
+            {
+              question: `Como comparar AliExpress, Shein, Shopee, Temu e Amazon Internacional em ${state.name}?`,
+              answer: `Use ${state.code} como estado de destino, some produto e frete, confira se os tributos aparecem no checkout e compare o total com uma alternativa vendida no Brasil. ${stateHubInsight.decision}`,
+            },
+            {
+              question: `Quando comprar no Brasil em vez de importar para ${state.code}?`,
+              answer: "Quando a diferença final for pequena, a compra nacional pode ser melhor por prazo, garantia, troca e menor risco de cobrança inesperada.",
+            },
+          ] : []),
           {
             question: "Esta estimativa substitui o valor oficial?",
             answer: "Não. Ela serve para decisão antes da compra. O valor oficial depende do checkout, da transportadora, dos Correios ou da autoridade competente.",
@@ -207,6 +288,51 @@ export default function ICMSPorEstado() {
         >
           Simular importação para {state.code}
         </a>
+
+        {stateHubInsight && (
+          <>
+            <h2 className="text-2xl font-semibold mt-10 mb-4">
+              Comparação por plataforma em {state.name}
+            </h2>
+
+            <p className="mb-6">{stateHubInsight.market}</p>
+
+            <div className="grid gap-4 md:grid-cols-2 mb-8">
+              {platformLinks.map((platform) => (
+                <a
+                  key={platform.slug}
+                  href={`/imposto-${platform.slug}-${state.slug}`}
+                  className="block rounded-xl border border-slate-200 bg-white p-5 shadow-sm hover:border-[#008272] hover:shadow-md transition"
+                >
+                  <span className="text-sm font-semibold text-[#008272]">
+                    {platform.name}
+                  </span>
+                  <h3 className="text-lg font-semibold mt-2 mb-2">
+                    Imposto da {platform.name} para {state.code}
+                  </h3>
+                  <p className="text-slate-600 text-sm">
+                    Veja produto, frete, Remessa Conforme, ICMS de {state.rate}
+                    e comparação com compra nacional.
+                  </p>
+                </a>
+              ))}
+            </div>
+
+            <h2 className="text-2xl font-semibold mt-10 mb-4">
+              Importar ou comprar no Brasil?
+            </h2>
+            <p className="mb-6">{stateHubInsight.decision}</p>
+
+            <h2 className="text-2xl font-semibold mt-10 mb-4">
+              Checklist para compradores em {state.code}
+            </h2>
+            <ul className="list-disc pl-6 mb-8 space-y-2">
+              {stateHubInsight.checklist.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </>
+        )}
 
         <h2 className="text-2xl font-semibold mt-10 mb-4">
           O que entra no cálculo para {state.name}?
