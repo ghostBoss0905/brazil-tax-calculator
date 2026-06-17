@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -39,6 +39,7 @@ import {
 } from "@/components/ui/tooltip";
 import { formatBRL } from "@/lib/utils";
 import { BRAZILIAN_STATES, FAQS } from "@/lib/constants";
+import { trackEvent } from "@/lib/analytics";
 import RelatedGuides from "@/components/RelatedGuides";
 
 const calculatorSchema = z.object({
@@ -354,6 +355,7 @@ export default function Home() {
   const [results, setResults] = useState<TaxResults | null>(null);
   const [copied, setCopied] = useState(false);
   const [isSharingImage, setIsSharingImage] = useState(false);
+  const hasTrackedCalculatorStart = useRef(false);
 
   const {
     register,
@@ -375,6 +377,17 @@ export default function Home() {
 
   const selectedCurrency = watch("currency");
 
+  function handleCalculatorStart() {
+    if (hasTrackedCalculatorStart.current) {
+      return;
+    }
+
+    hasTrackedCalculatorStart.current = true;
+    trackEvent("calculator_started", {
+      page_path: window.location.pathname,
+    });
+  }
+
   const currentFormData = (): CalculatorFormValues => ({
     productValue: watch("productValue"),
     currency: watch("currency"),
@@ -387,6 +400,14 @@ export default function Home() {
   const onSubmit = (data: CalculatorFormValues) => {
     const calcResults = calculateTaxes(data);
     setResults(calcResults);
+    trackEvent("calculator_completed", {
+      currency: data.currency,
+      state: data.state,
+      remessa_conforme: data.isRemessaConforme,
+      order_value: Number((data.productValue + data.shippingCost).toFixed(2)),
+      estimated_total_brl: Number(calcResults.total.toFixed(2)),
+      effective_rate: Number(calcResults.effectiveRate.toFixed(1)),
+    });
 
     if (window.innerWidth < 1024) {
       setTimeout(() => {
@@ -406,6 +427,9 @@ export default function Home() {
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);
+      trackEvent("result_copied", {
+        state: currentFormData().state,
+      });
       setTimeout(() => setCopied(false), 1800);
     } catch {
       alert("Não foi possível copiar o resultado.");
@@ -424,10 +448,18 @@ export default function Home() {
           text,
           url: "https://www.taxadeimportacao.com/",
         });
+        trackEvent("result_shared", {
+          share_type: "text",
+          state: currentFormData().state,
+        });
       } catch {}
     } else {
       try {
         await navigator.clipboard.writeText(text);
+        trackEvent("result_shared", {
+          share_type: "text_fallback_copy",
+          state: currentFormData().state,
+        });
         alert(
           "Compartilhamento indisponível neste dispositivo. Resultado copiado.",
         );
@@ -454,6 +486,10 @@ export default function Home() {
           text: "Veja meu cálculo de importação no Brasil.",
           files: [file],
         });
+        trackEvent("result_shared", {
+          share_type: "image",
+          state: currentFormData().state,
+        });
       } else {
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
@@ -461,6 +497,10 @@ export default function Home() {
         link.download = "estimativa-importacao-brasil.png";
         link.click();
         URL.revokeObjectURL(url);
+        trackEvent("result_shared", {
+          share_type: "image_download",
+          state: currentFormData().state,
+        });
       }
     } catch {
       alert("Não foi possível gerar a imagem agora.");
@@ -557,6 +597,7 @@ export default function Home() {
                 <form
                   id="tax-form"
                   onSubmit={handleSubmit(onSubmit)}
+                  onFocusCapture={handleCalculatorStart}
                   className="space-y-2.5 sm:space-y-4"
                 >
                   <div className="grid grid-cols-[0.78fr_1.22fr] gap-2 sm:grid-cols-3 sm:gap-3">
