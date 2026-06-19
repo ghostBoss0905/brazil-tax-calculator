@@ -1355,6 +1355,44 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="mx-auto mb-12 max-w-5xl min-w-0 rounded-2xl border border-[#008272]/20 bg-white p-5 shadow-sm sm:p-6">
+          <div className="grid gap-5 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+            <div>
+              <h2 className="text-2xl font-bold text-[#071933]">
+                Como esta estimativa é feita
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600 sm:text-base">
+                A calculadora usa produto, frete, câmbio, estado de destino,
+                Remessa Conforme e referências públicas. O objetivo é ajudar na
+                decisão antes da compra, não substituir a cobrança oficial.
+              </p>
+            </div>
+            <div className="grid gap-2 text-sm">
+              <a
+                href="/metodologia"
+                className="flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 font-semibold text-[#071933] hover:border-[#008272] hover:text-[#008272]"
+              >
+                Metodologia da calculadora
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href="/fontes-oficiais"
+                className="flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 font-semibold text-[#071933] hover:border-[#008272] hover:text-[#008272]"
+              >
+                Fontes oficiais e referências
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href="/sobre"
+                className="flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 font-semibold text-[#071933] hover:border-[#008272] hover:text-[#008272]"
+              >
+                Sobre a Taxa de Importação
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+        </section>
+
         <div className="mx-auto mb-12 max-w-3xl min-w-0 space-y-1 rounded-xl border border-border bg-muted/40 px-4 py-4 text-xs text-muted-foreground sm:px-5">
           <p><strong>Versão das regras:</strong> 2026-06</p>
           <p><strong>Última verificação:</strong> Receita Federal do Brasil e Portal Compras Internacionais</p>
@@ -1369,6 +1407,15 @@ export default function Home() {
             </a>
             <a className="underline-offset-2 hover:underline" href="/aviso-legal">
               Aviso Legal
+            </a>
+            <a className="underline-offset-2 hover:underline" href="/metodologia">
+              Metodologia
+            </a>
+            <a className="underline-offset-2 hover:underline" href="/fontes-oficiais">
+              Fontes oficiais
+            </a>
+            <a className="underline-offset-2 hover:underline" href="/sobre">
+              Sobre
             </a>
           </div>
         </div>

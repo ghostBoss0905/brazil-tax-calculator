@@ -57,6 +57,21 @@ const guides: Guide[] = [
     description: "Compare São Paulo, Rio de Janeiro, Minas Gerais, Paraná e outros estados.",
   },
   {
+    href: "/metodologia",
+    title: "Metodologia da calculadora",
+    description: "Veja como produto, frete, câmbio, II e ICMS entram na estimativa.",
+  },
+  {
+    href: "/fontes-oficiais",
+    title: "Fontes oficiais",
+    description: "Consulte Receita Federal, Correios e referências usadas no site.",
+  },
+  {
+    href: "/sobre",
+    title: "Sobre a Taxa de Importação",
+    description: "Entenda o propósito, os limites e a independência editorial do projeto.",
+  },
+  {
     href: "/calcular-taxas-importacao",
     title: "Calcular taxas de importação",
     description: "Veja o passo a passo para estimar imposto, ICMS, frete e câmbio.",
@@ -223,6 +238,8 @@ function getRelatedHrefs(currentPath?: string) {
       "/tabela-imposto-importacao-brasil",
       "/taxa-correios-importacao",
       "/icms-importacao-brasil",
+      "/metodologia",
+      "/fontes-oficiais",
       "/guias/lojas-internacionais",
       "/guias/icms-por-estado",
     ]);
@@ -232,6 +249,8 @@ function getRelatedHrefs(currentPath?: string) {
     return uniqueHrefs([
       ...platformGuides.map((platformGuide) => platformGuide.href),
       "/lojas-remessa-conforme",
+      "/metodologia",
+      "/fontes-oficiais",
       "/guias/regras-importacao",
       "/guias/icms-por-estado",
     ]);
@@ -241,6 +260,8 @@ function getRelatedHrefs(currentPath?: string) {
     return uniqueHrefs([
       "/icms-importacao-brasil",
       ...stateGuides.map((state) => `/icms-importacao-${state.slug}`),
+      "/metodologia",
+      "/fontes-oficiais",
       "/guias/regras-importacao",
       "/guias/lojas-internacionais",
     ]);
@@ -260,6 +281,8 @@ function getRelatedHrefs(currentPath?: string) {
       state ? `/icms-importacao-${state.slug}` : "",
       "/o-que-e-remessa-conforme",
       "/compras-internacionais-abaixo-50-dolares",
+      "/metodologia",
+      "/fontes-oficiais",
       ...platformGuides
         .filter((item) => item.slug !== platformSlug)
         .map((item) => platformStateHref(item.slug, stateSlug)),
@@ -279,6 +302,8 @@ function getRelatedHrefs(currentPath?: string) {
       "/icms-importacao-brasil",
       "/compras-internacionais-abaixo-50-dolares",
       "/lojas-remessa-conforme",
+      "/metodologia",
+      "/fontes-oficiais",
       ...stateGuides
         .slice(0, 3)
         .map((state) => platformStateHref(platform.slug, state.slug)),
@@ -300,6 +325,8 @@ function getRelatedHrefs(currentPath?: string) {
         ...platformGuides.map((item) => platformStateHref(item.slug, state.slug)),
         "/o-que-e-remessa-conforme",
         "/compras-internacionais-abaixo-50-dolares",
+        "/metodologia",
+        "/fontes-oficiais",
       ]);
     }
   }
@@ -311,6 +338,8 @@ function getRelatedHrefs(currentPath?: string) {
       "/compras-internacionais-abaixo-50-dolares",
       "/tabela-imposto-importacao-brasil",
       "/icms-importacao-brasil",
+      "/metodologia",
+      "/fontes-oficiais",
       ...platformGuides.map((platformGuide) => platformGuide.href),
     ]);
   }
@@ -321,6 +350,24 @@ function getRelatedHrefs(currentPath?: string) {
       ...stateGuides.map((state) => `/icms-importacao-${state.slug}`),
       "/o-que-e-remessa-conforme",
       "/calcular-taxas-importacao",
+      "/tabela-imposto-importacao-brasil",
+      "/metodologia",
+      "/fontes-oficiais",
+    ]);
+  }
+
+  if (
+    currentPath === "/sobre" ||
+    currentPath === "/metodologia" ||
+    currentPath === "/fontes-oficiais"
+  ) {
+    return uniqueHrefs([
+      "/",
+      "/guias/regras-importacao",
+      "/guias/lojas-internacionais",
+      "/guias/icms-por-estado",
+      "/o-que-e-remessa-conforme",
+      "/icms-importacao-brasil",
       "/tabela-imposto-importacao-brasil",
     ]);
   }

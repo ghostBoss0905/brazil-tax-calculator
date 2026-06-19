@@ -23,6 +23,7 @@ import ICMSPorEstado from "@/pages/ICMSPorEstado";
 import DynamicSeoPage from "@/pages/DynamicSeoPage";
 import LegalPage from "@/pages/LegalPage";
 import HubPage from "@/pages/HubPage";
+import TrustPage from "@/pages/TrustPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -121,6 +122,12 @@ function Router() {
       <Route path="/politica-de-cookies" component={LegalPage} />
 
       <Route path="/aviso-legal" component={LegalPage} />
+
+      <Route path="/sobre" component={TrustPage} />
+
+      <Route path="/metodologia" component={TrustPage} />
+
+      <Route path="/fontes-oficiais" component={TrustPage} />
 
       <Route path="/guias/regras-importacao" component={HubPage} />
 

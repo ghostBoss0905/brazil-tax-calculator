@@ -1130,6 +1130,111 @@ const legalPages = [
   },
 ];
 
+const trustPages = [
+  {
+    path: "/sobre",
+    title: "Sobre a Taxa de Importação | Calculadora para Compras Internacionais",
+    description:
+      "Conheça o propósito da Taxa de Importação: ajudar consumidores no Brasil a estimar impostos, ICMS, frete e Remessa Conforme antes de comprar.",
+    h1: "Sobre a Taxa de Importação",
+    directAnswer:
+      "A Taxa de Importação é uma calculadora independente criada para ajudar consumidores no Brasil a comparar o custo final de compras internacionais antes do pagamento.",
+    introParagraph:
+      "O site transforma regras de importação em uma estimativa prática para consumidores brasileiros que compram em lojas internacionais.",
+    sections: [
+      {
+        heading: "Propósito do site",
+        paragraphs: [
+          "O foco é ajudar quem compra em AliExpress, Shein, Shopee, Temu, Amazon internacional e outras lojas a entender produto, frete, câmbio, Imposto de Importação, ICMS e Remessa Conforme.",
+        ],
+      },
+      {
+        heading: "Como o conteúdo é produzido",
+        paragraphs: [
+          "As páginas combinam fontes públicas, regras divulgadas por órgãos oficiais e exemplos de compra comuns para consumidores brasileiros.",
+          "Sempre que uma regra pode variar por checkout, transportadora ou estado, a página deixa isso claro e recomenda conferência no pagamento.",
+        ],
+      },
+      {
+        heading: "Independência editorial",
+        paragraphs: [
+          "A Taxa de Importação não é afiliada à Receita Federal, Correios, AliExpress, Shein, Shopee, Temu ou Amazon. As marcas são citadas apenas para explicar cenários de compra.",
+        ],
+      },
+    ],
+  },
+  {
+    path: "/metodologia",
+    title: "Metodologia da Calculadora de Importação | Taxa de Importação",
+    description:
+      "Veja como a calculadora estima custo final de importação com produto, frete, câmbio, Imposto de Importação, ICMS e Remessa Conforme.",
+    h1: "Metodologia da calculadora",
+    directAnswer:
+      "A calculadora estima o custo final somando produto, frete, câmbio, regra de Imposto de Importação, ICMS estadual e o enquadramento informado no Remessa Conforme.",
+    introParagraph:
+      "Esta página explica os dados usados, a lógica da estimativa e os limites do cálculo antes de uma compra internacional.",
+    sections: [
+      {
+        heading: "Dados informados pelo usuário",
+        paragraphs: [
+          "O cálculo começa com valor do produto, moeda, frete, taxa de câmbio, estado de destino e indicação de Remessa Conforme.",
+          "Esses dados mudam o resultado, por isso a estimativa deve refletir o carrinho real antes do pagamento.",
+        ],
+      },
+      {
+        heading: "Como a estimativa é montada",
+        paragraphs: [
+          "Produto e frete são convertidos para reais. Depois a calculadora aplica a regra federal informada para o cenário e soma o ICMS estimado do estado de entrega.",
+          "Quando o pedido está no Remessa Conforme, compras até US$50 podem ter Imposto de Importação federal de 0%, mas o ICMS continua relevante.",
+        ],
+      },
+      {
+        heading: "Limites da simulação",
+        paragraphs: [
+          "O valor exibido é uma estimativa educacional. O custo oficial pode variar conforme descrição da mercadoria, frete, seguro, câmbio usado, plataforma, transportadora, Correios, Receita Federal, estado de destino e regra vigente.",
+        ],
+      },
+    ],
+  },
+  {
+    path: "/fontes-oficiais",
+    title: "Fontes Oficiais sobre Imposto de Importação | Taxa de Importação",
+    description:
+      "Veja as fontes usadas para orientar a calculadora: Receita Federal, Portal Compras Internacionais, Correios e páginas oficiais sobre remessas internacionais.",
+    h1: "Fontes oficiais e referências",
+    directAnswer:
+      "A Taxa de Importação usa fontes públicas e oficiais como base editorial, principalmente Receita Federal, Portal Compras Internacionais e Correios.",
+    introParagraph:
+      "As referências abaixo ajudam a validar regras de remessas internacionais, Remessa Conforme, pagamento de tributos e acompanhamento de encomendas.",
+    sections: [
+      {
+        heading: "Receita Federal",
+        paragraphs: [
+          "A Receita Federal é a principal referência para regras de remessas internacionais, Imposto de Importação, Remessa Conforme e empresas certificadas no programa.",
+        ],
+      },
+      {
+        heading: "Portal Compras Internacionais",
+        paragraphs: [
+          "O Portal Compras Internacionais ajuda o consumidor a acompanhar encomendas, entender pagamentos pendentes e consultar informações práticas sobre compras do exterior.",
+        ],
+      },
+      {
+        heading: "Correios e transportadoras",
+        paragraphs: [
+          "Correios e transportadoras podem apresentar cobranças, prazos e procedimentos específicos. O usuário deve confirmar a informação no canal de atendimento da encomenda.",
+        ],
+      },
+      {
+        heading: "Revisão editorial",
+        paragraphs: [
+          "As páginas são revisadas quando regras públicas mudam ou quando Search Console indica que uma explicação precisa ficar mais clara. A versão atual do conteúdo é Junho de 2026.",
+        ],
+      },
+    ],
+  },
+];
+
 const hubPages = [
   {
     path: "/guias/regras-importacao",
@@ -1326,7 +1431,7 @@ function enrichStateHubPage(page) {
 
 const allPages = Array.from(
   new Map(
-    [...generatedStatePages, ...generatedPlatformStatePages, ...pages, ...legalPages, ...hubPages].map(
+    [...generatedStatePages, ...generatedPlatformStatePages, ...pages, ...legalPages, ...trustPages, ...hubPages].map(
       (page) => [page.path, enrichStateHubPage(page)],
     ),
   ).values(),
@@ -1346,6 +1451,15 @@ const homePage = {
     "Use a calculadora para estimar produto, frete, câmbio, Imposto de Importação, ICMS do estado de destino e regra do Remessa Conforme antes de finalizar uma compra internacional.",
   introParagraph:
     "A Taxa de Importação ajuda consumidores no Brasil a comparar o custo final de compras em AliExpress, Shein, Shopee, Temu, Amazon e outras lojas internacionais. Informe o valor do produto, frete, câmbio, estado de entrega e se os tributos aparecem no checkout para estimar o total em reais antes de comprar.",
+  sections: [
+    {
+      heading: "Como esta estimativa é feita",
+      paragraphs: [
+        "A calculadora usa produto, frete, câmbio, estado de destino, Remessa Conforme e referências públicas para montar uma estimativa de custo final.",
+        "O objetivo é ajudar na decisão antes da compra, não substituir a cobrança oficial feita no checkout, nos Correios, na transportadora ou pelas autoridades competentes.",
+      ],
+    },
+  ],
   faqs: [
     {
       question: "Quanto pago de imposto para importar no Brasil?",
@@ -1413,6 +1527,8 @@ function getRelatedPaths(path) {
       "/tabela-imposto-importacao-brasil",
       "/taxa-correios-importacao",
       "/icms-importacao-brasil",
+      "/metodologia",
+      "/fontes-oficiais",
       "/guias/lojas-internacionais",
       "/guias/icms-por-estado",
     ]);
@@ -1422,6 +1538,8 @@ function getRelatedPaths(path) {
     return uniqueValues([
       ...platforms.map((platform) => `/imposto-${platform.slug}-brasil`),
       "/lojas-remessa-conforme",
+      "/metodologia",
+      "/fontes-oficiais",
       "/guias/regras-importacao",
       "/guias/icms-por-estado",
     ]);
@@ -1431,6 +1549,8 @@ function getRelatedPaths(path) {
     return uniqueValues([
       "/icms-importacao-brasil",
       ...priorityStateSlugs.map((stateSlug) => `/icms-importacao-${stateSlug}`),
+      "/metodologia",
+      "/fontes-oficiais",
       "/guias/regras-importacao",
       "/guias/lojas-internacionais",
     ]);
@@ -1450,6 +1570,8 @@ function getRelatedPaths(path) {
       state ? `/icms-importacao-${state.slug}` : "",
       "/o-que-e-remessa-conforme",
       "/compras-internacionais-abaixo-50-dolares",
+      "/metodologia",
+      "/fontes-oficiais",
       ...platforms
         .filter((item) => item.slug !== platformSlug)
         .map((item) => buildPlatformStatePath(item.slug, stateSlug)),
@@ -1469,6 +1591,8 @@ function getRelatedPaths(path) {
       "/icms-importacao-brasil",
       "/compras-internacionais-abaixo-50-dolares",
       "/lojas-remessa-conforme",
+      "/metodologia",
+      "/fontes-oficiais",
       ...priorityStateSlugs
         .slice(0, 3)
         .map((stateSlug) => buildPlatformStatePath(platform.slug, stateSlug)),
@@ -1491,6 +1615,8 @@ function getRelatedPaths(path) {
         ...platforms.map((item) => buildPlatformStatePath(item.slug, state.slug)),
         "/o-que-e-remessa-conforme",
         "/compras-internacionais-abaixo-50-dolares",
+        "/metodologia",
+        "/fontes-oficiais",
       ]);
     }
   }
@@ -1502,6 +1628,8 @@ function getRelatedPaths(path) {
       "/compras-internacionais-abaixo-50-dolares",
       "/tabela-imposto-importacao-brasil",
       "/icms-importacao-brasil",
+      "/metodologia",
+      "/fontes-oficiais",
       ...platforms.map((platform) => `/imposto-${platform.slug}-brasil`),
     ]);
   }
@@ -1512,6 +1640,20 @@ function getRelatedPaths(path) {
       ...priorityStateSlugs.map((stateSlug) => `/icms-importacao-${stateSlug}`),
       "/o-que-e-remessa-conforme",
       "/calcular-taxas-importacao",
+      "/tabela-imposto-importacao-brasil",
+      "/metodologia",
+      "/fontes-oficiais",
+    ]);
+  }
+
+  if (path === "/sobre" || path === "/metodologia" || path === "/fontes-oficiais") {
+    return uniqueValues([
+      "/",
+      "/guias/regras-importacao",
+      "/guias/lojas-internacionais",
+      "/guias/icms-por-estado",
+      "/o-que-e-remessa-conforme",
+      "/icms-importacao-brasil",
       "/tabela-imposto-importacao-brasil",
     ]);
   }
@@ -1551,6 +1693,10 @@ function buildSchema(page) {
       "@id": `${siteOrigin}/#organization`,
       name: "Taxa de Importação",
       url: siteOrigin,
+      sameAs: [
+        `${siteOrigin}/sobre`,
+        `${siteOrigin}/fontes-oficiais`,
+      ],
     },
     {
       "@type": "WebSite",
@@ -1594,7 +1740,7 @@ function buildSchema(page) {
         "@id": breadcrumbId,
       },
       datePublished: "2026-05-23",
-      dateModified: "2026-06-10",
+      dateModified: "2026-06-19",
     },
   ];
 
@@ -1617,7 +1763,7 @@ function buildSchema(page) {
         "@id": `${siteOrigin}/#organization`,
       },
       datePublished: "2026-05-23",
-      dateModified: "2026-06-10",
+      dateModified: "2026-06-19",
     });
   }
 
@@ -1782,6 +1928,12 @@ function buildBodyHtml(page) {
     body += `</ul>`;
     body += `</nav>`;
   }
+
+  body += `<section style="margin-top:3rem;border:1px solid #dbe5ef;border-radius:16px;background:#ffffff;padding:18px">`;
+  body += `<h2 style="font-size:1.25rem;font-weight:650;margin:0 0 0.75rem;color:#071933">Transparência da estimativa</h2>`;
+  body += `<p style="margin:0 0 0.75rem;color:#475569">A calculadora é uma estimativa educacional baseada em regras públicas, estado de destino, câmbio, frete e enquadramento informado pelo usuário.</p>`;
+  body += `<p style="margin:0"><a href="${siteOrigin}/metodologia" style="color:#008272;text-decoration:underline">Metodologia</a> · <a href="${siteOrigin}/fontes-oficiais" style="color:#008272;text-decoration:underline">Fontes oficiais</a> · <a href="${siteOrigin}/sobre" style="color:#008272;text-decoration:underline">Sobre o projeto</a> · <a href="${siteOrigin}/aviso-legal" style="color:#008272;text-decoration:underline">Aviso legal</a></p>`;
+  body += `</section>`;
 
   body += `<p style="font-size:0.85rem;color:#64748b;margin-top:3rem">Atualizado em Junho de 2026. Fonte: Receita Federal, Portal Compras Internacionais e orientações sobre remessas internacionais.</p>`;
   body += `<p style="margin-top:1.5rem"><a href="${siteOrigin}" style="display:inline-block;background:#008272;color:white;padding:14px 28px;border-radius:12px;font-size:1.1rem;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(0,130,114,0.3)">Calcular imposto de importação</a></p>`;

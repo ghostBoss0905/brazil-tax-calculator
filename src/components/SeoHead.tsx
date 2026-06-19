@@ -22,7 +22,7 @@ export default function SeoHead({
   faqs = [],
   image = "https://www.taxadeimportacao.com/opengraph.jpg",
   type = "article",
-  dateModified = "2026-06-10",
+  dateModified = "2026-06-19",
 }: SeoHeadProps) {
   const articleSchema =
     type === "article"
@@ -45,6 +45,10 @@ export default function SeoHead({
             "@type": "Organization",
             name: "Taxa de Importação",
             url: "https://www.taxadeimportacao.com/",
+            sameAs: [
+              "https://www.taxadeimportacao.com/sobre",
+              "https://www.taxadeimportacao.com/fontes-oficiais",
+            ],
             logo: {
               "@type": "ImageObject",
               url: "https://www.taxadeimportacao.com/images/logo-icon.png",

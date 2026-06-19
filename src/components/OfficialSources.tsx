@@ -38,6 +38,17 @@ export default function OfficialSources({ sources }: OfficialSourcesProps) {
       <p className="mt-4 text-sm text-slate-500">
         Última revisão editorial: Junho de 2026.
       </p>
+      <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+        <a className="text-[#008272] underline" href="/metodologia">
+          Metodologia da calculadora
+        </a>
+        <a className="text-[#008272] underline" href="/fontes-oficiais">
+          Fontes oficiais e referências
+        </a>
+        <a className="text-[#008272] underline" href="/aviso-legal">
+          Limites da estimativa
+        </a>
+      </div>
     </section>
   );
 }
