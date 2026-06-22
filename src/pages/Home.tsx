@@ -287,38 +287,10 @@ async function buildShareImageBlob(results: TaxResults, data: CalculatorFormValu
 }
 
 function GeometricBrazilStrip() {
-  const tiles = [
-    "bg-[#ffca28]",
-    "bg-[#f5b700]",
-    "bg-[#0b7f55]",
-    "bg-[#0f5f4d]",
-    "bg-[#06264b]",
-    "bg-[#f8e7a8]",
-    "bg-[#ffd449]",
-    "bg-[#168f5b]",
-    "bg-[#073763]",
-    "bg-[#f6c516]",
-    "bg-[#0a7a61]",
-    "bg-[#fff4cc]",
-  ];
-
   return (
-    <div className="absolute left-0 top-0 hidden h-full w-20 overflow-hidden rounded-l-[28px] lg:block">
-      <div className="grid h-full grid-cols-2">
-        {tiles.map((color, index) => {
-          const clipPath =
-            index % 3 === 0
-              ? "polygon(0 0, 100% 0, 0 100%)"
-              : index % 3 === 1
-                ? "polygon(100% 0, 100% 100%, 0 100%)"
-                : undefined;
-
-          return (
-            <div key={index} className={color} style={{ clipPath }} />
-          );
-        })}
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/10" />
+    <div className="tax-brazil-strip absolute left-0 top-0 h-full w-1 overflow-hidden rounded-l-[18px] sm:rounded-l-[28px] lg:w-7">
+      <div className="absolute inset-y-0 left-1/2 w-px bg-white/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/25 via-transparent to-[#071933]/10" />
     </div>
   );
 }
@@ -510,9 +482,9 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#f7f9fb] font-sans pb-20 selection:bg-[#f5c400]/30">
-      <main className="mx-auto w-full max-w-7xl min-w-0 px-2 pb-10 pt-2 sm:px-6 sm:pt-5 lg:px-8 lg:pt-10">
-        <section className="relative w-full max-w-full overflow-hidden rounded-[18px] border border-slate-200 bg-white shadow-2xl shadow-slate-200/70 sm:rounded-[28px]">
+    <div className="tax-home min-h-screen overflow-x-hidden bg-[#f7f9fb] font-sans pb-20 selection:bg-[#f5c400]/30">
+      <main className="tax-home-main mx-auto w-full max-w-7xl min-w-0 px-2 pb-10 pt-2 sm:px-6 sm:pt-5 lg:px-8 lg:pt-10">
+        <section className="tax-home-hero relative w-full max-w-full overflow-hidden rounded-[18px] border border-slate-200 bg-white shadow-2xl shadow-slate-200/70 sm:rounded-[28px]">
           <GeometricBrazilStrip />
           <div className="pointer-events-none absolute right-0 top-24 hidden h-80 w-80 opacity-60 lg:block">
             <div className="grid h-full grid-cols-4">
@@ -574,7 +546,7 @@ export default function Home() {
                     Calcule o custo final da importação
                   </span>
                 </h1>
-                <p className="mx-auto mt-1 max-w-[280px] text-pretty break-words text-sm leading-6 text-slate-600 min-[390px]:max-w-[320px] sm:mt-5 sm:max-w-2xl sm:text-lg sm:leading-8">
+                <p className="mx-auto mt-1 max-w-[260px] text-pretty break-words text-sm leading-6 text-slate-600 min-[390px]:max-w-[300px] sm:mt-5 sm:max-w-2xl sm:text-lg sm:leading-8">
                   Imposto, ICMS, frete e Remessa Conforme antes de comprar.
                 </p>
               </div>
@@ -582,7 +554,7 @@ export default function Home() {
 
         <div className="grid min-w-0 grid-cols-1 gap-3 sm:gap-5 lg:grid-cols-12 lg:gap-8">
           <div className="min-w-0 lg:col-span-8">
-            <Card className="max-w-full overflow-hidden rounded-[18px] border-slate-200 bg-white shadow-xl shadow-slate-200/70 sm:rounded-[24px]">
+            <Card className="tax-calculator-card max-w-full overflow-hidden rounded-[18px] border-slate-200 bg-white shadow-xl shadow-slate-200/70 sm:rounded-[24px]">
               <CardHeader className="border-b border-slate-100 bg-white px-4 py-3 sm:p-6 sm:pb-4">
                 <CardTitle className="flex min-w-0 items-center gap-2 text-[1.05rem] text-[#071933] min-[390px]:text-lg sm:text-xl">
                   <Calculator className="h-4 w-4 shrink-0 text-[#008272] sm:h-5 sm:w-5" />
@@ -769,10 +741,10 @@ export default function Home() {
           <aside className="min-w-0 space-y-3 lg:col-span-4 lg:h-full">
             <div
               id="results-panel"
-              className={
-                results
-                  ? "overflow-hidden rounded-2xl border border-[#06264b]/10 bg-[#06264b] text-white shadow-xl shadow-[#06264b]/20"
-                  : "rounded-2xl border border-dashed border-slate-300 bg-slate-50/80 p-5 text-center"
+                className={
+                  results
+                  ? "tax-result-panel overflow-hidden rounded-2xl border border-[#06264b]/10 bg-[#06264b] text-white shadow-xl shadow-[#06264b]/20"
+                  : "tax-empty-panel rounded-2xl border border-dashed border-slate-300 bg-slate-50/80 p-5 text-center"
               }
             >
               {!results ? (
@@ -889,7 +861,7 @@ export default function Home() {
             <div className="grid gap-3">
               <a
                 href="/tabela-imposto-importacao-brasil"
-                className="group flex min-w-0 flex-col justify-center rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
+                className="tax-side-link group flex min-w-0 flex-col justify-center rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
               >
                 <BadgeCheck className="mb-3 h-7 w-7 text-[#008272]" />
                 <p className="break-words font-semibold text-[#071933]">Regras 2026 atualizadas</p>
@@ -899,7 +871,7 @@ export default function Home() {
               </a>
               <a
                 href="/o-que-e-remessa-conforme"
-                className="group flex min-w-0 flex-col justify-center rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
+                className="tax-side-link group flex min-w-0 flex-col justify-center rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
               >
                 <ShoppingCart className="mb-3 h-7 w-7 text-[#008272]" />
                 <p className="break-words font-semibold text-[#071933]">Remessa Conforme</p>
@@ -909,7 +881,7 @@ export default function Home() {
               </a>
               <a
                 href="/icms-importacao-brasil"
-                className="group flex min-w-0 flex-col justify-center rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
+                className="tax-side-link group flex min-w-0 flex-col justify-center rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm transition-colors hover:border-[#008272]"
               >
                 <Zap className="mb-3 h-7 w-7 text-[#008272]" />
                 <p className="break-words font-semibold text-[#071933]">ICMS por estado</p>
@@ -921,7 +893,7 @@ export default function Home() {
           </aside>
 
           <div className="min-w-0 lg:col-span-12">
-            <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+            <section className="tax-section-card rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
               <div className="mb-3 flex min-w-0 items-center justify-between gap-3">
                 <div className="min-w-0">
                   <h2 className="text-lg font-bold text-[#071933]">
@@ -939,7 +911,7 @@ export default function Home() {
                   <a
                     key={platform.href}
                     href={platform.href}
-                    className="group relative min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 transition-colors hover:border-[#008272] hover:bg-white"
+                    className="tax-platform-link group relative min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 transition-colors hover:border-[#008272] hover:bg-white"
                   >
                     <span className="absolute right-0 top-0 h-10 w-10 bg-[#ffca28]/25 [clip-path:polygon(0_0,100%_0,100%_100%)]" />
                     <span className="relative block text-sm font-extrabold text-[#071933] group-hover:text-[#008272]">
@@ -964,7 +936,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="space-y-4">
+            <div className="tax-faq-list space-y-4">
               {FAQS.map((faq, index) => (
                 <FaqAccordionItem
                   key={index}
@@ -1279,7 +1251,7 @@ export default function Home() {
             </AnimatePresence>
           </section>
 
-        <section className="mx-auto mb-12 max-w-5xl min-w-0 rounded-2xl border border-primary/10 bg-primary/5 p-5 sm:p-6">
+        <section className="tax-section-card tax-advice-card mx-auto mb-12 max-w-5xl min-w-0 rounded-2xl border border-primary/10 bg-primary/5 p-5 sm:p-6">
           <div className="grid min-w-0 gap-5 lg:grid-cols-[1.3fr_1fr] lg:items-center">
             <div className="min-w-0">
               <h2 className="text-balance text-2xl font-bold text-foreground">
@@ -1325,7 +1297,7 @@ export default function Home() {
           />
         </section>
 
-        <section className="mx-auto mb-12 max-w-5xl min-w-0 rounded-2xl border border-border bg-background p-5 shadow-sm sm:p-6">
+        <section className="tax-section-card mx-auto mb-12 max-w-5xl min-w-0 rounded-2xl border border-border bg-background p-5 shadow-sm sm:p-6">
           <h2 className="text-2xl font-bold text-foreground">
             Centros de consulta
           </h2>
@@ -1355,7 +1327,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mx-auto mb-12 max-w-5xl min-w-0 rounded-2xl border border-[#008272]/20 bg-white p-5 shadow-sm sm:p-6">
+        <section className="tax-section-card mx-auto mb-12 max-w-5xl min-w-0 rounded-2xl border border-[#008272]/20 bg-white p-5 shadow-sm sm:p-6">
           <div className="grid gap-5 lg:grid-cols-[1.1fr_1fr] lg:items-center">
             <div>
               <h2 className="text-2xl font-bold text-[#071933]">
@@ -1393,7 +1365,7 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="mx-auto mb-12 max-w-3xl min-w-0 space-y-1 rounded-xl border border-border bg-muted/40 px-4 py-4 text-xs text-muted-foreground sm:px-5">
+        <div className="tax-footer-note mx-auto mb-12 max-w-3xl min-w-0 space-y-1 rounded-xl border border-border bg-muted/40 px-4 py-4 text-xs text-muted-foreground sm:px-5">
           <p><strong>Versão das regras:</strong> 2026-06</p>
           <p><strong>Última verificação:</strong> Receita Federal do Brasil e Portal Compras Internacionais</p>
           <p><strong>Fonte oficial:</strong> Receita Federal, Correios e normas públicas aplicáveis</p>
@@ -1434,7 +1406,7 @@ function FaqAccordionItem({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="min-w-0 overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-colors hover:border-primary/30">
+    <div className="tax-faq-item min-w-0 overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-colors hover:border-primary/30">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full min-w-0 items-center justify-between px-5 py-4 text-left focus:outline-none focus-visible:bg-secondary sm:px-6"
